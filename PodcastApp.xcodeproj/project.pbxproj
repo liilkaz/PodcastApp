@@ -13,7 +13,6 @@
 		751C225C2AC0542100FF50C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751C225B2AC0542100FF50C6 /* Assets.xcassets */; };
 		751C225F2AC0542100FF50C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751C225D2AC0542100FF50C6 /* LaunchScreen.storyboard */; };
 		751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22B22AC1930300FF50C6 /* LoginViewController.swift */; };
-		751C22B62AC194ED00FF50C6 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22B52AC194ED00FF50C6 /* CreateAccount.swift */; };
 		751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22B82AC1968800FF50C6 /* UILabel + Extension.swift */; };
 		751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22BA2AC196C600FF50C6 /* UIFont + Extension.swift */; };
 		751C22C62AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751C22BF2AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf */; };
@@ -27,7 +26,6 @@
 		751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D42AC1B5EB00FF50C6 /* UIColor + Extension.swift */; };
 		751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D62AC1BC4F00FF50C6 /* Divider.swift */; };
 		751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D92AC1C18200FF50C6 /* CreateAccountViewController.swift */; };
-		7595506A2AC1C99700A47208 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550692AC1C99700A47208 /* SignUp.swift */; };
 		7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506B2AC1D06900A47208 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +38,6 @@
 		751C225E2AC0542100FF50C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		751C22602AC0542100FF50C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		751C22B22AC1930300FF50C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		751C22B52AC194ED00FF50C6 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		751C22B82AC1968800FF50C6 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		751C22BA2AC196C600FF50C6 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		751C22BF2AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Medium.ttf"; sourceTree = "<group>"; };
@@ -54,7 +51,6 @@
 		751C22D42AC1B5EB00FF50C6 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		751C22D62AC1BC4F00FF50C6 /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
 		751C22D92AC1C18200FF50C6 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		759550692AC1C99700A47208 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		7595506B2AC1D06900A47208 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,7 +152,6 @@
 		751C22D82AC1C16100FF50C6 /* CreateAccountScreen */ = {
 			isa = PBXGroup;
 			children = (
-				751C22B52AC194ED00FF50C6 /* CreateAccount.swift */,
 				751C22D92AC1C18200FF50C6 /* CreateAccountViewController.swift */,
 			);
 			path = CreateAccountScreen;
@@ -165,7 +160,6 @@
 		759550682AC1C97400A47208 /* SignUpScreen */ = {
 			isa = PBXGroup;
 			children = (
-				759550692AC1C99700A47208 /* SignUp.swift */,
 				7595506B2AC1D06900A47208 /* SignUpViewController.swift */,
 			);
 			path = SignUpScreen;
@@ -249,12 +243,10 @@
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
 				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
 				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
-				7595506A2AC1C99700A47208 /* SignUp.swift in Sources */,
 				751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */,
 				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
 				751C22572AC0542000FF50C6 /* ViewController.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
-				751C22B62AC194ED00FF50C6 /* CreateAccount.swift in Sources */,
 				7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */,
 				751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */,
 				751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */,

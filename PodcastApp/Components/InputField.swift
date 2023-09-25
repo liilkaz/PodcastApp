@@ -12,11 +12,8 @@ class InputField: UIView {
     let inputTextField: UITextField
     let title: String
 
-    private lazy var nameInput: UILabel = {
-        let label = UILabel(name: title, font: .jakarta14medium())
-        label.textColor = .darkGrayTextColor
-        return label
-    }()
+    private lazy var nameInput = UILabel(name: title, font: .jakarta14medium(), textColor: .darkGrayTextColor)
+
 
     init(inputField: UITextField, title: String) {
 
