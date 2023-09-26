@@ -21,7 +21,6 @@ extension UIButton {
             self.setTitleColor(titleColor, for: .normal)
             self.backgroundColor = backgroundColor
             self.titleLabel?.font = font
-            
             self.layer.cornerRadius = cornerRadius
             
             if hasBorder {

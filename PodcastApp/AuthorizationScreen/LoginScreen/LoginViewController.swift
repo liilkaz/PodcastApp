@@ -11,10 +11,7 @@ class LoginViewController: UIViewController {
     
     let cornerRadius: CGFloat = 24
     
-    private lazy var loginField: InputField = {
-        let emailField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your login"), title: "Login")
-        return emailField
-    }()
+    private lazy var loginField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your login"), title: "Login")
 
     private lazy var emailField: InputField = {
         let emailField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your email address"), title: "Email")
@@ -47,33 +44,24 @@ class LoginViewController: UIViewController {
 
     private lazy var bottomText = UILabel(name: "Don't you have an account yet?",
                             font: .jakarta16semibold(), textColor: .boldGrayTextColor)
-
-    private lazy var registerButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle(" Register", for: .normal)
-        button.titleLabel?.font = .jakarta16semibold()
-        button.setTitleColor(.greenTextColor, for: .normal)
-        button.addTarget(self, action: #selector(didTapRegisterButton), for: .touchUpInside)
-        return button
-    }()
     
-    let bottomStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        return stack
-    }()
+    private lazy var registerButton = UIButton(title: "Register", backgroundColor: .clear, titleColor: .greenTextColor, hasBorder: false)
+    
+    private let bottomStackView = UIStackView(axis: .horizontal, spacing: 2)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setConstraint()
+        navigationItem.hidesBackButton = true
     }
     
     func setupView() {
         view.backgroundColor = .white
         
-        bottomStackView.addArrangedSubview(bottomText)
-        bottomStackView.addArrangedSubview(registerButton)
+        registerButton.addTarget(self, action: #selector(didTapRegisterButton), for: .touchUpInside)
+        
+        bottomStackView.addArrangedSubviews(bottomText, registerButton)
         
         view.addSubviews(loginField, emailField, emailButton, dividerView, googleButton, bottomStackView)
     }

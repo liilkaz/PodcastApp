@@ -110,7 +110,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBar()
+        setNavigationBarBackButtonAuth(title: "Sign Up")
         setupView()
         setConstraints()
     }
@@ -168,22 +168,7 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    
-    private func setNavigationBar() {
-        title = "Sign Up"
-        navigationItem.hidesBackButton = true
-        let backButton = UIBarButtonItem(
-            image: UIImage(named: "arrowBack")?.withTintColor(.systemGray,
-                                                              renderingMode: .alwaysOriginal), style: .plain, target: self, action: #selector(didTapBackButton))
-        navigationItem.leftBarButtonItem = backButton
-    }
-    
     // MARK: - @objs Methods
-    
-    @objc
-    private func didTapBackButton() {
-        navigationController?.popViewController(animated: true)
-    }
     
     @objc
     private func didTapLoginButton() {

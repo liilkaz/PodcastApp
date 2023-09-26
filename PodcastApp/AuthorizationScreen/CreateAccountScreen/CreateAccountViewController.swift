@@ -44,29 +44,16 @@ class CreateAccountViewController: UIViewController {
 
     private let bottomText = UILabel(name: "Already have an account?",
                             font: .jakarta16semibold(), textColor: .boldGrayTextColor)
-
-
-    private lazy var loginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Login", for: .normal)
-        button.titleLabel?.font = .jakarta16semibold()
-        button.setTitleColor(.purpleTextColor, for: .normal)
-        button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
-        return button
-    }()
     
-    private let bottomStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        return stack
-    }()
+    private lazy var loginButton = UIButton(title: "Login", backgroundColor: .clear, titleColor: .purpleTextColor, hasBorder: false)
+    
+    private let bottomStackView = UIStackView(axis: .horizontal, spacing: 2)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setConstraints()
-        
-        
+        navigationItem.hidesBackButton = true
     }
     
     private func setupView() {
@@ -74,10 +61,11 @@ class CreateAccountViewController: UIViewController {
         mainView.layer.cornerRadius = 32
         mainView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
+        loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
+        
         view.addSubviews(titleLabel, subTitleLabel, mainView)
         
-        bottomStackView.addArrangedSubview(bottomText)
-        bottomStackView.addArrangedSubview(loginButton)
+        bottomStackView.addArrangedSubviews(bottomText, loginButton)
         
         emailButton.addTarget(self, action: #selector(didTapEmailButton), for: .touchUpInside)
         
