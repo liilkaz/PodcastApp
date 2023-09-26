@@ -1,5 +1,5 @@
 //
-//  FaroritsCell.swift
+//  FavoritesListCell.swift
 //  PodcastApp
 //
 //  Created by sidzhe on 26.09.2023.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class FavoritsCell: UICollectionViewCell {
+final class FavoritesListCell: UICollectionViewCell {
     
     //MARK: - Properties
     
@@ -19,7 +19,6 @@ final class FavoritsCell: UICollectionViewCell {
             contentLabel.text = newValue?.contentName
         }
     }
-    
     //MARK: - UI Elements
     
     private lazy var iconImage: UIImageView = {
@@ -43,14 +42,6 @@ final class FavoritsCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var stackView: UIStackView = {
-        let view = UIStackView()
-        view.distribution = .fill
-        view.axis = .vertical
-        view.spacing = 10
-        return view
-    }()
-    
     //MARK: - Inits
     
     override init(frame: CGRect) {
@@ -68,22 +59,24 @@ final class FavoritsCell: UICollectionViewCell {
     
     private func setupViews() {
         
-        stackView.addArrangedSubview(songName)
-        stackView.addArrangedSubview(contentLabel)
-        
         contentView.addSubview(iconImage)
-        contentView.addSubview(stackView)
+        contentView.addSubview(songName)
+        contentView.addSubview(contentLabel)
         
         iconImage.snp.makeConstraints { make in
-            make.size.equalTo(48)
-            make.centerY.equalToSuperview()
-            make.left.equalToSuperview()
+            make.size.equalTo(60)
+            make.top.equalToSuperview().inset(26)
+            make.horizontalEdges.equalToSuperview().inset(30)
         }
         
-        stackView.snp.makeConstraints { make in
-            make.left.equalTo(iconImage.snp.right).inset(-12)
-            make.right.equalToSuperview()
-            make.top.equalTo(iconImage.snp.top)
+        songName.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview().inset(20)
+            make.top.equalTo(iconImage.snp.bottom).inset(-10)
+        }
+        
+        contentLabel.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview().inset(10)
+            make.top.equalTo(songName.snp.bottom).inset(-4)
         }
     }
 }

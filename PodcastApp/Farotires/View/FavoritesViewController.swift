@@ -34,8 +34,8 @@ final class FavoritesViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: view.frame.size.width, height: 80)
-        layout.minimumLineSpacing = 24
+        layout.itemSize = CGSize(width: view.frame.size.width - 92, height: 60)
+        layout.minimumLineSpacing = 20
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(FavoritsCell.self, forCellWithReuseIdentifier: identifier)
         view.dataSource = self
@@ -64,7 +64,7 @@ final class FavoritesViewController: UIViewController {
         
         headerLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16)
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(10)
         }
         
         additionallyButton.snp.makeConstraints { make in
@@ -74,8 +74,8 @@ final class FavoritesViewController: UIViewController {
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(headerLabel.snp.bottom).inset(-16)
-            make.horizontalEdges.equalToSuperview()
+            make.top.equalTo(headerLabel.snp.bottom).inset(-26)
+            make.horizontalEdges.equalToSuperview().inset(46)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }

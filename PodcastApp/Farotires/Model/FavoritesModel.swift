@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FavoritesModel {
+struct FavoritesModel: Hashable {
     var icon: String
     var songName: String
     var contentName: String  
