@@ -12,6 +12,14 @@
 		751C22572AC0542000FF50C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22562AC0542000FF50C6 /* ViewController.swift */; };
 		751C225C2AC0542100FF50C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751C225B2AC0542100FF50C6 /* Assets.xcassets */; };
 		751C225F2AC0542100FF50C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751C225D2AC0542100FF50C6 /* LaunchScreen.storyboard */; };
+		EB9A4B1F2AC287B300B38D20 /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B1E2AC287B300B38D20 /* FavoritesModel.swift */; };
+		EB9A4B222AC287D600B38D20 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EB9A4B212AC287D600B38D20 /* SnapKit */; };
+		EB9A4B242AC287F100B38D20 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B232AC287F100B38D20 /* FavoritesViewController.swift */; };
+		EB9A4B272AC2888F00B38D20 /* FavoritsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B262AC2888F00B38D20 /* FavoritsCell.swift */; };
+		EB9A4B292AC2967900B38D20 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B282AC2967900B38D20 /* FavoritesViewModel.swift */; };
+		EB9A4B2B2AC2968300B38D20 /* FavoritesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B2A2AC2968300B38D20 /* FavoritesViewModelProtocol.swift */; };
+		EB9A4B2D2AC2969000B38D20 /* FavoritsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B2C2AC2969000B38D20 /* FavoritsCellViewModel.swift */; };
+		EB9A4B2F2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B2E2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,13 @@
 		751C225B2AC0542100FF50C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		751C225E2AC0542100FF50C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		751C22602AC0542100FF50C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB9A4B1E2AC287B300B38D20 /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
+		EB9A4B232AC287F100B38D20 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		EB9A4B262AC2888F00B38D20 /* FavoritsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCell.swift; sourceTree = "<group>"; };
+		EB9A4B282AC2967900B38D20 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		EB9A4B2A2AC2968300B38D20 /* FavoritesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelProtocol.swift; sourceTree = "<group>"; };
+		EB9A4B2C2AC2969000B38D20 /* FavoritsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCellViewModel.swift; sourceTree = "<group>"; };
+		EB9A4B2E2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCellViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9A4B222AC287D600B38D20 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,11 +73,66 @@
 				751C22522AC0542000FF50C6 /* AppDelegate.swift */,
 				751C22542AC0542000FF50C6 /* SceneDelegate.swift */,
 				751C22562AC0542000FF50C6 /* ViewController.swift */,
+				EB9A4B192AC2878200B38D20 /* Farotires */,
 				751C225B2AC0542100FF50C6 /* Assets.xcassets */,
 				751C225D2AC0542100FF50C6 /* LaunchScreen.storyboard */,
 				751C22602AC0542100FF50C6 /* Info.plist */,
 			);
 			path = PodcastApp;
+			sourceTree = "<group>";
+		};
+		EB9A4B192AC2878200B38D20 /* Farotires */ = {
+			isa = PBXGroup;
+			children = (
+				EB9A4B1D2AC2879E00B38D20 /* Model */,
+				EB9A4B1C2AC2879700B38D20 /* View */,
+				EB9A4B1A2AC2878B00B38D20 /* ViewModel */,
+				EB9A4B1B2AC2879100B38D20 /* Protocols */,
+			);
+			path = Farotires;
+			sourceTree = "<group>";
+		};
+		EB9A4B1A2AC2878B00B38D20 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EB9A4B282AC2967900B38D20 /* FavoritesViewModel.swift */,
+				EB9A4B2C2AC2969000B38D20 /* FavoritsCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB9A4B1B2AC2879100B38D20 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EB9A4B2A2AC2968300B38D20 /* FavoritesViewModelProtocol.swift */,
+				EB9A4B2E2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EB9A4B1C2AC2879700B38D20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB9A4B232AC287F100B38D20 /* FavoritesViewController.swift */,
+				EB9A4B252AC2887D00B38D20 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB9A4B1D2AC2879E00B38D20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB9A4B1E2AC287B300B38D20 /* FavoritesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB9A4B252AC2887D00B38D20 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB9A4B262AC2888F00B38D20 /* FavoritsCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +151,9 @@
 			dependencies = (
 			);
 			name = PodcastApp;
+			packageProductDependencies = (
+				EB9A4B212AC287D600B38D20 /* SnapKit */,
+			);
 			productName = "Podcast App";
 			productReference = 751C224F2AC0542000FF50C6 /* PodcastApp.app */;
 			productType = "com.apple.product-type.application";
@@ -92,7 +166,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					751C224E2AC0542000FF50C6 = {
 						CreatedOnToolsVersion = 14.1;
@@ -108,6 +182,9 @@
 				Base,
 			);
 			mainGroup = 751C22462AC0542000FF50C6;
+			packageReferences = (
+				EB9A4B202AC287D600B38D20 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 751C22502AC0542000FF50C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,9 +211,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9A4B2B2AC2968300B38D20 /* FavoritesViewModelProtocol.swift in Sources */,
+				EB9A4B2D2AC2969000B38D20 /* FavoritsCellViewModel.swift in Sources */,
 				751C22572AC0542000FF50C6 /* ViewController.swift in Sources */,
+				EB9A4B292AC2967900B38D20 /* FavoritesViewModel.swift in Sources */,
+				EB9A4B2F2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
 				751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */,
+				EB9A4B272AC2888F00B38D20 /* FavoritsCell.swift in Sources */,
+				EB9A4B242AC287F100B38D20 /* FavoritesViewController.swift in Sources */,
+				EB9A4B1F2AC287B300B38D20 /* FavoritesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +242,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -190,6 +275,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -218,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -250,6 +337,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -352,6 +440,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EB9A4B202AC287D600B38D20 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EB9A4B212AC287D600B38D20 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB9A4B202AC287D600B38D20 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 751C22472AC0542000FF50C6 /* Project object */;
 }
