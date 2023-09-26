@@ -12,7 +12,7 @@ extension UIViewController {
         navigationItem.hidesBackButton = true
         navigationItem.title = title
         let backButton = UIBarButtonItem(
-            image: UIImage(named: "arrowBack")?.withTintColor(.systemGray,
+            image: UIImage(named: "arrowBack")?.withTintColor(.blackTextColor,
                                                               renderingMode: .alwaysOriginal), style: .plain, target: self, action: #selector(goBack))
         navigationItem.leftBarButtonItem = backButton
     }
