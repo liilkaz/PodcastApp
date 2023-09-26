@@ -11,4 +11,6 @@ struct FavoritesModel: Hashable {
     var icon: String
     var songName: String
     var contentName: String  
+    
+    let identifier = UUID()
 }

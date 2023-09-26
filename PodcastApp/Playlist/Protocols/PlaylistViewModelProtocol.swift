@@ -10,4 +10,6 @@ import Foundation
 protocol PlaylistViewModelProtocol: AnyObject {
     func getFavoritesModel(indexPath: IndexPath) -> FavoritsCellViewModelProtocol?
     func favoritesArray() -> [FavoritesModel]? 
+    func getPlaylistModel(indexPath: IndexPath) -> FavoritsCellViewModelProtocol?
+    func playlistArray() -> [FavoritesModel]?
 }

@@ -16,6 +16,7 @@ final class HeaderCell: UICollectionReusableView {
         let label = UILabel()
         label.text = "Favorites"
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         return label
     }()
     
@@ -49,7 +50,7 @@ final class HeaderCell: UICollectionReusableView {
         
         headerLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().inset(32)
+            make.left.equalToSuperview()
         }
         
         seeAllButton.snp.makeConstraints { make in

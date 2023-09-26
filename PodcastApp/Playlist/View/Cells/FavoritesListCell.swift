@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class FavoritesListCell: UICollectionViewCell {
-    
     //MARK: - Properties
     
     weak var viewModel: FavoritsCellViewModelProtocol? {
@@ -26,6 +25,7 @@ final class FavoritesListCell: UICollectionViewCell {
         image.image = UIImage(systemName: "swift")
         image.clipsToBounds = true
         image.layer.cornerRadius = 8
+        image.backgroundColor = .lightGray
         return image
     }()
     

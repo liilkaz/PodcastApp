@@ -14,13 +14,14 @@ final class PlaylistViewController: UIViewController {
     
     private var viewModel: PlaylistViewModelProtocol?
     private var collectionView: UICollectionView!
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Item>?
+    private var dataSource: UICollectionViewDiffableDataSource<Section, FavoritesModel>?
     
     //MARK: - UI Elements
     
     private lazy var headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Playlist"
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textAlignment = .center
         return label
     }()
@@ -55,7 +56,7 @@ final class PlaylistViewController: UIViewController {
         view.addSubview(additionallyButton)
         
         headerLabel.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(16)
+            make.horizontalEdges.equalToSuperview().inset(30)
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(10)
         }
         
@@ -103,13 +104,13 @@ extension PlaylistViewController {
                 
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(120), heightDimension: .absolute(160))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 16
                 section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-                section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 16)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 30, bottom: 8, trailing: 0)
                 
                 ///header
                 let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44))
@@ -124,16 +125,15 @@ extension PlaylistViewController {
                 
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .fractionalWidth(0.1))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(60))
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 16
-                section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-                section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 30, bottom: 8, trailing: 0)
                 
                 ///header
-                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44))
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(100))
                 let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
                                                                                 elementKind: UICollectionView.elementKindSectionHeader,
                                                                                 alignment: .top)
@@ -152,8 +152,8 @@ extension PlaylistViewController {
     
     //MARK: - Registration
     
-    private func registrFavorites() -> UICollectionView.CellRegistration<FavoritesListCell, Item> {
-        return UICollectionView.CellRegistration<FavoritesListCell, Item> { [weak self] (cell, indexPath, item) in
+    private func registrFavorites() -> UICollectionView.CellRegistration<FavoritesListCell, FavoritesModel> {
+        return UICollectionView.CellRegistration<FavoritesListCell, FavoritesModel> { [weak self] (cell, indexPath, item) in
             let model = self?.viewModel?.getFavoritesModel(indexPath: indexPath)
             cell.clipsToBounds = true
             cell.layer.cornerRadius = 16
@@ -162,9 +162,10 @@ extension PlaylistViewController {
         }
     }
     
-    private func registrPlaylist() -> UICollectionView.CellRegistration<PlaylistCell, PlaylistModel> {
-        return UICollectionView.CellRegistration<PlaylistCell, PlaylistModel> { (cell, indexPath, label) in
-        
+    private func registrPlaylist() -> UICollectionView.CellRegistration<FavoritsCell, FavoritesModel> {
+        return UICollectionView.CellRegistration<FavoritsCell, FavoritesModel> { [weak self] (cell, indexPath, label) in
+            let model = self?.viewModel?.getPlaylistModel(indexPath: indexPath)
+            cell.viewModel = model
         }
     }
     
@@ -189,16 +190,16 @@ extension PlaylistViewController {
         let headerFavorites = registrFavoritesHeader()
         let headerPlaylist = registrPlaylistHeaher()
         
-        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) {
+        dataSource = UICollectionViewDiffableDataSource<Section, FavoritesModel>(collectionView: collectionView) {
             (collectionView, indexPath, item) -> UICollectionViewCell? in
             
             guard let sectionKind = Section(rawValue: indexPath.section) else { return nil }
             
             switch sectionKind {
             case .favorites:
-                return collectionView.dequeueConfiguredReusableCell(using: favoritesCell, for: indexPath, item: item)
+                    return collectionView.dequeueConfiguredReusableCell(using: favoritesCell, for: indexPath, item: item)
             case .playlist:
-                return collectionView.dequeueConfiguredReusableCell(using: playlistCell, for: indexPath, item: item.playlist)
+                return collectionView.dequeueConfiguredReusableCell(using: playlistCell, for: indexPath, item: item)
             }
         }
         
@@ -221,15 +222,13 @@ extension PlaylistViewController {
     
     private func applySnapshot() {
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, FavoritesModel>()
         snapshot.appendSections([.favorites, .playlist])
         
-        guard let model = viewModel?.favoritesArray() else { return }
+        guard let model = viewModel?.favoritesArray(), let model2 = viewModel?.playlistArray() else { return }
         
-        let item = model.map { Item(favorites: $0) }
-
-                snapshot.appendItems(item, toSection: .favorites)
-        //        snapshot.appendItems(item2, toSection: .playlist)
+        snapshot.appendItems(model, toSection: .favorites)
+        snapshot.appendItems(model2, toSection: .playlist)
         
         dataSource?.apply(snapshot, animatingDifferences: true)
     }

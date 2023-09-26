@@ -14,8 +14,25 @@ final class HeaderPlaylist: UICollectionReusableView {
     
     private lazy var headerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Playlist"
+        label.text = "Your Playlist"
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        return label
+    }()
+    
+    private lazy var backgrImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(systemName: "swift")
+        image.tintColor = .black
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 8
+        image.backgroundColor = .lightGray
+        return image
+    }()
+    
+    private lazy var createLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Create Playlist"
         return label
     }()
     
@@ -37,10 +54,23 @@ final class HeaderPlaylist: UICollectionReusableView {
     private func setupViews() {
         
         addSubview(headerLabel)
+        addSubview(backgrImage)
+        addSubview(createLabel)
         
         headerLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.left.equalToSuperview().inset(32)
+            make.top.equalToSuperview().inset(12)
+            make.left.equalToSuperview()
+        }
+        
+        backgrImage.snp.makeConstraints { make in
+            make.size.equalTo(48)
+            make.left.equalTo(headerLabel.snp.left)
+            make.top.equalTo(headerLabel.snp.bottom).inset(-16)
+        }
+        
+        createLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(backgrImage.snp.centerY)
+            make.left.equalTo(backgrImage.snp.right).inset(-12)
         }
     }
 }
