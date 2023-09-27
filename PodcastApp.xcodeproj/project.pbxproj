@@ -12,6 +12,24 @@
 		751C22572AC0542000FF50C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22562AC0542000FF50C6 /* ViewController.swift */; };
 		751C225C2AC0542100FF50C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751C225B2AC0542100FF50C6 /* Assets.xcassets */; };
 		751C225F2AC0542100FF50C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751C225D2AC0542100FF50C6 /* LaunchScreen.storyboard */; };
+		751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22B22AC1930300FF50C6 /* LoginViewController.swift */; };
+		751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22B82AC1968800FF50C6 /* UILabel + Extension.swift */; };
+		751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22BA2AC196C600FF50C6 /* UIFont + Extension.swift */; };
+		751C22C62AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751C22BF2AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf */; };
+		751C22C72AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751C22C02AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf */; };
+		751C22C82AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751C22C12AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf */; };
+		751C22C92AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751C22C22AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf */; };
+		751C22CC2AC1B08900FF50C6 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22CB2AC1B08900FF50C6 /* UITextField + Extension.swift */; };
+		751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22CE2AC1B36A00FF50C6 /* InputField.swift */; };
+		751C22D12AC1B3F100FF50C6 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D02AC1B3F100FF50C6 /* UIView + Extension.swift */; };
+		751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D22AC1B55300FF50C6 /* UIButton + Extension.swift */; };
+		751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D42AC1B5EB00FF50C6 /* UIColor + Extension.swift */; };
+		751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D62AC1BC4F00FF50C6 /* Divider.swift */; };
+		751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D92AC1C18200FF50C6 /* CreateAccountViewController.swift */; };
+		7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506B2AC1D06900A47208 /* SignUpViewController.swift */; };
+		759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */; };
+		759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550712AC2E6D200A47208 /* BottomLineAuth.swift */; };
+		759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550732AC2F22F00A47208 /* UIViewController + Extension.swift */; };
 		EB9A4B1F2AC287B300B38D20 /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B1E2AC287B300B38D20 /* FavoritesModel.swift */; };
 		EB9A4B222AC287D600B38D20 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EB9A4B212AC287D600B38D20 /* SnapKit */; };
 		EB9A4B242AC287F100B38D20 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B232AC287F100B38D20 /* FavoritesViewController.swift */; };
@@ -39,6 +57,24 @@
 		751C225B2AC0542100FF50C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		751C225E2AC0542100FF50C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		751C22602AC0542100FF50C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		751C22B22AC1930300FF50C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		751C22B82AC1968800FF50C6 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		751C22BA2AC196C600FF50C6 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
+		751C22BF2AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Medium.ttf"; sourceTree = "<group>"; };
+		751C22C02AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		751C22C12AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
+		751C22C22AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
+		751C22CB2AC1B08900FF50C6 /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
+		751C22CE2AC1B36A00FF50C6 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		751C22D02AC1B3F100FF50C6 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		751C22D22AC1B55300FF50C6 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
+		751C22D42AC1B5EB00FF50C6 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		751C22D62AC1BC4F00FF50C6 /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
+		751C22D92AC1C18200FF50C6 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		7595506B2AC1D06900A47208 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
+		759550712AC2E6D200A47208 /* BottomLineAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineAuth.swift; sourceTree = "<group>"; };
+		759550732AC2F22F00A47208 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		EB9A4B1E2AC287B300B38D20 /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
 		EB9A4B232AC287F100B38D20 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		EB9A4B262AC2888F00B38D20 /* FavoritsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCell.swift; sourceTree = "<group>"; };
@@ -88,6 +124,10 @@
 		751C22512AC0542000FF50C6 /* PodcastApp */ = {
 			isa = PBXGroup;
 			children = (
+				751C22CD2AC1B32600FF50C6 /* Components */,
+				751C22BC2AC1975300FF50C6 /* Fonts */,
+				751C22B72AC1966C00FF50C6 /* Extensions */,
+				751C22B12AC192BA00FF50C6 /* AuthorizationScreen */,
 				751C22522AC0542000FF50C6 /* AppDelegate.swift */,
 				751C22542AC0542000FF50C6 /* SceneDelegate.swift */,
 				751C22562AC0542000FF50C6 /* ViewController.swift */,
@@ -210,6 +250,76 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		751C22B12AC192BA00FF50C6 /* AuthorizationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				759550682AC1C97400A47208 /* SignUpScreen */,
+				751C22D82AC1C16100FF50C6 /* CreateAccountScreen */,
+				751C22B42AC194C100FF50C6 /* LoginScreen */,
+			);
+			path = AuthorizationScreen;
+			sourceTree = "<group>";
+		};
+		751C22B42AC194C100FF50C6 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				751C22B22AC1930300FF50C6 /* LoginViewController.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		751C22B72AC1966C00FF50C6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				751C22B82AC1968800FF50C6 /* UILabel + Extension.swift */,
+				751C22BA2AC196C600FF50C6 /* UIFont + Extension.swift */,
+				751C22CB2AC1B08900FF50C6 /* UITextField + Extension.swift */,
+				751C22D02AC1B3F100FF50C6 /* UIView + Extension.swift */,
+				751C22D22AC1B55300FF50C6 /* UIButton + Extension.swift */,
+				751C22D42AC1B5EB00FF50C6 /* UIColor + Extension.swift */,
+				7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */,
+				759550732AC2F22F00A47208 /* UIViewController + Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		751C22BC2AC1975300FF50C6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				751C22BF2AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf */,
+				751C22C02AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf */,
+				751C22C12AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf */,
+				751C22C22AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		751C22CD2AC1B32600FF50C6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				751C22CE2AC1B36A00FF50C6 /* InputField.swift */,
+				751C22D62AC1BC4F00FF50C6 /* Divider.swift */,
+				759550712AC2E6D200A47208 /* BottomLineAuth.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		751C22D82AC1C16100FF50C6 /* CreateAccountScreen */ = {
+			isa = PBXGroup;
+			children = (
+				751C22D92AC1C18200FF50C6 /* CreateAccountViewController.swift */,
+			);
+			path = CreateAccountScreen;
+			sourceTree = "<group>";
+		};
+		759550682AC1C97400A47208 /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7595506B2AC1D06900A47208 /* SignUpViewController.swift */,
+			);
+			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,6 +385,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				751C225F2AC0542100FF50C6 /* LaunchScreen.storyboard in Resources */,
+				751C22C92AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf in Resources */,
+				751C22C82AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf in Resources */,
+				751C22C72AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf in Resources */,
+				751C22C62AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf in Resources */,
 				751C225C2AC0542100FF50C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +400,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */,
+				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
+				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
+				759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */,
+				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
+				751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */,
+				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
 				EB9A4B2B2AC2968300B38D20 /* FavoritesViewModelProtocol.swift in Sources */,
 				EB9A4B2D2AC2969000B38D20 /* FavoritsCellViewModel.swift in Sources */,
 				EB9A4B4D2AC2B0B600B38D20 /* PlaylistViewController.swift in Sources */,
@@ -299,7 +420,14 @@
 				EB9A4B392AC2A4E800B38D20 /* FavoritesListCell.swift in Sources */,
 				EB9A4B492AC2A8BC00B38D20 /* HeaderCell.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
+				7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */,
+				751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */,
 				751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */,
+				751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */,
+				751C22D12AC1B3F100FF50C6 /* UIView + Extension.swift in Sources */,
+				759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */,
+				759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */,
+				751C22CC2AC1B08900FF50C6 /* UITextField + Extension.swift in Sources */,
 				EB9A4B4F2AC2B12A00B38D20 /* Section.swift in Sources */,
 				EB9A4B272AC2888F00B38D20 /* FavoritsCell.swift in Sources */,
 				EB9A4B3D2AC2A5EF00B38D20 /* PlaylistViewModel.swift in Sources */,
