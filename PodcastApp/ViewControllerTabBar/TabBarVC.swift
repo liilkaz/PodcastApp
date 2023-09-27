@@ -28,16 +28,16 @@ final class TabBarVC: UITabBarController {
     private func generateTabBar() {
         viewControllers = [
             generateVC(
-                viewController: HomeVC(),
+                viewController: HomeViewController(),
                 image: UIImage(named: "home")),
             generateVC(
-                viewController: SearchVC(),
+                viewController: SearchViewController(),
                 image: UIImage(named: "search")),
             generateVC(
-                viewController: FavoritesVC(),
+                viewController: FavoritesViewController(),
                 image: UIImage(named: "bookmark")),
             generateVC(
-                viewController: ProfileSettingVC(),
+                viewController: ProfileSettingViewController(),
                 image: UIImage(named: "setting"))
         ]
     }
