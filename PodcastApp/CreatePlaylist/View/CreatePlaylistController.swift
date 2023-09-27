@@ -68,7 +68,7 @@ final class CreatePlaylistController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: view.frame.size.width - 92, height: 60)
+        layout.itemSize = CGSize(width: view.frame.size.width - 64, height: 72)
         layout.minimumLineSpacing = 20
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(CreatePlaylistCell.self, forCellWithReuseIdentifier: identifier)
@@ -121,23 +121,23 @@ final class CreatePlaylistController: UIViewController {
         }
         
         textField.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(16)
+            make.horizontalEdges.equalToSuperview().inset(32)
             make.top.equalTo(iconImage.snp.bottom).inset(-24)
         }
         
         lineView.snp.makeConstraints { make in
             make.height.equalTo(1)
             make.top.equalTo(textField.snp.bottom).inset(-12)
-            make.horizontalEdges.equalToSuperview().inset(32)
+            make.horizontalEdges.equalToSuperview().inset(30)
         }
         
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(lineView.snp.bottom).inset(-20)
-            make.horizontalEdges.equalToSuperview().inset(32)
+            make.horizontalEdges.equalToSuperview().inset(28)
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).inset(-24)
+            make.top.equalTo(searchBar.snp.bottom).inset(-10)
             make.horizontalEdges.equalToSuperview().inset(32)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
@@ -158,7 +158,7 @@ extension CreatePlaylistController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? CreatePlaylistCell
         let model = viewModel?.getModel(indexPath)
         cell?.viewModel = model
-        cell?.backgroundColor = .systemGray3
+        cell?.backgroundColor = .systemGray4
         cell?.clipsToBounds = true
         cell?.layer.cornerRadius = 16
         return cell ?? UICollectionViewCell()
