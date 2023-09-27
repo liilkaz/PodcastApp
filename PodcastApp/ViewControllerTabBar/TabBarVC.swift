@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TabBarVC: UITabBarController {
+final class TabBarViewController: UITabBarController {
     
     //MARK: - Life Cycle
     
