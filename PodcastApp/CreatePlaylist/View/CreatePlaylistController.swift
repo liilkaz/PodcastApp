@@ -34,6 +34,12 @@ final class CreatePlaylistController: UIViewController {
         return button
     }()
     
+    private lazy var addImageButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.addTarget(self, action: #selector(tapAddImage), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var iconImage: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
@@ -102,6 +108,7 @@ final class CreatePlaylistController: UIViewController {
         view.addSubview(lineView)
         view.addSubview(searchBar)
         view.addSubview(collectionView)
+        view.addSubview(addImageButton)
         
         headerLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(30)
@@ -118,6 +125,11 @@ final class CreatePlaylistController: UIViewController {
             make.size.equalTo(84)
             make.top.equalTo(headerLabel.snp.bottom).inset(-33)
             make.centerX.equalToSuperview()
+        }
+        
+        addImageButton.snp.makeConstraints { make in
+            make.size.equalTo(84)
+            make.center.equalTo(iconImage.snp.center)
         }
         
         textField.snp.makeConstraints { make in
@@ -145,8 +157,17 @@ final class CreatePlaylistController: UIViewController {
     
     @objc private func tapButton() {
         print("Tap button")
+    }   
+    
+    @objc private func tapAddImage() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        present(imagePicker, animated: true)
     }
 }
+
+//MARK: - Extensoin UICollectionViewDataSource
 
 extension CreatePlaylistController: UICollectionViewDataSource {
     
@@ -162,5 +183,31 @@ extension CreatePlaylistController: UICollectionViewDataSource {
         cell?.clipsToBounds = true
         cell?.layer.cornerRadius = 16
         return cell ?? UICollectionViewCell()
+    }
+}
+
+
+//MARK: - Extension
+
+extension CreatePlaylistController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let image = info[.editedImage] as? UIImage else { return }
+       
+        let imageName = UUID().uuidString
+        let imagePath = getDocument().appendingPathExtension(imageName)
+        
+        if let data = image.jpegData(compressionQuality: 0.8) {
+            try? data.write(to: imagePath)
+            self.iconImage.image = UIImage(data: data)
+        }
+        
+        dismiss(animated: true)
+    }
+    
+    func getDocument() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 }
