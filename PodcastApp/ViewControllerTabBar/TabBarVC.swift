@@ -7,7 +7,9 @@
 
 import UIKit
 
-class TabBarVC: UITabBarController {
+final class TabBarVC: UITabBarController {
+    
+    //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,10 +19,11 @@ class TabBarVC: UITabBarController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         self.tabBar.itemPositioning = .centered
         self.tabBar.itemSpacing = 2
     }
+    
+    //MARK: - Generate TabBar
     
     private func generateTabBar() {
         viewControllers = [
@@ -39,11 +42,14 @@ class TabBarVC: UITabBarController {
         ]
     }
     
+    //MARK: - Generate VC
+    
     private func generateVC(viewController: UIViewController, image: UIImage?) -> UIViewController {
         viewController.tabBarItem.image = image
-        
         return viewController
     }
+    
+    //MARK: - Set TabBar Appearance
     
     private func  setTabBarAppearance() {
         let positionOnX: CGFloat = 5
@@ -67,6 +73,7 @@ class TabBarVC: UITabBarController {
         roundLayer.path = bezierPath.cgPath
         
         tabBar.layer.insertSublayer(roundLayer, at: 0)
+        tabBar.layer.shadowRadius = 10
 
         tabBar.itemWidth = width / 5
         tabBar.itemPositioning = .centered

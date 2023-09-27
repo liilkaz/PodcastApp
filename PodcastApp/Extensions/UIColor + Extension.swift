@@ -40,5 +40,10 @@ extension UIColor {
     static let purpleTextColor = UIColor(hexString: "#514EB6")
     static let greenTextColor = UIColor(hexString: "#B5CB5C")
     static let blackTextColor = UIColor(hexString: "#111111")
+    static let lightGrayWallpaper = UIColor(hexString: "#F8F8F5")
     
+    //TextColor TabBar
+    static var tabBarItemAccent = UIColor.white
+    static var mainWhite = UIColor.white
+    static var tabBarItemLight = UIColor.activeBlueColor
 }

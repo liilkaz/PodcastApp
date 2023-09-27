@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */; };
-		448D80052AC32D0C003D0403 /* Extention + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D7FFE2AC32D0B003D0403 /* Extention + UIColor.swift */; };
 		448D80062AC32D0C003D0403 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* SearchVC.swift */; };
 		448D80072AC32D0C003D0403 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80012AC32D0B003D0403 /* HomeVC.swift */; };
 		448D80082AC32D0C003D0403 /* ProfileSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */; };
@@ -40,7 +39,6 @@
 
 /* Begin PBXFileReference section */
 		448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
-		448D7FFE2AC32D0B003D0403 /* Extention + UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extention + UIColor.swift"; sourceTree = "<group>"; };
 		448D80002AC32D0B003D0403 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		448D80012AC32D0B003D0403 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingVC.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */,
-				448D7FFE2AC32D0B003D0403 /* Extention + UIColor.swift */,
 				448D7FFF2AC32D0B003D0403 /* PresentationClasses */,
 			);
 			path = ViewControllerTabBar;
@@ -96,10 +93,10 @@
 		448D7FFF2AC32D0B003D0403 /* PresentationClasses */ = {
 			isa = PBXGroup;
 			children = (
-				448D80002AC32D0B003D0403 /* SearchVC.swift */,
 				448D80012AC32D0B003D0403 /* HomeVC.swift */,
-				448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */,
+				448D80002AC32D0B003D0403 /* SearchVC.swift */,
 				448D80032AC32D0B003D0403 /* FavoritesVC.swift */,
+				448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */,
 			);
 			path = PresentationClasses;
 			sourceTree = "<group>";
@@ -282,7 +279,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				448D80052AC32D0C003D0403 /* Extention + UIColor.swift in Sources */,
 				751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */,
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
 				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
