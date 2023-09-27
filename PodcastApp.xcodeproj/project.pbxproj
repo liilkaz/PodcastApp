@@ -30,6 +30,12 @@
 		759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */; };
 		759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550712AC2E6D200A47208 /* BottomLineAuth.swift */; };
 		759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550732AC2F22F00A47208 /* UIViewController + Extension.swift */; };
+		EB4C1C8D2AC3F03D0027D3ED /* CreatePlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C1C8C2AC3F03D0027D3ED /* CreatePlaylistController.swift */; };
+		EB4C1C902AC3FB9A0027D3ED /* CreatePlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C1C8F2AC3FB9A0027D3ED /* CreatePlaylistCell.swift */; };
+		EB4C1C922AC3FD740027D3ED /* CreatePlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C1C912AC3FD740027D3ED /* CreatePlaylistViewModel.swift */; };
+		EB4C1C942AC3FD800027D3ED /* CreatePlaylistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C1C932AC3FD800027D3ED /* CreatePlaylistCellViewModel.swift */; };
+		EB4C1C962AC3FD8D0027D3ED /* CreatePlaylistProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C1C952AC3FD8D0027D3ED /* CreatePlaylistProtocol.swift */; };
+		EB4C1C982AC3FD960027D3ED /* CreatePlaylistCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C1C972AC3FD960027D3ED /* CreatePlaylistCellProtocol.swift */; };
 		EB9A4B1F2AC287B300B38D20 /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B1E2AC287B300B38D20 /* FavoritesModel.swift */; };
 		EB9A4B222AC287D600B38D20 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EB9A4B212AC287D600B38D20 /* SnapKit */; };
 		EB9A4B242AC287F100B38D20 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B232AC287F100B38D20 /* FavoritesViewController.swift */; };
@@ -75,6 +81,12 @@
 		7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		759550712AC2E6D200A47208 /* BottomLineAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineAuth.swift; sourceTree = "<group>"; };
 		759550732AC2F22F00A47208 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		EB4C1C8C2AC3F03D0027D3ED /* CreatePlaylistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistController.swift; sourceTree = "<group>"; };
+		EB4C1C8F2AC3FB9A0027D3ED /* CreatePlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCell.swift; sourceTree = "<group>"; };
+		EB4C1C912AC3FD740027D3ED /* CreatePlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistViewModel.swift; sourceTree = "<group>"; };
+		EB4C1C932AC3FD800027D3ED /* CreatePlaylistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCellViewModel.swift; sourceTree = "<group>"; };
+		EB4C1C952AC3FD8D0027D3ED /* CreatePlaylistProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistProtocol.swift; sourceTree = "<group>"; };
+		EB4C1C972AC3FD960027D3ED /* CreatePlaylistCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCellProtocol.swift; sourceTree = "<group>"; };
 		EB9A4B1E2AC287B300B38D20 /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
 		EB9A4B232AC287F100B38D20 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		EB9A4B262AC2888F00B38D20 /* FavoritsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCell.swift; sourceTree = "<group>"; };
@@ -133,11 +145,135 @@
 				751C22562AC0542000FF50C6 /* ViewController.swift */,
 				EB9A4B192AC2878200B38D20 /* Farotires */,
 				EB9A4B302AC2A3C900B38D20 /* Playlist */,
+				EB4C1C872AC3ED650027D3ED /* CreatePlaylist */,
 				751C225B2AC0542100FF50C6 /* Assets.xcassets */,
 				751C225D2AC0542100FF50C6 /* LaunchScreen.storyboard */,
 				751C22602AC0542100FF50C6 /* Info.plist */,
 			);
 			path = PodcastApp;
+			sourceTree = "<group>";
+		};
+		751C22B12AC192BA00FF50C6 /* AuthorizationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				759550682AC1C97400A47208 /* SignUpScreen */,
+				751C22D82AC1C16100FF50C6 /* CreateAccountScreen */,
+				751C22B42AC194C100FF50C6 /* LoginScreen */,
+			);
+			path = AuthorizationScreen;
+			sourceTree = "<group>";
+		};
+		751C22B42AC194C100FF50C6 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				751C22B22AC1930300FF50C6 /* LoginViewController.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		751C22B72AC1966C00FF50C6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				751C22B82AC1968800FF50C6 /* UILabel + Extension.swift */,
+				751C22BA2AC196C600FF50C6 /* UIFont + Extension.swift */,
+				751C22CB2AC1B08900FF50C6 /* UITextField + Extension.swift */,
+				751C22D02AC1B3F100FF50C6 /* UIView + Extension.swift */,
+				751C22D22AC1B55300FF50C6 /* UIButton + Extension.swift */,
+				751C22D42AC1B5EB00FF50C6 /* UIColor + Extension.swift */,
+				7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */,
+				759550732AC2F22F00A47208 /* UIViewController + Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		751C22BC2AC1975300FF50C6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				751C22BF2AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf */,
+				751C22C02AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf */,
+				751C22C12AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf */,
+				751C22C22AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		751C22CD2AC1B32600FF50C6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				751C22CE2AC1B36A00FF50C6 /* InputField.swift */,
+				751C22D62AC1BC4F00FF50C6 /* Divider.swift */,
+				759550712AC2E6D200A47208 /* BottomLineAuth.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		751C22D82AC1C16100FF50C6 /* CreateAccountScreen */ = {
+			isa = PBXGroup;
+			children = (
+				751C22D92AC1C18200FF50C6 /* CreateAccountViewController.swift */,
+			);
+			path = CreateAccountScreen;
+			sourceTree = "<group>";
+		};
+		759550682AC1C97400A47208 /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7595506B2AC1D06900A47208 /* SignUpViewController.swift */,
+			);
+			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		EB4C1C872AC3ED650027D3ED /* CreatePlaylist */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C1C8B2AC3F01D0027D3ED /* Model */,
+				EB4C1C8A2AC3F0180027D3ED /* View */,
+				EB4C1C892AC3F0130027D3ED /* ViewModel */,
+				EB4C1C882AC3F00E0027D3ED /* Protocols */,
+			);
+			path = CreatePlaylist;
+			sourceTree = "<group>";
+		};
+		EB4C1C882AC3F00E0027D3ED /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C1C952AC3FD8D0027D3ED /* CreatePlaylistProtocol.swift */,
+				EB4C1C972AC3FD960027D3ED /* CreatePlaylistCellProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EB4C1C892AC3F0130027D3ED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C1C912AC3FD740027D3ED /* CreatePlaylistViewModel.swift */,
+				EB4C1C932AC3FD800027D3ED /* CreatePlaylistCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB4C1C8A2AC3F0180027D3ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C1C8C2AC3F03D0027D3ED /* CreatePlaylistController.swift */,
+				EB4C1C8E2AC3FB8F0027D3ED /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB4C1C8B2AC3F01D0027D3ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB4C1C8E2AC3FB8F0027D3ED /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C1C8F2AC3FB9A0027D3ED /* CreatePlaylistCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		EB9A4B192AC2878200B38D20 /* Farotires */ = {
@@ -250,76 +386,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		751C22B12AC192BA00FF50C6 /* AuthorizationScreen */ = {
-			isa = PBXGroup;
-			children = (
-				759550682AC1C97400A47208 /* SignUpScreen */,
-				751C22D82AC1C16100FF50C6 /* CreateAccountScreen */,
-				751C22B42AC194C100FF50C6 /* LoginScreen */,
-			);
-			path = AuthorizationScreen;
-			sourceTree = "<group>";
-		};
-		751C22B42AC194C100FF50C6 /* LoginScreen */ = {
-			isa = PBXGroup;
-			children = (
-				751C22B22AC1930300FF50C6 /* LoginViewController.swift */,
-			);
-			path = LoginScreen;
-			sourceTree = "<group>";
-		};
-		751C22B72AC1966C00FF50C6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				751C22B82AC1968800FF50C6 /* UILabel + Extension.swift */,
-				751C22BA2AC196C600FF50C6 /* UIFont + Extension.swift */,
-				751C22CB2AC1B08900FF50C6 /* UITextField + Extension.swift */,
-				751C22D02AC1B3F100FF50C6 /* UIView + Extension.swift */,
-				751C22D22AC1B55300FF50C6 /* UIButton + Extension.swift */,
-				751C22D42AC1B5EB00FF50C6 /* UIColor + Extension.swift */,
-				7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */,
-				759550732AC2F22F00A47208 /* UIViewController + Extension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		751C22BC2AC1975300FF50C6 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				751C22BF2AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf */,
-				751C22C02AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf */,
-				751C22C12AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf */,
-				751C22C22AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		751C22CD2AC1B32600FF50C6 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				751C22CE2AC1B36A00FF50C6 /* InputField.swift */,
-				751C22D62AC1BC4F00FF50C6 /* Divider.swift */,
-				759550712AC2E6D200A47208 /* BottomLineAuth.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		751C22D82AC1C16100FF50C6 /* CreateAccountScreen */ = {
-			isa = PBXGroup;
-			children = (
-				751C22D92AC1C18200FF50C6 /* CreateAccountViewController.swift */,
-			);
-			path = CreateAccountScreen;
-			sourceTree = "<group>";
-		};
-		759550682AC1C97400A47208 /* SignUpScreen */ = {
-			isa = PBXGroup;
-			children = (
-				7595506B2AC1D06900A47208 /* SignUpViewController.swift */,
-			);
-			path = SignUpScreen;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -400,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4C1C982AC3FD960027D3ED /* CreatePlaylistCellProtocol.swift in Sources */,
 				751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */,
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
 				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
@@ -414,13 +481,16 @@
 				751C22572AC0542000FF50C6 /* ViewController.swift in Sources */,
 				EB9A4B432AC2A61F00B38D20 /* PlaylistViewModelProtocol.swift in Sources */,
 				EB9A4B3F2AC2A5FE00B38D20 /* FavoritesListViewModel.swift in Sources */,
+				EB4C1C902AC3FB9A0027D3ED /* CreatePlaylistCell.swift in Sources */,
 				EB9A4B412AC2A60D00B38D20 /* PlaylistCellViewModel.swift in Sources */,
 				EB9A4B292AC2967900B38D20 /* FavoritesViewModel.swift in Sources */,
 				EB9A4B2F2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift in Sources */,
+				EB4C1C922AC3FD740027D3ED /* CreatePlaylistViewModel.swift in Sources */,
 				EB9A4B392AC2A4E800B38D20 /* FavoritesListCell.swift in Sources */,
 				EB9A4B492AC2A8BC00B38D20 /* HeaderCell.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
 				7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */,
+				EB4C1C8D2AC3F03D0027D3ED /* CreatePlaylistController.swift in Sources */,
 				751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */,
 				751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */,
 				751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */,
@@ -432,7 +502,9 @@
 				EB9A4B272AC2888F00B38D20 /* FavoritsCell.swift in Sources */,
 				EB9A4B3D2AC2A5EF00B38D20 /* PlaylistViewModel.swift in Sources */,
 				EB9A4B242AC287F100B38D20 /* FavoritesViewController.swift in Sources */,
+				EB4C1C942AC3FD800027D3ED /* CreatePlaylistCellViewModel.swift in Sources */,
 				EB9A4B1F2AC287B300B38D20 /* FavoritesModel.swift in Sources */,
+				EB4C1C962AC3FD8D0027D3ED /* CreatePlaylistProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
