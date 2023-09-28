@@ -11,7 +11,6 @@
 		448D80062AC32D0C003D0403 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* SearchVC.swift */; };
 		448D80072AC32D0C003D0403 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80012AC32D0B003D0403 /* HomeVC.swift */; };
 		448D80082AC32D0C003D0403 /* ProfileSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */; };
-		448D80092AC32D0C003D0403 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80032AC32D0B003D0403 /* FavoritesVC.swift */; };
 		751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22522AC0542000FF50C6 /* AppDelegate.swift */; };
 		751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22542AC0542000FF50C6 /* SceneDelegate.swift */; };
 		751C22572AC0542000FF50C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22562AC0542000FF50C6 /* ViewController.swift */; };
@@ -75,7 +74,6 @@
 		448D80002AC32D0B003D0403 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		448D80012AC32D0B003D0403 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingVC.swift; sourceTree = "<group>"; };
-		448D80032AC32D0B003D0403 /* FavoritesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		751C224F2AC0542000FF50C6 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		751C22522AC0542000FF50C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		751C22542AC0542000FF50C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 			children = (
 				448D80012AC32D0B003D0403 /* HomeVC.swift */,
 				448D80002AC32D0B003D0403 /* SearchVC.swift */,
-				448D80032AC32D0B003D0403 /* FavoritesVC.swift */,
 				448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */,
 			);
 			path = PresentationClasses;
@@ -622,7 +619,6 @@
 				EB9A4B392AC2A4E800B38D20 /* FavoritesListCell.swift in Sources */,
 				EB9A4B492AC2A8BC00B38D20 /* HeaderCell.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
-				448D80092AC32D0C003D0403 /* FavoritesVC.swift in Sources */,
 				7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */,
 				EB4C1C8D2AC3F03D0027D3ED /* CreatePlaylistController.swift in Sources */,
 				751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */,

@@ -25,7 +25,7 @@ extension PodcastClient {
         urlComponents.host = endpoint.host
         urlComponents.path = endpoint.path
         urlComponents.queryItems = [URLQueryItem(name: "q", value: search)]
-        print(urlComponents.url)
+        
         guard let url = urlComponents.url else { return .failure(.invalidURL)}
         print(url)
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
