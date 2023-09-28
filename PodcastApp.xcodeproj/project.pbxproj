@@ -30,6 +30,15 @@
 		759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */; };
 		759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550712AC2E6D200A47208 /* BottomLineAuth.swift */; };
 		759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550732AC2F22F00A47208 /* UIViewController + Extension.swift */; };
+		EB1084422AC533B800C6345E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1084412AC533B800C6345E /* Endpoint.swift */; };
+		EB1084442AC533D400C6345E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1084432AC533D400C6345E /* HTTPMethod.swift */; };
+		EB1084462AC533EB00C6345E /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1084452AC533EB00C6345E /* RequestError.swift */; };
+		EB1084482AC533FC00C6345E /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1084472AC533FC00C6345E /* HTTPClient.swift */; };
+		EB10844B2AC5342400C6345E /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB10844A2AC5342400C6345E /* Endpoints.swift */; };
+		EB1084512AC53ACC00C6345E /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1084502AC53ACC00C6345E /* Extension + String.swift */; };
+		EB1084552AC53D2100C6345E /* PodcastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1084542AC53D2100C6345E /* PodcastService.swift */; };
+		EB1084572AC53EA100C6345E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1084562AC53EA100C6345E /* NetworkService.swift */; };
+		EB10845A2AC5418100C6345E /* Servisable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1084592AC5418100C6345E /* Servisable.swift */; };
 		EB4C1C8D2AC3F03D0027D3ED /* CreatePlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C1C8C2AC3F03D0027D3ED /* CreatePlaylistController.swift */; };
 		EB4C1C902AC3FB9A0027D3ED /* CreatePlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C1C8F2AC3FB9A0027D3ED /* CreatePlaylistCell.swift */; };
 		EB4C1C922AC3FD740027D3ED /* CreatePlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C1C912AC3FD740027D3ED /* CreatePlaylistViewModel.swift */; };
@@ -53,6 +62,7 @@
 		EB9A4B4B2AC2AF6000B38D20 /* HeaderPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B4A2AC2AF6000B38D20 /* HeaderPlaylist.swift */; };
 		EB9A4B4D2AC2B0B600B38D20 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B4C2AC2B0B600B38D20 /* PlaylistViewController.swift */; };
 		EB9A4B4F2AC2B12A00B38D20 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B4E2AC2B12A00B38D20 /* Section.swift */; };
+		EBB906592AC542EE001B29C5 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB906582AC542EE001B29C5 /* MainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +91,15 @@
 		7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		759550712AC2E6D200A47208 /* BottomLineAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineAuth.swift; sourceTree = "<group>"; };
 		759550732AC2F22F00A47208 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		EB1084412AC533B800C6345E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		EB1084432AC533D400C6345E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		EB1084452AC533EB00C6345E /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		EB1084472AC533FC00C6345E /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		EB10844A2AC5342400C6345E /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		EB1084502AC53ACC00C6345E /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
+		EB1084542AC53D2100C6345E /* PodcastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastService.swift; sourceTree = "<group>"; };
+		EB1084562AC53EA100C6345E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		EB1084592AC5418100C6345E /* Servisable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servisable.swift; sourceTree = "<group>"; };
 		EB4C1C8C2AC3F03D0027D3ED /* CreatePlaylistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistController.swift; sourceTree = "<group>"; };
 		EB4C1C8F2AC3FB9A0027D3ED /* CreatePlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCell.swift; sourceTree = "<group>"; };
 		EB4C1C912AC3FD740027D3ED /* CreatePlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistViewModel.swift; sourceTree = "<group>"; };
@@ -103,6 +122,7 @@
 		EB9A4B4A2AC2AF6000B38D20 /* HeaderPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPlaylist.swift; sourceTree = "<group>"; };
 		EB9A4B4C2AC2B0B600B38D20 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		EB9A4B4E2AC2B12A00B38D20 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		EBB906582AC542EE001B29C5 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +156,7 @@
 		751C22512AC0542000FF50C6 /* PodcastApp */ = {
 			isa = PBXGroup;
 			children = (
+				EBB906572AC542E2001B29C5 /* MainModel */,
 				751C22CD2AC1B32600FF50C6 /* Components */,
 				751C22BC2AC1975300FF50C6 /* Fonts */,
 				751C22B72AC1966C00FF50C6 /* Extensions */,
@@ -143,6 +164,7 @@
 				751C22522AC0542000FF50C6 /* AppDelegate.swift */,
 				751C22542AC0542000FF50C6 /* SceneDelegate.swift */,
 				751C22562AC0542000FF50C6 /* ViewController.swift */,
+				EB10843F2AC5336B00C6345E /* NetworkManager */,
 				EB9A4B192AC2878200B38D20 /* Farotires */,
 				EB9A4B302AC2A3C900B38D20 /* Playlist */,
 				EB4C1C872AC3ED650027D3ED /* CreatePlaylist */,
@@ -221,6 +243,70 @@
 				7595506B2AC1D06900A47208 /* SignUpViewController.swift */,
 			);
 			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		EB10843F2AC5336B00C6345E /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				EB10844F2AC53ABE00C6345E /* Helper */,
+				EB1084402AC533A900C6345E /* Base */,
+				EB1084492AC5341900C6345E /* Endpoints */,
+				EB1084582AC5415C00C6345E /* Servisable */,
+				EB10844D2AC5346400C6345E /* Services */,
+				EB10844E2AC5347100C6345E /* NetworkService */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		EB1084402AC533A900C6345E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EB1084412AC533B800C6345E /* Endpoint.swift */,
+				EB1084432AC533D400C6345E /* HTTPMethod.swift */,
+				EB1084452AC533EB00C6345E /* RequestError.swift */,
+				EB1084472AC533FC00C6345E /* HTTPClient.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		EB1084492AC5341900C6345E /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				EB10844A2AC5342400C6345E /* Endpoints.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		EB10844D2AC5346400C6345E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EB1084542AC53D2100C6345E /* PodcastService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EB10844E2AC5347100C6345E /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				EB1084562AC53EA100C6345E /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		EB10844F2AC53ABE00C6345E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EB1084502AC53ACC00C6345E /* Extension + String.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		EB1084582AC5415C00C6345E /* Servisable */ = {
+			isa = PBXGroup;
+			children = (
+				EB1084592AC5418100C6345E /* Servisable.swift */,
+			);
+			path = Servisable;
 			sourceTree = "<group>";
 		};
 		EB4C1C872AC3ED650027D3ED /* CreatePlaylist */ = {
@@ -386,6 +472,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		EBB906572AC542E2001B29C5 /* MainModel */ = {
+			isa = PBXGroup;
+			children = (
+				EBB906582AC542EE001B29C5 /* MainModel.swift */,
+			);
+			path = MainModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,21 +564,27 @@
 				751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */,
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
 				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
+				EB1084442AC533D400C6345E /* HTTPMethod.swift in Sources */,
+				EB1084482AC533FC00C6345E /* HTTPClient.swift in Sources */,
 				759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */,
 				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
 				751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */,
 				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
+				EB1084572AC53EA100C6345E /* NetworkService.swift in Sources */,
+				EB10844B2AC5342400C6345E /* Endpoints.swift in Sources */,
 				EB9A4B2B2AC2968300B38D20 /* FavoritesViewModelProtocol.swift in Sources */,
 				EB9A4B2D2AC2969000B38D20 /* FavoritsCellViewModel.swift in Sources */,
 				EB9A4B4D2AC2B0B600B38D20 /* PlaylistViewController.swift in Sources */,
 				EB9A4B4B2AC2AF6000B38D20 /* HeaderPlaylist.swift in Sources */,
 				751C22572AC0542000FF50C6 /* ViewController.swift in Sources */,
+				EB1084462AC533EB00C6345E /* RequestError.swift in Sources */,
 				EB9A4B432AC2A61F00B38D20 /* PlaylistViewModelProtocol.swift in Sources */,
 				EB9A4B3F2AC2A5FE00B38D20 /* FavoritesListViewModel.swift in Sources */,
 				EB4C1C902AC3FB9A0027D3ED /* CreatePlaylistCell.swift in Sources */,
 				EB9A4B412AC2A60D00B38D20 /* PlaylistCellViewModel.swift in Sources */,
 				EB9A4B292AC2967900B38D20 /* FavoritesViewModel.swift in Sources */,
 				EB9A4B2F2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift in Sources */,
+				EBB906592AC542EE001B29C5 /* MainModel.swift in Sources */,
 				EB4C1C922AC3FD740027D3ED /* CreatePlaylistViewModel.swift in Sources */,
 				EB9A4B392AC2A4E800B38D20 /* FavoritesListCell.swift in Sources */,
 				EB9A4B492AC2A8BC00B38D20 /* HeaderCell.swift in Sources */,
@@ -494,13 +594,17 @@
 				751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */,
 				751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */,
 				751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */,
+				EB1084512AC53ACC00C6345E /* Extension + String.swift in Sources */,
 				751C22D12AC1B3F100FF50C6 /* UIView + Extension.swift in Sources */,
 				759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */,
+				EB1084552AC53D2100C6345E /* PodcastService.swift in Sources */,
 				759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */,
 				751C22CC2AC1B08900FF50C6 /* UITextField + Extension.swift in Sources */,
 				EB9A4B4F2AC2B12A00B38D20 /* Section.swift in Sources */,
 				EB9A4B272AC2888F00B38D20 /* FavoritsCell.swift in Sources */,
+				EB1084422AC533B800C6345E /* Endpoint.swift in Sources */,
 				EB9A4B3D2AC2A5EF00B38D20 /* PlaylistViewModel.swift in Sources */,
+				EB10845A2AC5418100C6345E /* Servisable.swift in Sources */,
 				EB9A4B242AC287F100B38D20 /* FavoritesViewController.swift in Sources */,
 				EB4C1C942AC3FD800027D3ED /* CreatePlaylistCellViewModel.swift in Sources */,
 				EB9A4B1F2AC287B300B38D20 /* FavoritesModel.swift in Sources */,

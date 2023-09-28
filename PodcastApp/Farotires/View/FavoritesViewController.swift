@@ -14,6 +14,7 @@ final class FavoritesViewController: UIViewController {
     
     private var viewModel: FavoritesViewModelProtocol?
     private let identifier = "cell"
+    var networkService =  NetworkService()
     
     //MARK: - UI Elements
     
@@ -50,6 +51,15 @@ final class FavoritesViewController: UIViewController {
         setupViews()
         viewModel = FavoritesViewModel()
         
+//       networkService.searchPodcast(search: "sport") { [weak self] (result: Result<MainModel, RequestError>) in
+//            switch result {
+//                
+//            case .success(let data):
+//                print(data)
+//            case .failure(let error):
+//                print(error.customMessage)
+//            }
+//        }
     }
     
     //MARK: - Methods
