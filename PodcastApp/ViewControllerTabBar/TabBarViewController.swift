@@ -9,6 +9,8 @@ import UIKit
 
 final class TabBarViewController: UITabBarController {
     
+    
+    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -17,10 +19,10 @@ final class TabBarViewController: UITabBarController {
         setTabBarAppearance()
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewWillLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.tabBar.itemPositioning = .centered
-        self.tabBar.itemSpacing = 2
+        tabBar.itemPositioning = .centered
+        tabBar.itemSpacing = 2
     }
     
     //MARK: - Generate TabBar
@@ -29,23 +31,28 @@ final class TabBarViewController: UITabBarController {
         viewControllers = [
             generateVC(
                 viewController: HomeViewController(),
-                image: UIImage(named: "home")),
+                image: UIImage(named: "homeGrey"),
+                selectedImage: UIImage(named: "homeBlue")),
             generateVC(
-                viewController: SearchViewController(),
-                image: UIImage(named: "search")),
+                viewController: HomeViewController(),
+                image: UIImage(named: "searchGrey"),
+                selectedImage: UIImage(named: "searchBlue")),
             generateVC(
-                viewController: FavoritesViewController(),
-                image: UIImage(named: "bookmark")),
+                viewController: HomeViewController(),
+                image: UIImage(named: "bookmarkGrey"),
+                selectedImage: UIImage(named: "bookmarkBlue")),
             generateVC(
-                viewController: ProfileSettingViewController(),
-                image: UIImage(named: "setting"))
+                viewController: HomeViewController(),
+                image: UIImage(named: "settingGrey"),
+                selectedImage: UIImage(named: "settingBlue"))
         ]
     }
     
     //MARK: - Generate VC
     
-    private func generateVC(viewController: UIViewController, image: UIImage?) -> UIViewController {
+    private func generateVC(viewController: UIViewController, image: UIImage?, selectedImage: UIImage?) -> UIViewController {
         viewController.tabBarItem.image = image
+        viewController.tabBarItem.selectedImage = selectedImage
         return viewController
     }
     
