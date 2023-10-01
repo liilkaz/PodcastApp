@@ -8,7 +8,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         return image
     }()
     
-    private lazy var musicView = UIView(background: .lightPinkColor, cornerRadius: 12)
+    private lazy var musicView = CornerRadiusUIView(background: .lightPinkColor, rounding: 12)
     private lazy var categoryMusic = UILabel(text: "Music & Fun", font: .boldSystemFont(ofSize: 15), textColor: .black, textAlignment: .left)
     private lazy var countMusic = UILabel(text: "100 tracks", font: .systemFont(ofSize: 10), textColor: .black, textAlignment: .left)
     

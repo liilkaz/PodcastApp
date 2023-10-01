@@ -265,7 +265,6 @@
 				7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */,
 				759550732AC2F22F00A47208 /* UIViewController + Extension.swift */,
 				40BCF6DA2AC8C0F100912EA4 /* UICollectionView + Extension.swift */,
-				40BCF6DE2AC8C16E00912EA4 /* UIView.swift */,
 				40BCF6E02AC8C18700912EA4 /* UIImageView.swift */,
 			);
 			path = Extensions;
@@ -285,6 +284,7 @@
 		751C22CD2AC1B32600FF50C6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				40BCF6DE2AC8C16E00912EA4 /* UIView.swift */,
 				751C22CE2AC1B36A00FF50C6 /* InputField.swift */,
 				751C22D62AC1BC4F00FF50C6 /* Divider.swift */,
 				759550712AC2E6D200A47208 /* BottomLineAuth.swift */,
