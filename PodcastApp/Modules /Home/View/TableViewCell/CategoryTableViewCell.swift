@@ -5,6 +5,18 @@ class CategoryTableViewCell: UITableViewCell {
     private var lastSelectedIndexPath: IndexPath? = nil
     
     private let homeViewModel = HomeViewModel()
+    
+    
+    private lazy var personFullnameLabel = UILabel(text: "Abigael Amaniah", font: .boldSystemFont(ofSize: 16), textColor: .black, textAlignment: .center)
+    
+    private lazy var loveLifeAndChillLabel = UILabel(text: "Love, Life, and chill", font: .systemFont(ofSize: 14), textColor: .darkGray, textAlignment: .center)
+    
+    private lazy var profileImage: UIImageView = {
+        let image = UIImageView(cornerRadius: 12)
+        image.backgroundColor = .systemBlue
+        return image
+    }()
+    
     private lazy var categoryLabel = UILabel(text: "Category", font: .systemFont(ofSize: 20), textColor: .black, textAlignment: .center)
     private lazy var seeAllButton: UIButton = {
         let button = UIButton(text: "See All", textColor: .darkGray, backgroundColor: .clear)
@@ -37,20 +49,45 @@ class CategoryTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        contentView.addSubviews(categoryLabel, seeAllButton, categoryCollectionView, categoryTagCollectionView)
+        contentView.addSubviews(personFullnameLabel, loveLifeAndChillLabel, profileImage, categoryLabel, seeAllButton, categoryCollectionView, categoryTagCollectionView)
+        
         
         NSLayoutConstraint.activate([
-            categoryLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            personFullnameLabel.heightAnchor.constraint(equalToConstant: 25),
+            personFullnameLabel.topAnchor.constraint(equalTo: topAnchor),
+            personFullnameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5)
+        ])
+        
+        NSLayoutConstraint.activate([
+            loveLifeAndChillLabel.heightAnchor.constraint(equalToConstant: 25),
+            loveLifeAndChillLabel.topAnchor.constraint(equalTo: personFullnameLabel.bottomAnchor, constant: 5),
+            loveLifeAndChillLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5)
+        ])
+        
+        
+        NSLayoutConstraint.activate([
+            profileImage.heightAnchor.constraint(equalToConstant: 45),
+            profileImage.widthAnchor.constraint(equalToConstant: 45),
+            profileImage.topAnchor.constraint(equalTo: topAnchor, constant: 3),
+            profileImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+        ])
+        
+        NSLayoutConstraint.activate([
+            categoryLabel.heightAnchor.constraint(equalToConstant: 25),
+            categoryLabel.topAnchor.constraint(equalTo: loveLifeAndChillLabel.bottomAnchor, constant: 30),
             categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5)
         ])
         
         NSLayoutConstraint.activate([
-            seeAllButton.topAnchor.constraint(equalTo: topAnchor, constant: 25),
-            seeAllButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
+            seeAllButton.heightAnchor.constraint(equalToConstant: 25),
+            seeAllButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            seeAllButton.topAnchor.constraint(equalTo: loveLifeAndChillLabel.bottomAnchor, constant: 30)
         ])
         
+        
+        
         NSLayoutConstraint.activate([
-            categoryCollectionView.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 30),
+            categoryCollectionView.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 20),
             categoryCollectionView.widthAnchor.constraint(equalTo: widthAnchor),
             categoryCollectionView.heightAnchor.constraint(equalToConstant: 210)
         ])

@@ -18,7 +18,6 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
 
@@ -29,34 +28,16 @@ class HomeViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         view.backgroundColor = .white
-        navigationItem.title = "Loktionov Vlad"
         setupUI()
-        setupImage()
+        navigationItem.title = "Profile"
     }
     
-
-    private func setupImage() {
-        guard let navigationBar = navigationController?.navigationBar else { return }
-        for subview in navigationBar.subviews {
-            if NSStringFromClass(subview.classForCoder).contains("UINavigationBarLargeTitleView") {
-                subview.addSubview(userImage)
-                NSLayoutConstraint.activate([
-                    userImage.rightAnchor.constraint(equalTo: subview.rightAnchor, constant: -20),
-                    userImage.bottomAnchor.constraint(equalTo: userImage.superview?.bottomAnchor ?? navigationBar.bottomAnchor, constant: -10),
-                    userImage.heightAnchor.constraint(equalToConstant: 36),
-                    userImage.widthAnchor.constraint(equalToConstant: 36)
-                ])
-            }
-        }
-    }
-    
-
     @IBAction private func seeAllButtonPressed(_ sender: UIButton) {
         print("See all button pressed")
     }
     
     private func setupUI() {
-        view.addSubview(homeTableView)
+        view.addSubviews(homeTableView)
         NSLayoutConstraint.activate([
             homeTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             homeTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -72,7 +53,7 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 400
+            return 430
         case 1:
             return 90
         default: break

@@ -15,6 +15,5 @@ extension UILabel {
         self.textColor = textColor
         self.textAlignment = textAlignment
         self.numberOfLines = numberOfLines
-        self.translatesAutoresizingMaskIntoConstraints = false
     }
 }

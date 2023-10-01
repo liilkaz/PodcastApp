@@ -17,7 +17,7 @@ class CategoryTagCollectionViewCell: UICollectionViewCell {
      lazy var categoryLabel = UILabel(text: "🔥 Popular", font: .systemFont(ofSize: 15), textColor: .gray, textAlignment: .center)
     
     private func setupUI() {
-        contentView.addSubview(categoryLabel)
+        contentView.addSubviews(categoryLabel)
         NSLayoutConstraint.activate([
             categoryLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             categoryLabel.centerXAnchor.constraint(equalTo: centerXAnchor)

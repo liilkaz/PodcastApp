@@ -17,24 +17,12 @@ class PlayedTrackView: UIView {
     private lazy var musicLabel = UILabel(text: "Моя тень и я", font: .systemFont(ofSize: 15), textColor: .darkGray, textAlignment: .center)
     
     private lazy var buttonsStackView: UIStackView = {
-        let sv = UIStackView()
-        sv.spacing = 15
-        sv.axis = .horizontal
+        let sv = UIStackView(axis: .horizontal, spacing: 15)
         sv.alignment = .fill
         sv.distribution = .fillEqually
-        sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
-    
-    private lazy var backwardButton: UIButton = {
-        let button = UIButton()
-        button.tintColor = .black
-        button.setImage(UIImage(systemName: "backward.fill"), for: .normal)
-        button.addTarget(self, action: #selector(backwardButtonPressed(_:)), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
+    private lazy var backwardButton = MusicButton(image: UIImage(systemName: "backward.fill"), selector: #selector(backwardButtonPressed(_:)))
     
     private lazy var playPauseButton: UIButton = {
         let button = UIButton()
@@ -42,25 +30,16 @@ class PlayedTrackView: UIView {
         button.tintColor = .black
         button.setImage(UIImage(systemName: "pause.fill")?.withConfiguration(config), for: .normal)
         button.addTarget(self, action: #selector(playPauseButtonPressed(_:)), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    
-    private lazy var forwardButton: UIButton = {
-        let button = UIButton()
-        button.tintColor = .black
-        button.setImage(UIImage(systemName: "forward.fill"), for: .normal)
-        button.addTarget(self, action: #selector(forwardButtonPressed(_:)), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    private lazy var forwardButton = MusicButton(image: UIImage(systemName: "forward.fill"), selector: #selector(forwardButtonPressed(_:)))
+       
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         self.backgroundColor = UIColor(red: 205/255, green: 220/255, blue: 250/255, alpha: 1)
         self.layer.cornerRadius = 12
-        self.translatesAutoresizingMaskIntoConstraints = false
         setupUI()
     }
     required init?(coder: NSCoder) {

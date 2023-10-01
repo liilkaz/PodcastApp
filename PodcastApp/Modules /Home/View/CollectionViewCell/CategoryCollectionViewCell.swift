@@ -9,7 +9,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(categoryImage)
+        addSubviews(categoryImage)
         categoryImage.addSubviews(musicView, categoryMusic, countMusic)
         setupUI()
     }
