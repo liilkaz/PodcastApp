@@ -30,3 +30,16 @@ extension UIViewController {
         navigationController?.popViewController(animated: true)
     }
 }
+
+
+extension UIViewController {
+    func setupNavigationBarWithBackButton(title: String) {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(goBackVC))
+        backButton.tintColor = .black
+        navigationItem.leftBarButtonItem = backButton
+        navigationItem.title = title
+    }
+    @IBAction private func goBackVC() {
+        navigationController?.popViewController(animated: true)
+    }
+}
