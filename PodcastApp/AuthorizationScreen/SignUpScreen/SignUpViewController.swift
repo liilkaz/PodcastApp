@@ -113,6 +113,7 @@ class SignUpViewController: UIViewController {
         setNavigationBarBackButtonAuth(title: "Sign Up")
         setupView()
         setConstraints()
+        signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
     }
     
     func setupView() {
@@ -174,6 +175,24 @@ class SignUpViewController: UIViewController {
     private func didTapLoginButton() {
         let loginVC = LoginViewController()
         navigationController?.pushViewController(loginVC, animated: true)
+    }
+    
+    @objc
+    private func didTapSignUp() {
+        AuthService.shared.register(
+            email: emailField.inputTextField.text,
+            password: passwordField.inputTextField.text,
+            confirmPassword: confirmPasswordField.inputTextField.text) { [weak self] result in
+                switch result {
+                case .success(let user):
+                    let homeVC = TabBarViewController()
+                    homeVC.modalPresentationStyle = .fullScreen
+                    self?.present(homeVC, animated: true)
+                    print(user)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+        }
     }
     
 }

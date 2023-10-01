@@ -11,19 +11,20 @@ class LoginViewController: UIViewController {
     
     let cornerRadius: CGFloat = 24
     
-    private lazy var loginField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your login"), title: "Login")
+    private lazy var emailField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your email address"), title: "Email")
 
-    private lazy var emailField: InputField = {
-        let emailField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your email address"), title: "Email")
+    private lazy var passwordField: InputField = {
+        let emailField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your password"), title: "Password")
         return emailField
     }()
 
-    private lazy var emailButton: UIButton = {
+    private lazy var EnterButton: UIButton = {
         let button = UIButton(title: "Enter",
                               backgroundColor: .activeBlueColor,
                               titleColor: .white,
                               hasBorder: false,
                               cornerRadius: cornerRadius)
+        button.addTarget(self, action: #selector(didTapEnterButton), for: .touchUpInside)
         return button
     }()
 
@@ -63,28 +64,28 @@ class LoginViewController: UIViewController {
         
         bottomStackView.addArrangedSubviews(bottomText, registerButton)
         
-        view.addSubviews(loginField, emailField, emailButton, dividerView, googleButton, bottomStackView)
+        view.addSubviews(emailField, passwordField, EnterButton, dividerView, googleButton, bottomStackView)
     }
     
     func setConstraint(){
         
         NSLayoutConstraint.activate([
-            loginField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            loginField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            loginField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            loginField.heightAnchor.constraint(equalToConstant: 88),
-            
-            emailField.topAnchor.constraint(equalTo: loginField.bottomAnchor, constant: 12),
+            emailField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             emailField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             emailField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             emailField.heightAnchor.constraint(equalToConstant: 88),
             
-            emailButton.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 24),
-            emailButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            emailButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            emailButton.heightAnchor.constraint(equalToConstant: 56),
+            passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 12),
+            passwordField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            passwordField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            passwordField.heightAnchor.constraint(equalToConstant: 88),
             
-            dividerView.topAnchor.constraint(equalTo: emailButton.bottomAnchor, constant: 32),
+            EnterButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 24),
+            EnterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            EnterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            EnterButton.heightAnchor.constraint(equalToConstant: 56),
+            
+            dividerView.topAnchor.constraint(equalTo: EnterButton.bottomAnchor, constant: 32),
             dividerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 48),
             dividerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -48),
             dividerView.heightAnchor.constraint(equalToConstant: 22),
@@ -103,6 +104,35 @@ class LoginViewController: UIViewController {
     private func didTapRegisterButton() {
         let createAcc = CreateAccountViewController()
         navigationController?.pushViewController(createAcc, animated: true)
+    }
+    
+    @objc
+    private func didTapEnterButton() {
+        AuthService.shared.login(email: emailField.inputTextField.text,
+                                 password: passwordField.inputTextField.text) { [weak self] result in
+            switch result {
+            case .success(let user):
+//                if self?.userDataService.getUser(for: user.uid) == nil {
+//                    let userModel = UserModel(
+//                        email: user.email ?? "no",
+//                        firstName: user.displayName ?? "no",
+//                        lastName: "no",
+//                        uuid: user.uid)
+//                    self?.userDataService.saveUserModel(with: userModel)
+//                    AllMovies.shared.userId = userModel.uuid
+//                } else {
+//                    AllMovies.shared.userId = user.uid
+//                }
+
+                let homeVC = TabBarViewController()
+                homeVC.modalPresentationStyle = .fullScreen
+                self?.present(homeVC, animated: true)
+                print(user)
+            case .failure(let error):
+//                self?.showAlert(with: "Ошибка", and:
+                print(error.localizedDescription)
+            }
+        }
     }
     
 }
