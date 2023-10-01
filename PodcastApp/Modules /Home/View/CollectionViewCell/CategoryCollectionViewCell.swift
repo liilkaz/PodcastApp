@@ -2,8 +2,13 @@ import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     static let identifier = "CategoryCollectionViewCell"
-    private lazy var categoryImage = UIImageView(cornerRadius: 12)
-    private lazy var musicView = UIView(background: UIColor(red: 255/255, green: 240/255, blue: 240/255, alpha: 1), cornerRadius: 12)
+    private lazy var categoryImage: UIImageView = {
+        let image = UIImageView(cornerRadius: 12)
+        image.backgroundColor = .systemPink
+        return image
+    }()
+    
+    private lazy var musicView = UIView(background: .lightPinkColor, cornerRadius: 12)
     private lazy var categoryMusic = UILabel(text: "Music & Fun", font: .boldSystemFont(ofSize: 15), textColor: .black, textAlignment: .left)
     private lazy var countMusic = UILabel(text: "100 tracks", font: .systemFont(ofSize: 10), textColor: .black, textAlignment: .left)
     
@@ -14,7 +19,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         setupUI()
     }
     
-    public func configureCell(image: UIImage, title: CategoryMusic, tracks: Int) {
+    public func configureCell(image: UIImage?, title: CategoryMusic, tracks: Int) {
         self.categoryImage.image = image
         self.categoryMusic.text = title.rawValue
         self.countMusic.text = "\(tracks) tracks"

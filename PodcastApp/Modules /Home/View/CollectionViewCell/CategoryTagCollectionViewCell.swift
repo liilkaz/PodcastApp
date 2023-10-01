@@ -5,7 +5,7 @@ class CategoryTagCollectionViewCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
+                backgroundColor = .collectionSelectedColor
                 categoryLabel.textColor = .black
             } else {
                 backgroundColor = .clear

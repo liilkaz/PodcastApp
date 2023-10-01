@@ -3,7 +3,7 @@ import UIKit
 class HomeTableViewCell: UITableViewCell {
     static let identifier = "HomeTableViewCell"
     private var isIconChanged = false
-    private lazy var homeCellView = UIView(background: UIColor(red: 236/255, green: 240/255, blue: 252/255, alpha: 1), cornerRadius: 12)
+    private lazy var homeCellView = UIView(background: .tableViewColor, cornerRadius: 12)
     
     private lazy var musicImage: UIImageView = {
         let image = UIImageView(cornerRadius: 12)

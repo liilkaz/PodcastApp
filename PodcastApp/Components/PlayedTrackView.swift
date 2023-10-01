@@ -38,7 +38,7 @@ class PlayedTrackView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.backgroundColor = UIColor(red: 205/255, green: 220/255, blue: 250/255, alpha: 1)
+        self.backgroundColor = .lightBlueColor
         self.layer.cornerRadius = 12
         setupUI()
     }
