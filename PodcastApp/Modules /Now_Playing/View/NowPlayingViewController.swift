@@ -25,14 +25,12 @@ class NowPlayingViewController: UIViewController {
         slider.thumbTintColor = .systemBlue
         slider.minimumTrackTintColor = .systemBlue
         slider.maximumTrackTintColor = .lightBlueColor
-        slider.translatesAutoresizingMaskIntoConstraints = false
         return slider
     }()
     private lazy var buttonsStackView: UIStackView = {
         let sv = UIStackView(axis: .horizontal, spacing: 0)
         sv.alignment = .fill
         sv.distribution = .equalSpacing
-        sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
     
