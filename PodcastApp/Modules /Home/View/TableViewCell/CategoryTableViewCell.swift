@@ -117,14 +117,15 @@ extension CategoryTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case categoryCollectionView:
-            let arrayIndexPath = homeViewModel.categoryArray[indexPath.row]
+            let title = homeViewModel.categoryArray[indexPath.row]
+            let image = homeViewModel.categoryImageArray[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
-            cell.configureCell(image: nil, title: arrayIndexPath, tracks: 100)
+            cell.configureCell(image: image, title: title, tracks: 100)
             return cell
         case categoryTagCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryTagCollectionViewCell.identifier, for: indexPath) as! CategoryTagCollectionViewCell
             if indexPath == lastSelectedIndexPath {
-                cell.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
+                cell.backgroundColor = .collectionSelectedColor
                 cell.categoryLabel.textColor = .black
             }
             return cell
