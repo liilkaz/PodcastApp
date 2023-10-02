@@ -11,6 +11,7 @@ import Foundation
 
 enum PodcastEndpoint {
     case serchPodcast
+    case recent
 }
 
 
@@ -22,7 +23,9 @@ extension PodcastEndpoint: Endpoint {
         switch self {
             
         case .serchPodcast: 
-            return "/api/1.0/search/byterm"
+            return "/api/1.0/search/byperson"
+        case .recent:
+            return "/api/1.0/recent/episodes"
         }
     }
     
@@ -30,6 +33,8 @@ extension PodcastEndpoint: Endpoint {
         switch self {
             
         case .serchPodcast:
+            return .get
+        case .recent:
             return .get
         }
     }
@@ -52,6 +57,21 @@ extension PodcastEndpoint: Endpoint {
                ]
             
             return headers
+            
+        case .recent:
+            let apiKey = "WXBZTQWQCKQKZVEVPYKT"
+            let apiSecret = "PEWevq^7z^a4bjafR$#EnGe8#98$WuMH599T#4Kg"
+            let apiHeaderTime = String(Int(Date().timeIntervalSince1970))
+            let hash = (apiKey + apiSecret + apiHeaderTime).sha1()
+
+            let headers: [String: String] = [
+                   "User-Agent": "com.tacarlen.Podcast-App",
+                   "X-Auth-Key": apiKey,
+                   "X-Auth-Date": apiHeaderTime,
+                   "Authorization": hash
+               ]
+            
+            return headers
         }
     }
     
@@ -59,6 +79,8 @@ extension PodcastEndpoint: Endpoint {
         switch self {
             
         case .serchPodcast:
+            return nil
+        case .recent:
             return nil
         }
     }
@@ -68,6 +90,9 @@ extension PodcastEndpoint: Endpoint {
             
         case .serchPodcast:
             return nil
+        case .recent:
+            let items = [URLQueryItem(name: "max", value: "7"), URLQueryItem(name: "pretty", value: nil)]
+            return items
         }
     }
 }

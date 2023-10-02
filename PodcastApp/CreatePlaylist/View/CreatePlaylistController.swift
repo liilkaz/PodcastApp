@@ -68,6 +68,8 @@ final class CreatePlaylistController: UIViewController {
         let search = UISearchBar()
         search.searchBarStyle = .minimal
         search.placeholder = "Search..."
+        search.delegate = self
+        search.searchTextField.backgroundColor = .backgroundCellCustom
         return search
     }()
     
@@ -85,11 +87,20 @@ final class CreatePlaylistController: UIViewController {
     
     //MARK: - Init
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel?.fetch()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         viewModel = CreatePlaylistViewModel()
+        viewModel?.fetch()
+        observeEvent()
         
     }
     
@@ -155,9 +166,27 @@ final class CreatePlaylistController: UIViewController {
         }
     }
     
+    private func observeEvent() {
+        
+        viewModel?.eventHandler = { [weak self] event in
+            guard let self else { return }
+            
+            switch event {
+            case .loading:
+                print("Product loading....")
+            case .stopLoading:
+                print("Stop loading...")
+            case .dataLoaded:
+                DispatchQueue.main.async { self.collectionView.reloadData() }
+            case .error(let error):
+                print(error?.localizedDescription ?? "")
+            }
+        }
+    }
+    
     @objc private func tapButton() {
         print("Tap button")
-    }   
+    }
     
     @objc private func tapAddImage() {
         let imagePicker = UIImagePickerController()
@@ -179,7 +208,7 @@ extension CreatePlaylistController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? CreatePlaylistCell
         let model = viewModel?.getModel(indexPath)
         cell?.viewModel = model
-        cell?.backgroundColor = .systemGray4
+        cell?.backgroundColor = .backgroundCellCustom
         cell?.clipsToBounds = true
         cell?.layer.cornerRadius = 16
         return cell ?? UICollectionViewCell()
@@ -187,14 +216,14 @@ extension CreatePlaylistController: UICollectionViewDataSource {
 }
 
 
-//MARK: - Extension
+//MARK: - Extension UIImagePickerControllerDelegate, UINavigationControllerDelegate
 
 extension CreatePlaylistController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let image = info[.editedImage] as? UIImage else { return }
-       
+        
         let imageName = UUID().uuidString
         let imagePath = getDocument().appendingPathExtension(imageName)
         
@@ -209,5 +238,14 @@ extension CreatePlaylistController: UIImagePickerControllerDelegate, UINavigatio
     func getDocument() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
+    }
+}
+
+//MARK: - Extension UISearchBarDelegate
+
+extension CreatePlaylistController: UISearchBarDelegate {
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
     }
 }

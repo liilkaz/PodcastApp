@@ -9,12 +9,7 @@ import UIKit
 
 final class FavoritesViewModel: FavoritesViewModelProtocol {
     
-    private let model = [FavoritesModel(icon: "swift", songName: "song name1", contentName: "contentName1"),
-                         FavoritesModel(icon: "swift", songName: "song name2", contentName: "contentName2"),
-                         FavoritesModel(icon: "swift", songName: "song name3", contentName: "contentName3"),
-                         FavoritesModel(icon: "swift", songName: "song name4", contentName: "contentName4"),
-                         FavoritesModel(icon: "swift", songName: "song name5", contentName: "contentName5"),
-                         FavoritesModel(icon: "swift", songName: "song name6", contentName: "contentName6")]
+    private let model = [FavoritesModel]()
     
     func getRowsCount() -> Int {
         return model.count

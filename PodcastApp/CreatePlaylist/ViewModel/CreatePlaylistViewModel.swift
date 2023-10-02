@@ -5,23 +5,58 @@
 //  Created by sidzhe on 27.09.2023.
 //
 
-import Foundation
+import UIKit
 
 final class CreatePlaylistViewModel: CreatePlaylistProtocol {
     
-    private let model = [FavoritesModel(icon: "swift", songName: "song name1", contentName: "contentName1"),
-                         FavoritesModel(icon: "swift", songName: "song name2", contentName: "contentName2"),
-                         FavoritesModel(icon: "swift", songName: "song name3", contentName: "contentName3"),
-                         FavoritesModel(icon: "swift", songName: "song name4", contentName: "contentName4"),
-                         FavoritesModel(icon: "swift", songName: "song name5", contentName: "contentName5"),
-                         FavoritesModel(icon: "swift", songName: "song name6", contentName: "contentName6")]
+    //MARK: - Properties
+    
+    var networkService = NetworkService()
+    var eventHandler: ((_ event: Event) -> Void)? 
+        
+    private var model: [Item]?
+    
+    //MARK: - Methods
     
     func getRowsCount() -> Int {
-        return model.count
+        return model?.count ?? 0
     }
     
     func getModel(_ indexPath: IndexPath) -> CreatePlaylistCellProtocol? {
-        let model = model[indexPath.row]
-        return CreatePlaylistCellViewModel(favoritesModel: model)
+        guard let model = model?[indexPath.row] else { return nil }
+        return CreatePlaylistCellViewModel(podcastModel: model)
+    }
+    
+    func fetch() {
+        
+        self.eventHandler?(.loading)
+        
+        networkService.searchRecent { [weak self] (result: Result<PodcastModel, RequestError>) in
+            
+            guard let self else { return }
+            
+            self.eventHandler?(.stopLoading)
+            
+            switch result {
+                
+            case .success(let data):
+                guard let item = data.items else { return }
+                self.model = item
+                self.eventHandler?(.dataLoaded)
+            case .failure(let error):
+                self.eventHandler?(.error(error))
+            }
+        }
     }
 }
+
+
+//MARK: - Event
+
+enum Event {
+    case loading
+    case stopLoading
+    case dataLoaded
+    case error(Error?)
+}
+

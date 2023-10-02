@@ -5,23 +5,30 @@
 //  Created by sidzhe on 27.09.2023.
 //
 
-import Foundation
+import UIKit
 
 final class CreatePlaylistCellViewModel: CreatePlaylistCellProtocol {
     
     //MARK: - Properties
     
-    private var favoritesModel: FavoritesModel
+    private var podcastModel: Item
+    private var networkService = NetworkService()
     
-    var icon: String { favoritesModel.icon }
-    
-    var songName: String { favoritesModel.songName }
-    
-    var contentName: String { favoritesModel.contentName }
+    var songName: String { podcastModel.title ?? "" }
+    var contentName: String { podcastModel.feedTitle ?? "" }
+    var icon: ObserverBox<UIImage?> = ObserverBox(value: nil)
     
     //MARK: - Init
-
-    init(favoritesModel: FavoritesModel) {
-        self.favoritesModel = favoritesModel
+    
+    init(podcastModel: Item) {
+        self.podcastModel = podcastModel
+        loadImage(from: podcastModel.image)
+        print(podcastModel.image)
+    }
+    
+    private func loadImage(from urlString: String?) {
+        guard let urlString else { return }
+        Task { self.icon.value = try await networkService.loadImageTask(from: urlString) }
     }
 }
+

@@ -11,4 +11,5 @@ import Foundation
 
 protocol Serviceable {
     func getPodcast<T: Decodable>(search: String) async -> Result<T, RequestError> 
+    func getRecent<T: Decodable>() async -> Result<T, RequestError> 
 }

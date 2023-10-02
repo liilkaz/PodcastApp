@@ -12,17 +12,19 @@ final class CreatePlaylistCell: UICollectionViewCell {
     
     //MARK: - Properties
     
-    weak var viewModel: CreatePlaylistCellProtocol? {
+    var viewModel: CreatePlaylistCellProtocol? {
         willSet {
-            iconImage.image = UIImage(systemName: newValue!.icon) ?? UIImage()
             songName.text = newValue?.songName
             contentLabel.text = newValue?.contentName
+            newValue?.icon.bind { [weak self] icon in
+                self?.iconImage.image = icon
+            }
         }
     }
     
     //MARK: - UI Elements
     
-    private lazy var iconImage: UIImageView = {
+    lazy var iconImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "swift")
         image.clipsToBounds = true
@@ -62,11 +64,18 @@ final class CreatePlaylistCell: UICollectionViewCell {
     
     //MARK: - Inits
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        iconImage.image = nil
+        
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupViews()
-        
+     
     }
     
     required init?(coder: NSCoder) {
@@ -87,7 +96,7 @@ final class CreatePlaylistCell: UICollectionViewCell {
         iconImage.snp.makeConstraints { make in
             make.size.equalTo(48)
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview()
+            make.left.equalToSuperview().inset(8)
         }
         
         stackView.snp.makeConstraints { make in

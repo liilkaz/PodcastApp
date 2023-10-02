@@ -66,7 +66,8 @@
 		EB9A4B4B2AC2AF6000B38D20 /* HeaderPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B4A2AC2AF6000B38D20 /* HeaderPlaylist.swift */; };
 		EB9A4B4D2AC2B0B600B38D20 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B4C2AC2B0B600B38D20 /* PlaylistViewController.swift */; };
 		EB9A4B4F2AC2B12A00B38D20 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B4E2AC2B12A00B38D20 /* Section.swift */; };
-		EBB906592AC542EE001B29C5 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB906582AC542EE001B29C5 /* MainModel.swift */; };
+		EBB906592AC542EE001B29C5 /* PodcastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB906582AC542EE001B29C5 /* PodcastModel.swift */; };
+		EBFF64A52AC9AA6D0041E0AA /* ObserverBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFF64A42AC9AA6D0041E0AA /* ObserverBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,7 +131,8 @@
 		EB9A4B4A2AC2AF6000B38D20 /* HeaderPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPlaylist.swift; sourceTree = "<group>"; };
 		EB9A4B4C2AC2B0B600B38D20 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		EB9A4B4E2AC2B12A00B38D20 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
-		EBB906582AC542EE001B29C5 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		EBB906582AC542EE001B29C5 /* PodcastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastModel.swift; sourceTree = "<group>"; };
+		EBFF64A42AC9AA6D0041E0AA /* ObserverBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,7 +342,7 @@
 		EB4C1C872AC3ED650027D3ED /* CreatePlaylist */ = {
 			isa = PBXGroup;
 			children = (
-				EB4C1C8B2AC3F01D0027D3ED /* Model */,
+				EBFF64A42AC9AA6D0041E0AA /* ObserverBox.swift */,
 				EB4C1C8A2AC3F0180027D3ED /* View */,
 				EB4C1C892AC3F0130027D3ED /* ViewModel */,
 				EB4C1C882AC3F00E0027D3ED /* Protocols */,
@@ -373,13 +375,6 @@
 				EB4C1C8E2AC3FB8F0027D3ED /* Cell */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		EB4C1C8B2AC3F01D0027D3ED /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		EB4C1C8E2AC3FB8F0027D3ED /* Cell */ = {
@@ -503,7 +498,7 @@
 		EBB906572AC542E2001B29C5 /* MainModel */ = {
 			isa = PBXGroup;
 			children = (
-				EBB906582AC542EE001B29C5 /* MainModel.swift */,
+				EBB906582AC542EE001B29C5 /* PodcastModel.swift */,
 			);
 			path = MainModel;
 			sourceTree = "<group>";
@@ -599,6 +594,7 @@
 				448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */,
 				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
 				751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */,
+				EBFF64A52AC9AA6D0041E0AA /* ObserverBox.swift in Sources */,
 				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
 				EB1084572AC53EA100C6345E /* NetworkService.swift in Sources */,
 				EB10844B2AC5342400C6345E /* Endpoints.swift in Sources */,
@@ -614,7 +610,7 @@
 				EB9A4B412AC2A60D00B38D20 /* PlaylistCellViewModel.swift in Sources */,
 				EB9A4B292AC2967900B38D20 /* FavoritesViewModel.swift in Sources */,
 				EB9A4B2F2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift in Sources */,
-				EBB906592AC542EE001B29C5 /* MainModel.swift in Sources */,
+				EBB906592AC542EE001B29C5 /* PodcastModel.swift in Sources */,
 				EB4C1C922AC3FD740027D3ED /* CreatePlaylistViewModel.swift in Sources */,
 				EB9A4B392AC2A4E800B38D20 /* FavoritesListCell.swift in Sources */,
 				EB9A4B492AC2A8BC00B38D20 /* HeaderCell.swift in Sources */,

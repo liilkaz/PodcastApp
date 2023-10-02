@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 final class FavoritesListCell: UICollectionViewCell {
+    
     //MARK: - Properties
     
     weak var viewModel: FavoritsCellViewModelProtocol? {

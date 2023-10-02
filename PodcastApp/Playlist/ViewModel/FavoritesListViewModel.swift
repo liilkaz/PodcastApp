@@ -13,11 +13,11 @@ final class FavoritesListModel: FavoritsCellViewModelProtocol {
     
     private var favoritesModel: FavoritesModel
     
-    var icon: String { favoritesModel.icon }
+    var icon: String { "" }
     
-    var songName: String { favoritesModel.songName }
+    var songName: String { "" }
     
-    var contentName: String { favoritesModel.contentName }
+    var contentName: String { "" }
     
     //MARK: - Init
 

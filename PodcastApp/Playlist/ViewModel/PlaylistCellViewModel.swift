@@ -11,17 +11,17 @@ final class PlaylistCellViewModel: FavoritsCellViewModelProtocol {
     
     //MARK: - Properties
     
-    private var favoritesModel: FavoritesModel
+    private var favoritesModel: PodcastModel
     
-    var icon: String { favoritesModel.icon }
+    var icon: String { "" }
     
-    var songName: String { favoritesModel.songName }
+    var songName: String { "favoritesModel.songName" }
     
-    var contentName: String { favoritesModel.contentName }
+    var contentName: String { "favoritesModel.contentName" }
     
     //MARK: - Init
 
-    init(favoritesModel: FavoritesModel) {
+    init(favoritesModel: PodcastModel) {
         self.favoritesModel = favoritesModel
     }
 }
