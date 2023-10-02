@@ -29,7 +29,7 @@ class BottomLineAuth: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var bottomText = UILabel(text: text, font: .jakarta16semibold(), textColor: .boldGrayTextColor)
+    private lazy var bottomText = UILabel(name: text, font: .jakarta16semibold(), textColor: .boldGrayTextColor)
     
     private lazy var loginButton = UIButton(title: title, backgroundColor: .clear, titleColor: .purpleTextColor, hasBorder: false)
     

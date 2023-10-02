@@ -11,9 +11,9 @@ class CreateAccountViewController: UIViewController {
     
     let cornerRadius: CGFloat = 24
 
-    private lazy var titleLabel = UILabel(text: "Create account", font: .jakarta24(), textColor: .white)
+    private lazy var titleLabel = UILabel(name: "Create account", font: .jakarta24(), textColor: .white)
 
-    private lazy var subTitleLabel = UILabel(text: "Lorem ipsum dolor sit amet", font: .jakarta16(), textColor: .white)
+    private lazy var subTitleLabel = UILabel(name: "Lorem ipsum dolor sit amet", font: .jakarta16(), textColor: .white)
 
     private lazy var mainView: UIView = {
         let view = UIView()
@@ -42,7 +42,7 @@ class CreateAccountViewController: UIViewController {
         return button
     }()
 
-    private let bottomText = UILabel(text: "Already have an account?",
+    private let bottomText = UILabel(name: "Already have an account?",
                             font: .jakarta16semibold(), textColor: .boldGrayTextColor)
     
     private lazy var loginButton = UIButton(title: "Login", backgroundColor: .clear, titleColor: .purpleTextColor, hasBorder: false)

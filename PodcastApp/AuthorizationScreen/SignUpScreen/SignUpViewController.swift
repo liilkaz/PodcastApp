@@ -11,10 +11,10 @@ class SignUpViewController: UIViewController {
     
     let cornerRadius: CGFloat = 24
     
-    private lazy var titleLabel = UILabel(text: "Complet your account",
+    private lazy var titleLabel = UILabel(name: "Complet your account",
                             font: .jakarta24(), textColor: .blackTextColor)
 
-    private lazy var subTitleLabel = UILabel(text: "Lorem ipsum dolor sit amet", font: .jakarta14medium(), textColor: .darkGrayTextColor)
+    private lazy var subTitleLabel = UILabel(name: "Lorem ipsum dolor sit amet", font: .jakarta14medium(), textColor: .darkGrayTextColor)
     
     private lazy var firstNameField = InputField(inputField: UITextField(hasBorder: false,
                                                                 backgroundColor: .lightGray,
@@ -80,7 +80,7 @@ class SignUpViewController: UIViewController {
     
     
     // вынести в компоненты
-    private lazy var bottomText = UILabel(text: "Already hav an account?",
+    private lazy var bottomText = UILabel(name: "Already hav an account?",
                             font: .jakarta16semibold(), textColor: .boldGrayTextColor)
 
     

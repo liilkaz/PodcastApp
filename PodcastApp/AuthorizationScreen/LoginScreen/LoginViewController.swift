@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
         return button
     }()
 
-    private lazy var bottomText = UILabel(text: "Don't you have an account yet?",
+    private lazy var bottomText = UILabel(name: "Don't you have an account yet?",
                             font: .jakarta16semibold(), textColor: .boldGrayTextColor)
     
     private lazy var registerButton = UIButton(title: "Register", backgroundColor: .clear, titleColor: .greenTextColor, hasBorder: false)
