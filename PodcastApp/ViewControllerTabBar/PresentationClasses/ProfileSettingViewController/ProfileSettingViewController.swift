@@ -50,17 +50,21 @@ final class ProfileSettingViewController: UIViewController {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel(
-            name: "Danila Bolshakov",
-            font: .semiBold(),
-            textColor: .black)
+            text: "Danila Bolshakov",
+            font: .regular14(),
+            textColor: .black,
+            textAlignment: .left,
+            numberOfLines: 0)
         return label
     }()
     
     private lazy var aboutMySelfLabel: UILabel = {
         let label = UILabel(
-            name: "Love,life and chill",
+            text: "Love,life and chill",
             font: .regular14(),
-            textColor: .boldGrayTextColor)
+            textColor: .boldGrayTextColor,
+            textAlignment: .left,
+            numberOfLines: 0)
         return label
     }()
     
@@ -140,6 +144,7 @@ extension ProfileSettingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Theme.psVCTableViewCellID, for: indexPath) as? ProfileSettingViewControllerTableViewCell  else { return UITableViewCell() }
         let item = models[indexPath.row]
+        cell.selectionStyle = .none
         cell.configure(model: item)
         return cell
     }
@@ -154,7 +159,6 @@ extension ProfileSettingViewController: UITableViewDataSource {
 extension ProfileSettingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         
         switch indexPath.row {
         case 0:
