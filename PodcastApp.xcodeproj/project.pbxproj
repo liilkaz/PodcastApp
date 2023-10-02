@@ -46,6 +46,18 @@
 		759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */; };
 		759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550712AC2E6D200A47208 /* BottomLineAuth.swift */; };
 		759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550732AC2F22F00A47208 /* UIViewController + Extension.swift */; };
+		79F994B62ACA808500592F1E /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F994B52ACA808500592F1E /* GenreCell.swift */; };
+		79F994B82ACA837900592F1E /* TopGenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F994B72ACA837800592F1E /* TopGenreCell.swift */; };
+		79F994BA2ACA88CD00592F1E /* GenresHardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F994B92ACA88CD00592F1E /* GenresHardData.swift */; };
+		79F994BC2ACA935C00592F1E /* AllPodcastsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F994BB2ACA935C00592F1E /* AllPodcastsCell.swift */; };
+		79F994BE2ACA97EF00592F1E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F994BD2ACA97EF00592F1E /* SearchViewController.swift */; };
+		79F994C02ACAB3B700592F1E /* BrowseAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F994BF2ACAB3B700592F1E /* BrowseAllCell.swift */; };
+		79F994C22ACAC9C800592F1E /* BrowseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F994C12ACAC9C800592F1E /* BrowseCell.swift */; };
+		79F994C42ACAE69700592F1E /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F994C32ACAE69700592F1E /* SearchResultsViewController.swift */; };
+		79F994C62ACAE70600592F1E /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F994C52ACAE70600592F1E /* SearchResultCell.swift */; };
+		79F994C82ACAFAC700592F1E /* textFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F994C72ACAFAC700592F1E /* textFieldCell.swift */; };
+		79F994CB2ACB18F900592F1E /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79F994C92ACB18F900592F1E /* Manrope-Regular.ttf */; };
+		79F994CC2ACB18F900592F1E /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79F994CA2ACB18F900592F1E /* Manrope-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +102,18 @@
 		7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		759550712AC2E6D200A47208 /* BottomLineAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineAuth.swift; sourceTree = "<group>"; };
 		759550732AC2F22F00A47208 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		79F994B52ACA808500592F1E /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
+		79F994B72ACA837800592F1E /* TopGenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGenreCell.swift; sourceTree = "<group>"; };
+		79F994B92ACA88CD00592F1E /* GenresHardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresHardData.swift; sourceTree = "<group>"; };
+		79F994BB2ACA935C00592F1E /* AllPodcastsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPodcastsCell.swift; sourceTree = "<group>"; };
+		79F994BD2ACA97EF00592F1E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		79F994BF2ACAB3B700592F1E /* BrowseAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseAllCell.swift; sourceTree = "<group>"; };
+		79F994C12ACAC9C800592F1E /* BrowseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCell.swift; sourceTree = "<group>"; };
+		79F994C32ACAE69700592F1E /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		79F994C52ACAE70600592F1E /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		79F994C72ACAFAC700592F1E /* textFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFieldCell.swift; sourceTree = "<group>"; };
+		79F994C92ACB18F900592F1E /* Manrope-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Regular.ttf"; sourceTree = "<group>"; };
+		79F994CA2ACB18F900592F1E /* Manrope-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +243,7 @@
 		751C22512AC0542000FF50C6 /* PodcastApp */ = {
 			isa = PBXGroup;
 			children = (
+				79F994B12ACA804500592F1E /* Search */,
 				40CA63AD2AC8BD0E00B8B4DA /* Modules  */,
 				751C22CD2AC1B32600FF50C6 /* Components */,
 				751C22BC2AC1975300FF50C6 /* Fonts */,
@@ -277,6 +302,8 @@
 				751C22C02AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf */,
 				751C22C12AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf */,
 				751C22C22AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf */,
+				79F994CA2ACB18F900592F1E /* Manrope-Bold.ttf */,
+				79F994C92ACB18F900592F1E /* Manrope-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -308,6 +335,47 @@
 				7595506B2AC1D06900A47208 /* SignUpViewController.swift */,
 			);
 			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		79F994B12ACA804500592F1E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				79F994B32ACA806200592F1E /* SearchGenres */,
+				79F994B22ACA804C00592F1E /* SearchResult */,
+				79F994B92ACA88CD00592F1E /* GenresHardData.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		79F994B22ACA804C00592F1E /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				79F994C32ACAE69700592F1E /* SearchResultsViewController.swift */,
+				79F994C52ACAE70600592F1E /* SearchResultCell.swift */,
+				79F994BB2ACA935C00592F1E /* AllPodcastsCell.swift */,
+				79F994C72ACAFAC700592F1E /* textFieldCell.swift */,
+			);
+			path = SearchResult;
+			sourceTree = "<group>";
+		};
+		79F994B32ACA806200592F1E /* SearchGenres */ = {
+			isa = PBXGroup;
+			children = (
+				79F994B42ACA807100592F1E /* Cells */,
+				79F994BD2ACA97EF00592F1E /* SearchViewController.swift */,
+			);
+			path = SearchGenres;
+			sourceTree = "<group>";
+		};
+		79F994B42ACA807100592F1E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				79F994B52ACA808500592F1E /* GenreCell.swift */,
+				79F994C12ACAC9C800592F1E /* BrowseCell.swift */,
+				79F994B72ACA837800592F1E /* TopGenreCell.swift */,
+				79F994BF2ACAB3B700592F1E /* BrowseAllCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,8 +440,10 @@
 				751C22C92AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf in Resources */,
 				751C22C82AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf in Resources */,
 				751C22C72AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf in Resources */,
+				79F994CC2ACB18F900592F1E /* Manrope-Bold.ttf in Resources */,
 				751C22C62AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf in Resources */,
 				751C225C2AC0542100FF50C6 /* Assets.xcassets in Resources */,
+				79F994CB2ACB18F900592F1E /* Manrope-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,19 +456,26 @@
 			files = (
 				751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */,
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
+				79F994C02ACAB3B700592F1E /* BrowseAllCell.swift in Sources */,
 				40BCF6D92AC8C08200912EA4 /* CategoryMusicEnum.swift in Sources */,
 				40BCF6E12AC8C18700912EA4 /* UIImageView.swift in Sources */,
+				79F994BE2ACA97EF00592F1E /* SearchViewController.swift in Sources */,
 				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
 				40BCF7042AC9A5B000912EA4 /* MusicButton.swift in Sources */,
 				759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */,
 				448D80082AC32D0C003D0403 /* ProfileSettingVC.swift in Sources */,
 				448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */,
 				40BCF6D42AC8BECF00912EA4 /* CategoryTableViewCell.swift in Sources */,
+				79F994C42ACAE69700592F1E /* SearchResultsViewController.swift in Sources */,
 				40BCF6DB2AC8C0F100912EA4 /* UICollectionView + Extension.swift in Sources */,
+				79F994C22ACAC9C800592F1E /* BrowseCell.swift in Sources */,
 				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
+				79F994B82ACA837900592F1E /* TopGenreCell.swift in Sources */,
 				751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */,
 				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
 				751C22572AC0542000FF50C6 /* ViewController.swift in Sources */,
+				79F994C62ACAE70600592F1E /* SearchResultCell.swift in Sources */,
+				79F994BA2ACA88CD00592F1E /* GenresHardData.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
 				448D80092AC32D0C003D0403 /* FavoritesVC.swift in Sources */,
 				40BCF6E32AC8C27700912EA4 /* CategoryCollectionViewCell.swift in Sources */,
@@ -408,11 +485,14 @@
 				751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */,
 				751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */,
 				751C22D12AC1B3F100FF50C6 /* UIView + Extension.swift in Sources */,
+				79F994BC2ACA935C00592F1E /* AllPodcastsCell.swift in Sources */,
 				40BCF6D62AC8BF2700912EA4 /* HomeViewModel.swift in Sources */,
 				448D80062AC32D0C003D0403 /* SearchVC.swift in Sources */,
 				40BCF6DF2AC8C16E00912EA4 /* UIView.swift in Sources */,
 				759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */,
+				79F994C82ACAFAC700592F1E /* textFieldCell.swift in Sources */,
 				40BCF6E52AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift in Sources */,
+				79F994B62ACA808500592F1E /* GenreCell.swift in Sources */,
 				40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */,
 				759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */,
 				751C22CC2AC1B08900FF50C6 /* UITextField + Extension.swift in Sources */,
