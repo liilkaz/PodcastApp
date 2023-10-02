@@ -8,8 +8,10 @@
 import Foundation
 
 protocol PlaylistViewModelProtocol: AnyObject {
+    var eventHandler: ((Event) -> Void)? { get set }
     func getFavoritesModel(indexPath: IndexPath) -> FavoritsCellViewModelProtocol?
-    func favoritesArray() -> [FavoritesModel]?
+    func favoritesArray() -> [Item]?
     func getPlaylistModel(indexPath: IndexPath) -> FavoritsCellViewModelProtocol?
-    func playlistArray() -> [FavoritesModel]?
+    func playlistArray() -> [Item]?
+    func fetch()
 }

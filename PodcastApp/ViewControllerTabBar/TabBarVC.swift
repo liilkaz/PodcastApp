@@ -34,7 +34,7 @@ final class TabBarViewController: UITabBarController {
                 viewController: SearchViewController(),
                 image: UIImage(named: "search")),
             generateVC(
-                viewController: FavoritesViewController(),
+                viewController: PlaylistViewController(),
                 image: UIImage(named: "bookmark")),
             generateVC(
                 viewController: ProfileSettingViewController(),

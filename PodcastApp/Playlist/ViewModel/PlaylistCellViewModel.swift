@@ -11,7 +11,7 @@ final class PlaylistCellViewModel: FavoritsCellViewModelProtocol {
     
     //MARK: - Properties
     
-    private var favoritesModel: PodcastModel
+    private var favoritesModel: Item
     
     var icon: String { "" }
     
@@ -21,7 +21,7 @@ final class PlaylistCellViewModel: FavoritsCellViewModelProtocol {
     
     //MARK: - Init
 
-    init(favoritesModel: PodcastModel) {
+    init(favoritesModel: Item) {
         self.favoritesModel = favoritesModel
     }
 }

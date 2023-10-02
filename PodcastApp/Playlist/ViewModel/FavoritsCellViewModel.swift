@@ -11,7 +11,7 @@ final class FavoritsCellViewModel: FavoritsCellViewModelProtocol {
     
     //MARK: - Properties
     
-    private var favoritesModel: FavoritesModel
+    private var favoritesModel: Item
     
     var icon: String { "favoritesModel.icon" }
     
@@ -21,7 +21,7 @@ final class FavoritsCellViewModel: FavoritsCellViewModelProtocol {
     
     //MARK: - Init
 
-    init(favoritesModel: FavoritesModel) {
+    init(favoritesModel: Item) {
         self.favoritesModel = favoritesModel
     }
 }
