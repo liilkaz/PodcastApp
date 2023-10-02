@@ -9,8 +9,6 @@ import UIKit
 
 final class TabBarViewController: UITabBarController {
     
-    
-    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -34,15 +32,15 @@ final class TabBarViewController: UITabBarController {
                 image: UIImage(named: "homeGrey"),
                 selectedImage: UIImage(named: "homeBlue")),
             generateVC(
-                viewController: HomeViewController(),
+                viewController: SearchViewController(),
                 image: UIImage(named: "searchGrey"),
                 selectedImage: UIImage(named: "searchBlue")),
             generateVC(
-                viewController: HomeViewController(),
+                viewController: FavoritesViewController(),
                 image: UIImage(named: "bookmarkGrey"),
                 selectedImage: UIImage(named: "bookmarkBlue")),
             generateVC(
-                viewController: HomeViewController(),
+                viewController: ProfileSettingViewController(),
                 image: UIImage(named: "settingGrey"),
                 selectedImage: UIImage(named: "settingBlue"))
         ]
