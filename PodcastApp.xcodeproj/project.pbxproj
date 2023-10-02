@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40B999192ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B999182ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift */; };
+		40B9991B2ACB0F3A00184D44 /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9991A2ACB0F3A00184D44 /* ProfileSettingViewController.swift */; };
 		40BCF6D42AC8BECF00912EA4 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6D32AC8BECF00912EA4 /* CategoryTableViewCell.swift */; };
 		40BCF6D62AC8BF2700912EA4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6D52AC8BF2700912EA4 /* HomeViewModel.swift */; };
 		40BCF6D92AC8C08200912EA4 /* CategoryMusicEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6D82AC8C08200912EA4 /* CategoryMusicEnum.swift */; };
@@ -21,9 +23,6 @@
 		40BCF7042AC9A5B000912EA4 /* MusicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF7032AC9A5B000912EA4 /* MusicButton.swift */; };
 		40BCF70B2AC9E14100912EA4 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF70A2AC9E14100912EA4 /* NowPlayingViewController.swift */; };
 		40BCF70D2AC9E18800912EA4 /* NowPlayingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF70C2AC9E18800912EA4 /* NowPlayingButtons.swift */; };
-		445FA16B2ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FA1692ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift */; };
-		445FA16C2ACAC30B00778159 /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FA16A2ACAC30B00778159 /* ProfileSettingViewController.swift */; };
-		445FA16E2ACAC4C800778159 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FA16D2ACAC4C800778159 /* Theme.swift */; };
 		448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */; };
 		448D80062AC32D0C003D0403 /* SearchViewContriller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* SearchViewContriller.swift */; };
 		448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80032AC32D0B003D0403 /* FavoritesViewController.swift */; };
@@ -53,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40B999182ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		40B9991A2ACB0F3A00184D44 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		40BCF6D32AC8BECF00912EA4 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		40BCF6D52AC8BF2700912EA4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		40BCF6D82AC8C08200912EA4 /* CategoryMusicEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMusicEnum.swift; sourceTree = "<group>"; };
@@ -67,6 +68,10 @@
 		40BCF7032AC9A5B000912EA4 /* MusicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicButton.swift; sourceTree = "<group>"; };
 		40BCF70A2AC9E14100912EA4 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		40BCF70C2AC9E18800912EA4 /* NowPlayingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingButtons.swift; sourceTree = "<group>"; };
+		40BCF7152ACACC1A00912EA4 /* ChannelMusicInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelMusicInfoTableViewCell.swift; sourceTree = "<group>"; };
+		40BCF7172ACACC2900912EA4 /* AllEpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		40BCF71A2ACACC4900912EA4 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		40BCF71E2ACACC9A00912EA4 /* ChannelHeaderView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChannelHeaderView .swift"; sourceTree = "<group>"; };
 		445FA1692ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		445FA16A2ACAC30B00778159 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		445FA16D2ACAC4C800778159 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -111,6 +116,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40B999142ACB0EC400184D44 /* ProfileSettings */ = {
+			isa = PBXGroup;
+			children = (
+				40B999172ACB0ED300184D44 /* Model */,
+				40B999162ACB0ED100184D44 /* View */,
+				40B999152ACB0ECE00184D44 /* ViewModel */,
+			);
+			path = ProfileSettings;
+			sourceTree = "<group>";
+		};
+		40B999152ACB0ECE00184D44 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		40B999162ACB0ED100184D44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40B999182ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift */,
+				40B9991A2ACB0F3A00184D44 /* ProfileSettingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		40B999172ACB0ED300184D44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		40BCF6CD2AC8BE6600912EA4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,9 +240,70 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		40BCF70F2ACACAD300912EA4 /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF7102ACACBC800912EA4 /* Model */,
+				40BCF7112ACACBCC00912EA4 /* View */,
+				40BCF7122ACACBD100912EA4 /* ViewModel */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		40BCF7102ACACBC800912EA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40BCF7112ACACBCC00912EA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF71C2ACACC8B00912EA4 /* HeaderView */,
+				40BCF7142ACACC0700912EA4 /* Controller */,
+				40BCF7132ACACBFD00912EA4 /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		40BCF7122ACACBD100912EA4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		40BCF7132ACACBFD00912EA4 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF7152ACACC1A00912EA4 /* ChannelMusicInfoTableViewCell.swift */,
+				40BCF7172ACACC2900912EA4 /* AllEpisodeTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		40BCF7142ACACC0700912EA4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF71A2ACACC4900912EA4 /* ChannelViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		40BCF71C2ACACC8B00912EA4 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF71E2ACACC9A00912EA4 /* ChannelHeaderView .swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
 		40CA63AD2AC8BD0E00B8B4DA /* Modules  */ = {
 			isa = PBXGroup;
 			children = (
+				40B999142ACB0EC400184D44 /* ProfileSettings */,
+				40BCF70F2ACACAD300912EA4 /* Channel */,
 				40BCF7062AC9E0C800912EA4 /* Now_Playing */,
 				40CA63AE2AC8BD1900B8B4DA /* Home */,
 			);
@@ -455,7 +554,6 @@
 				40BCF6D42AC8BECF00912EA4 /* CategoryTableViewCell.swift in Sources */,
 				40BCF6DB2AC8C0F100912EA4 /* UICollectionView + Extension.swift in Sources */,
 				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
-				445FA16E2ACAC4C800778159 /* Theme.swift in Sources */,
 				751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */,
 				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
 				751C22572AC0542000FF50C6 /* ViewController.swift in Sources */,
@@ -476,11 +574,11 @@
 				759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */,
 				40BCF6E52AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift in Sources */,
 				40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */,
-				445FA16B2ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift in Sources */,
+				40B999192ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift in Sources */,
 				759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */,
 				751C22CC2AC1B08900FF50C6 /* UITextField + Extension.swift in Sources */,
 				40BCF6E72AC8C2AF00912EA4 /* PlayedTrackView.swift in Sources */,
-				445FA16C2ACAC30B00778159 /* ProfileSettingViewController.swift in Sources */,
+				40B9991B2ACB0F3A00184D44 /* ProfileSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
