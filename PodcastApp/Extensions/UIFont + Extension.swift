@@ -31,4 +31,17 @@ extension UIFont {
     static func jakarta14medium() -> UIFont? {
         return UIFont(name: "PlusJakartaSans-Medium", size: 14)
     }
+    
+    static func regular14() -> UIFont? {
+        return UIFont(name: "Manrope-Regular", size: 14)
+    }
+    
+    static func extraLight() -> UIFont? {
+        return UIFont(name: "Manrope-ExtraLight", size: 16)
+    }
+    
+    static func semiBold() -> UIFont? {
+        return UIFont(name: "Manrope-SemiBold", size: 16)
+    }
 }
+
