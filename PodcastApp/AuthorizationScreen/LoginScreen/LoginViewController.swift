@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
+import FirebaseAuth
+import GoogleSignInSwift
 
 class LoginViewController: UIViewController {
     
@@ -18,13 +22,13 @@ class LoginViewController: UIViewController {
         return emailField
     }()
 
-    private lazy var EnterButton: UIButton = {
-        let button = UIButton(title: "Enter",
+    private lazy var loginButton: UIButton = {
+        let button = UIButton(title: "Login",
                               backgroundColor: .activeBlueColor,
                               titleColor: .white,
                               hasBorder: false,
                               cornerRadius: cornerRadius)
-        button.addTarget(self, action: #selector(didTapEnterButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         return button
     }()
 
@@ -40,6 +44,7 @@ class LoginViewController: UIViewController {
                               hasBorder: true,
                               cornerRadius: cornerRadius)
         button.setupGoogleImage()
+        button.addTarget(self, action: #selector(didTapGoogleButton), for: .touchUpInside)
         return button
     }()
 
@@ -64,7 +69,7 @@ class LoginViewController: UIViewController {
         
         bottomStackView.addArrangedSubviews(bottomText, registerButton)
         
-        view.addSubviews(emailField, passwordField, EnterButton, dividerView, googleButton, bottomStackView)
+        view.addSubviews(emailField, passwordField, loginButton, dividerView, googleButton, bottomStackView)
     }
     
     func setConstraint(){
@@ -80,12 +85,12 @@ class LoginViewController: UIViewController {
             passwordField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             passwordField.heightAnchor.constraint(equalToConstant: 88),
             
-            EnterButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 24),
-            EnterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            EnterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            EnterButton.heightAnchor.constraint(equalToConstant: 56),
+            loginButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 24),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            loginButton.heightAnchor.constraint(equalToConstant: 56),
             
-            dividerView.topAnchor.constraint(equalTo: EnterButton.bottomAnchor, constant: 32),
+            dividerView.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 32),
             dividerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 48),
             dividerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -48),
             dividerView.heightAnchor.constraint(equalToConstant: 22),
@@ -107,32 +112,63 @@ class LoginViewController: UIViewController {
     }
     
     @objc
-    private func didTapEnterButton() {
+    private func didTapLoginButton() {
         AuthService.shared.login(email: emailField.inputTextField.text,
                                  password: passwordField.inputTextField.text) { [weak self] result in
             switch result {
             case .success(let user):
-//                if self?.userDataService.getUser(for: user.uid) == nil {
-//                    let userModel = UserModel(
-//                        email: user.email ?? "no",
-//                        firstName: user.displayName ?? "no",
-//                        lastName: "no",
-//                        uuid: user.uid)
-//                    self?.userDataService.saveUserModel(with: userModel)
-//                    AllMovies.shared.userId = userModel.uuid
-//                } else {
-//                    AllMovies.shared.userId = user.uid
-//                }
-
                 let homeVC = TabBarViewController()
                 homeVC.modalPresentationStyle = .fullScreen
                 self?.present(homeVC, animated: true)
                 print(user)
             case .failure(let error):
-//                self?.showAlert(with: "Ошибка", and:
-                print(error.localizedDescription)
+                self?.showAlert(with: "Ошибка", and: error.localizedDescription)
             }
         }
     }
     
+    @objc
+    private func didTapGoogleButton() {
+       signWithGoogle()
+    }
+}
+
+extension LoginViewController {
+    private func signWithGoogle() {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+          guard error == nil else {
+              showAlert(with: "Warning!", and: AuthError.unknownError.localizedDescription)
+              return
+          }
+
+          guard let user = result?.user,
+            let idToken = user.idToken?.tokenString
+          else {
+              return
+          }
+
+          let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                         accessToken: user.accessToken.tokenString)
+
+            Auth.auth().signIn(with: credential) { [weak self] result, error in
+
+                if result != nil {
+                    let homeVC = TabBarViewController()
+                    homeVC.modalPresentationStyle = .fullScreen
+                    self?.present(homeVC, animated: true)
+                }
+
+                if error != nil {
+                    self?.showAlert(with: "Warning", and: AuthError.unknownError.localizedDescription)
+                }
+            }
+        }
+    }
 }

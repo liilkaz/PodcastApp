@@ -9,6 +9,17 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    var email: String
+    
+    init(email: String) {
+        self.email = email
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     let cornerRadius: CGFloat = 24
     
     private lazy var titleLabel = UILabel(text: "Complet your account",
@@ -33,6 +44,7 @@ class SignUpViewController: UIViewController {
                                                             cornerRadius: cornerRadius,
                                                             placeholder: "Enter your email"), title: "E-mail")
         emailField.inputTextField.keyboardType = .emailAddress
+        emailField.inputTextField.text = email
         return emailField
     }()
     
