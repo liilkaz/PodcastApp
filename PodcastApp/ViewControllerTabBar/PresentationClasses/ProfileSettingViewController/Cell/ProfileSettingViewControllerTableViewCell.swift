@@ -20,12 +20,7 @@ final class ProfileSettingViewControllerTableViewCell: UITableViewCell {
     
     private lazy var iconImageView = UIImageView()
     
-    private lazy var menuTitleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .blackTextColor
-        label.font = .extraLight()
-        return label
-    }()
+    private lazy var menuTitleLabel = UILabel(textColor: .blackTextColor)
     
     private lazy var arrowImageView = UIImageView(image: UIImage(named: "arrowRight"))
     
