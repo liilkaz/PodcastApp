@@ -17,10 +17,7 @@ class LoginViewController: UIViewController {
     
     private lazy var emailField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your email address"), title: "Email")
 
-    private lazy var passwordField: InputField = {
-        let emailField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your password"), title: "Password")
-        return emailField
-    }()
+    private lazy var passwordField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your password"), title: "Password")
 
     private lazy var loginButton: UIButton = {
         let button = UIButton(title: "Login",
