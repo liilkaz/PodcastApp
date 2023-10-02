@@ -18,12 +18,7 @@ extension UIButton {
             
             if hasBorder {
                 self.layer.borderWidth = 1
-                self.layer.borderColor = UIColor.blackTextColor.cgColor
-            }
-            
-            if hasBorder == false {
-                self.layer.borderWidth = 1
-                self.layer.borderColor = UIColor.systemBlue.cgColor
+                self.layer.borderColor = titleColor.cgColor
             }
         }
     
