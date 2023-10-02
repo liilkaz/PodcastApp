@@ -22,7 +22,7 @@ final class HeaderPlaylist: UICollectionReusableView {
     
     private lazy var backgrImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(systemName: "swift")
+        image.image = UIImage(systemName: "plus")
         image.tintColor = .black
         image.clipsToBounds = true
         image.layer.cornerRadius = 8

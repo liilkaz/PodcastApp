@@ -5,7 +5,7 @@
 //  Created by sidzhe on 26.09.2023.
 //
 
-import Foundation
+import UIKit
 
 protocol PlaylistViewModelProtocol: AnyObject {
     var eventHandler: ((Event) -> Void)? { get set }
@@ -14,4 +14,5 @@ protocol PlaylistViewModelProtocol: AnyObject {
     func getPlaylistModel(indexPath: IndexPath) -> FavoritsCellViewModelProtocol?
     func playlistArray() -> [Item]?
     func fetch()
+    func getColorfull(_ index: Int) -> UIColor
 }

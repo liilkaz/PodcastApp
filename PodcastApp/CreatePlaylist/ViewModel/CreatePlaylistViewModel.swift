@@ -69,14 +69,3 @@ final class CreatePlaylistViewModel: CreatePlaylistProtocol {
         }
     }
 }
-
-
-//MARK: - Event
-
-enum Event {
-    case loading
-    case stopLoading
-    case dataLoaded
-    case error(Error?)
-}
-

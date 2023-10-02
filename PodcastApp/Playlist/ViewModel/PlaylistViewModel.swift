@@ -15,6 +15,8 @@ final class PlaylistViewModel: PlaylistViewModelProtocol {
     private var favoritesModel: [Item]?
     private var playlistModel: [Item]?
     private var networkService = NetworkService()
+    private let cellColors = [UIColor.customBlue, UIColor.customLightBlue, UIColor.customPink]
+    private var cellColorIndexMap: [Int: Int] = [:]
     
     //MARK: - Methods
     
@@ -40,12 +42,19 @@ final class PlaylistViewModel: PlaylistViewModelProtocol {
         return playlistModel
     }
     
+    func getColorfull(_ index: Int) -> UIColor {
+        
+        let colorIndex = index % cellColors.count
+        cellColorIndexMap[index] = colorIndex
+        return cellColors[colorIndex]
+    }
+    
     func fetch() {
         
         self.eventHandler?(.loading)
         
         networkService.searchRecent { [weak self] (result: Result<PodcastModel, RequestError>) in
-            print("TYT")
+           
             guard let self else { return }
             
             self.eventHandler?(.stopLoading)

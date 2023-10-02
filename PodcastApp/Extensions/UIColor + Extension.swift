@@ -43,6 +43,10 @@ extension UIColor {
     static let lightGrayWallpaper = UIColor(hexString: "#F8F8F5")
     static let customGray = UIColor(hexString: "#EDF0FC")
     
+    static let customBlue = UIColor(hexString: "#E6F6FF")
+    static let customLightBlue = UIColor(hexString: "#E8F6FD")
+    static let customPink = UIColor(hexString: "#FFE5EC")
+    
     //TextColor TabBar
     static var tabBarItemAccent = UIColor.white
     static var mainWhite = UIColor.white

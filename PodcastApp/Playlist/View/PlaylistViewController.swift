@@ -146,7 +146,7 @@ extension PlaylistViewController {
             let model = self?.viewModel?.getFavoritesModel(indexPath: indexPath)
             cell.clipsToBounds = true
             cell.layer.cornerRadius = 16
-            cell.backgroundColor = .systemMint
+            cell.backgroundColor = self?.viewModel?.getColorfull(indexPath.row)
             cell.viewModel = model
         }
     }

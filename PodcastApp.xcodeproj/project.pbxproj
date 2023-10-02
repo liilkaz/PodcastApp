@@ -50,15 +50,14 @@
 		EB4C1C962AC3FD8D0027D3ED /* CreatePlaylistProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C1C952AC3FD8D0027D3ED /* CreatePlaylistProtocol.swift */; };
 		EB4C1C982AC3FD960027D3ED /* CreatePlaylistCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C1C972AC3FD960027D3ED /* CreatePlaylistCellProtocol.swift */; };
 		EB7390192ACB206F00428736 /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7390182ACB206F00428736 /* PlaylistModel.swift */; };
+		EB73901B2ACB2E8900428736 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73901A2ACB2E8900428736 /* Event.swift */; };
 		EB9A4B222AC287D600B38D20 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EB9A4B212AC287D600B38D20 /* SnapKit */; };
 		EB9A4B272AC2888F00B38D20 /* FavoritsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B262AC2888F00B38D20 /* FavoritsCell.swift */; };
-		EB9A4B2B2AC2968300B38D20 /* FavoritesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B2A2AC2968300B38D20 /* FavoritesViewModelProtocol.swift */; };
 		EB9A4B2D2AC2969000B38D20 /* FavoritsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B2C2AC2969000B38D20 /* FavoritsCellViewModel.swift */; };
 		EB9A4B2F2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B2E2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift */; };
 		EB9A4B392AC2A4E800B38D20 /* FavoritesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B382AC2A4E800B38D20 /* FavoritesListCell.swift */; };
 		EB9A4B3D2AC2A5EF00B38D20 /* PlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B3C2AC2A5EF00B38D20 /* PlaylistViewModel.swift */; };
 		EB9A4B3F2AC2A5FE00B38D20 /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B3E2AC2A5FE00B38D20 /* FavoritesListViewModel.swift */; };
-		EB9A4B412AC2A60D00B38D20 /* PlaylistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B402AC2A60D00B38D20 /* PlaylistCellViewModel.swift */; };
 		EB9A4B432AC2A61F00B38D20 /* PlaylistViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B422AC2A61F00B38D20 /* PlaylistViewModelProtocol.swift */; };
 		EB9A4B492AC2A8BC00B38D20 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B482AC2A8BC00B38D20 /* HeaderCell.swift */; };
 		EB9A4B4B2AC2AF6000B38D20 /* HeaderPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4B4A2AC2AF6000B38D20 /* HeaderPlaylist.swift */; };
@@ -114,14 +113,13 @@
 		EB4C1C952AC3FD8D0027D3ED /* CreatePlaylistProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistProtocol.swift; sourceTree = "<group>"; };
 		EB4C1C972AC3FD960027D3ED /* CreatePlaylistCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCellProtocol.swift; sourceTree = "<group>"; };
 		EB7390182ACB206F00428736 /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModel.swift; sourceTree = "<group>"; };
+		EB73901A2ACB2E8900428736 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		EB9A4B262AC2888F00B38D20 /* FavoritsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCell.swift; sourceTree = "<group>"; };
-		EB9A4B2A2AC2968300B38D20 /* FavoritesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelProtocol.swift; sourceTree = "<group>"; };
 		EB9A4B2C2AC2969000B38D20 /* FavoritsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCellViewModel.swift; sourceTree = "<group>"; };
 		EB9A4B2E2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCellViewModelProtocol.swift; sourceTree = "<group>"; };
 		EB9A4B382AC2A4E800B38D20 /* FavoritesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListCell.swift; sourceTree = "<group>"; };
 		EB9A4B3C2AC2A5EF00B38D20 /* PlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewModel.swift; sourceTree = "<group>"; };
 		EB9A4B3E2AC2A5FE00B38D20 /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
-		EB9A4B402AC2A60D00B38D20 /* PlaylistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCellViewModel.swift; sourceTree = "<group>"; };
 		EB9A4B422AC2A61F00B38D20 /* PlaylistViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewModelProtocol.swift; sourceTree = "<group>"; };
 		EB9A4B482AC2A8BC00B38D20 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		EB9A4B4A2AC2AF6000B38D20 /* HeaderPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPlaylist.swift; sourceTree = "<group>"; };
@@ -337,7 +335,6 @@
 		EB4C1C872AC3ED650027D3ED /* CreatePlaylist */ = {
 			isa = PBXGroup;
 			children = (
-				EBFF64A42AC9AA6D0041E0AA /* ObserverBox.swift */,
 				EB4C1C8A2AC3F0180027D3ED /* View */,
 				EB4C1C892AC3F0130027D3ED /* ViewModel */,
 				EB4C1C882AC3F00E0027D3ED /* Protocols */,
@@ -394,8 +391,10 @@
 		EB9A4B312AC2A3DF00B38D20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EBFF64A42AC9AA6D0041E0AA /* ObserverBox.swift */,
 				EB9A4B4E2AC2B12A00B38D20 /* Section.swift */,
 				EB7390182ACB206F00428736 /* PlaylistModel.swift */,
+				EB73901A2ACB2E8900428736 /* Event.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,10 +411,9 @@
 		EB9A4B332AC2A3F000B38D20 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				EB9A4B2C2AC2969000B38D20 /* FavoritsCellViewModel.swift */,
 				EB9A4B3C2AC2A5EF00B38D20 /* PlaylistViewModel.swift */,
-				EB9A4B402AC2A60D00B38D20 /* PlaylistCellViewModel.swift */,
 				EB9A4B3E2AC2A5FE00B38D20 /* FavoritesListViewModel.swift */,
+				EB9A4B2C2AC2969000B38D20 /* FavoritsCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -423,9 +421,8 @@
 		EB9A4B342AC2A40200B38D20 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				EB9A4B2A2AC2968300B38D20 /* FavoritesViewModelProtocol.swift */,
-				EB9A4B2E2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift */,
 				EB9A4B422AC2A61F00B38D20 /* PlaylistViewModelProtocol.swift */,
+				EB9A4B2E2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -544,7 +541,6 @@
 				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
 				EB1084572AC53EA100C6345E /* NetworkService.swift in Sources */,
 				EB10844B2AC5342400C6345E /* Endpoints.swift in Sources */,
-				EB9A4B2B2AC2968300B38D20 /* FavoritesViewModelProtocol.swift in Sources */,
 				EB9A4B2D2AC2969000B38D20 /* FavoritsCellViewModel.swift in Sources */,
 				EB9A4B4D2AC2B0B600B38D20 /* PlaylistViewController.swift in Sources */,
 				EB9A4B4B2AC2AF6000B38D20 /* HeaderPlaylist.swift in Sources */,
@@ -553,9 +549,9 @@
 				EB9A4B432AC2A61F00B38D20 /* PlaylistViewModelProtocol.swift in Sources */,
 				EB9A4B3F2AC2A5FE00B38D20 /* FavoritesListViewModel.swift in Sources */,
 				EB4C1C902AC3FB9A0027D3ED /* CreatePlaylistCell.swift in Sources */,
-				EB9A4B412AC2A60D00B38D20 /* PlaylistCellViewModel.swift in Sources */,
 				EB9A4B2F2AC2969600B38D20 /* FavoritsCellViewModelProtocol.swift in Sources */,
 				EBB906592AC542EE001B29C5 /* PodcastModel.swift in Sources */,
+				EB73901B2ACB2E8900428736 /* Event.swift in Sources */,
 				EB4C1C922AC3FD740027D3ED /* CreatePlaylistViewModel.swift in Sources */,
 				EB9A4B392AC2A4E800B38D20 /* FavoritesListCell.swift in Sources */,
 				EB9A4B492AC2A8BC00B38D20 /* HeaderCell.swift in Sources */,

@@ -14,9 +14,11 @@ final class FavoritesListCell: UICollectionViewCell {
     
     weak var viewModel: FavoritsCellViewModelProtocol? {
         willSet {
-            iconImage.image = UIImage(systemName: newValue!.icon) ?? UIImage()
             songName.text = newValue?.songName
             contentLabel.text = newValue?.contentName
+            newValue?.icon.bind { [weak self] icon in
+                self?.iconImage.image = icon
+            }
         }
     }
     //MARK: - UI Elements
@@ -32,18 +34,23 @@ final class FavoritesListCell: UICollectionViewCell {
     
     private lazy var songName: UILabel = {
         let label = UILabel()
-        label.text = "Tuhan mengapa dia berbeda"
         return label
     }()
     
     private lazy var contentLabel: UILabel = {
         let label = UILabel()
-        label.text = "30 Eps"
         label.textColor = .lightGray
         return label
     }()
     
     //MARK: - Inits
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        iconImage.image = nil
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
