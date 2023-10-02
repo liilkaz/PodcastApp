@@ -20,6 +20,11 @@ extension UIButton {
                 self.layer.borderWidth = 1
                 self.layer.borderColor = UIColor.blackTextColor.cgColor
             }
+            
+            if hasBorder == false {
+                self.layer.borderWidth = 1
+                self.layer.borderColor = UIColor.blackTextColor.cgColor
+            }
         }
     
     func setupGoogleImage() {
