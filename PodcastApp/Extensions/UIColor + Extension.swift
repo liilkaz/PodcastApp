@@ -49,6 +49,7 @@ extension UIColor {
     
     // UIView Color
     static let lightBlueColor = UIColor(hexString: "#CDDCFA")
+    static let buttonsViewColor = UIColor(hexString: "D3D3D3")
     
     
     // CollectionView Color

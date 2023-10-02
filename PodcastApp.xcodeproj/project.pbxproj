@@ -19,6 +19,8 @@
 		40BCF6E72AC8C2AF00912EA4 /* PlayedTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6E62AC8C2AF00912EA4 /* PlayedTrackView.swift */; };
 		40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6EA2AC8C30C00912EA4 /* HomeViewController.swift */; };
 		40BCF7042AC9A5B000912EA4 /* MusicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF7032AC9A5B000912EA4 /* MusicButton.swift */; };
+		40BCF70B2AC9E14100912EA4 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF70A2AC9E14100912EA4 /* NowPlayingViewController.swift */; };
+		40BCF70D2AC9E18800912EA4 /* NowPlayingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF70C2AC9E18800912EA4 /* NowPlayingButtons.swift */; };
 		448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */; };
 		448D80062AC32D0C003D0403 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* SearchVC.swift */; };
 		448D80082AC32D0C003D0403 /* ProfileSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */; };
@@ -61,6 +63,8 @@
 		40BCF6E62AC8C2AF00912EA4 /* PlayedTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedTrackView.swift; sourceTree = "<group>"; };
 		40BCF6EA2AC8C30C00912EA4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		40BCF7032AC9A5B000912EA4 /* MusicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicButton.swift; sourceTree = "<group>"; };
+		40BCF70A2AC9E14100912EA4 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
+		40BCF70C2AC9E18800912EA4 /* NowPlayingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingButtons.swift; sourceTree = "<group>"; };
 		448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		448D80002AC32D0B003D0403 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingVC.swift; sourceTree = "<group>"; };
@@ -162,9 +166,42 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		40BCF7062AC9E0C800912EA4 /* Now_Playing */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF7072AC9E0FD00912EA4 /* Model */,
+				40BCF7082AC9E10700912EA4 /* View */,
+				40BCF7092AC9E10C00912EA4 /* ViewModel */,
+			);
+			path = Now_Playing;
+			sourceTree = "<group>";
+		};
+		40BCF7072AC9E0FD00912EA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40BCF7082AC9E10700912EA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF70A2AC9E14100912EA4 /* NowPlayingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		40BCF7092AC9E10C00912EA4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		40CA63AD2AC8BD0E00B8B4DA /* Modules  */ = {
 			isa = PBXGroup;
 			children = (
+				40BCF7062AC9E0C800912EA4 /* Now_Playing */,
 				40CA63AE2AC8BD1900B8B4DA /* Home */,
 			);
 			path = "Modules ";
@@ -290,6 +327,7 @@
 				759550712AC2E6D200A47208 /* BottomLineAuth.swift */,
 				40BCF6E62AC8C2AF00912EA4 /* PlayedTrackView.swift */,
 				40BCF7032AC9A5B000912EA4 /* MusicButton.swift */,
+				40BCF70C2AC9E18800912EA4 /* NowPlayingButtons.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -408,6 +446,8 @@
 				751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */,
 				751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */,
 				751C22D12AC1B3F100FF50C6 /* UIView + Extension.swift in Sources */,
+				40BCF70B2AC9E14100912EA4 /* NowPlayingViewController.swift in Sources */,
+				40BCF70D2AC9E18800912EA4 /* NowPlayingButtons.swift in Sources */,
 				40BCF6D62AC8BF2700912EA4 /* HomeViewModel.swift in Sources */,
 				448D80062AC32D0C003D0403 /* SearchVC.swift in Sources */,
 				40BCF6DF2AC8C16E00912EA4 /* UIView.swift in Sources */,
