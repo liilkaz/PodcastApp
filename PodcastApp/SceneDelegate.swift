@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Podcast App
-//
-//  Created by Лилия Феодотова on 24.09.2023.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -15,7 +8,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+        let vc = UINavigationController(rootViewController: ProfileSettingViewController())
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }
 

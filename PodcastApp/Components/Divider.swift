@@ -23,7 +23,7 @@ final class Divider: UIView {
         return view
     }()
     
-    private lazy var titleLabel = UILabel(name: title, font: .jakarta14(), textColor: .boldGrayTextColor)
+    private lazy var titleLabel = UILabel(text: title, font: .jakarta14(), textColor: .boldGrayTextColor)
     
     init(title: String) {
         self.title = title
