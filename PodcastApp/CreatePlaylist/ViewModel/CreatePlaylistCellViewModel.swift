@@ -22,8 +22,7 @@ final class CreatePlaylistCellViewModel: CreatePlaylistCellProtocol {
     
     init(podcastModel: Item) {
         self.podcastModel = podcastModel
-        loadImage(from: podcastModel.image)
-        print(podcastModel.image)
+        loadImage(from: podcastModel.feedImage)
     }
     
     private func loadImage(from urlString: String?) {

@@ -19,21 +19,6 @@ final class CreatePlaylistController: UIViewController {
     
     private lazy var lineView = UIView()
     
-    private lazy var headerLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Create Playlist"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private lazy var additionallyButton: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-        button.setImage(UIImage(named: "ellipsisVert"), for: .normal)
-        return button
-    }()
-    
     private lazy var addImageButton: UIButton = {
         let button = UIButton(type: .custom)
         button.addTarget(self, action: #selector(tapAddImage), for: .touchUpInside)
@@ -44,7 +29,8 @@ final class CreatePlaylistController: UIViewController {
         let image = UIImageView()
         image.clipsToBounds = true
         image.layer.cornerRadius = 20
-        image.image = UIImage(systemName: "swift")
+        image.backgroundColor = .customGray
+        image.image = UIImage(named: "defImage")
         return image
     }()
     
@@ -54,6 +40,7 @@ final class CreatePlaylistController: UIViewController {
         text.placeholder = "Give a name for your playlist"
         text.clearButtonMode = .always
         text.textAlignment = .center
+        text.delegate = self
         return text
     }()
     
@@ -69,7 +56,7 @@ final class CreatePlaylistController: UIViewController {
         search.searchBarStyle = .minimal
         search.placeholder = "Search..."
         search.delegate = self
-        search.searchTextField.backgroundColor = .backgroundCellCustom
+        search.searchTextField.backgroundColor = .customGray
         return search
     }()
     
@@ -85,7 +72,7 @@ final class CreatePlaylistController: UIViewController {
         return view
     }()
     
-    //MARK: - Init
+    //MARK: - Inits
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -99,7 +86,6 @@ final class CreatePlaylistController: UIViewController {
         
         setupViews()
         viewModel = CreatePlaylistViewModel()
-        viewModel?.fetch()
         observeEvent()
         
     }
@@ -111,30 +97,17 @@ final class CreatePlaylistController: UIViewController {
         view.backgroundColor = .white
         
         lineView.layer.addSublayer(line)
-        
-        view.addSubview(headerLabel)
-        view.addSubview(additionallyButton)
+
         view.addSubview(iconImage)
         view.addSubview(textField)
         view.addSubview(lineView)
         view.addSubview(searchBar)
         view.addSubview(collectionView)
         view.addSubview(addImageButton)
-        
-        headerLabel.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(30)
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-        }
-        
-        additionallyButton.snp.makeConstraints { make in
-            make.size.equalTo(30)
-            make.centerY.equalTo(headerLabel.snp.centerY)
-            make.right.equalToSuperview().inset(32)
-        }
-        
+                
         iconImage.snp.makeConstraints { make in
             make.size.equalTo(84)
-            make.top.equalTo(headerLabel.snp.bottom).inset(-33)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.centerX.equalToSuperview()
         }
         
@@ -208,7 +181,7 @@ extension CreatePlaylistController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? CreatePlaylistCell
         let model = viewModel?.getModel(indexPath)
         cell?.viewModel = model
-        cell?.backgroundColor = .backgroundCellCustom
+        cell?.backgroundColor = .customGray
         cell?.clipsToBounds = true
         cell?.layer.cornerRadius = 16
         return cell ?? UICollectionViewCell()
@@ -245,7 +218,19 @@ extension CreatePlaylistController: UIImagePickerControllerDelegate, UINavigatio
 
 extension CreatePlaylistController: UISearchBarDelegate {
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel?.searchRequest(searchBar.text)
+        searchBar.resignFirstResponder()
+    }
+}
+
+
+//MARK: - Extension UITextFieldDelegate
+
+extension CreatePlaylistController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

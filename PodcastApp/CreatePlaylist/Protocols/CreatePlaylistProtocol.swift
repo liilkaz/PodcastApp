@@ -12,4 +12,5 @@ protocol CreatePlaylistProtocol: AnyObject {
     func getRowsCount() -> Int
     func getModel(_ indexPath: IndexPath) -> CreatePlaylistCellProtocol?
     func fetch()
+    func searchRequest(_ search: String?)
 }

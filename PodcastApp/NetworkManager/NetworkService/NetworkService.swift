@@ -60,7 +60,7 @@ class NetworkService: NetworkServiceProtocol {
         guard let response = response as? HTTPURLResponse else { throw URLError(.badServerResponse)}
         guard response.statusCode == 200 else { throw URLError(.badServerResponse)}
         guard let image = UIImage(data: data) else { throw URLError(.cannotDecodeContentData)}
-        
+      
         let cachedData = CachedURLResponse(response: response, data: data)
         URLCache.shared.storeCachedResponse(cachedData, for: request)
         

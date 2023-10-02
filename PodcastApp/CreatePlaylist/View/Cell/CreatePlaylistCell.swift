@@ -12,7 +12,7 @@ final class CreatePlaylistCell: UICollectionViewCell {
     
     //MARK: - Properties
     
-    var viewModel: CreatePlaylistCellProtocol? {
+    weak var viewModel: CreatePlaylistCellProtocol? {
         willSet {
             songName.text = newValue?.songName
             contentLabel.text = newValue?.contentName
@@ -26,7 +26,6 @@ final class CreatePlaylistCell: UICollectionViewCell {
     
     lazy var iconImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(systemName: "swift")
         image.clipsToBounds = true
         image.layer.cornerRadius = 8
         return image
@@ -34,14 +33,12 @@ final class CreatePlaylistCell: UICollectionViewCell {
     
     private lazy var songName: UILabel = {
         let label = UILabel()
-        label.text = "Tuhan mengapa dia berbeda"
         return label
     }()
     
     private lazy var contentLabel: UILabel = {
         let label = UILabel()
-        label.text = "30 Eps"
-        label.textColor = .lightGray
+        label.textColor = .darkGray
         return label
     }()
     
@@ -49,16 +46,21 @@ final class CreatePlaylistCell: UICollectionViewCell {
         let view = UIStackView()
         view.distribution = .fill
         view.axis = .vertical
-        view.spacing = 10
+        view.spacing = 4
         return view
     }()
     
     private lazy var addButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(tapAddButton), for: .touchUpInside)
-        button.setImage(UIImage(systemName: "plus.app"), for: .normal)
-        button.setImage(UIImage(systemName: "checkmark.square.fill"), for: .selected)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.setImage(UIImage(systemName: "checkmark"), for: .selected)
         button.tintColor = .black
+        button.backgroundColor = .clear
+        button.clipsToBounds = true
+        button.layer.borderWidth = 1.5
+        button.layer.borderColor = UIColor.systemGray.cgColor
+        button.layer.cornerRadius = 8
         return button
     }()
     
@@ -75,7 +77,7 @@ final class CreatePlaylistCell: UICollectionViewCell {
         super.init(frame: frame)
         
         setupViews()
-     
+        
     }
     
     required init?(coder: NSCoder) {
@@ -101,7 +103,7 @@ final class CreatePlaylistCell: UICollectionViewCell {
         
         stackView.snp.makeConstraints { make in
             make.left.equalTo(iconImage.snp.right).inset(-18)
-            make.right.equalTo(addButton.snp.left)
+            make.right.equalTo(addButton.snp.left).inset(-8)
             make.top.equalTo(iconImage.snp.top)
         }
         
@@ -112,7 +114,11 @@ final class CreatePlaylistCell: UICollectionViewCell {
         }
     }
     
-    @objc private func tapAddButton() {
+    @objc private func tapAddButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        sender.backgroundColor = sender.backgroundColor == .clear ? .systemGreen : .clear
+        sender.tintColor = sender.tintColor == .black ? .white : .black
+        sender.layer.borderWidth = sender.layer.borderWidth == 1.5 ? 0.0 : 1.5
         print("add")
     }
 }

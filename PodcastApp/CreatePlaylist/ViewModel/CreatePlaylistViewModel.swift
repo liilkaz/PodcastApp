@@ -48,6 +48,26 @@ final class CreatePlaylistViewModel: CreatePlaylistProtocol {
             }
         }
     }
+    
+    func searchRequest(_ search: String?) {
+        
+        guard let text = search else { return }
+        
+        networkService.searchPodcast(search: text) { [weak self] (result: Result<PodcastModel, RequestError>) in
+            guard let self else { return }
+            
+            switch result {
+                
+            case .success(let data):
+               
+                guard let item = data.items else { return }
+                self.model = item
+                self.eventHandler?(.dataLoaded)
+            case .failure(let error):
+                self.eventHandler?(.error(error))
+            }
+        }
+    }
 }
 
 

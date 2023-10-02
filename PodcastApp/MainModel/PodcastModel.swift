@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - PodcastModel
 
 struct PodcastModel: Hashable, Decodable {
     let status: String?
