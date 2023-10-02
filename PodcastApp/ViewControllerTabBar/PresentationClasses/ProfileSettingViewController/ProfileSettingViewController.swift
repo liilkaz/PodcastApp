@@ -162,13 +162,13 @@ extension ProfileSettingViewController: UITableViewDelegate {
         
         switch indexPath.row {
         case 0:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         case 1:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         case 2:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         default:
             break

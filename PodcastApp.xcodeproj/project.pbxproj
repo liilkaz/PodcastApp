@@ -24,6 +24,7 @@
 		445FA16B2ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FA1692ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift */; };
 		445FA16C2ACAC30B00778159 /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FA16A2ACAC30B00778159 /* ProfileSettingViewController.swift */; };
 		445FA16E2ACAC4C800778159 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FA16D2ACAC4C800778159 /* Theme.swift */; };
+		445FA1702ACB14E100778159 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FA16F2ACB14E100778159 /* AccountSettingViewController.swift */; };
 		448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */; };
 		448D80062AC32D0C003D0403 /* SearchViewContriller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* SearchViewContriller.swift */; };
 		448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80032AC32D0B003D0403 /* FavoritesViewController.swift */; };
@@ -70,6 +71,7 @@
 		445FA1692ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		445FA16A2ACAC30B00778159 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		445FA16D2ACAC4C800778159 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		445FA16F2ACB14E100778159 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		448D80002AC32D0B003D0403 /* SearchViewContriller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewContriller.swift; sourceTree = "<group>"; };
 		448D80032AC32D0B003D0403 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				445FA16A2ACAC30B00778159 /* ProfileSettingViewController.swift */,
+				445FA16F2ACB14E100778159 /* AccountSettingViewController.swift */,
 				445FA1682ACAC30B00778159 /* Cell */,
 			);
 			path = ProfileSettingViewController;
@@ -447,6 +450,7 @@
 				751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */,
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
 				40BCF6D92AC8C08200912EA4 /* CategoryMusicEnum.swift in Sources */,
+				445FA1702ACB14E100778159 /* AccountSettingViewController.swift in Sources */,
 				40BCF6E12AC8C18700912EA4 /* UIImageView.swift in Sources */,
 				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
 				40BCF7042AC9A5B000912EA4 /* MusicButton.swift in Sources */,

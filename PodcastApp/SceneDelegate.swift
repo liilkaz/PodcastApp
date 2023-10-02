@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         #warning("NowPlayingViewController")
-        let vc = UINavigationController(rootViewController: NowPlayingViewController())
+        let vc = UINavigationController(rootViewController: ProfileSettingViewController())
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }
