@@ -8,7 +8,7 @@
 import UIKit
 
 final class PlaylistViewModel: PlaylistViewModelProtocol {
-
+    
     //MARK: - Properties
     
     var eventHandler: ((Event) -> Void)?
@@ -51,16 +51,12 @@ final class PlaylistViewModel: PlaylistViewModelProtocol {
     
     func fetch() {
         
-        self.eventHandler?(.loading)
-        
         networkService.searchRecent { [weak self] (result: Result<PodcastModel, RequestError>) in
-           
+            
             guard let self else { return }
             
-            self.eventHandler?(.stopLoading)
-            
             switch result {
-            
+                
             case .success(let data):
                 guard let item = data.items else { return }
                 self.favoritesModel = item

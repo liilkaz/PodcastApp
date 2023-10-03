@@ -28,14 +28,10 @@ final class CreatePlaylistViewModel: CreatePlaylistProtocol {
     }
     
     func fetch() {
-        
-        self.eventHandler?(.loading)
-        
+                
         networkService.searchRecent { [weak self] (result: Result<PodcastModel, RequestError>) in
             
             guard let self else { return }
-            
-            self.eventHandler?(.stopLoading)
             
             switch result {
                 
@@ -50,7 +46,7 @@ final class CreatePlaylistViewModel: CreatePlaylistProtocol {
     }
     
     func searchRequest(_ search: String?) {
-        
+        sleep(10)
         guard let text = search else { return }
         
         networkService.searchPodcast(search: text) { [weak self] (result: Result<PodcastModel, RequestError>) in

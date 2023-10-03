@@ -14,14 +14,25 @@ final class FavoritesListCell: UICollectionViewCell {
     
     weak var viewModel: FavoritsCellViewModelProtocol? {
         willSet {
+            
+            activityIndicator.startAnimating()
             songName.text = newValue?.songName
             contentLabel.text = newValue?.contentName
             newValue?.icon.bind { [weak self] icon in
-                self?.iconImage.image = icon
+                guard let self else { return }
+                Task { self.activityIndicator.stopAnimating() }
+                self.iconImage.image = icon
             }
         }
     }
     //MARK: - UI Elements
+    
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.color = .systemGray
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
     
     private lazy var iconImage: UIImageView = {
         let image = UIImageView()
@@ -67,9 +78,15 @@ final class FavoritesListCell: UICollectionViewCell {
     
     private func setupViews() {
         
+        iconImage.addSubviews(activityIndicator)
+        
         contentView.addSubview(iconImage)
         contentView.addSubview(songName)
         contentView.addSubview(contentLabel)
+        
+        activityIndicator.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
         
         iconImage.snp.makeConstraints { make in
             make.size.equalTo(60)

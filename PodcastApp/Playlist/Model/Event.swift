@@ -10,8 +10,6 @@ import Foundation
 //MARK: - Event
 
 enum Event {
-    case loading
-    case stopLoading
     case dataLoaded
     case error(Error?)
 }

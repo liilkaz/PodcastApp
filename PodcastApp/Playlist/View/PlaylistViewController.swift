@@ -44,10 +44,6 @@ final class PlaylistViewController: UIViewController {
             guard let self else { return }
             
             switch event {
-            case .loading:
-                print("Product loading....")
-            case .stopLoading:
-                print("Stop loading...")
             case .dataLoaded:
                 Task { self.applySnapshot() }
             case .error(let error):
@@ -114,12 +110,12 @@ extension PlaylistViewController {
                 
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 32, bottom: 0, trailing: 62)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(60))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 16
-                section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 30, bottom: 8, trailing: 0)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 30, bottom: 8, trailing: 0)
                 
                 ///header
                 let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(100))

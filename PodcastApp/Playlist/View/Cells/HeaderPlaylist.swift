@@ -59,7 +59,7 @@ final class HeaderPlaylist: UICollectionReusableView {
         
         headerLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(12)
-            make.left.equalToSuperview()
+            make.left.equalToSuperview().inset(32)
         }
         
         backgrImage.snp.makeConstraints { make in

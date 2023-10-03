@@ -14,10 +14,14 @@ final class CreatePlaylistCell: UICollectionViewCell {
     
     weak var viewModel: CreatePlaylistCellProtocol? {
         willSet {
+        
+            activityIndicator.startAnimating()
             songName.text = newValue?.songName
             contentLabel.text = newValue?.contentName
             newValue?.icon.bind { [weak self] icon in
-                self?.iconImage.image = icon
+                guard let self else { return }
+                Task { self.activityIndicator.stopAnimating() }
+                self.iconImage.image = icon
             }
         }
     }
@@ -29,6 +33,13 @@ final class CreatePlaylistCell: UICollectionViewCell {
         image.clipsToBounds = true
         image.layer.cornerRadius = 8
         return image
+    }()
+    
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.color = .systemGray
+        indicator.hidesWhenStopped = true
+        return indicator
     }()
     
     private lazy var songName: UILabel = {
@@ -91,6 +102,8 @@ final class CreatePlaylistCell: UICollectionViewCell {
         stackView.addArrangedSubview(songName)
         stackView.addArrangedSubview(contentLabel)
         
+        iconImage.addSubviews(activityIndicator)
+        
         contentView.addSubview(iconImage)
         contentView.addSubview(stackView)
         contentView.addSubview(addButton)
@@ -99,6 +112,10 @@ final class CreatePlaylistCell: UICollectionViewCell {
             make.size.equalTo(48)
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().inset(8)
+        }
+        
+        activityIndicator.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
         
         stackView.snp.makeConstraints { make in

@@ -145,10 +145,6 @@ final class CreatePlaylistController: UIViewController {
             guard let self else { return }
             
             switch event {
-            case .loading:
-                print("Product loading....")
-            case .stopLoading:
-                print("Stop loading...")
             case .dataLoaded:
                 DispatchQueue.main.async { self.collectionView.reloadData() }
             case .error(let error):
