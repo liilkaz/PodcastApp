@@ -31,12 +31,14 @@ final class ProfileSettingViewController: UIViewController {
         stackView.distribution = .fill
         stackView.axis = .horizontal
         stackView.spacing = 16
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
     private lazy var avatarImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(systemName: "person.crop.circle"))
         imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -45,6 +47,7 @@ final class ProfileSettingViewController: UIViewController {
         stackView.alignment = .leading
         stackView.axis = .vertical
         stackView.spacing = 4
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
@@ -55,6 +58,7 @@ final class ProfileSettingViewController: UIViewController {
             textColor: .black,
             textAlignment: .left,
             numberOfLines: 0)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -65,6 +69,7 @@ final class ProfileSettingViewController: UIViewController {
             textColor: .boldGrayTextColor,
             textAlignment: .left,
             numberOfLines: 0)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -75,6 +80,7 @@ final class ProfileSettingViewController: UIViewController {
         tableView.register(ProfileSettingViewControllerTableViewCell.self, forCellReuseIdentifier: Theme.psVCTableViewCellID)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
@@ -148,28 +154,20 @@ extension ProfileSettingViewController: UITableViewDataSource {
         cell.configure(model: item)
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.section).")
-    }
 }
 
 //MARK: - UITableViewDelegate
 
 extension ProfileSettingViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let viewController = AccountSettingViewController()
-            present(viewController, animated: true)
+            navigationController?.pushViewController(AccountSettingViewController(), animated: false)
         case 1:
-            let viewController = AccountSettingViewController()
-            present(viewController, animated: true)
+            navigationController?.pushViewController(AccountSettingViewController(), animated: false)
         case 2:
-            let viewController = AccountSettingViewController()
-            present(viewController, animated: true)
+            navigationController?.pushViewController(AccountSettingViewController(), animated: false)
         default:
             break
         }

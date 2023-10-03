@@ -53,6 +53,18 @@ extension UIButton {
             image.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
+    
+    func setupAvatarImage() {
+        let image = UIImageView(image: UIImage(named: "googleImage") ?? UIImage())
+        image.contentMode = .scaleAspectFit
+        
+        self.addSubviews(image)
+        
+        NSLayoutConstraint.activate([
+            image.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
+            image.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+    }
 }
 
 
