@@ -19,7 +19,7 @@ final class FavoritsCell: UICollectionViewCell {
             contentLabel.text = newValue?.contentName
             newValue?.icon.bind { [weak self] icon in
                 guard let self else { return }
-                Task { self.activityIndicator.stopAnimating() }
+                self.activityIndicator.stopAnimating() 
                 self.iconImage.image = icon
             }
         }
