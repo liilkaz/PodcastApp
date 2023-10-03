@@ -7,7 +7,24 @@
 
 import UIKit
 
-final class TextFieldView: UIView {
+enum TextFieldViewStyle {
+    case firstname
+    case lastname
+    case email
+    
+    var title: String {
+        switch self {
+        case .firstname:
+            "First Name"
+        case .lastname:
+            "Last Name"
+        case .email:
+            "E-mail"
+        }
+    }
+}
+
+final class TextFieldView: UIView, UITextFieldDelegate {
     //MARK: - Views
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -29,7 +46,10 @@ final class TextFieldView: UIView {
     private lazy var universalTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter some text"
+        textField.textColor = .blue
+        textField.isUserInteractionEnabled = true
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.delegate = self
         return textField
     }()
     
@@ -82,23 +102,6 @@ private extension  TextFieldView {
     }
 }
 
-enum TextFieldViewStyle {
-    case firstname
-    case lastname
-    case email
-    
-    var title: String {
-        switch self {
-        case .firstname:
-            "First Name"
-        case .lastname:
-            "Last Name"
-        case .email:
-            "E-mail"
-        }
-    }
-}
-
-let viewOne = TextFieldView(style: .firstname)
-let viewTwo = TextFieldView(style: .lastname)
-let viewThird = TextFieldView(style: .email)
+    let firstName = TextFieldView(style: .firstname)
+    let lastName = TextFieldView(style: .lastname)
+    let email = TextFieldView(style: .email)
