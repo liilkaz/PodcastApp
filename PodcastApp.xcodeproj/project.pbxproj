@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40B999192ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B999182ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift */; };
-		40B9991B2ACB0F3A00184D44 /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9991A2ACB0F3A00184D44 /* ProfileSettingViewController.swift */; };
 		40BCF6D42AC8BECF00912EA4 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6D32AC8BECF00912EA4 /* CategoryTableViewCell.swift */; };
 		40BCF6D62AC8BF2700912EA4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6D52AC8BF2700912EA4 /* HomeViewModel.swift */; };
 		40BCF6D92AC8C08200912EA4 /* CategoryMusicEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6D82AC8C08200912EA4 /* CategoryMusicEnum.swift */; };
@@ -23,21 +21,16 @@
 		40BCF7042AC9A5B000912EA4 /* MusicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF7032AC9A5B000912EA4 /* MusicButton.swift */; };
 		40BCF70B2AC9E14100912EA4 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF70A2AC9E14100912EA4 /* NowPlayingViewController.swift */; };
 		40BCF70D2AC9E18800912EA4 /* NowPlayingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF70C2AC9E18800912EA4 /* NowPlayingButtons.swift */; };
-		448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */; };
-		448D80062AC32D0C003D0403 /* SearchViewContriller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* SearchViewContriller.swift */; };
-		448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80032AC32D0B003D0403 /* FavoritesViewController.swift */; };
+		443A6C342ACC0BD8008DC815 /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FA16A2ACAC30B00778159 /* ProfileSettingViewController.swift */; };
+		443A6C352ACC0BDB008DC815 /* ProfileSettingViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FA1692ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift */; };
+		443A6C382ACC11FD008DC815 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443A6C372ACC11FD008DC815 /* AccountSettingViewController.swift */; };
+		448D80042AC32D0C003D0403 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D7FFD2AC32D0B003D0403 /* TabBarViewController.swift */; };
 		751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22522AC0542000FF50C6 /* AppDelegate.swift */; };
 		751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22542AC0542000FF50C6 /* SceneDelegate.swift */; };
 		751C22572AC0542000FF50C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22562AC0542000FF50C6 /* ViewController.swift */; };
-		751C225C2AC0542100FF50C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751C225B2AC0542100FF50C6 /* Assets.xcassets */; };
-		751C225F2AC0542100FF50C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751C225D2AC0542100FF50C6 /* LaunchScreen.storyboard */; };
 		751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22B22AC1930300FF50C6 /* LoginViewController.swift */; };
 		751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22B82AC1968800FF50C6 /* UILabel + Extension.swift */; };
 		751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22BA2AC196C600FF50C6 /* UIFont + Extension.swift */; };
-		751C22C62AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751C22BF2AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf */; };
-		751C22C72AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751C22C02AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf */; };
-		751C22C82AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751C22C12AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf */; };
-		751C22C92AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751C22C22AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf */; };
 		751C22CC2AC1B08900FF50C6 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22CB2AC1B08900FF50C6 /* UITextField + Extension.swift */; };
 		751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22CE2AC1B36A00FF50C6 /* InputField.swift */; };
 		751C22D12AC1B3F100FF50C6 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D02AC1B3F100FF50C6 /* UIView + Extension.swift */; };
@@ -55,7 +48,6 @@
 		7595507F2AC7133900A47208 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595507E2AC7133900A47208 /* AuthService.swift */; };
 		759550812AC713B100A47208 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550802AC713B100A47208 /* AuthError.swift */; };
 		759550832AC7142700A47208 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550822AC7142700A47208 /* Validation.swift */; };
-		759550852AC7169B00A47208 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 759550842AC7169B00A47208 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,12 +71,11 @@
 		40BCF7172ACACC2900912EA4 /* AllEpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		40BCF71A2ACACC4900912EA4 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		40BCF71E2ACACC9A00912EA4 /* ChannelHeaderView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChannelHeaderView .swift"; sourceTree = "<group>"; };
+		443A6C372ACC11FD008DC815 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		445FA1692ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		445FA16A2ACAC30B00778159 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		445FA16D2ACAC4C800778159 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
-		448D80002AC32D0B003D0403 /* SearchViewContriller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewContriller.swift; sourceTree = "<group>"; };
-		448D80032AC32D0B003D0403 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		448D7FFD2AC32D0B003D0403 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		751C224F2AC0542000FF50C6 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		751C22522AC0542000FF50C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		751C22542AC0542000FF50C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -335,6 +326,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		443A6C362ACC1126008DC815 /* AccountSettingViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				443A6C372ACC11FD008DC815 /* AccountSettingViewController.swift */,
+			);
+			path = AccountSettingViewControler;
+			sourceTree = "<group>";
+		};
 		445FA1672ACAC30B00778159 /* ProfileSettingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,20 +354,9 @@
 		448D7FFC2AC32D0B003D0403 /* ViewControllerTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */,
-				448D7FFF2AC32D0B003D0403 /* PresentationClasses */,
+				448D7FFD2AC32D0B003D0403 /* TabBarViewController.swift */,
 			);
 			path = ViewControllerTabBar;
-			sourceTree = "<group>";
-		};
-		448D7FFF2AC32D0B003D0403 /* PresentationClasses */ = {
-			isa = PBXGroup;
-			children = (
-				448D80002AC32D0B003D0403 /* SearchViewContriller.swift */,
-				448D80032AC32D0B003D0403 /* FavoritesViewController.swift */,
-				445FA1672ACAC30B00778159 /* ProfileSettingViewController */,
-			);
-			path = PresentationClasses;
 			sourceTree = "<group>";
 		};
 		751C22462AC0542000FF50C6 = {
@@ -396,6 +384,8 @@
 				751C22BC2AC1975300FF50C6 /* Fonts */,
 				751C22B72AC1966C00FF50C6 /* Extensions */,
 				751C22B12AC192BA00FF50C6 /* AuthorizationScreen */,
+				445FA1672ACAC30B00778159 /* ProfileSettingViewController */,
+				443A6C362ACC1126008DC815 /* AccountSettingViewControler */,
 				448D7FFC2AC32D0B003D0403 /* ViewControllerTabBar */,
 				751C22522AC0542000FF50C6 /* AppDelegate.swift */,
 				751C22542AC0542000FF50C6 /* SceneDelegate.swift */,
@@ -504,7 +494,6 @@
 			buildPhases = (
 				751C224B2AC0542000FF50C6 /* Sources */,
 				751C224C2AC0542000FF50C6 /* Frameworks */,
-				751C224D2AC0542000FF50C6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -557,23 +546,6 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		751C224D2AC0542000FF50C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				751C225F2AC0542100FF50C6 /* LaunchScreen.storyboard in Resources */,
-				751C22C92AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf in Resources */,
-				751C22C82AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf in Resources */,
-				751C22C72AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf in Resources */,
-				751C22C62AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf in Resources */,
-				751C225C2AC0542100FF50C6 /* Assets.xcassets in Resources */,
-				759550852AC7169B00A47208 /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		751C224B2AC0542000FF50C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -582,13 +554,14 @@
 				751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */,
 				7595507F2AC7133900A47208 /* AuthService.swift in Sources */,
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
+				443A6C382ACC11FD008DC815 /* AccountSettingViewController.swift in Sources */,
 				40BCF6D92AC8C08200912EA4 /* CategoryMusicEnum.swift in Sources */,
 				40BCF6E12AC8C18700912EA4 /* UIImageView.swift in Sources */,
 				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
 				40BCF7042AC9A5B000912EA4 /* MusicButton.swift in Sources */,
 				759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */,
 				759550812AC713B100A47208 /* AuthError.swift in Sources */,
-				448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */,
+				448D80042AC32D0C003D0403 /* TabBarViewController.swift in Sources */,
 				40BCF6D42AC8BECF00912EA4 /* CategoryTableViewCell.swift in Sources */,
 				40BCF6DB2AC8C0F100912EA4 /* UICollectionView + Extension.swift in Sources */,
 				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
@@ -596,9 +569,9 @@
 				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
 				751C22572AC0542000FF50C6 /* ViewController.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
+				443A6C352ACC0BDB008DC815 /* ProfileSettingViewControllerTableViewCell.swift in Sources */,
 				759550832AC7142700A47208 /* Validation.swift in Sources */,
-				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
-				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
+				443A6C342ACC0BD8008DC815 /* ProfileSettingViewController.swift in Sources */,
 				40BCF6E32AC8C27700912EA4 /* CategoryCollectionViewCell.swift in Sources */,
 				40BCF6DD2AC8C14600912EA4 /* HomeTableViewCell.swift in Sources */,
 				7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */,
@@ -609,16 +582,13 @@
 				40BCF70B2AC9E14100912EA4 /* NowPlayingViewController.swift in Sources */,
 				40BCF70D2AC9E18800912EA4 /* NowPlayingButtons.swift in Sources */,
 				40BCF6D62AC8BF2700912EA4 /* HomeViewModel.swift in Sources */,
-				448D80062AC32D0C003D0403 /* SearchViewContriller.swift in Sources */,
 				40BCF6DF2AC8C16E00912EA4 /* UIView.swift in Sources */,
 				759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */,
 				40BCF6E52AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift in Sources */,
 				40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */,
-				40B999192ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift in Sources */,
 				759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */,
 				751C22CC2AC1B08900FF50C6 /* UITextField + Extension.swift in Sources */,
 				40BCF6E72AC8C2AF00912EA4 /* PlayedTrackView.swift in Sources */,
-				40B9991B2ACB0F3A00184D44 /* ProfileSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

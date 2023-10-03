@@ -25,16 +25,18 @@ final class TabBarViewController: UITabBarController {
     
     //MARK: - Generate TabBar
     
+    #warning("SearchViewController, FavoritesViewController ")
+    
     private func generateTabBar() {
         viewControllers = [
             generateVC(
                 viewController: HomeViewController(),
                 image: UIImage(named: "home")),
             generateVC(
-                viewController: SearchViewController(),
+                viewController: HomeViewController(),
                 image: UIImage(named: "search")),
             generateVC(
-                viewController: FavoritesViewController(),
+                viewController: HomeViewController(),
                 image: UIImage(named: "bookmark")),
             generateVC(
                 viewController: ProfileSettingViewController(),

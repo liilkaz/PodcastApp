@@ -8,6 +8,10 @@
 
 import UIKit
 
+struct Theme {
+    static let psVCTableViewCellID = "psVCTableViewCellID"
+}
+
 struct PSViewControllerModel {
     let name: String
     let aboutText: String
