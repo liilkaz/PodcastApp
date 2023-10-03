@@ -7,10 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40B999192ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B999182ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift */; };
+		40B9991B2ACB0F3A00184D44 /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9991A2ACB0F3A00184D44 /* ProfileSettingViewController.swift */; };
+		40BCF6D42AC8BECF00912EA4 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6D32AC8BECF00912EA4 /* CategoryTableViewCell.swift */; };
+		40BCF6D62AC8BF2700912EA4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6D52AC8BF2700912EA4 /* HomeViewModel.swift */; };
+		40BCF6D92AC8C08200912EA4 /* CategoryMusicEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6D82AC8C08200912EA4 /* CategoryMusicEnum.swift */; };
+		40BCF6DB2AC8C0F100912EA4 /* UICollectionView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6DA2AC8C0F100912EA4 /* UICollectionView + Extension.swift */; };
+		40BCF6DD2AC8C14600912EA4 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6DC2AC8C14600912EA4 /* HomeTableViewCell.swift */; };
+		40BCF6DF2AC8C16E00912EA4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6DE2AC8C16E00912EA4 /* UIView.swift */; };
+		40BCF6E12AC8C18700912EA4 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6E02AC8C18700912EA4 /* UIImageView.swift */; };
+		40BCF6E32AC8C27700912EA4 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6E22AC8C27700912EA4 /* CategoryCollectionViewCell.swift */; };
+		40BCF6E52AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6E42AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift */; };
+		40BCF6E72AC8C2AF00912EA4 /* PlayedTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6E62AC8C2AF00912EA4 /* PlayedTrackView.swift */; };
+		40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6EA2AC8C30C00912EA4 /* HomeViewController.swift */; };
+		40BCF7042AC9A5B000912EA4 /* MusicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF7032AC9A5B000912EA4 /* MusicButton.swift */; };
+		40BCF70B2AC9E14100912EA4 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF70A2AC9E14100912EA4 /* NowPlayingViewController.swift */; };
+		40BCF70D2AC9E18800912EA4 /* NowPlayingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF70C2AC9E18800912EA4 /* NowPlayingButtons.swift */; };
 		448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */; };
-		448D80062AC32D0C003D0403 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* SearchVC.swift */; };
-		448D80072AC32D0C003D0403 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80012AC32D0B003D0403 /* HomeVC.swift */; };
-		448D80082AC32D0C003D0403 /* ProfileSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */; };
+		448D80062AC32D0C003D0403 /* SearchViewContriller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* SearchViewContriller.swift */; };
+		448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80032AC32D0B003D0403 /* FavoritesViewController.swift */; };
 		751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22522AC0542000FF50C6 /* AppDelegate.swift */; };
 		751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22542AC0542000FF50C6 /* SceneDelegate.swift */; };
 		751C22572AC0542000FF50C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22562AC0542000FF50C6 /* ViewController.swift */; };
@@ -34,6 +49,13 @@
 		759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */; };
 		759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550712AC2E6D200A47208 /* BottomLineAuth.swift */; };
 		759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550732AC2F22F00A47208 /* UIViewController + Extension.swift */; };
+		759550772AC710EF00A47208 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 759550762AC710EF00A47208 /* FirebaseAuth */; };
+		7595507A2AC7126200A47208 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 759550792AC7126200A47208 /* GoogleSignIn */; };
+		7595507C2AC7126200A47208 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7595507B2AC7126200A47208 /* GoogleSignInSwift */; };
+		7595507F2AC7133900A47208 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595507E2AC7133900A47208 /* AuthService.swift */; };
+		759550812AC713B100A47208 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550802AC713B100A47208 /* AuthError.swift */; };
+		759550832AC7142700A47208 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550822AC7142700A47208 /* Validation.swift */; };
+		759550852AC7169B00A47208 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 759550842AC7169B00A47208 /* GoogleService-Info.plist */; };
 		EB1084422AC533B800C6345E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1084412AC533B800C6345E /* Endpoint.swift */; };
 		EB1084442AC533D400C6345E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1084432AC533D400C6345E /* HTTPMethod.swift */; };
 		EB1084462AC533EB00C6345E /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1084452AC533EB00C6345E /* RequestError.swift */; };
@@ -68,10 +90,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40B999182ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		40B9991A2ACB0F3A00184D44 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
+		40BCF6D32AC8BECF00912EA4 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		40BCF6D52AC8BF2700912EA4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		40BCF6D82AC8C08200912EA4 /* CategoryMusicEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMusicEnum.swift; sourceTree = "<group>"; };
+		40BCF6DA2AC8C0F100912EA4 /* UICollectionView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView + Extension.swift"; sourceTree = "<group>"; };
+		40BCF6DC2AC8C14600912EA4 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		40BCF6DE2AC8C16E00912EA4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		40BCF6E02AC8C18700912EA4 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		40BCF6E22AC8C27700912EA4 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		40BCF6E42AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		40BCF6E62AC8C2AF00912EA4 /* PlayedTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedTrackView.swift; sourceTree = "<group>"; };
+		40BCF6EA2AC8C30C00912EA4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		40BCF7032AC9A5B000912EA4 /* MusicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicButton.swift; sourceTree = "<group>"; };
+		40BCF70A2AC9E14100912EA4 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
+		40BCF70C2AC9E18800912EA4 /* NowPlayingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingButtons.swift; sourceTree = "<group>"; };
+		40BCF7152ACACC1A00912EA4 /* ChannelMusicInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelMusicInfoTableViewCell.swift; sourceTree = "<group>"; };
+		40BCF7172ACACC2900912EA4 /* AllEpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		40BCF71A2ACACC4900912EA4 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		40BCF71E2ACACC9A00912EA4 /* ChannelHeaderView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChannelHeaderView .swift"; sourceTree = "<group>"; };
+		445FA1692ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		445FA16A2ACAC30B00778159 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
+		445FA16D2ACAC4C800778159 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
-		448D80002AC32D0B003D0403 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
-		448D80012AC32D0B003D0403 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingVC.swift; sourceTree = "<group>"; };
+		448D80002AC32D0B003D0403 /* SearchViewContriller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewContriller.swift; sourceTree = "<group>"; };
+		448D80032AC32D0B003D0403 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		751C224F2AC0542000FF50C6 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		751C22522AC0542000FF50C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		751C22542AC0542000FF50C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +141,10 @@
 		7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		759550712AC2E6D200A47208 /* BottomLineAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineAuth.swift; sourceTree = "<group>"; };
 		759550732AC2F22F00A47208 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		7595507E2AC7133900A47208 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		759550802AC713B100A47208 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		759550822AC7142700A47208 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		759550842AC7169B00A47208 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EB1084412AC533B800C6345E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		EB1084432AC533D400C6345E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		EB1084452AC533EB00C6345E /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
@@ -134,6 +182,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7595507C2AC7126200A47208 /* GoogleSignInSwift in Frameworks */,
+				759550772AC710EF00A47208 /* FirebaseAuth in Frameworks */,
+				7595507A2AC7126200A47208 /* GoogleSignIn in Frameworks */,
 				EB9A4B222AC287D600B38D20 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +192,228 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40B999142ACB0EC400184D44 /* ProfileSettings */ = {
+			isa = PBXGroup;
+			children = (
+				40B999172ACB0ED300184D44 /* Model */,
+				40B999162ACB0ED100184D44 /* View */,
+				40B999152ACB0ECE00184D44 /* ViewModel */,
+			);
+			path = ProfileSettings;
+			sourceTree = "<group>";
+		};
+		40B999152ACB0ECE00184D44 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		40B999162ACB0ED100184D44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40B999182ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift */,
+				40B9991A2ACB0F3A00184D44 /* ProfileSettingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		40B999172ACB0ED300184D44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40BCF6CD2AC8BE6600912EA4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF6D52AC8BF2700912EA4 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		40BCF6CE2AC8BE6900912EA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF6D12AC8BEA800912EA4 /* TableViewCell */,
+				40BCF6D22AC8BEB100912EA4 /* CollectionViewCell */,
+				40BCF7022AC98E1600912EA4 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		40BCF6CF2AC8BE6A00912EA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40BCF6D12AC8BEA800912EA4 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF6D32AC8BECF00912EA4 /* CategoryTableViewCell.swift */,
+				40BCF6DC2AC8C14600912EA4 /* HomeTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		40BCF6D22AC8BEB100912EA4 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF6E22AC8C27700912EA4 /* CategoryCollectionViewCell.swift */,
+				40BCF6E42AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		40BCF6D72AC8C07400912EA4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF6D82AC8C08200912EA4 /* CategoryMusicEnum.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		40BCF7022AC98E1600912EA4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF6EA2AC8C30C00912EA4 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		40BCF7062AC9E0C800912EA4 /* Now_Playing */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF7072AC9E0FD00912EA4 /* Model */,
+				40BCF7082AC9E10700912EA4 /* View */,
+				40BCF7092AC9E10C00912EA4 /* ViewModel */,
+			);
+			path = Now_Playing;
+			sourceTree = "<group>";
+		};
+		40BCF7072AC9E0FD00912EA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40BCF7082AC9E10700912EA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF70A2AC9E14100912EA4 /* NowPlayingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		40BCF7092AC9E10C00912EA4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		40BCF70F2ACACAD300912EA4 /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF7102ACACBC800912EA4 /* Model */,
+				40BCF7112ACACBCC00912EA4 /* View */,
+				40BCF7122ACACBD100912EA4 /* ViewModel */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		40BCF7102ACACBC800912EA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40BCF7112ACACBCC00912EA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF71C2ACACC8B00912EA4 /* HeaderView */,
+				40BCF7142ACACC0700912EA4 /* Controller */,
+				40BCF7132ACACBFD00912EA4 /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		40BCF7122ACACBD100912EA4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		40BCF7132ACACBFD00912EA4 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF7152ACACC1A00912EA4 /* ChannelMusicInfoTableViewCell.swift */,
+				40BCF7172ACACC2900912EA4 /* AllEpisodeTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		40BCF7142ACACC0700912EA4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF71A2ACACC4900912EA4 /* ChannelViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		40BCF71C2ACACC8B00912EA4 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF71E2ACACC9A00912EA4 /* ChannelHeaderView .swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		40CA63AD2AC8BD0E00B8B4DA /* Modules  */ = {
+			isa = PBXGroup;
+			children = (
+				40B999142ACB0EC400184D44 /* ProfileSettings */,
+				40BCF70F2ACACAD300912EA4 /* Channel */,
+				40BCF7062AC9E0C800912EA4 /* Now_Playing */,
+				40CA63AE2AC8BD1900B8B4DA /* Home */,
+			);
+			path = "Modules ";
+			sourceTree = "<group>";
+		};
+		40CA63AE2AC8BD1900B8B4DA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				40BCF6D72AC8C07400912EA4 /* Helpers */,
+				40BCF6CF2AC8BE6A00912EA4 /* Model */,
+				40BCF6CE2AC8BE6900912EA4 /* View */,
+				40BCF6CD2AC8BE6600912EA4 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		445FA1672ACAC30B00778159 /* ProfileSettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				445FA16A2ACAC30B00778159 /* ProfileSettingViewController.swift */,
+				445FA1682ACAC30B00778159 /* Cell */,
+			);
+			path = ProfileSettingViewController;
+			sourceTree = "<group>";
+		};
+		445FA1682ACAC30B00778159 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				445FA1692ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		448D7FFC2AC32D0B003D0403 /* ViewControllerTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +426,9 @@
 		448D7FFF2AC32D0B003D0403 /* PresentationClasses */ = {
 			isa = PBXGroup;
 			children = (
+				448D80002AC32D0B003D0403 /* SearchViewContriller.swift */,
+				448D80032AC32D0B003D0403 /* FavoritesViewController.swift */,
+				445FA1672ACAC30B00778159 /* ProfileSettingViewController */,
 				448D80012AC32D0B003D0403 /* HomeVC.swift */,
 				448D80002AC32D0B003D0403 /* SearchVC.swift */,
 				448D80022AC32D0B003D0403 /* ProfileSettingVC.swift */,
@@ -179,6 +455,8 @@
 		751C22512AC0542000FF50C6 /* PodcastApp */ = {
 			isa = PBXGroup;
 			children = (
+				759550842AC7169B00A47208 /* GoogleService-Info.plist */,
+				40CA63AD2AC8BD0E00B8B4DA /* Modules  */,
 				EBB906572AC542E2001B29C5 /* MainModel */,
 				751C22CD2AC1B32600FF50C6 /* Components */,
 				751C22BC2AC1975300FF50C6 /* Fonts */,
@@ -201,6 +479,7 @@
 		751C22B12AC192BA00FF50C6 /* AuthorizationScreen */ = {
 			isa = PBXGroup;
 			children = (
+				7595507D2AC712F700A47208 /* Services */,
 				759550682AC1C97400A47208 /* SignUpScreen */,
 				751C22D82AC1C16100FF50C6 /* CreateAccountScreen */,
 				751C22B42AC194C100FF50C6 /* LoginScreen */,
@@ -227,6 +506,9 @@
 				751C22D42AC1B5EB00FF50C6 /* UIColor + Extension.swift */,
 				7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */,
 				759550732AC2F22F00A47208 /* UIViewController + Extension.swift */,
+				40BCF6DA2AC8C0F100912EA4 /* UICollectionView + Extension.swift */,
+				40BCF6E02AC8C18700912EA4 /* UIImageView.swift */,
+				445FA16D2ACAC4C800778159 /* Theme.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -248,6 +530,9 @@
 				751C22CE2AC1B36A00FF50C6 /* InputField.swift */,
 				751C22D62AC1BC4F00FF50C6 /* Divider.swift */,
 				759550712AC2E6D200A47208 /* BottomLineAuth.swift */,
+				40BCF6E62AC8C2AF00912EA4 /* PlayedTrackView.swift */,
+				40BCF7032AC9A5B000912EA4 /* MusicButton.swift */,
+				40BCF70C2AC9E18800912EA4 /* NowPlayingButtons.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -266,6 +551,16 @@
 				7595506B2AC1D06900A47208 /* SignUpViewController.swift */,
 			);
 			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		7595507D2AC712F700A47208 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7595507E2AC7133900A47208 /* AuthService.swift */,
+				759550802AC713B100A47208 /* AuthError.swift */,
+				759550822AC7142700A47208 /* Validation.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		EB10843F2AC5336B00C6345E /* NetworkManager */ = {
@@ -463,6 +758,11 @@
 			);
 			name = PodcastApp;
 			packageProductDependencies = (
+				759550762AC710EF00A47208 /* FirebaseAuth */,
+				759550792AC7126200A47208 /* GoogleSignIn */,
+				7595507B2AC7126200A47208 /* GoogleSignInSwift */,
+			);
+			packageProductDependencies = (
 				EB9A4B212AC287D600B38D20 /* SnapKit */,
 			);
 			productName = "Podcast App";
@@ -494,6 +794,10 @@
 			);
 			mainGroup = 751C22462AC0542000FF50C6;
 			packageReferences = (
+				759550752AC710EF00A47208 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				759550782AC7126200A47208 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
+			packageReferences = (
 				EB9A4B202AC287D600B38D20 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 751C22502AC0542000FF50C6 /* Products */;
@@ -516,6 +820,7 @@
 				751C22C72AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf in Resources */,
 				751C22C62AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf in Resources */,
 				751C225C2AC0542100FF50C6 /* Assets.xcassets in Resources */,
+				759550852AC7169B00A47208 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,12 +833,13 @@
 			files = (
 				EB4C1C982AC3FD960027D3ED /* CreatePlaylistCellProtocol.swift in Sources */,
 				751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */,
+				7595507F2AC7133900A47208 /* AuthService.swift in Sources */,
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
 				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
 				EB1084442AC533D400C6345E /* HTTPMethod.swift in Sources */,
 				EB1084482AC533FC00C6345E /* HTTPClient.swift in Sources */,
 				759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */,
-				448D80082AC32D0C003D0403 /* ProfileSettingVC.swift in Sources */,
+				759550812AC713B100A47208 /* AuthError.swift in Sources */,
 				448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */,
 				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
 				751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */,
@@ -556,6 +862,11 @@
 				EB9A4B392AC2A4E800B38D20 /* FavoritesListCell.swift in Sources */,
 				EB9A4B492AC2A8BC00B38D20 /* HeaderCell.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
+				759550832AC7142700A47208 /* Validation.swift in Sources */,
+				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
+				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
+				40BCF6E32AC8C27700912EA4 /* CategoryCollectionViewCell.swift in Sources */,
+				40BCF6DD2AC8C14600912EA4 /* HomeTableViewCell.swift in Sources */,
 				7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */,
 				EB4C1C8D2AC3F03D0027D3ED /* CreatePlaylistController.swift in Sources */,
 				751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */,
@@ -565,11 +876,19 @@
 				448D80072AC32D0C003D0403 /* HomeVC.swift in Sources */,
 				EB1084512AC53ACC00C6345E /* Extension + String.swift in Sources */,
 				751C22D12AC1B3F100FF50C6 /* UIView + Extension.swift in Sources */,
-				448D80062AC32D0C003D0403 /* SearchVC.swift in Sources */,
+				40BCF70B2AC9E14100912EA4 /* NowPlayingViewController.swift in Sources */,
+				40BCF70D2AC9E18800912EA4 /* NowPlayingButtons.swift in Sources */,
+				40BCF6D62AC8BF2700912EA4 /* HomeViewModel.swift in Sources */,
+				448D80062AC32D0C003D0403 /* SearchViewContriller.swift in Sources */,
+				40BCF6DF2AC8C16E00912EA4 /* UIView.swift in Sources */,
 				759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */,
-				EB1084552AC53D2100C6345E /* PodcastService.swift in Sources */,
+				40BCF6E52AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift in Sources */,
+				40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */,
+				40B999192ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift in Sources */,
 				759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */,
 				751C22CC2AC1B08900FF50C6 /* UITextField + Extension.swift in Sources */,
+				40BCF6E72AC8C2AF00912EA4 /* PlayedTrackView.swift in Sources */,
+				40B9991B2ACB0F3A00184D44 /* ProfileSettingViewController.swift in Sources */,
 				EB9A4B4F2AC2B12A00B38D20 /* Section.swift in Sources */,
 				EB9A4B272AC2888F00B38D20 /* FavoritsCell.swift in Sources */,
 				EB1084422AC533B800C6345E /* Endpoint.swift in Sources */,
@@ -796,6 +1115,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		759550752AC710EF00A47208 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		759550782AC7126200A47208 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		759550762AC710EF00A47208 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 759550752AC710EF00A47208 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		759550792AC7126200A47208 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 759550782AC7126200A47208 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		7595507B2AC7126200A47208 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 759550782AC7126200A47208 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		EB9A4B202AC287D600B38D20 /* XCRemoteSwiftPackageReference "SnapKit" */ = {

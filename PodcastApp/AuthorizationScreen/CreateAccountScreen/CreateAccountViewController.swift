@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
+import FirebaseAuth
+import GoogleSignInSwift
 
 class CreateAccountViewController: UIViewController {
     
@@ -39,6 +43,7 @@ class CreateAccountViewController: UIViewController {
                               hasBorder: true,
                               cornerRadius: cornerRadius)
         button.setupGoogleImage()
+        button.addTarget(self, action: #selector(didTapGoogleButton), for: .touchUpInside)
         return button
     }()
 
@@ -116,13 +121,63 @@ class CreateAccountViewController: UIViewController {
 
     @objc
     private func didTapEmailButton() {
-        let signUpVC = SignUpViewController()
-        navigationController?.pushViewController(signUpVC, animated: true)
+        guard let email = emailField.inputTextField.text else {return}
+        if !email.isEmpty{
+            let signUpVC = SignUpViewController(email: email)
+            navigationController?.pushViewController(signUpVC, animated: true)
+        } else {
+            emailButton.isEnabled = true
+        }
     }
 
     @objc
     private func didTapLoginButton() {
         navigationController?.popViewController(animated: true)
     }
-
+    
+    @objc
+    private func didTapGoogleButton() {
+       signWithGoogle()
+    }
 }
+
+extension CreateAccountViewController {
+    private func signWithGoogle() {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+          guard error == nil else {
+              showAlert(with: "Warning!", and: AuthError.unknownError.localizedDescription)
+              return
+          }
+
+          guard let user = result?.user,
+            let idToken = user.idToken?.tokenString
+          else {
+              return
+          }
+
+          let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                         accessToken: user.accessToken.tokenString)
+
+            Auth.auth().signIn(with: credential) { [weak self] result, error in
+
+                if result != nil {
+                    let homeVC = TabBarViewController()
+                    homeVC.modalPresentationStyle = .fullScreen
+                    self?.present(homeVC, animated: true)
+                }
+
+                if error != nil {
+                    self?.showAlert(with: "Warning", and: AuthError.unknownError.localizedDescription)
+                }
+            }
+        }
+    }
+}
+
