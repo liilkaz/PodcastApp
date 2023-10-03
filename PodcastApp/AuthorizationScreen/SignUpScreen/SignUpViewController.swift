@@ -9,17 +9,6 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    var email: String
-    
-    init(email: String) {
-        self.email = email
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     let cornerRadius: CGFloat = 24
     
     private lazy var titleLabel = UILabel(name: "Complet your account",
@@ -44,7 +33,6 @@ class SignUpViewController: UIViewController {
                                                             cornerRadius: cornerRadius,
                                                             placeholder: "Enter your email"), title: "E-mail")
         emailField.inputTextField.keyboardType = .emailAddress
-        emailField.inputTextField.text = email
         return emailField
     }()
     
@@ -125,7 +113,6 @@ class SignUpViewController: UIViewController {
         setNavigationBarBackButtonAuth(title: "Sign Up")
         setupView()
         setConstraints()
-        signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
     }
     
     func setupView() {
@@ -187,24 +174,6 @@ class SignUpViewController: UIViewController {
     private func didTapLoginButton() {
         let loginVC = LoginViewController()
         navigationController?.pushViewController(loginVC, animated: true)
-    }
-    
-    @objc
-    private func didTapSignUp() {
-        AuthService.shared.register(
-            email: emailField.inputTextField.text,
-            password: passwordField.inputTextField.text,
-            confirmPassword: confirmPasswordField.inputTextField.text) { [weak self] result in
-                switch result {
-                case .success(let user):
-                    let homeVC = TabBarViewController()
-                    homeVC.modalPresentationStyle = .fullScreen
-                    self?.present(homeVC, animated: true)
-                    print(user)
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-        }
     }
     
 }

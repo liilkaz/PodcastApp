@@ -51,16 +51,4 @@ extension UIColor {
     static var tabBarItemAccent = UIColor.white
     static var mainWhite = UIColor.white
     static var tabBarItemLight = UIColor.activeBlueColor
-    
-    // UIView Color
-    static let lightBlueColor = UIColor(hexString: "#CDDCFA")
-    static let buttonsViewColor = UIColor(hexString: "D3D3D3")
-    
-    
-    // CollectionView Color
-    static let lightPinkColor = UIColor(hexString: "#FFF0F0")
-    static let collectionSelectedColor = UIColor(hexString: "F7F7F7")
-    
-    // TableViewCell Color
-    static let tableViewColor = UIColor(hexString: "ECF0FC")
 }
