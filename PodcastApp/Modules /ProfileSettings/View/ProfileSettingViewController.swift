@@ -1,3 +1,10 @@
+//
+//  ProfileSettingViewController.swift
+//  PodcastApp
+//
+//  Created by Danila Bolshakov on 25.09.2023.
+//
+
 import UIKit
 
 struct PSViewControllerModel {

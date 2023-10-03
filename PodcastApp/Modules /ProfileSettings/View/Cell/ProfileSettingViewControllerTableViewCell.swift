@@ -1,3 +1,10 @@
+//
+//  PSViewControllerTableViewCell.swift
+//  PodcastApp
+//
+//  Created by Danila Bolshakov on 01.10.2023.
+//
+
 import UIKit
 
 final class ProfileSettingViewControllerTableViewCell: UITableViewCell {

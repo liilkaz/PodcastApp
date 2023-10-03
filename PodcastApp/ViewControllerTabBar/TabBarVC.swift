@@ -31,10 +31,10 @@ final class TabBarViewController: UITabBarController {
                 viewController: HomeViewController(),
                 image: UIImage(named: "home")),
             generateVC(
-                viewController: SearchViewController(),
+                viewController: HomeViewController(),
                 image: UIImage(named: "search")),
             generateVC(
-                viewController: FavoritesViewController(),
+                viewController: HomeViewController(),
                 image: UIImage(named: "bookmark")),
             generateVC(
                 viewController: ProfileSettingViewController(),
