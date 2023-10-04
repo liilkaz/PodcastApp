@@ -103,7 +103,7 @@ final class ProfileSettingViewController: UIViewController {
     
     private func setViews() {
         view.addSubviews(headerStackView, settingsTableView, logOutButton)
-        view.backgroundColor = .white
+        view.backgroundColor = .lightGray
     }
 }
 
@@ -116,7 +116,7 @@ extension ProfileSettingViewController {
             avatarImageView.heightAnchor.constraint(equalToConstant: 52),
             avatarImageView.widthAnchor.constraint(equalToConstant: 48),
             
-            headerStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 56),
+            headerStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 56),
             headerStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             headerStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             
@@ -162,13 +162,13 @@ extension ProfileSettingViewController: UITableViewDelegate {
         
         switch indexPath.row {
         case 0:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         case 1:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         case 2:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         default:
             break

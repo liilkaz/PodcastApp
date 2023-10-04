@@ -24,7 +24,8 @@
 		40BCF70B2AC9E14100912EA4 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF70A2AC9E14100912EA4 /* NowPlayingViewController.swift */; };
 		40BCF70D2AC9E18800912EA4 /* NowPlayingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF70C2AC9E18800912EA4 /* NowPlayingButtons.swift */; };
 		443A6C3F2ACC24E8008DC815 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443A6C3E2ACC24E7008DC815 /* TextFieldView.swift */; };
-		448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */; };
+		444BDC322ACD6C260043DDF8 /* sufinter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 444BDC312ACD6C260043DDF8 /* sufinter.ttf */; };
+		444BDC352ACE14B60043DDF8 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444BDC342ACE14B60043DDF8 /* TabBarVC.swift */; };
 		448D80062AC32D0C003D0403 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* AccountSettingViewController.swift */; };
 		751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22522AC0542000FF50C6 /* AppDelegate.swift */; };
 		751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22542AC0542000FF50C6 /* SceneDelegate.swift */; };
@@ -80,10 +81,11 @@
 		40BCF71A2ACACC4900912EA4 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		40BCF71E2ACACC9A00912EA4 /* ChannelHeaderView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChannelHeaderView .swift"; sourceTree = "<group>"; };
 		443A6C3E2ACC24E7008DC815 /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		444BDC312ACD6C260043DDF8 /* sufinter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sufinter.ttf; sourceTree = "<group>"; };
+		444BDC342ACE14B60043DDF8 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		445FA1692ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		445FA16A2ACAC30B00778159 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		445FA16D2ACAC4C800778159 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		448D80002AC32D0B003D0403 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		751C224F2AC0542000FF50C6 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		751C22522AC0542000FF50C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -343,6 +345,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		444BDC332ACE14B60043DDF8 /* ViewControllerTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				444BDC342ACE14B60043DDF8 /* TabBarVC.swift */,
+			);
+			path = ViewControllerTabBar;
+			sourceTree = "<group>";
+		};
 		445FA1672ACAC30B00778159 /* ProfileSettingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,14 +368,6 @@
 				445FA1692ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		448D7FFC2AC32D0B003D0403 /* ViewControllerTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */,
-			);
-			path = ViewControllerTabBar;
 			sourceTree = "<group>";
 		};
 		448D7FFF2AC32D0B003D0403 /* AccountSettingViewController */ = {
@@ -404,7 +406,7 @@
 				751C22B12AC192BA00FF50C6 /* AuthorizationScreen */,
 				445FA1672ACAC30B00778159 /* ProfileSettingViewController */,
 				448D7FFF2AC32D0B003D0403 /* AccountSettingViewController */,
-				448D7FFC2AC32D0B003D0403 /* ViewControllerTabBar */,
+				444BDC332ACE14B60043DDF8 /* ViewControllerTabBar */,
 				751C22522AC0542000FF50C6 /* AppDelegate.swift */,
 				751C22542AC0542000FF50C6 /* SceneDelegate.swift */,
 				751C22562AC0542000FF50C6 /* ViewController.swift */,
@@ -455,6 +457,7 @@
 		751C22BC2AC1975300FF50C6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				444BDC312ACD6C260043DDF8 /* sufinter.ttf */,
 				751C22BF2AC1975300FF50C6 /* PlusJakartaSans-Medium.ttf */,
 				751C22C02AC1975300FF50C6 /* PlusJakartaSans-SemiBold.ttf */,
 				751C22C12AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf */,
@@ -570,6 +573,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444BDC322ACD6C260043DDF8 /* sufinter.ttf in Resources */,
 				751C225F2AC0542100FF50C6 /* LaunchScreen.storyboard in Resources */,
 				751C22C92AC1975300FF50C6 /* PlusJakartaSans-Bold.ttf in Resources */,
 				751C22C82AC1975300FF50C6 /* PlusJakartaSans-Regular.ttf in Resources */,
@@ -596,7 +600,6 @@
 				40BCF7042AC9A5B000912EA4 /* MusicButton.swift in Sources */,
 				759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */,
 				759550812AC713B100A47208 /* AuthError.swift in Sources */,
-				448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */,
 				40BCF6D42AC8BECF00912EA4 /* CategoryTableViewCell.swift in Sources */,
 				40BCF6DB2AC8C0F100912EA4 /* UICollectionView + Extension.swift in Sources */,
 				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
@@ -622,6 +625,7 @@
 				40BCF6E52AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift in Sources */,
 				40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */,
 				40B999192ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift in Sources */,
+				444BDC352ACE14B60043DDF8 /* TabBarVC.swift in Sources */,
 				759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */,
 				751C22CC2AC1B08900FF50C6 /* UITextField + Extension.swift in Sources */,
 				40BCF6E72AC8C2AF00912EA4 /* PlayedTrackView.swift in Sources */,

@@ -22,7 +22,7 @@ final class ProfileSettingViewControllerTableViewCell: UITableViewCell {
     
     private lazy var iconImageView = UIImageView()
     
-    private lazy var menuTitleLabel = UILabel(textColor: .blackTextColor)
+    private lazy var menuTitleLabel = UILabel(font: .sufinter(), textColor: .black, textAlignment: .center, numberOfLines: 0)
     
     private lazy var arrowImageView = UIImageView(image: UIImage(named: "arrowRight"))
     
@@ -57,17 +57,15 @@ private extension ProfileSettingViewControllerTableViewCell {
             iconImageView.leadingAnchor.constraint(equalTo: iconContentView.leadingAnchor, constant: 12),
             iconImageView.trailingAnchor.constraint(equalTo: iconContentView.trailingAnchor, constant: -12),
             iconImageView.bottomAnchor.constraint(equalTo: iconContentView.bottomAnchor, constant: -12),
-            iconImageView.heightAnchor.constraint(equalToConstant: 18),
-            iconImageView.widthAnchor.constraint(equalToConstant: 18),
-            
+
             iconContentView.topAnchor.constraint(equalTo: contentView.topAnchor),
             iconContentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 32),
             iconContentView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -21),
             
-            menuTitleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 16),
+            menuTitleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 37),
             menuTitleLabel.centerYAnchor.constraint(equalTo: iconContentView.centerYAnchor),
             
-            arrowImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -32),
+            arrowImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             arrowImageView.centerYAnchor.constraint(equalTo: iconContentView.centerYAnchor),
             arrowImageView.heightAnchor.constraint(equalToConstant: 24),
             arrowImageView.widthAnchor.constraint(equalToConstant: 24)

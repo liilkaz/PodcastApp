@@ -43,5 +43,9 @@ extension UIFont {
     static func semiBold() -> UIFont? {
         return UIFont(name: "Manrope-SemiBold", size: 16)
     }
+    
+    static func sufinter() -> UIFont? {
+        return UIFont(name: "sufinter", size: 10)
+    }
 }
 

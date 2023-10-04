@@ -86,29 +86,89 @@ final class AccountSettingViewController: UIViewController {
         title: "Date of Birth"
     )
     
-    private lazy var buttonSaveChanges = UIButton(title: "Save Changes", backgroundColor: .gray, titleColor: .darkGray, hasBorder: true)
+    let buttonSaveChanges = UIButton(
+        title: "Save Changes",
+        backgroundColor: .lightGray,
+        titleColor: .darkGray,
+        font: .jakarta16(),
+        hasBorder: false,
+        cornerRadius: 20
+    )
     
+    private lazy var genderLabel = UILabel(
+        text: "Gender",
+        font: .jakarta14medium(),
+        textColor: .darkGrayTextColor,
+        textAlignment: .left
+    )
+    
+    private lazy var checkboxSwitchStack: UIStackView = {
+        let stack = UIStackView()
+        stack.distribution = .fillEqually
+        stack.spacing = 16
+        stack.axis = .horizontal
+        return stack
+    }()
+    
+    lazy var checkBoxButtonOne: UIButton = {
+            let button = UIButton()
+            button.setTitle("Male", for: .normal)
+            var configuration = UIButton.Configuration.filled()
+            configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14)
+            configuration.image = UIImage(systemName: "circle")
+            configuration.imagePadding = 8
+            configuration.imagePlacement = .leading
+            button.configuration = configuration
+            return button
+        }()
+    
+    lazy var checkBoxButtonTwo: UIButton = {
+            let button = UIButton()
+            button.setTitle("Famale", for: .normal)
+            var configuration = UIButton.Configuration.filled()
+            configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14)
+            configuration.image = UIImage(systemName: "circle")
+            configuration.imagePadding = 8
+            configuration.imagePlacement = .leading
+            button.configuration = configuration
+            return button
+        }()
+    
+    @IBAction private func genderPressed(_ sender: UIButton) {
+        checkBoxButtonOne.setImage(UIImage(systemName: "circle"), for: .normal)
+        checkBoxButtonTwo.setImage(UIImage(systemName: "circle"), for: .normal)
+        sender.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+    }
+
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        saveAddTarget()
         setupConstraints()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         view.backgroundColor = .white
-        setNavigationBarWithBackButton(title: "Profile")
+        setNavigationBarBackButtonAuth(title: "Profile")
+    }
+    
+    private func saveAddTarget() {
+        dateOfBirth.inputTextField.setupRightButton(with: UIImage(named: "calendar")!)
+        checkBoxButtonOne.addTarget(self, action: #selector(genderPressed(_:)), for: .touchUpInside)
+        checkBoxButtonTwo.addTarget(self, action: #selector(genderPressed(_:)), for: .touchUpInside)
+        buttonSaveChanges.addTarget(self, action: #selector(saveChanges), for: .touchUpInside)
     }
     
     //MARK: - Setup Views
     
     private func setupViews() {
         view.addSubviews(scrollViewAccountSetting, viewScreen)
-        viewScreen.addSubviews(avatarImageEdit, firstName, lastName, email, dateOfBirth, buttonSaveChanges)
-        dateOfBirth.inputTextField.setupRightButton(with: UIImage(named: "calendar")!)
+        viewScreen.addSubviews(avatarImageEdit, firstName, lastName, email, dateOfBirth, genderLabel, checkboxSwitchStack, buttonSaveChanges)
         avatarImageEdit.addSubviews(imageAvatarView, buttonEdit)
+        checkboxSwitchStack.addArrangedSubviews(checkBoxButtonOne, checkBoxButtonTwo)
     }
     
     //MARK: - @objc private func editButtonTapped()
@@ -116,7 +176,13 @@ final class AccountSettingViewController: UIViewController {
     @objc private func editButtonTapped() {
         print("Edit button pressed")
     }
+    
+    @objc private func saveChanges() {
+        print("Save Changes")
+    }
 }
+
+//MARK: - UITextFieldDelegate
 
 extension AccountSettingViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -134,13 +200,12 @@ extension AccountSettingViewController {
             scrollViewAccountSetting.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollViewAccountSetting.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollViewAccountSetting.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollViewAccountSetting.heightAnchor.constraint(equalToConstant: 2000),
             
             viewScreen.topAnchor.constraint(equalTo: scrollViewAccountSetting.topAnchor, constant: 10),
             viewScreen.leadingAnchor.constraint(equalTo: scrollViewAccountSetting.leadingAnchor, constant: 10),
             viewScreen.trailingAnchor.constraint(equalTo: scrollViewAccountSetting.trailingAnchor, constant: -10),
             viewScreen.bottomAnchor.constraint(equalTo: scrollViewAccountSetting.bottomAnchor, constant: -10),
-            
+
             avatarImageEdit.topAnchor.constraint(equalTo: viewScreen.topAnchor, constant: 37),
             avatarImageEdit.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 138),
             avatarImageEdit.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -138),
@@ -174,11 +239,20 @@ extension AccountSettingViewController {
             dateOfBirth.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
             dateOfBirth.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -32),
             
-            buttonEdit.topAnchor.constraint(equalTo: avatarImageEdit.bottomAnchor, constant: 728),
-            buttonEdit.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
-            buttonEdit.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -32),
-            buttonEdit.heightAnchor.constraint(equalToConstant: 300)
+            genderLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 653),
+            genderLabel.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
+            genderLabel.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -250),
+            
+            checkboxSwitchStack.topAnchor.constraint(equalTo: genderLabel.bottomAnchor, constant: 8),
+            checkboxSwitchStack.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
+            checkboxSwitchStack.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -32),
+            checkboxSwitchStack.bottomAnchor.constraint(equalTo: buttonSaveChanges.topAnchor, constant: -10),
+            
+            buttonSaveChanges.topAnchor.constraint(equalTo: avatarImageEdit.bottomAnchor, constant: 500),
+            buttonSaveChanges.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
+            buttonSaveChanges.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -32),
+            buttonSaveChanges.bottomAnchor.constraint(equalTo: viewScreen.bottomAnchor, constant: -20),
+            buttonSaveChanges.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
 }
-
