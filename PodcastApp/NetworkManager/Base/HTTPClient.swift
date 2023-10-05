@@ -28,7 +28,7 @@ extension PodcastClient {
         urlComponents.queryItems = [URLQueryItem(name: "q", value: search), URLQueryItem(name: "max", value: "7"), URLQueryItem(name: "pretty", value: nil)]
         
         guard let url = urlComponents.url else { return .failure(.invalidURL)}
-      
+        print(url)
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
         request.httpMethod = endpoint.method.rawValue
         request.allHTTPHeaderFields = endpoint.header
