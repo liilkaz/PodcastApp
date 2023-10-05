@@ -13,10 +13,8 @@ final class AccountSettingViewController: UIViewController {
     
     private lazy var scrollViewAccountSetting: UIScrollView = {
         let scroll = UIScrollView()
-        scroll.backgroundColor = .lightBlueColor
-//        scroll.frame = view.bounds
-//        scroll.contentSize = contentCGSize
-        scroll.showsVerticalScrollIndicator = true
+        scroll.backgroundColor = .white
+        scroll.contentSize = view.bounds.size
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
@@ -24,7 +22,6 @@ final class AccountSettingViewController: UIViewController {
     private lazy var viewScreen: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        //view.frame.size = contentCGSize
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -32,6 +29,7 @@ final class AccountSettingViewController: UIViewController {
     private lazy var avatarImageEdit: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
+        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -115,28 +113,29 @@ final class AccountSettingViewController: UIViewController {
     }()
     
     lazy var checkBoxButtonOne: UIButton = {
-            let button = UIButton()
-            button.setTitle("Male", for: .normal)
-            var configuration = UIButton.Configuration.filled()
-            configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14)
-            configuration.image = UIImage(systemName: "circle")
-            configuration.imagePadding = 8
-            configuration.imagePlacement = .leading
-            button.configuration = configuration
-            return button
-        }()
+        let button = UIButton()
+        button.setTitle("Male", for: .normal)
+        var configuration = UIButton.Configuration.filled()
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14)
+        configuration.image = UIImage(systemName: "circle")
+        configuration.imagePadding = 8
+        configuration.imagePlacement = .leading
+        button.configuration = configuration
+        return button
+    }()
     
     lazy var checkBoxButtonTwo: UIButton = {
-            let button = UIButton()
-            button.setTitle("Famale", for: .normal)
-            var configuration = UIButton.Configuration.filled()
-            configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14)
-            configuration.image = UIImage(systemName: "circle")
-            configuration.imagePadding = 8
-            configuration.imagePlacement = .leading
-            button.configuration = configuration
-            return button
-        }()
+        let button = UIButton()
+        button.setTitle("Famale", for: .normal)
+        var configuration = UIButton.Configuration.filled()
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14)
+        configuration.image = UIImage(systemName: "circle")
+        configuration.imagePadding = 8
+        configuration.imagePlacement = .leading
+        button.configuration = configuration
+        button.backgroundColor = .clear
+        return button
+    }()
     
     private var contentCGSize: CGSize {
         CGSize(width: view.frame.width, height: view.frame.height + 1000)
@@ -147,7 +146,7 @@ final class AccountSettingViewController: UIViewController {
         checkBoxButtonTwo.setImage(UIImage(systemName: "circle"), for: .normal)
         sender.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
     }
-
+    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -198,7 +197,7 @@ extension AccountSettingViewController: UITextFieldDelegate {
         if textField.text != nil {
             print("Print TextField")
         }
-   }
+    }
 }
 
 //MARK: - Setup Constraints
@@ -209,29 +208,29 @@ extension AccountSettingViewController {
             scrollViewAccountSetting.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollViewAccountSetting.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollViewAccountSetting.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollViewAccountSetting.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollViewAccountSetting.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
-            viewScreen.topAnchor.constraint(equalTo: scrollViewAccountSetting.topAnchor, constant: 10),
-            viewScreen.leadingAnchor.constraint(equalTo: scrollViewAccountSetting.leadingAnchor, constant: 10),
-            viewScreen.trailingAnchor.constraint(equalTo: scrollViewAccountSetting.trailingAnchor, constant: -10),
-            viewScreen.bottomAnchor.constraint(equalTo: scrollViewAccountSetting.bottomAnchor, constant: -10),
+            viewScreen.topAnchor.constraint(equalTo: scrollViewAccountSetting.topAnchor),
+            viewScreen.leadingAnchor.constraint(equalTo: scrollViewAccountSetting.leadingAnchor),
+            viewScreen.trailingAnchor.constraint(equalTo: scrollViewAccountSetting.trailingAnchor),
+            viewScreen.bottomAnchor.constraint(equalTo: scrollViewAccountSetting.bottomAnchor),
             viewScreen.heightAnchor.constraint(equalTo: view.heightAnchor),
-            viewScreen.widthAnchor.constraint(equalTo: viewScreen.widthAnchor),
-
+            viewScreen.widthAnchor.constraint(equalTo: view.widthAnchor),
+            
             avatarImageEdit.topAnchor.constraint(equalTo: viewScreen.topAnchor, constant: 37),
             avatarImageEdit.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 138),
             avatarImageEdit.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -138),
             avatarImageEdit.heightAnchor.constraint(equalToConstant: 100),
             
             imageAvatarView.topAnchor.constraint(equalTo: avatarImageEdit.topAnchor),
-            imageAvatarView.leadingAnchor.constraint(equalTo: avatarImageEdit.leadingAnchor),
-            imageAvatarView.trailingAnchor.constraint(equalTo: avatarImageEdit.trailingAnchor),
-            imageAvatarView.bottomAnchor.constraint(equalTo: avatarImageEdit.bottomAnchor),
+            imageAvatarView.centerXAnchor.constraint(equalTo: avatarImageEdit.centerXAnchor),
+            imageAvatarView.heightAnchor.constraint(equalToConstant: 100),
+            imageAvatarView.widthAnchor.constraint(equalToConstant: 100),
             
             buttonEdit.topAnchor.constraint(equalTo: avatarImageEdit.topAnchor, constant: 68),
             buttonEdit.leadingAnchor.constraint(equalTo: avatarImageEdit.leadingAnchor, constant: 73),
             buttonEdit.trailingAnchor.constraint(equalTo: avatarImageEdit.trailingAnchor, constant: 5),
-            buttonEdit.heightAnchor.constraint(equalToConstant: 32),
+            buttonEdit.heightAnchor.constraint(equalToConstant: 50),
             
             firstName.topAnchor.constraint(equalTo: avatarImageEdit.bottomAnchor, constant: 16),
             firstName.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
@@ -251,7 +250,7 @@ extension AccountSettingViewController {
             
             genderLabel.topAnchor.constraint(equalTo: dateOfBirth.bottomAnchor, constant: 16),
             genderLabel.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
-            genderLabel.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -250),
+            genderLabel.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -32),
             
             checkboxSwitchStack.topAnchor.constraint(equalTo: genderLabel.bottomAnchor, constant: 8),
             checkboxSwitchStack.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
