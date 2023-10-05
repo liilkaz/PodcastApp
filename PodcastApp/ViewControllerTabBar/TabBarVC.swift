@@ -14,72 +14,28 @@ final class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         generateTabBar()
-        setTabBarAppearance()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.tabBar.itemPositioning = .centered
-        self.tabBar.itemSpacing = 2
-    }
+    
     
     //MARK: - Generate TabBar
     
     private func generateTabBar() {
-        viewControllers = [
-            generateVC(
-                viewController: HomeViewController(),
-                image: UIImage(named: "home")),
-            generateVC(
-                viewController: SearchViewController(),
-                image: UIImage(named: "search")),
-            generateVC(
-                viewController: FavoritesViewController(),
-                image: UIImage(named: "bookmark")),
-            generateVC(
-                viewController: ProfileSettingViewController(),
-                image: UIImage(named: "setting"))
-        ]
+        let home = generateVC(viewController: UINavigationController(rootViewController: HomeViewController()), title: "House", image: UIImage(systemName: "house"))
+        let search = generateVC(viewController: UINavigationController(rootViewController: SearchViewController()), title: "Search", image: UIImage(systemName: "magnifyingglass"))
+        let favorites = generateVC(viewController: UINavigationController(rootViewController: FavoritesViewController()), title: "Favorites", image: UIImage(systemName: "bookmark"))
+        let profile = generateVC(
+            viewController: UINavigationController(rootViewController: ProfileSettingViewController()), title: "Settings",
+                image: UIImage(systemName: "gearshape"))
+        
+        setViewControllers([home, search, favorites, profile], animated: true)
     }
     
     //MARK: - Generate VC
     
-    private func generateVC(viewController: UIViewController, image: UIImage?) -> UIViewController {
+    private func generateVC(viewController: UIViewController, title: String, image: UIImage?) -> UIViewController {
         viewController.tabBarItem.image = image
+        viewController.tabBarItem.title = title
         return viewController
-    }
-    
-    //MARK: - Set TabBar Appearance
-    
-    private func  setTabBarAppearance() {
-        let positionOnX: CGFloat = 5
-        let positionOnY: CGFloat = 3
-        
-        let width = tabBar.bounds.width - positionOnX * 15
-        let hight = tabBar.bounds.height + positionOnY * 1
-        
-        let roundLayer = CAShapeLayer()
-        
-        let bezierPath = UIBezierPath(
-            roundedRect:
-                CGRect(
-                    x: CGFloat(Int(tabBar.bounds.minX + 35)),
-                    y: CGFloat(Int(tabBar.bounds.minY - 5)),
-                    width: width,
-                    height: hight
-                ),
-            cornerRadius: hight / 4
-        )
-        roundLayer.path = bezierPath.cgPath
-        
-        tabBar.layer.insertSublayer(roundLayer, at: 0)
-        tabBar.layer.shadowRadius = 10
-
-        tabBar.itemWidth = width / 5
-        tabBar.itemPositioning = .centered
-        
-        roundLayer.fillColor = UIColor.mainWhite.cgColor
-        tabBar.tintColor = .tabBarItemAccent
-        tabBar.tintColor = .tabBarItemLight
     }
 }

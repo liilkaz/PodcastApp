@@ -25,7 +25,7 @@ extension PodcastClient {
         urlComponents.scheme = endpoint.scheme
         urlComponents.host = endpoint.host
         urlComponents.path = endpoint.path
-        urlComponents.queryItems = [URLQueryItem(name: "q", value: search), URLQueryItem(name: "max", value: "7"), URLQueryItem(name: "pretty", value: nil)]
+        urlComponents.queryItems = [URLQueryItem(name: "q", value: search), URLQueryItem(name: "max", value: "10"), URLQueryItem(name: "pretty", value: nil)]
         
         guard let url = urlComponents.url else { return .failure(.invalidURL)}
         print(url)

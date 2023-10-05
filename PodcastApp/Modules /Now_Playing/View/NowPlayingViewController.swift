@@ -1,6 +1,11 @@
 import UIKit
 
 class NowPlayingViewController: UIViewController {
+    
+    var nowPlayingViewModel: NowPlayingViewModel
+    var musicPlayerViewModel = MusicPlayerViewModel()
+    private var isSliderBeingDragged = false
+
     private var isPlaying = true {
         didSet {
             playPauseButton.isSelected = isPlaying
@@ -21,10 +26,11 @@ class NowPlayingViewController: UIViewController {
     private lazy var musicSlider: UISlider = {
         let slider = UISlider()
         slider.minimumValue = 0
-        slider.maximumValue = 50
         slider.thumbTintColor = .systemBlue
         slider.minimumTrackTintColor = .systemBlue
         slider.maximumTrackTintColor = .lightBlueColor
+        slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        slider.addTarget(self, action: #selector(sliderTouchUp(_:)), for: .touchDown)
         return slider
     }()
     private lazy var buttonsStackView: UIStackView = {
@@ -61,6 +67,17 @@ class NowPlayingViewController: UIViewController {
         return button
     }()
     
+    
+    
+    init(nowPlayingModel: NowPlayingViewModel) {
+        self.nowPlayingViewModel = nowPlayingModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -72,6 +89,50 @@ class NowPlayingViewController: UIViewController {
         setupNavigationBarWithBookmark()
         setupUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupPlayer()
+        configure()
+        musicPlayerViewModel.delegate = self
+    }
+    
+    @IBAction private func sliderTouchUp(_ sender: UISlider) {
+        isSliderBeingDragged = false
+    }
+    
+    @IBAction private func sliderValueChanged(_ sender: UISlider) {
+        isSliderBeingDragged = true
+        let value = musicPlayerViewModel.normalizeMinuteSecondFormat(sender.value)
+        startSliderValueLabel.text = String(format: "%.2f", value).replacingOccurrences(of: ".", with: ":")
+        musicPlayerViewModel.updateCurrentTime(sliderValue: Double(value))
+    }
+
+    
+    private func setupPlayer() {
+        musicPlayerViewModel.setupPlayer(with: nowPlayingViewModel.podcastMusic!)
+        musicPlayerViewModel.playMusic()
+    }
+    
+    private func configure() {
+        let duration = musicPlayerViewModel.currentTime
+        guard let image = nowPlayingViewModel.podcastImage,
+              let podcastTitle = nowPlayingViewModel.podcastTitle,
+              let podcastCreator = nowPlayingViewModel.podcastCreator
+        else {
+            return
+        }
+        Task {
+           let image = try await nowPlayingViewModel.networkService.loadImageTask(from: image)
+            musicImage.image = image
+        }
+        musicLabel.text = podcastTitle
+        creatorLabel.text = podcastCreator
+        endSliderValueLabel.text = String(format: "%.2f", duration).replacingOccurrences(of: ".", with: ":")
+        musicSlider.maximumValue = Float(duration)
+        print(duration)
+    }
+    
     
     private func setupNavigationBarWithBookmark() {
         let button = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: self, action: #selector(bookmarkButtonPressed(_:)))
@@ -93,11 +154,14 @@ class NowPlayingViewController: UIViewController {
         isPlaying.toggle()
         let config = UIImage.SymbolConfiguration(pointSize: 40)
         if isPlaying {
+            musicPlayerViewModel.playMusic()
+            
             UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: []) {
                 sender.setImage(UIImage(systemName: "pause.fill")?.withConfiguration(config), for: .normal)
                 self.musicImage.transform = CGAffineTransform.identity
             }
         } else {
+            musicPlayerViewModel.pauseMusic()
             UIView.animate(withDuration: 0.5) {
                 sender.setImage(UIImage(systemName: "play.fill")?.withConfiguration(config), for: .normal)
                 self.musicImage.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
@@ -168,8 +232,8 @@ class NowPlayingViewController: UIViewController {
             endSliderValueLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             musicSlider.topAnchor.constraint(equalTo: creatorLabel.bottomAnchor, constant: 20),
-            musicSlider.leadingAnchor.constraint(equalTo: startSliderValueLabel.trailingAnchor, constant: 5),
-            musicSlider.trailingAnchor.constraint(equalTo: endSliderValueLabel.leadingAnchor, constant: -5),
+            musicSlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
+            musicSlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
             
             buttonsStackView.topAnchor.constraint(equalTo: musicSlider.bottomAnchor, constant: 30),
             buttonsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
@@ -192,5 +256,15 @@ class NowPlayingViewController: UIViewController {
             forwardButton.centerYAnchor.constraint(equalTo: forwardView.centerYAnchor),
             forwardButton.centerXAnchor.constraint(equalTo: forwardView.centerXAnchor)
         ])
+    }
+}
+
+extension NowPlayingViewController: CurrentTimeValueChangedDelegate {
+    func changeValue(time: Double) {
+        if !musicSlider.isTracking && !musicPlayerViewModel.isPaused {
+            let currentTime = String(format: "%.2f", time).replacingOccurrences(of: ".", with: ":")
+            startSliderValueLabel.text = currentTime
+            musicSlider.setValue(Float(time), animated: true)
+        }
     }
 }

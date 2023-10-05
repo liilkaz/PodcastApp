@@ -24,6 +24,10 @@ class CategoryTagCollectionViewCell: UICollectionViewCell {
         ])
     }
     
+    public func configureCell(text: String) {
+        categoryLabel.text = text
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.cornerRadius = 12

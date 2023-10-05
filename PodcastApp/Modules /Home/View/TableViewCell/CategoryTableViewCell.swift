@@ -1,22 +1,22 @@
 import UIKit
 
+protocol CategoryTagPressedDelegate: AnyObject {
+    func categoryTagPressed(with model: [Item])
+}
+
 class CategoryTableViewCell: UITableViewCell {
+    weak var delegate: CategoryTagPressedDelegate?
     static let identifier = "CategoryTableViewCell"
     private var lastSelectedIndexPath: IndexPath? = nil
     
     private let homeViewModel = HomeViewModel()
-    
-    
     private lazy var personFullnameLabel = UILabel(text: "Abigael Amaniah", font: .boldSystemFont(ofSize: 16), textColor: .black, textAlignment: .center)
-    
     private lazy var loveLifeAndChillLabel = UILabel(text: "Love, Life, and chill", font: .systemFont(ofSize: 14), textColor: .darkGray, textAlignment: .center)
-    
     private lazy var profileImage: UIImageView = {
         let image = UIImageView(cornerRadius: 12)
         image.backgroundColor = .systemBlue
         return image
     }()
-    
     private lazy var categoryLabel = UILabel(text: "Category", font: .systemFont(ofSize: 20), textColor: .black, textAlignment: .center)
     private lazy var seeAllButton: UIButton = {
         let button = UIButton(text: "See All", textColor: .darkGray, backgroundColor: .clear)
@@ -41,11 +41,24 @@ class CategoryTableViewCell: UITableViewCell {
         categoryTagCollectionView.allowsMultipleSelection = false
         lastSelectedIndexPath = IndexPath(row: 0, section: 0)
         setupUI()
+        callNetworkingForFirstCell()
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    private func callNetworkingForFirstCell() {
+        homeViewModel.fetchPodcast(creator: "Emma") { [weak self] result in
+            switch result {
+            case .success(let success):
+                self?.delegate?.categoryTagPressed(with: success)
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
     }
     
     private func setupUI() {
@@ -119,21 +132,43 @@ extension CategoryTableViewCell: UICollectionViewDataSource {
         case categoryCollectionView:
             let title = homeViewModel.categoryArray[indexPath.row]
             let image = homeViewModel.categoryImageArray[indexPath.row]
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
             cell.configureCell(image: image, title: title, tracks: 100)
             return cell
         case categoryTagCollectionView:
+            let creatorName = homeViewModel.categoryTagArray[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryTagCollectionViewCell.identifier, for: indexPath) as! CategoryTagCollectionViewCell
             if indexPath == lastSelectedIndexPath {
                 cell.backgroundColor = .collectionSelectedColor
                 cell.categoryLabel.textColor = .black
             }
+            cell.configureCell(text: creatorName)
             return cell
         default: return UICollectionViewCell()
         }
     }
-    
+}
+
+extension CategoryTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case categoryCollectionView:
+            break
+        case categoryTagCollectionView:
+            let creator = homeViewModel.categoryTagArray[indexPath.row]
+            homeViewModel.fetchPodcast(creator: creator) { [weak self] result in
+                switch result {
+                case .success(let success):
+                    self?.delegate?.categoryTagPressed(with: success)
+                case .failure(let failure):
+                    print(failure.localizedDescription)
+                }
+            }
+        default: break
+        }
+        
+        
         if categoryTagCollectionView == collectionView {
             if let lastIndexPath = lastSelectedIndexPath,
                 let lastCell = collectionView.cellForItem(at: lastIndexPath) as? CategoryTagCollectionViewCell {
@@ -146,5 +181,3 @@ extension CategoryTableViewCell: UICollectionViewDataSource {
         }
     }
 }
-
-extension CategoryTableViewCell: UICollectionViewDelegate {}
