@@ -14,6 +14,9 @@ final class AccountSettingViewController: UIViewController {
     private lazy var scrollViewAccountSetting: UIScrollView = {
         let scroll = UIScrollView()
         scroll.backgroundColor = .lightBlueColor
+//        scroll.frame = view.bounds
+//        scroll.contentSize = contentCGSize
+        scroll.showsVerticalScrollIndicator = true
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
@@ -21,6 +24,7 @@ final class AccountSettingViewController: UIViewController {
     private lazy var viewScreen: UIView = {
         let view = UIView()
         view.backgroundColor = .white
+        //view.frame.size = contentCGSize
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -134,6 +138,10 @@ final class AccountSettingViewController: UIViewController {
             return button
         }()
     
+    private var contentCGSize: CGSize {
+        CGSize(width: view.frame.width, height: view.frame.height + 1000)
+    }
+    
     @IBAction private func genderPressed(_ sender: UIButton) {
         checkBoxButtonOne.setImage(UIImage(systemName: "circle"), for: .normal)
         checkBoxButtonTwo.setImage(UIImage(systemName: "circle"), for: .normal)
@@ -165,7 +173,8 @@ final class AccountSettingViewController: UIViewController {
     //MARK: - Setup Views
     
     private func setupViews() {
-        view.addSubviews(scrollViewAccountSetting, viewScreen)
+        view.addSubviews(scrollViewAccountSetting)
+        scrollViewAccountSetting.addSubviews(viewScreen)
         viewScreen.addSubviews(avatarImageEdit, firstName, lastName, email, dateOfBirth, genderLabel, checkboxSwitchStack, buttonSaveChanges)
         avatarImageEdit.addSubviews(imageAvatarView, buttonEdit)
         checkboxSwitchStack.addArrangedSubviews(checkBoxButtonOne, checkBoxButtonTwo)
@@ -186,7 +195,7 @@ final class AccountSettingViewController: UIViewController {
 
 extension AccountSettingViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let text = textField.text {
+        if textField.text != nil {
             print("Print TextField")
         }
    }
@@ -200,17 +209,19 @@ extension AccountSettingViewController {
             scrollViewAccountSetting.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollViewAccountSetting.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollViewAccountSetting.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollViewAccountSetting.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             viewScreen.topAnchor.constraint(equalTo: scrollViewAccountSetting.topAnchor, constant: 10),
             viewScreen.leadingAnchor.constraint(equalTo: scrollViewAccountSetting.leadingAnchor, constant: 10),
             viewScreen.trailingAnchor.constraint(equalTo: scrollViewAccountSetting.trailingAnchor, constant: -10),
             viewScreen.bottomAnchor.constraint(equalTo: scrollViewAccountSetting.bottomAnchor, constant: -10),
+            viewScreen.heightAnchor.constraint(equalTo: view.heightAnchor),
+            viewScreen.widthAnchor.constraint(equalTo: viewScreen.widthAnchor),
 
             avatarImageEdit.topAnchor.constraint(equalTo: viewScreen.topAnchor, constant: 37),
             avatarImageEdit.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 138),
             avatarImageEdit.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -138),
             avatarImageEdit.heightAnchor.constraint(equalToConstant: 100),
-            avatarImageEdit.widthAnchor.constraint(equalToConstant: 105),
             
             imageAvatarView.topAnchor.constraint(equalTo: avatarImageEdit.topAnchor),
             imageAvatarView.leadingAnchor.constraint(equalTo: avatarImageEdit.leadingAnchor),
@@ -221,34 +232,31 @@ extension AccountSettingViewController {
             buttonEdit.leadingAnchor.constraint(equalTo: avatarImageEdit.leadingAnchor, constant: 73),
             buttonEdit.trailingAnchor.constraint(equalTo: avatarImageEdit.trailingAnchor, constant: 5),
             buttonEdit.heightAnchor.constraint(equalToConstant: 32),
-            buttonEdit.widthAnchor.constraint(equalToConstant: 32),
             
             firstName.topAnchor.constraint(equalTo: avatarImageEdit.bottomAnchor, constant: 16),
             firstName.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
             firstName.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -32),
             
-            lastName.topAnchor.constraint(equalTo: avatarImageEdit.bottomAnchor, constant: 114),
+            lastName.topAnchor.constraint(equalTo: firstName.bottomAnchor, constant: 16),
             lastName.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
             lastName.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -32),
             
-            email.topAnchor.constraint(equalTo: avatarImageEdit.bottomAnchor, constant: 212),
+            email.topAnchor.constraint(equalTo: lastName.bottomAnchor, constant: 16),
             email.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
             email.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -32),
             
-            dateOfBirth.topAnchor.constraint(equalTo: avatarImageEdit.bottomAnchor, constant: 310),
+            dateOfBirth.topAnchor.constraint(equalTo: email.bottomAnchor, constant: 16),
             dateOfBirth.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
             dateOfBirth.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -32),
             
-            genderLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 653),
+            genderLabel.topAnchor.constraint(equalTo: dateOfBirth.bottomAnchor, constant: 16),
             genderLabel.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
             genderLabel.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -250),
             
             checkboxSwitchStack.topAnchor.constraint(equalTo: genderLabel.bottomAnchor, constant: 8),
             checkboxSwitchStack.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
             checkboxSwitchStack.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -32),
-            checkboxSwitchStack.bottomAnchor.constraint(equalTo: buttonSaveChanges.topAnchor, constant: -10),
             
-            buttonSaveChanges.topAnchor.constraint(equalTo: avatarImageEdit.bottomAnchor, constant: 500),
             buttonSaveChanges.leadingAnchor.constraint(equalTo: viewScreen.leadingAnchor, constant: 32),
             buttonSaveChanges.trailingAnchor.constraint(equalTo: viewScreen.trailingAnchor, constant: -32),
             buttonSaveChanges.bottomAnchor.constraint(equalTo: viewScreen.bottomAnchor, constant: -20),
