@@ -2,13 +2,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     private var homeViewModel = HomeViewModel()
-    
-    private lazy var userImage: UIImageView = {
-        let image = UIImageView(image: UIImage(systemName: "person.crop.circle.fill"))
-        image.contentMode = .scaleAspectFill
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
-    }()
+    var items: [Item] = []
     
     private lazy var homeTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -69,7 +63,7 @@ extension HomeViewController: UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 10
+            return items.count
         default: return 0
         }
     }
@@ -78,10 +72,13 @@ extension HomeViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
+            cell.delegate = self
             cell.selectionStyle = .none
             return cell
         case 1:
+            let item = items[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as! HomeTableViewCell
+            cell.configureCell(with: items[indexPath.row])
             cell.selectionStyle = .none
             return cell
         default: break
@@ -89,7 +86,23 @@ extension HomeViewController: UITableViewDataSource {
         return UITableViewCell()
     }
 }
-
 extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let indexPathRow = items[indexPath.row]
+        let model = NowPlayingViewModel(podcastMusic: indexPathRow.enclosureURL, podcastImage: indexPathRow.feedImage, podcastTitle: indexPathRow.feedTitle, podcastCreator: indexPathRow.feedAuthor)
+        let nowPlayingVC = NowPlayingViewController(nowPlayingModel: model)
+        nowPlayingVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(nowPlayingVC, animated: true)
+    }
+}
+
+extension HomeViewController: CategoryTagPressedDelegate {
+    func categoryTagPressed(with model: [Item]) {
+        DispatchQueue.main.async{
+            self.items = model
+            self.homeTableView.reloadData()
+        }
+    }
+    
     
 }
