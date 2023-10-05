@@ -65,6 +65,29 @@
 		EB00A0A62ACC5675000C1CA3 /* PodcastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB00A0A52ACC5675000C1CA3 /* PodcastService.swift */; };
 		EB00A0A92ACC5698000C1CA3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB00A0A82ACC5698000C1CA3 /* NetworkService.swift */; };
 		EB00A0AC2ACC56D5000C1CA3 /* PodcastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB00A0AB2ACC56D5000C1CA3 /* PodcastModel.swift */; };
+		EB181D082ACE6238004EA989 /* ObserverBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D072ACE6238004EA989 /* ObserverBox.swift */; };
+		EB181D0A2ACE624B004EA989 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D092ACE624B004EA989 /* Section.swift */; };
+		EB181D0C2ACE6258004EA989 /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D0B2ACE6258004EA989 /* PlaylistModel.swift */; };
+		EB181D0E2ACE6266004EA989 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D0D2ACE6266004EA989 /* Event.swift */; };
+		EB181D102ACE627A004EA989 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D0F2ACE627A004EA989 /* PlaylistViewController.swift */; };
+		EB181D132ACE6296004EA989 /* FavoritsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D122ACE6296004EA989 /* FavoritsCell.swift */; };
+		EB181D152ACE62A5004EA989 /* FavoritesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D142ACE62A5004EA989 /* FavoritesListCell.swift */; };
+		EB181D172ACE62BB004EA989 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D162ACE62BB004EA989 /* HeaderCell.swift */; };
+		EB181D192ACE62C9004EA989 /* HeaderPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D182ACE62C9004EA989 /* HeaderPlaylist.swift */; };
+		EB181D1B2ACE62DE004EA989 /* PlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D1A2ACE62DE004EA989 /* PlaylistViewModel.swift */; };
+		EB181D1D2ACE6303004EA989 /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D1C2ACE6303004EA989 /* FavoritesListViewModel.swift */; };
+		EB181D1F2ACE631D004EA989 /* FavoritsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D1E2ACE631D004EA989 /* FavoritsCellViewModel.swift */; };
+		EB181D212ACE6339004EA989 /* PlaylistViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D202ACE6339004EA989 /* PlaylistViewModelProtocol.swift */; };
+		EB181D232ACE634C004EA989 /* FavoritsCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D222ACE634C004EA989 /* FavoritsCellViewModelProtocol.swift */; };
+		EB181D262ACE63F0004EA989 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EB181D252ACE63F0004EA989 /* SnapKit */; };
+		EB181D282ACE63F0004EA989 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EB181D272ACE63F0004EA989 /* SnapKit-Dynamic */; };
+		EB181D2E2ACE6451004EA989 /* CreatePlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D2D2ACE6451004EA989 /* CreatePlaylistController.swift */; };
+		EB181D312ACE646C004EA989 /* CreatePlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D302ACE646C004EA989 /* CreatePlaylistCell.swift */; };
+		EB181D332ACE647E004EA989 /* CreatePlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D322ACE647E004EA989 /* CreatePlaylistViewModel.swift */; };
+		EB181D352ACE648C004EA989 /* CreatePlaylistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D342ACE648C004EA989 /* CreatePlaylistCellViewModel.swift */; };
+		EB181D372ACE649B004EA989 /* CreatePlaylistProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D362ACE649B004EA989 /* CreatePlaylistProtocol.swift */; };
+		EB181D392ACE64AA004EA989 /* CreatePlaylistCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D382ACE64AA004EA989 /* CreatePlaylistCellProtocol.swift */; };
+		EB181D3C2ACE8BBC004EA989 /* SavePlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D3B2ACE8BBC004EA989 /* SavePlaylistModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +155,27 @@
 		EB00A0A52ACC5675000C1CA3 /* PodcastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastService.swift; sourceTree = "<group>"; };
 		EB00A0A82ACC5698000C1CA3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		EB00A0AB2ACC56D5000C1CA3 /* PodcastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastModel.swift; sourceTree = "<group>"; };
+		EB181D072ACE6238004EA989 /* ObserverBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverBox.swift; sourceTree = "<group>"; };
+		EB181D092ACE624B004EA989 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		EB181D0B2ACE6258004EA989 /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModel.swift; sourceTree = "<group>"; };
+		EB181D0D2ACE6266004EA989 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		EB181D0F2ACE627A004EA989 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		EB181D122ACE6296004EA989 /* FavoritsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCell.swift; sourceTree = "<group>"; };
+		EB181D142ACE62A5004EA989 /* FavoritesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListCell.swift; sourceTree = "<group>"; };
+		EB181D162ACE62BB004EA989 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		EB181D182ACE62C9004EA989 /* HeaderPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPlaylist.swift; sourceTree = "<group>"; };
+		EB181D1A2ACE62DE004EA989 /* PlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewModel.swift; sourceTree = "<group>"; };
+		EB181D1C2ACE6303004EA989 /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
+		EB181D1E2ACE631D004EA989 /* FavoritsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCellViewModel.swift; sourceTree = "<group>"; };
+		EB181D202ACE6339004EA989 /* PlaylistViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewModelProtocol.swift; sourceTree = "<group>"; };
+		EB181D222ACE634C004EA989 /* FavoritsCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCellViewModelProtocol.swift; sourceTree = "<group>"; };
+		EB181D2D2ACE6451004EA989 /* CreatePlaylistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistController.swift; sourceTree = "<group>"; };
+		EB181D302ACE646C004EA989 /* CreatePlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCell.swift; sourceTree = "<group>"; };
+		EB181D322ACE647E004EA989 /* CreatePlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistViewModel.swift; sourceTree = "<group>"; };
+		EB181D342ACE648C004EA989 /* CreatePlaylistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCellViewModel.swift; sourceTree = "<group>"; };
+		EB181D362ACE649B004EA989 /* CreatePlaylistProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistProtocol.swift; sourceTree = "<group>"; };
+		EB181D382ACE64AA004EA989 /* CreatePlaylistCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCellProtocol.swift; sourceTree = "<group>"; };
+		EB181D3B2ACE8BBC004EA989 /* SavePlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePlaylistModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +183,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB181D282ACE63F0004EA989 /* SnapKit-Dynamic in Frameworks */,
 				7595507C2AC7126200A47208 /* GoogleSignInSwift in Frameworks */,
+				EB181D262ACE63F0004EA989 /* SnapKit in Frameworks */,
 				759550772AC710EF00A47208 /* FirebaseAuth in Frameworks */,
 				7595507A2AC7126200A47208 /* GoogleSignIn in Frameworks */,
 			);
@@ -416,6 +462,8 @@
 				751C22B72AC1966C00FF50C6 /* Extensions */,
 				751C22B12AC192BA00FF50C6 /* AuthorizationScreen */,
 				448D7FFC2AC32D0B003D0403 /* ViewControllerTabBar */,
+				EB181D022ACE61FD004EA989 /* Playlist */,
+				EB181D292ACE6414004EA989 /* CreatePlaylist */,
 				EB00A0912ACC5586000C1CA3 /* NetworkManager */,
 				EB00A0AD2ACC5727000C1CA3 /* Support */,
 				751C22602AC0542100FF50C6 /* Info.plist */,
@@ -602,6 +650,121 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		EB181D022ACE61FD004EA989 /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D032ACE620B004EA989 /* Model */,
+				EB181D042ACE6215004EA989 /* View */,
+				EB181D052ACE621E004EA989 /* ViewModel */,
+				EB181D062ACE6225004EA989 /* Protocols */,
+			);
+			path = Playlist;
+			sourceTree = "<group>";
+		};
+		EB181D032ACE620B004EA989 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D072ACE6238004EA989 /* ObserverBox.swift */,
+				EB181D092ACE624B004EA989 /* Section.swift */,
+				EB181D0B2ACE6258004EA989 /* PlaylistModel.swift */,
+				EB181D0D2ACE6266004EA989 /* Event.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB181D042ACE6215004EA989 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D0F2ACE627A004EA989 /* PlaylistViewController.swift */,
+				EB181D112ACE628C004EA989 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB181D052ACE621E004EA989 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D1A2ACE62DE004EA989 /* PlaylistViewModel.swift */,
+				EB181D1C2ACE6303004EA989 /* FavoritesListViewModel.swift */,
+				EB181D1E2ACE631D004EA989 /* FavoritsCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB181D062ACE6225004EA989 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D202ACE6339004EA989 /* PlaylistViewModelProtocol.swift */,
+				EB181D222ACE634C004EA989 /* FavoritsCellViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EB181D112ACE628C004EA989 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D142ACE62A5004EA989 /* FavoritesListCell.swift */,
+				EB181D122ACE6296004EA989 /* FavoritsCell.swift */,
+				EB181D162ACE62BB004EA989 /* HeaderCell.swift */,
+				EB181D182ACE62C9004EA989 /* HeaderPlaylist.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EB181D292ACE6414004EA989 /* CreatePlaylist */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D3A2ACE8BB3004EA989 /* Model */,
+				EB181D2A2ACE641F004EA989 /* View */,
+				EB181D2B2ACE6425004EA989 /* ViewModel */,
+				EB181D2C2ACE6432004EA989 /* Protocols */,
+			);
+			path = CreatePlaylist;
+			sourceTree = "<group>";
+		};
+		EB181D2A2ACE641F004EA989 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D2D2ACE6451004EA989 /* CreatePlaylistController.swift */,
+				EB181D2F2ACE6465004EA989 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB181D2B2ACE6425004EA989 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D322ACE647E004EA989 /* CreatePlaylistViewModel.swift */,
+				EB181D342ACE648C004EA989 /* CreatePlaylistCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB181D2C2ACE6432004EA989 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D362ACE649B004EA989 /* CreatePlaylistProtocol.swift */,
+				EB181D382ACE64AA004EA989 /* CreatePlaylistCellProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EB181D2F2ACE6465004EA989 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D302ACE646C004EA989 /* CreatePlaylistCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EB181D3A2ACE8BB3004EA989 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D3B2ACE8BBC004EA989 /* SavePlaylistModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -622,6 +785,8 @@
 				759550762AC710EF00A47208 /* FirebaseAuth */,
 				759550792AC7126200A47208 /* GoogleSignIn */,
 				7595507B2AC7126200A47208 /* GoogleSignInSwift */,
+				EB181D252ACE63F0004EA989 /* SnapKit */,
+				EB181D272ACE63F0004EA989 /* SnapKit-Dynamic */,
 			);
 			productName = "Podcast App";
 			productReference = 751C224F2AC0542000FF50C6 /* PodcastApp.app */;
@@ -654,6 +819,7 @@
 			packageReferences = (
 				759550752AC710EF00A47208 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				759550782AC7126200A47208 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				EB181D242ACE63F0004EA989 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 751C22502AC0542000FF50C6 /* Products */;
 			projectDirPath = "";
@@ -686,28 +852,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB181D332ACE647E004EA989 /* CreatePlaylistViewModel.swift in Sources */,
+				EB181D352ACE648C004EA989 /* CreatePlaylistCellViewModel.swift in Sources */,
+				EB181D0A2ACE624B004EA989 /* Section.swift in Sources */,
 				751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */,
+				EB181D232ACE634C004EA989 /* FavoritsCellViewModelProtocol.swift in Sources */,
+				EB181D2E2ACE6451004EA989 /* CreatePlaylistController.swift in Sources */,
 				7595507F2AC7133900A47208 /* AuthService.swift in Sources */,
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
 				40BCF6D92AC8C08200912EA4 /* CategoryMusicEnum.swift in Sources */,
 				EB00A0AC2ACC56D5000C1CA3 /* PodcastModel.swift in Sources */,
 				EB00A0992ACC55DA000C1CA3 /* RequestMethod.swift in Sources */,
 				40BCF6E12AC8C18700912EA4 /* UIImageView.swift in Sources */,
+				EB181D392ACE64AA004EA989 /* CreatePlaylistCellProtocol.swift in Sources */,
 				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
 				40BCF7042AC9A5B000912EA4 /* MusicButton.swift in Sources */,
+				EB181D082ACE6238004EA989 /* ObserverBox.swift in Sources */,
 				759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */,
+				EB181D212ACE6339004EA989 /* PlaylistViewModelProtocol.swift in Sources */,
 				759550812AC713B100A47208 /* AuthError.swift in Sources */,
 				448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */,
+				EB181D102ACE627A004EA989 /* PlaylistViewController.swift in Sources */,
 				40BCF6D42AC8BECF00912EA4 /* CategoryTableViewCell.swift in Sources */,
 				EB00A0A02ACC562C000C1CA3 /* Endpoints.swift in Sources */,
+				EB181D152ACE62A5004EA989 /* FavoritesListCell.swift in Sources */,
+				EB181D372ACE649B004EA989 /* CreatePlaylistProtocol.swift in Sources */,
 				EB00A0A92ACC5698000C1CA3 /* NetworkService.swift in Sources */,
 				40BCF6DB2AC8C0F100912EA4 /* UICollectionView + Extension.swift in Sources */,
 				EB00A0A62ACC5675000C1CA3 /* PodcastService.swift in Sources */,
+				EB181D132ACE6296004EA989 /* FavoritsCell.swift in Sources */,
+				EB181D1D2ACE6303004EA989 /* FavoritesListViewModel.swift in Sources */,
 				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
 				751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */,
+				EB181D1B2ACE62DE004EA989 /* PlaylistViewModel.swift in Sources */,
 				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
+				EB181D0E2ACE6266004EA989 /* Event.swift in Sources */,
 				759550832AC7142700A47208 /* Validation.swift in Sources */,
+				EB181D172ACE62BB004EA989 /* HeaderCell.swift in Sources */,
 				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
 				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
 				40BCF6E32AC8C27700912EA4 /* CategoryCollectionViewCell.swift in Sources */,
@@ -717,10 +899,12 @@
 				751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */,
 				EB00A0942ACC55A3000C1CA3 /* Extension + String.swift in Sources */,
 				751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */,
+				EB181D192ACE62C9004EA989 /* HeaderPlaylist.swift in Sources */,
 				751C22D12AC1B3F100FF50C6 /* UIView + Extension.swift in Sources */,
 				EB00A0972ACC55C0000C1CA3 /* Endpoint.swift in Sources */,
 				40BCF70B2AC9E14100912EA4 /* NowPlayingViewController.swift in Sources */,
 				40BCF70D2AC9E18800912EA4 /* NowPlayingButtons.swift in Sources */,
+				EB181D3C2ACE8BBC004EA989 /* SavePlaylistModel.swift in Sources */,
 				40BCF6D62AC8BF2700912EA4 /* HomeViewModel.swift in Sources */,
 				448D80062AC32D0C003D0403 /* SearchViewContriller.swift in Sources */,
 				40BCF6DF2AC8C16E00912EA4 /* UIView.swift in Sources */,
@@ -729,9 +913,12 @@
 				40BCF6E52AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift in Sources */,
 				40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */,
 				40B999192ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift in Sources */,
+				EB181D0C2ACE6258004EA989 /* PlaylistModel.swift in Sources */,
 				759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */,
 				EB00A09D2ACC55FC000C1CA3 /* HTTPClient.swift in Sources */,
+				EB181D312ACE646C004EA989 /* CreatePlaylistCell.swift in Sources */,
 				751C22CC2AC1B08900FF50C6 /* UITextField + Extension.swift in Sources */,
+				EB181D1F2ACE631D004EA989 /* FavoritsCellViewModel.swift in Sources */,
 				40BCF6E72AC8C2AF00912EA4 /* PlayedTrackView.swift in Sources */,
 				40B9991B2ACB0F3A00184D44 /* ProfileSettingViewController.swift in Sources */,
 				EB00A0A32ACC5655000C1CA3 /* Servisable.swift in Sources */,
@@ -968,6 +1155,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		EB181D242ACE63F0004EA989 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -985,6 +1180,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 759550782AC7126200A47208 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		EB181D252ACE63F0004EA989 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB181D242ACE63F0004EA989 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		EB181D272ACE63F0004EA989 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB181D242ACE63F0004EA989 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
