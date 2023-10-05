@@ -17,6 +17,8 @@ final class CreatePlaylistController: UIViewController {
     
     //MARK: - UI Elements
     
+    private lazy var additionallyButton = UIBarButtonItem()
+    
     private lazy var lineView = UIView()
     
     private lazy var addImageButton: UIButton = {
@@ -84,6 +86,7 @@ final class CreatePlaylistController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavBar()
         setupViews()
         viewModel = CreatePlaylistViewModel()
         observeEvent()
@@ -92,27 +95,51 @@ final class CreatePlaylistController: UIViewController {
     
     //MARK: - Properties
     
+    private func setupNavBar() {
+        
+        let backButton = UIBarButtonItem(
+            image: UIImage(named: "ArrowLeft"),
+            style: .plain,
+            target: self,
+            action: #selector(tapBackButton))
+        
+        additionallyButton = UIBarButtonItem(
+            image: UIImage(named: "ellipsis"),
+            style: .done,
+            target: self,
+            action: #selector(tapButton))
+        
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+        
+        navigationController?.navigationBar.tintColor = UIColor.black
+        navigationItem.leftBarButtonItems = [backButton]
+        navigationItem.rightBarButtonItems = [additionallyButton]
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.title = "Create Playlist"
+    }
+    
     private func setupViews() {
         
         view.backgroundColor = .white
         
         lineView.layer.addSublayer(line)
-
+        
         view.addSubview(iconImage)
         view.addSubview(textField)
         view.addSubview(lineView)
         view.addSubview(searchBar)
         view.addSubview(collectionView)
         view.addSubview(addImageButton)
-                
+        
         iconImage.snp.makeConstraints { make in
             make.size.equalTo(84)
-            make.top.equalToSuperview().inset(30)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
             make.centerX.equalToSuperview()
         }
         
         addImageButton.snp.makeConstraints { make in
-            make.size.equalTo(84)
+            make.size.equalTo(100)
             make.center.equalTo(iconImage.snp.center)
         }
         
@@ -154,7 +181,25 @@ final class CreatePlaylistController: UIViewController {
     }
     
     @objc private func tapButton() {
-        print("Tap button")
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let saveAction = UIAlertAction(title: "Сохранить плейлист", style: .default) { [weak self] _ in
+            
+            guard let self else { return }
+            self.viewModel?.savePlaylist(playlistName: textField.text, icon: iconImage.image)
+        }
+        
+        alertController.addAction(saveAction)
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    @objc private func tapBackButton() {
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func tapAddImage() {
@@ -176,6 +221,10 @@ extension CreatePlaylistController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? CreatePlaylistCell
         let model = viewModel?.getModel(indexPath)
+        cell?.buttonCompletionHandler = { [weak self] state in
+            guard let self else { return }
+            self.viewModel?.addIndex(state: state, index: indexPath.row)
+        }
         cell?.viewModel = model
         cell?.backgroundColor = .customGray
         cell?.clipsToBounds = true

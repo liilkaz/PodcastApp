@@ -14,7 +14,7 @@ final class CreatePlaylistCell: UICollectionViewCell {
     
     weak var viewModel: CreatePlaylistCellProtocol? {
         willSet {
-        
+            
             activityIndicator.startAnimating()
             songName.text = newValue?.songName
             contentLabel.text = newValue?.contentName
@@ -25,6 +25,8 @@ final class CreatePlaylistCell: UICollectionViewCell {
             }
         }
     }
+    
+    var buttonCompletionHandler: ((Bool) -> Void)?
     
     //MARK: - UI Elements
     
@@ -37,19 +39,21 @@ final class CreatePlaylistCell: UICollectionViewCell {
     
     lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
-        indicator.color = .customPink
+        indicator.color = .gray
         indicator.hidesWhenStopped = true
         return indicator
     }()
     
     private lazy var songName: UILabel = {
         let label = UILabel()
+        label.font = UIFont.regular14()
         return label
     }()
     
     private lazy var contentLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .darkGray
+        label.font = UIFont.regular10()
+        label.textColor = .customGray2
         return label
     }()
     
@@ -132,10 +136,13 @@ final class CreatePlaylistCell: UICollectionViewCell {
     }
     
     @objc private func tapAddButton(_ sender: UIButton) {
+    
         sender.isSelected.toggle()
         sender.backgroundColor = sender.backgroundColor == .clear ? .systemGreen : .clear
         sender.tintColor = sender.tintColor == .black ? .white : .black
         sender.layer.borderWidth = sender.layer.borderWidth == 1.5 ? 0.0 : 1.5
-        print("add")
+        
+        let state = sender.backgroundColor == .systemGreen ? true : false
+        buttonCompletionHandler?(state)
     }
 }

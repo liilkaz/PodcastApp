@@ -14,6 +14,7 @@ final class FavoritsCell: UICollectionViewCell {
     
     weak var viewModel: FavoritsCellViewModelProtocol? {
         willSet {
+            
             activityIndicator.startAnimating()
             songName.text = newValue?.songName
             contentLabel.text = newValue?.contentName
@@ -29,7 +30,7 @@ final class FavoritsCell: UICollectionViewCell {
     
     lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
-        indicator.color =  .customPink
+        indicator.color = .gray
         indicator.hidesWhenStopped = true
         return indicator
     }()

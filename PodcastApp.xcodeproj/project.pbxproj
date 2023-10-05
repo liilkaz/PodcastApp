@@ -87,6 +87,7 @@
 		EB181D352ACE648C004EA989 /* CreatePlaylistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D342ACE648C004EA989 /* CreatePlaylistCellViewModel.swift */; };
 		EB181D372ACE649B004EA989 /* CreatePlaylistProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D362ACE649B004EA989 /* CreatePlaylistProtocol.swift */; };
 		EB181D392ACE64AA004EA989 /* CreatePlaylistCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D382ACE64AA004EA989 /* CreatePlaylistCellProtocol.swift */; };
+		EB181D3C2ACE8BBC004EA989 /* SavePlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D3B2ACE8BBC004EA989 /* SavePlaylistModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -174,6 +175,7 @@
 		EB181D342ACE648C004EA989 /* CreatePlaylistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCellViewModel.swift; sourceTree = "<group>"; };
 		EB181D362ACE649B004EA989 /* CreatePlaylistProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistProtocol.swift; sourceTree = "<group>"; };
 		EB181D382ACE64AA004EA989 /* CreatePlaylistCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCellProtocol.swift; sourceTree = "<group>"; };
+		EB181D3B2ACE8BBC004EA989 /* SavePlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePlaylistModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -712,6 +714,7 @@
 		EB181D292ACE6414004EA989 /* CreatePlaylist */ = {
 			isa = PBXGroup;
 			children = (
+				EB181D3A2ACE8BB3004EA989 /* Model */,
 				EB181D2A2ACE641F004EA989 /* View */,
 				EB181D2B2ACE6425004EA989 /* ViewModel */,
 				EB181D2C2ACE6432004EA989 /* Protocols */,
@@ -752,6 +755,14 @@
 				EB181D302ACE646C004EA989 /* CreatePlaylistCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EB181D3A2ACE8BB3004EA989 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB181D3B2ACE8BBC004EA989 /* SavePlaylistModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -893,6 +904,7 @@
 				EB00A0972ACC55C0000C1CA3 /* Endpoint.swift in Sources */,
 				40BCF70B2AC9E14100912EA4 /* NowPlayingViewController.swift in Sources */,
 				40BCF70D2AC9E18800912EA4 /* NowPlayingButtons.swift in Sources */,
+				EB181D3C2ACE8BBC004EA989 /* SavePlaylistModel.swift in Sources */,
 				40BCF6D62AC8BF2700912EA4 /* HomeViewModel.swift in Sources */,
 				448D80062AC32D0C003D0403 /* SearchViewContriller.swift in Sources */,
 				40BCF6DF2AC8C16E00912EA4 /* UIView.swift in Sources */,

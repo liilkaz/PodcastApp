@@ -20,8 +20,8 @@ final class FavoritesListCell: UICollectionViewCell {
             contentLabel.text = newValue?.contentName
             newValue?.icon.bind { [weak self] icon in
                 guard let self else { return }
-                self.iconImage.image = icon
                 Task { self.activityIndicator.stopAnimating() }
+                self.iconImage.image = icon
             }
         }
     }
@@ -29,7 +29,7 @@ final class FavoritesListCell: UICollectionViewCell {
     
     lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
-        indicator.color = .customPink
+        indicator.color = .gray
         indicator.hidesWhenStopped = true
         return indicator
     }()

@@ -12,7 +12,7 @@ final class PlaylistViewModel: PlaylistViewModelProtocol {
     //MARK: - Properties
     
     var eventHandler: ((Event) -> Void)?
-    private var favoritesModel: [Item]?
+    private var favoritesModel: [Item]?    //MARK: - Добавить метод сохранения и загрузки в realm
     private var playlistModel: [Item]?
     private var networkService = NetworkService()
     private let cellColors = [UIColor.customBlue, UIColor.customLightBlue, UIColor.customPink]

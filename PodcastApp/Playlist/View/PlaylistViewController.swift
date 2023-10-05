@@ -15,13 +15,14 @@ final class PlaylistViewController: UIViewController {
     private var viewModel: PlaylistViewModelProtocol?
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, PlaylistModel>?
-    
+        
     //MARK: - Inits
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel = PlaylistViewModel()
+        setupViews()
         configureCollectionView()
         createDataSourse()
         applySnapshot()
@@ -35,6 +36,24 @@ final class PlaylistViewController: UIViewController {
         viewModel?.fetch()
         
     }
+    
+    private func setupViews() {
+        
+        let additionallyButton = UIBarButtonItem(
+            image: UIImage(named: "ellipsis"),
+            style: .done,
+            target: self,
+            action: #selector(tapButton))
+        
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+        
+        navigationController?.navigationBar.tintColor = UIColor.black
+        navigationItem.rightBarButtonItems = [additionallyButton]
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.title = "Playlist"
+    }
+
     
     //MARK: - Observer event
     
@@ -165,7 +184,7 @@ extension PlaylistViewController {
         return UICollectionView.SupplementaryRegistration<HeaderPlaylist>(elementKind: UICollectionView.elementKindSectionHeader) { header, _, _ in
             header.completionHandler = { [weak self] in
                 guard let self else { return }
-                self.present(CreatePlaylistController(), animated: true) }
+                self.navigationController?.pushViewController(CreatePlaylistController(), animated: true) }
         }
     }
     
