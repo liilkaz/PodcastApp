@@ -164,6 +164,7 @@ final class AccountSettingViewController: UIViewController {
     
     private func saveAddTarget() {
         dateOfBirth.inputTextField.setupRightButton(with: UIImage(named: "calendar")!)
+        buttonEdit.addTarget(self, action: #selector(imageTapped(_:)), for: .touchUpInside)
         checkBoxButtonOne.addTarget(self, action: #selector(genderPressed(_:)), for: .touchUpInside)
         checkBoxButtonTwo.addTarget(self, action: #selector(genderPressed(_:)), for: .touchUpInside)
         buttonSaveChanges.addTarget(self, action: #selector(saveChanges), for: .touchUpInside)
@@ -179,7 +180,7 @@ final class AccountSettingViewController: UIViewController {
         checkboxSwitchStack.addArrangedSubviews(checkBoxButtonOne, checkBoxButtonTwo)
     }
     
-    //MARK: - @objc private func editButtonTapped()
+    //MARK: - @objc private func
     
     @objc private func editButtonTapped() {
         print("Edit button pressed")
@@ -189,6 +190,46 @@ final class AccountSettingViewController: UIViewController {
         print("Save Changes")
     }
 }
+
+extension AccountSettingViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    @objc private func imageTapped(_ sender: UIImageView) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            let alertController = UIAlertController(title: "Choose Image Source", message: nil, preferredStyle: .actionSheet)
+          
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alertController.addAction(cancelAction)
+          
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
+                    imagePicker.sourceType = .camera
+                    self.present(imagePicker, animated: true)
+                }
+                alertController.addAction(cameraAction)
+            }
+          
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { _ in
+                    imagePicker.sourceType = .photoLibrary
+                    self.present(imagePicker, animated: true)
+                }
+                alertController.addAction(photoLibraryAction)
+            }
+            
+            alertController.popoverPresentationController?.sourceView = sender
+            present(alertController, animated: true)
+        }
+    
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+            if let image = info[.mediaMetadata] as? UIImage {
+                  imageAvatarView.image = image
+                  imageAvatarView.layer.cornerRadius = imageAvatarView.frame.size.width / 2
+                  imageAvatarView.clipsToBounds = true
+              }
+            picker.dismiss(animated: true)
+        }
+    }
 
 //MARK: - UITextFieldDelegate
 

@@ -26,6 +26,7 @@
 		443A6C3F2ACC24E8008DC815 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443A6C3E2ACC24E7008DC815 /* TextFieldView.swift */; };
 		444BDC322ACD6C260043DDF8 /* sufinter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 444BDC312ACD6C260043DDF8 /* sufinter.ttf */; };
 		444BDC352ACE14B60043DDF8 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444BDC342ACE14B60043DDF8 /* TabBarVC.swift */; };
+		444BDC382ACEE3C60043DDF8 /* ChangePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444BDC372ACEE3C60043DDF8 /* ChangePicture.swift */; };
 		448D80062AC32D0C003D0403 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* AccountSettingViewController.swift */; };
 		751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22522AC0542000FF50C6 /* AppDelegate.swift */; };
 		751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22542AC0542000FF50C6 /* SceneDelegate.swift */; };
@@ -83,6 +84,7 @@
 		443A6C3E2ACC24E7008DC815 /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		444BDC312ACD6C260043DDF8 /* sufinter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sufinter.ttf; sourceTree = "<group>"; };
 		444BDC342ACE14B60043DDF8 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		444BDC372ACEE3C60043DDF8 /* ChangePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePicture.swift; sourceTree = "<group>"; };
 		445FA1692ACAC30B00778159 /* ProfileSettingViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		445FA16A2ACAC30B00778159 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		445FA16D2ACAC4C800778159 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -353,6 +355,14 @@
 			path = ViewControllerTabBar;
 			sourceTree = "<group>";
 		};
+		444BDC362ACEE3900043DDF8 /* ChangePicture */ = {
+			isa = PBXGroup;
+			children = (
+				444BDC372ACEE3C60043DDF8 /* ChangePicture.swift */,
+			);
+			path = ChangePicture;
+			sourceTree = "<group>";
+		};
 		445FA1672ACAC30B00778159 /* ProfileSettingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +383,7 @@
 		448D7FFF2AC32D0B003D0403 /* AccountSettingViewController */ = {
 			isa = PBXGroup;
 			children = (
+				444BDC362ACEE3900043DDF8 /* ChangePicture */,
 				443A6C3E2ACC24E7008DC815 /* TextFieldView.swift */,
 				448D80002AC32D0B003D0403 /* AccountSettingViewController.swift */,
 			);
@@ -623,6 +634,7 @@
 				40BCF6DF2AC8C16E00912EA4 /* UIView.swift in Sources */,
 				759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */,
 				40BCF6E52AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift in Sources */,
+				444BDC382ACEE3C60043DDF8 /* ChangePicture.swift in Sources */,
 				40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */,
 				40B999192ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift in Sources */,
 				444BDC352ACE14B60043DDF8 /* TabBarVC.swift in Sources */,
