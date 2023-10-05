@@ -186,7 +186,7 @@ final class CreatePlaylistController: UIViewController {
         let saveAction = UIAlertAction(title: "Сохранить плейлист", style: .default) { [weak self] _ in
             
             guard let self else { return }
-            self.viewModel?.savePlaylist(playlistName: textField.text, icon: iconImage.image)
+            self.viewModel?.savePlaylist(playlistName: self.textField.text, icon: self.iconImage.image)
         }
         
         alertController.addAction(saveAction)

@@ -26,6 +26,7 @@
 		448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */; };
 		448D80062AC32D0C003D0403 /* SearchViewContriller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* SearchViewContriller.swift */; };
 		448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80032AC32D0B003D0403 /* FavoritesViewController.swift */; };
+		7501629D2ACF4A7500EEC7B4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7501629C2ACF4A7500EEC7B4 /* SnapKit */; };
 		751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22522AC0542000FF50C6 /* AppDelegate.swift */; };
 		751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22542AC0542000FF50C6 /* SceneDelegate.swift */; };
 		751C225C2AC0542100FF50C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751C225B2AC0542100FF50C6 /* Assets.xcassets */; };
@@ -79,8 +80,6 @@
 		EB181D1F2ACE631D004EA989 /* FavoritsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D1E2ACE631D004EA989 /* FavoritsCellViewModel.swift */; };
 		EB181D212ACE6339004EA989 /* PlaylistViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D202ACE6339004EA989 /* PlaylistViewModelProtocol.swift */; };
 		EB181D232ACE634C004EA989 /* FavoritsCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D222ACE634C004EA989 /* FavoritsCellViewModelProtocol.swift */; };
-		EB181D262ACE63F0004EA989 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EB181D252ACE63F0004EA989 /* SnapKit */; };
-		EB181D282ACE63F0004EA989 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EB181D272ACE63F0004EA989 /* SnapKit-Dynamic */; };
 		EB181D2E2ACE6451004EA989 /* CreatePlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D2D2ACE6451004EA989 /* CreatePlaylistController.swift */; };
 		EB181D312ACE646C004EA989 /* CreatePlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D302ACE646C004EA989 /* CreatePlaylistCell.swift */; };
 		EB181D332ACE647E004EA989 /* CreatePlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D322ACE647E004EA989 /* CreatePlaylistViewModel.swift */; };
@@ -89,6 +88,19 @@
 		EB181D392ACE64AA004EA989 /* CreatePlaylistCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D382ACE64AA004EA989 /* CreatePlaylistCellProtocol.swift */; };
 		EB181D3C2ACE8BBC004EA989 /* SavePlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB181D3B2ACE8BBC004EA989 /* SavePlaylistModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		750162A12ACF4B3900EEC7B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		40B999182ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewControllerTableViewCell.swift; sourceTree = "<group>"; };
@@ -183,9 +195,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB181D282ACE63F0004EA989 /* SnapKit-Dynamic in Frameworks */,
 				7595507C2AC7126200A47208 /* GoogleSignInSwift in Frameworks */,
-				EB181D262ACE63F0004EA989 /* SnapKit in Frameworks */,
+				7501629D2ACF4A7500EEC7B4 /* SnapKit in Frameworks */,
 				759550772AC710EF00A47208 /* FirebaseAuth in Frameworks */,
 				7595507A2AC7126200A47208 /* GoogleSignIn in Frameworks */,
 			);
@@ -775,18 +786,19 @@
 				751C224B2AC0542000FF50C6 /* Sources */,
 				751C224C2AC0542000FF50C6 /* Frameworks */,
 				751C224D2AC0542000FF50C6 /* Resources */,
+				750162A12ACF4B3900EEC7B4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				750162A32ACF4BB500EEC7B4 /* PBXTargetDependency */,
 			);
 			name = PodcastApp;
 			packageProductDependencies = (
 				759550762AC710EF00A47208 /* FirebaseAuth */,
 				759550792AC7126200A47208 /* GoogleSignIn */,
 				7595507B2AC7126200A47208 /* GoogleSignInSwift */,
-				EB181D252ACE63F0004EA989 /* SnapKit */,
-				EB181D272ACE63F0004EA989 /* SnapKit-Dynamic */,
+				7501629C2ACF4A7500EEC7B4 /* SnapKit */,
 			);
 			productName = "Podcast App";
 			productReference = 751C224F2AC0542000FF50C6 /* PodcastApp.app */;
@@ -819,7 +831,7 @@
 			packageReferences = (
 				759550752AC710EF00A47208 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				759550782AC7126200A47208 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				EB181D242ACE63F0004EA989 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7501629B2ACF4A7500EEC7B4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 751C22502AC0542000FF50C6 /* Products */;
 			projectDirPath = "";
@@ -926,6 +938,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		750162A32ACF4BB500EEC7B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 750162A22ACF4BB500EEC7B4 /* SnapKit-Dynamic */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		751C225D2AC0542100FF50C6 /* LaunchScreen.storyboard */ = {
@@ -1139,6 +1158,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7501629B2ACF4A7500EEC7B4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 		759550752AC710EF00A47208 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1155,17 +1182,19 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		EB181D242ACE63F0004EA989 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7501629C2ACF4A7500EEC7B4 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7501629B2ACF4A7500EEC7B4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		750162A22ACF4BB500EEC7B4 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7501629B2ACF4A7500EEC7B4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
 		759550762AC710EF00A47208 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 759550752AC710EF00A47208 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -1180,16 +1209,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 759550782AC7126200A47208 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
-		};
-		EB181D252ACE63F0004EA989 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EB181D242ACE63F0004EA989 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		EB181D272ACE63F0004EA989 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EB181D242ACE63F0004EA989 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
