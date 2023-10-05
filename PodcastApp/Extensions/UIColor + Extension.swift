@@ -58,4 +58,11 @@ extension UIColor {
     
     // TableViewCell Color
     static let tableViewColor = UIColor(hexString: "ECF0FC")
+    
+    // Custom Colors
+    static let customBlue = UIColor(hexString: "#E6F6FF")
+    static let customLightBlue = UIColor(hexString: "#E8F6FD")
+    static let customPink = UIColor(hexString: "#FFE5EC")
+    static let customGray = UIColor(hexString: "#EDF0FC")
+    static let customGray2 = UIColor(hexString: "#858391")
 }
