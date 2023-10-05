@@ -15,7 +15,7 @@ final class PlaylistViewController: UIViewController {
     private var viewModel: PlaylistViewModelProtocol?
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, PlaylistModel>?
-        
+    
     //MARK: - Inits
     
     override func viewDidLoad() {
@@ -53,7 +53,7 @@ final class PlaylistViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.title = "Playlist"
     }
-
+    
     
     //MARK: - Observer event
     

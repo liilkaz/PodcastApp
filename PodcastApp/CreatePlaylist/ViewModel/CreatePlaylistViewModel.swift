@@ -32,8 +32,6 @@ final class CreatePlaylistViewModel: CreatePlaylistProtocol {
     func addIndex(state: Bool, index: Int) {
         
         if state {
-            print(state)
-            print(index)
             self.indexPath.append(index)
         }
     }
@@ -86,7 +84,6 @@ final class CreatePlaylistViewModel: CreatePlaylistProtocol {
               let model = model else { return }
         
         self.indexPath.forEach({ index in
-            print(index)
             let element = model[index]
             saveElements.append(element)
         })
