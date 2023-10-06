@@ -73,7 +73,6 @@ final class CreatePlaylistController: UIViewController {
         super.viewWillAppear(animated)
 
         viewModel?.fetch()
-
     }
 
     override func viewDidLoad() {
@@ -83,33 +82,21 @@ final class CreatePlaylistController: UIViewController {
         setupViews()
         viewModel = CreatePlaylistViewModel()
         observeEvent()
-
     }
 
     //MARK: - Properties
     
     private func setupNavBar() {
-
-        let backButton = UIBarButtonItem(
-            image: UIImage(named: "ArrowLeft"),
-            style: .plain,
-            target: self,
-            action: #selector(tapBackButton))
-
+        setNavigationBarWithBackButton(title: "Create Playlist")
+        
         additionallyButton = UIBarButtonItem(
-            image: UIImage(named: "ellipsis"),
+            image: UIImage(systemName: "ellipsis"),
             style: .done,
             target: self,
             action: #selector(tapButton))
-
-        navigationController?.navigationBar.backgroundColor = .white
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
-
-        navigationController?.navigationBar.tintColor = UIColor.black
-        navigationItem.leftBarButtonItems = [backButton]
-        navigationItem.rightBarButtonItems = [additionallyButton]
-        navigationItem.largeTitleDisplayMode = .never
-        navigationItem.title = "Create Playlist"
+        additionallyButton.tintColor = .black
+        
+        navigationItem.rightBarButtonItem = additionallyButton
     }
 
     private func setupViews() {
@@ -179,7 +166,7 @@ final class CreatePlaylistController: UIViewController {
         let saveAction = UIAlertAction(title: "Сохранить плейлист", style: .default) { [weak self] _ in
 
             guard let self else { return }
-            self.viewModel?.savePlaylist(playlistName: textField.text, icon: iconImage.image)
+            self.viewModel?.savePlaylist(playlistName: self.textField.text, icon: self.iconImage.image)
         }
 
         alertController.addAction(saveAction)

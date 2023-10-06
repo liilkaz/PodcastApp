@@ -9,13 +9,7 @@ final class HeaderPlaylist: UICollectionReusableView {
 
     //MARK: - UI Elements
     
-    private lazy var headerLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Your Playlist"
-        label.textAlignment = .center
-        label.font = UIFont.semiBold()
-        return label
-    }()
+    private lazy var headerLabel = UILabel(text: "Your Playlist", font: .jakarta16semibold(), textColor: .blackTextColor, textAlignment: .center)
 
     private lazy var backgrView: UIView = {
         let view = UIView()
@@ -36,11 +30,7 @@ final class HeaderPlaylist: UICollectionReusableView {
         return image
     }()
 
-    private lazy var createLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Create Playlist"
-        return label
-    }()
+    private lazy var createLabel = UILabel(text: "Create Playlist", textColor: .blackTextColor)
 
     private lazy var createButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -79,7 +69,7 @@ final class HeaderPlaylist: UICollectionReusableView {
 
         headerLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(12)
-            make.left.equalToSuperview().inset(32)
+            make.left.equalToSuperview().inset(0)
         }
 
         backgrView.snp.makeConstraints { make in

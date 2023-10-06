@@ -35,18 +35,11 @@ final class FavoritesListCell: UICollectionViewCell {
         return image
     }()
 
-    private lazy var songName: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.regular14()
-        return label
-    }()
+    private lazy var songName = UILabel(font: .regular14(),
+                                        textColor: .blackTextColor, numberOfLines: 1)
 
-    private lazy var contentLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.regular10()
-        label.textColor = .customGray2
-        return label
-    }()
+    private lazy var contentLabel = UILabel (font: .regular10(),
+                                             textColor: .customGray2, numberOfLines: 1)
 
     //MARK: - Inits
     
@@ -54,7 +47,6 @@ final class FavoritesListCell: UICollectionViewCell {
         super.prepareForReuse()
 
         iconImage.image = nil
-
     }
 
     override init(frame: CGRect) {

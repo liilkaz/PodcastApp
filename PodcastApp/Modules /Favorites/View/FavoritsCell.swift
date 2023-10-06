@@ -35,26 +35,12 @@ final class FavoritsCell: UICollectionViewCell {
         return image
     }()
 
-    private lazy var songName: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.regular14()
-        return label
-    }()
+    private lazy var songName = UILabel(font: .regular14(), textColor: .blackTextColor)
 
-    private lazy var contentLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.regular10()
-        label.textColor = .customGray2
-        return label
-    }()
 
-    private lazy var stackView: UIStackView = {
-        let view = UIStackView()
-        view.distribution = .fill
-        view.axis = .vertical
-        view.spacing = 10
-        return view
-    }()
+    private lazy var contentLabel = UILabel(font: .regular10(), textColor: .customGray2)
+
+    private lazy var stackView = UIStackView(axis: .vertical, spacing: 10)
 
     //MARK: - Inits
     
@@ -62,14 +48,12 @@ final class FavoritsCell: UICollectionViewCell {
         super.prepareForReuse()
 
         iconImage.image = nil
-
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         setupViews()
-
     }
 
     required init?(coder: NSCoder) {
@@ -79,6 +63,7 @@ final class FavoritsCell: UICollectionViewCell {
     //MARK: - Methods
     
     private func setupViews() {
+        stackView.distribution = .fill
 
         iconImage.addSubviews(activityIndicator)
 
