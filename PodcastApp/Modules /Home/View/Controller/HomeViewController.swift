@@ -14,16 +14,17 @@ class HomeViewController: UIViewController {
         tableView.separatorStyle = .none
         return tableView
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         view.backgroundColor = .white
         setupUI()
         navigationItem.title = "Profile"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        homeTableView.reloadData()
     }
     
     @IBAction private func seeAllButtonPressed(_ sender: UIButton) {
@@ -72,7 +73,8 @@ extension HomeViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
-            cell.delegate = self
+            cell.categoryDelegate = self
+            cell.tagDelegate = self
             cell.selectionStyle = .none
             return cell
         case 1:
@@ -89,7 +91,15 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPathRow = items[indexPath.row]
-        let model = NowPlayingViewModel(podcastMusic: indexPathRow.enclosureURL, podcastImage: indexPathRow.feedImage, podcastTitle: indexPathRow.feedTitle, podcastCreator: indexPathRow.feedAuthor)
+        guard let id = indexPathRow.feedID,
+              let urlMusic = indexPathRow.enclosureURL,
+              let image = indexPathRow.feedImage,
+              let title = indexPathRow.feedTitle,
+              let creator = indexPathRow.feedAuthor
+        else {
+            return
+        }
+        let model = NowPlayingViewModel(podcastId: id, podcastMusic: urlMusic, podcastImage: image, podcastTitle: title, podcastCreator: creator)
         let nowPlayingVC = NowPlayingViewController(nowPlayingModel: model)
         nowPlayingVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(nowPlayingVC, animated: true)
@@ -103,6 +113,13 @@ extension HomeViewController: CategoryTagPressedDelegate {
             self.homeTableView.reloadData()
         }
     }
-    
-    
+}
+
+extension HomeViewController: CategoryPressedDelegate {
+    func categoryPressed(with model: ChannelModel) {
+        let channelModel = ChannelViewModel(channelModel: model)
+        let vc = ChannelViewController(channelViewModel: channelModel)
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

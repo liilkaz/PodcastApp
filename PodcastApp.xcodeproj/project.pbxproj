@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4033BE0C2AD094D90064339A /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF71A2ACACC4900912EA4 /* ChannelViewController.swift */; };
+		4033BE0F2AD095CC0064339A /* ChannelMusicInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF7152ACACC1A00912EA4 /* ChannelMusicInfoTableViewCell.swift */; };
+		4033BE102AD095DE0064339A /* AllEpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF7172ACACC2900912EA4 /* AllEpisodeTableViewCell.swift */; };
+		4033BE112AD095F50064339A /* ChannelHeaderView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF71E2ACACC9A00912EA4 /* ChannelHeaderView .swift */; };
+		4033BE122AD096070064339A /* ChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033BE0D2AD0952D0064339A /* ChannelViewModel.swift */; };
+		4033BE142AD096A40064339A /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033BE132AD096A40064339A /* ChannelModel.swift */; };
+		4033BE162AD096BB0064339A /* FeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033BE152AD096BB0064339A /* FeedsModel.swift */; };
+		4033BE192AD097580064339A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4033BE182AD097580064339A /* Kingfisher */; };
 		4060448C2ACD7CF0001002BA /* PopularCreatorsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4060448B2ACD7CF0001002BA /* PopularCreatorsEnum.swift */; };
 		4060448E2ACD93A1001002BA /* CreatorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4060448D2ACD93A1001002BA /* CreatorsModel.swift */; };
 		406044902ACDBDD7001002BA /* SavePodcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4060448F2ACDBDD7001002BA /* SavePodcastViewModel.swift */; };
@@ -97,6 +105,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4033BE0D2AD0952D0064339A /* ChannelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChannelViewModel.swift; path = PodcastApp/NetworkManager/MainModel/ChannelViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4033BE132AD096A40064339A /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChannelModel.swift; path = PodcastApp/NetworkManager/MainModel/ChannelModel.swift; sourceTree = SOURCE_ROOT; };
+		4033BE152AD096BB0064339A /* FeedsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsModel.swift; sourceTree = "<group>"; };
 		4060448B2ACD7CF0001002BA /* PopularCreatorsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCreatorsEnum.swift; sourceTree = "<group>"; };
 		4060448D2ACD93A1001002BA /* CreatorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorsModel.swift; sourceTree = "<group>"; };
 		4060448F2ACDBDD7001002BA /* SavePodcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePodcastViewModel.swift; sourceTree = "<group>"; };
@@ -195,6 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4033BE192AD097580064339A /* Kingfisher in Frameworks */,
 				406044932ACDBE51001002BA /* RealmSwift in Frameworks */,
 				7595507C2AC7126200A47208 /* GoogleSignInSwift in Frameworks */,
 				759550772AC710EF00A47208 /* FirebaseAuth in Frameworks */,
@@ -463,6 +475,7 @@
 		40BCF7102ACACBC800912EA4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4033BE132AD096A40064339A /* ChannelModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -480,6 +493,7 @@
 		40BCF7122ACACBD100912EA4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4033BE0D2AD0952D0064339A /* ChannelViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -770,6 +784,7 @@
 			children = (
 				EB00A0AB2ACC56D5000C1CA3 /* PodcastModel.swift */,
 				4060448D2ACD93A1001002BA /* CreatorsModel.swift */,
+				4033BE152AD096BB0064339A /* FeedsModel.swift */,
 			);
 			path = MainModel;
 			sourceTree = "<group>";
@@ -805,6 +820,7 @@
 				7595507B2AC7126200A47208 /* GoogleSignInSwift */,
 				406044922ACDBE51001002BA /* RealmSwift */,
 				406044B02AD01AB9001002BA /* SnapKit */,
+				4033BE182AD097580064339A /* Kingfisher */,
 			);
 			productName = "Podcast App";
 			productReference = 751C224F2AC0542000FF50C6 /* PodcastApp.app */;
@@ -839,6 +855,7 @@
 				759550782AC7126200A47208 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				406044912ACDBE51001002BA /* XCRemoteSwiftPackageReference "realm-swift" */,
 				406044AF2AD01AB9001002BA /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4033BE172AD097580064339A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 751C22502AC0542000FF50C6 /* Products */;
 			projectDirPath = "";
@@ -877,6 +894,7 @@
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
 				40BCF6D92AC8C08200912EA4 /* CategoryMusicEnum.swift in Sources */,
 				EB00A0AC2ACC56D5000C1CA3 /* PodcastModel.swift in Sources */,
+				4033BE0F2AD095CC0064339A /* ChannelMusicInfoTableViewCell.swift in Sources */,
 				EB00A0992ACC55DA000C1CA3 /* RequestMethod.swift in Sources */,
 				406044BE2AD01CAB001002BA /* PlaylistModel.swift in Sources */,
 				40BCF6E12AC8C18700912EA4 /* UIImageView.swift in Sources */,
@@ -895,6 +913,7 @@
 				EB00A0A62ACC5675000C1CA3 /* PodcastService.swift in Sources */,
 				406044BA2AD01C6D001002BA /* Event.swift in Sources */,
 				406044CB2AD01DBA001002BA /* HeaderPlaylist.swift in Sources */,
+				4033BE112AD095F50064339A /* ChannelHeaderView .swift in Sources */,
 				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
 				4060448E2ACD93A1001002BA /* CreatorsModel.swift in Sources */,
 				751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */,
@@ -910,12 +929,16 @@
 				40BCF6E32AC8C27700912EA4 /* CategoryCollectionViewCell.swift in Sources */,
 				40BCF6DD2AC8C14600912EA4 /* HomeTableViewCell.swift in Sources */,
 				406044C92AD01D83001002BA /* FavoritsCell.swift in Sources */,
+				4033BE142AD096A40064339A /* ChannelModel.swift in Sources */,
 				406044CF2AD01E65001002BA /* FavoritesListViewModel.swift in Sources */,
+				4033BE0C2AD094D90064339A /* ChannelViewController.swift in Sources */,
 				7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */,
 				751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */,
 				751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */,
 				406044A92AD019A8001002BA /* CreatePlaylistCellProtocol .swift in Sources */,
 				EB00A0942ACC55A3000C1CA3 /* Extension + String.swift in Sources */,
+				4033BE162AD096BB0064339A /* FeedsModel.swift in Sources */,
+				4033BE122AD096070064339A /* ChannelViewModel.swift in Sources */,
 				751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */,
 				406044B42AD01B48001002BA /* CreatePlaylistController .swift in Sources */,
 				406044992ACEB879001002BA /* MusicPlayerViewModel.swift in Sources */,
@@ -930,6 +953,7 @@
 				EB00A09B2ACC55ED000C1CA3 /* RequestError.swift in Sources */,
 				406044AB2AD019E5001002BA /* CreatePlaylistProtocol.swift in Sources */,
 				406044D32AD01EA7001002BA /* PlaylistViewModel.swift in Sources */,
+				4033BE102AD095DE0064339A /* AllEpisodeTableViewCell.swift in Sources */,
 				40BCF6E52AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift in Sources */,
 				406044C52AD01D23001002BA /* PlaylistViewModelProtocol.swift in Sources */,
 				40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */,
@@ -1164,6 +1188,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4033BE172AD097580064339A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.9.1;
+			};
+		};
 		406044912ACDBE51001002BA /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -1199,6 +1231,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4033BE182AD097580064339A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4033BE172AD097580064339A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		406044922ACDBE51001002BA /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 406044912ACDBE51001002BA /* XCRemoteSwiftPackageReference "realm-swift" */;

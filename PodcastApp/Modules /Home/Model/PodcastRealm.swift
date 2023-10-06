@@ -5,7 +5,6 @@ import RealmSwift
 // imageURL -> link to photo podcast
 // title ->  podcast title
 // creator -> podcast creator title
-// duration -> playback time
 
 class ItemPodcastModel: Object {
     @Persisted var id: Int = 0
@@ -13,7 +12,6 @@ class ItemPodcastModel: Object {
     @Persisted var imageURL: String = ""
     @Persisted var title: String = ""
     @Persisted var creator: String = ""
-    @Persisted var duration: Int = 0
 }
 
 class RealmService {
@@ -26,7 +24,7 @@ class RealmService {
         object.isEmpty ? failureCompletion() : successComletion()
     }
     
-    func savePodcastToRealm(id: Int, podcastURL: String, imageURL: String, title: String, creator: String, duration: Int) {
+    func savePodcastToRealm(id: Int, podcastURL: String, imageURL: String, title: String, creator: String) {
         checkPodcastInRealm(id: id, successComletion: {
             print("Object with id \(id) already exists in the database.")
         }, failureCompletion: {
@@ -36,7 +34,6 @@ class RealmService {
             newPodcast.imageURL = imageURL
             newPodcast.title = title
             newPodcast.creator = creator
-            newPodcast.duration = duration
             do {
                 try self.realm.write {
                     self.realm.add(newPodcast)

@@ -30,8 +30,7 @@ class HomeTableViewCell: UITableViewCell {
             let podcastURL = model.enclosureURL,
             let imageURL = model.feedImage,
             let title = model.title,
-            let creator = model.feedAuthor,
-            let duration = model.duration
+            let creator = model.feedAuthor
         else {
             return
         }
@@ -39,7 +38,7 @@ class HomeTableViewCell: UITableViewCell {
         isIconChanged.toggle()
         if isIconChanged {
             sender.setImage(UIImage(systemName: "heart.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .normal)
-            savePodcastViewModel.realmDatabase.savePodcastToRealm(id: id, podcastURL: podcastURL, imageURL: imageURL, title: title, creator: creator, duration: duration)
+            savePodcastViewModel.realmDatabase.savePodcastToRealm(id: id, podcastURL: podcastURL, imageURL: imageURL, title: title, creator: creator)
         } else {
             sender.setImage(UIImage(systemName: "heart")?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .normal)
             savePodcastViewModel.realmDatabase.deletePodcastFromRealm(id: id)
