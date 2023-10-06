@@ -72,7 +72,7 @@ final class ProfileSettingViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
-        tableView.register(ProfileSettingViewControllerTableViewCell.self, forCellReuseIdentifier: Theme.psVCTableViewCellID)
+        tableView.register(ProfileSettingViewControllerTableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -142,7 +142,7 @@ extension ProfileSettingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Theme.psVCTableViewCellID, for: indexPath) as? ProfileSettingViewControllerTableViewCell  else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ProfileSettingViewControllerTableViewCell  else { return UITableViewCell() }
         let item = models[indexPath.row]
         cell.selectionStyle = .none
         cell.configure(model: item)
@@ -162,13 +162,13 @@ extension ProfileSettingViewController: UITableViewDelegate {
         
         switch indexPath.row {
         case 0:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         case 1:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         case 2:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         default:
             break
