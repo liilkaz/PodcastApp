@@ -72,7 +72,7 @@ final class ProfileSettingViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
-        tableView.register(ProfileSettingViewControllerTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(ProfileSettingViewControllerTableViewCell.self, forCellReuseIdentifier: "Theme.psVCTableViewCellID")
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -103,7 +103,7 @@ final class ProfileSettingViewController: UIViewController {
     
     private func setViews() {
         view.addSubviews(headerStackView, settingsTableView, logOutButton)
-        view.backgroundColor = .white
+        view.backgroundColor = .lightGray
     }
 }
 
@@ -116,7 +116,7 @@ extension ProfileSettingViewController {
             avatarImageView.heightAnchor.constraint(equalToConstant: 52),
             avatarImageView.widthAnchor.constraint(equalToConstant: 48),
             
-            headerStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 56),
+            headerStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 56),
             headerStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             headerStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             
@@ -142,7 +142,7 @@ extension ProfileSettingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ProfileSettingViewControllerTableViewCell  else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Theme.psVCTableViewCellID", for: indexPath) as? ProfileSettingViewControllerTableViewCell  else { return UITableViewCell() }
         let item = models[indexPath.row]
         cell.selectionStyle = .none
         cell.configure(model: item)
