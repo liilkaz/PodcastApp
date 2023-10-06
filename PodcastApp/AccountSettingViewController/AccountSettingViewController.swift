@@ -9,12 +9,12 @@ import UIKit
 
 final class AccountSettingViewController: UIViewController {
     
-    //MARK: - Views UI
+    //MARK: - User Interface
     
     private lazy var scrollViewAccountSetting: UIScrollView = {
         let scroll = UIScrollView()
         scroll.backgroundColor = .white
-        scroll.contentSize = view.bounds.size
+        scroll.contentSize = contentCGSize
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
@@ -45,12 +45,11 @@ final class AccountSettingViewController: UIViewController {
         let button = UIButton()
         let image = UIImage(named: "edit")
         button.setImage(image, for: .normal)
+#warning("button.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)")
         button.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
-    //MARK: - TextFieldView
     
     private lazy var firstName = InputField(
         inputField: UITextField(
@@ -88,29 +87,12 @@ final class AccountSettingViewController: UIViewController {
         title: "Date of Birth"
     )
     
-    let buttonSaveChanges = UIButton(
-        title: "Save Changes",
-        backgroundColor: .lightGray,
-        titleColor: .darkGray,
-        font: .jakarta16(),
-        hasBorder: false,
-        cornerRadius: 20
-    )
-    
     private lazy var genderLabel = UILabel(
         text: "Gender",
         font: .jakarta14medium(),
         textColor: .darkGrayTextColor,
         textAlignment: .left
     )
-    
-    private lazy var checkboxSwitchStack: UIStackView = {
-        let stack = UIStackView()
-        stack.distribution = .fillEqually
-        stack.spacing = 16
-        stack.axis = .horizontal
-        return stack
-    }()
     
     lazy var checkBoxButtonOne: UIButton = {
         let button = UIButton()
@@ -136,6 +118,23 @@ final class AccountSettingViewController: UIViewController {
         button.backgroundColor = .clear
         return button
     }()
+    
+    private lazy var checkboxSwitchStack: UIStackView = {
+        let stack = UIStackView()
+        stack.distribution = .fillEqually
+        stack.spacing = 16
+        stack.axis = .horizontal
+        return stack
+    }()
+    
+    let buttonSaveChanges = UIButton(
+        title: "Save Changes",
+        backgroundColor: .lightGray,
+        titleColor: .darkGray,
+        font: .jakarta16(),
+        hasBorder: false,
+        cornerRadius: 20
+    )
     
     private var contentCGSize: CGSize {
         CGSize(width: view.frame.width, height: view.frame.height + 1000)
@@ -194,42 +193,61 @@ final class AccountSettingViewController: UIViewController {
 extension AccountSettingViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @objc private func imageTapped(_ sender: UIImageView) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            let alertController = UIAlertController(title: "Choose Image Source", message: nil, preferredStyle: .actionSheet)
-          
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-            alertController.addAction(cancelAction)
-          
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
-                    imagePicker.sourceType = .camera
-                    self.present(imagePicker, animated: true)
-                }
-                alertController.addAction(cameraAction)
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        blurView.frame = view.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubviews(blurView)
+        let imagePicker = UIImagePickerController()
+        
+        UIView.animate(
+            withDuration: 1.0) {
+                blurView.alpha = 1.0
+            } completion: { _ in
+                imagePicker.delegate = self
             }
-          
-            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-                let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { _ in
-                    imagePicker.sourceType = .photoLibrary
-                    self.present(imagePicker, animated: true)
+        
+        let alertController = UIAlertController(title: "Change your picture", message: nil, preferredStyle: .actionSheet)
+        let alertOff = CustomAlertController()
+        alertOff.modalPresentationStyle = .overFullScreen
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(cancelAction)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Take a photo", style: .default) { _ in
+                UIView.animate(withDuration: 0.3) {
+                    blurView.alpha = 0.0
                 }
-                alertController.addAction(photoLibraryAction)
+                imagePicker.sourceType = .camera
+                self.present(imagePicker, animated: true)
             }
-            
-            alertController.popoverPresentationController?.sourceView = sender
-            present(alertController, animated: true)
+            alertController.addAction(cameraAction)
         }
-    
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-            if let image = info[.mediaMetadata] as? UIImage {
-                  imageAvatarView.image = image
-                  imageAvatarView.layer.cornerRadius = imageAvatarView.frame.size.width / 2
-                  imageAvatarView.clipsToBounds = true
-              }
-            picker.dismiss(animated: true)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let photoLibraryAction = UIAlertAction(title: "Choose from your file", style: .default) { _ in
+                UIView.animate(withDuration: 0.3) {
+                    blurView.alpha = 0.0
+                }
+                imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker, animated: true)
+            }
+            alertController.addAction(photoLibraryAction)
         }
+        
+        alertController.popoverPresentationController?.sourceView = sender
+        present(alertController, animated: true)
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            imageAvatarView.image = image
+            imageAvatarView.layer.cornerRadius = imageAvatarView.frame.size.width / 2
+            imageAvatarView.clipsToBounds = true
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
 
 //MARK: - UITextFieldDelegate
 
