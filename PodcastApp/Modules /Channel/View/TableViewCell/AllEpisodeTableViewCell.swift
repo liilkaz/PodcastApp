@@ -25,12 +25,14 @@ class AllEpisodeTableViewCell: UITableViewCell {
     
     public func configure(with model: Feed) {
         guard let image = model.image,
-              let url = URL(string: image)
+              let url = URL(string: image),
+              let episodeCount = model.episodeCount
         else {
             return
         }
         episodeImage.kf.setImage(with: url)
         episodeNameLabel.text = model.title
+        episodeLabel.text = "\(episodeCount) Eps"
     }
     
     private func setupUI() {

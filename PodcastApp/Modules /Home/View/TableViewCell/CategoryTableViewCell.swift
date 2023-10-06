@@ -144,7 +144,7 @@ extension CategoryTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case categoryCollectionView:
-            let model = ChannelModel(image: homeViewModel.categoryImageArray[indexPath.row], title: homeViewModel.categoryArray[indexPath.row])
+            let model = ChannelModel(image: homeViewModel.categoryImageArray[indexPath.row], title: homeViewModel.categoryArray[indexPath.row].rawValue)
             categoryDelegate?.categoryPressed(with: model)
         case categoryTagCollectionView:
             let creator = homeViewModel.categoryTagArray[indexPath.row]
