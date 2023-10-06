@@ -191,6 +191,9 @@ class SignUpViewController: UIViewController {
     
     @objc
     private func didTapSignUp() {
+        DatabaseManager.shared.insertUser(with: UserDataBase(firstName: firstNameField.inputTextField.text ?? "none",
+                                                     lastName: lastNameField.inputTextField.text ?? "none",
+                                                     email: emailField.inputTextField.text ?? email))
         AuthService.shared.register(
             email: emailField.inputTextField.text,
             password: passwordField.inputTextField.text,

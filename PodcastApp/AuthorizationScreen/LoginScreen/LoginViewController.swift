@@ -16,9 +16,9 @@ class LoginViewController: UIViewController {
     let cornerRadius: CGFloat = 24
     
     private lazy var emailField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your email address"), title: "Email")
-
+    
     private lazy var passwordField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your password"), title: "Password")
-
+    
     private lazy var loginButton: UIButton = {
         let button = UIButton(title: "Login",
                               backgroundColor: .activeBlueColor,
@@ -28,12 +28,12 @@ class LoginViewController: UIViewController {
         button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         return button
     }()
-
+    
     private lazy var dividerView: Divider = {
         let view = Divider(title: "Or continue with")
         return view
     }()
-
+    
     private lazy var googleButton: UIButton = {
         let button = UIButton(title: "  Continue with Google",
                               backgroundColor: .clear,
@@ -44,9 +44,9 @@ class LoginViewController: UIViewController {
         button.addTarget(self, action: #selector(didTapGoogleButton), for: .touchUpInside)
         return button
     }()
-
+    
     private lazy var bottomText = UILabel(text: "Don't you have an account yet?",
-                            font: .jakarta16semibold(), textColor: .boldGrayTextColor)
+                                          font: .jakarta16semibold(), textColor: .boldGrayTextColor)
     
     private lazy var registerButton = UIButton(title: "Register", backgroundColor: .clear, titleColor: .greenTextColor, hasBorder: false)
     
@@ -126,42 +126,49 @@ class LoginViewController: UIViewController {
     
     @objc
     private func didTapGoogleButton() {
-       signWithGoogle()
+        signWithGoogle()
     }
 }
 
 extension LoginViewController {
     private func signWithGoogle() {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-
+        
         // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
         GIDSignIn.sharedInstance.configuration = config
-
+        
         // Start the sign in flow!
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
-          guard error == nil else {
-              showAlert(with: "Warning!", and: AuthError.unknownError.localizedDescription)
-              return
-          }
-
-          guard let user = result?.user,
-            let idToken = user.idToken?.tokenString
-          else {
-              return
-          }
-
-          let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                                                         accessToken: user.accessToken.tokenString)
-
+            guard error == nil else {
+                showAlert(with: "Warning!", and: AuthError.unknownError.localizedDescription)
+                return
+            }
+            
+            guard let user = result?.user,
+                  let idToken = user.idToken?.tokenString
+            else { return }
+            
+            guard let email = user.profile?.email,
+                  let firstName = user.profile?.givenName,
+                  let lastName = user.profile?.familyName else { return }
+            
+            DatabaseManager.shared.userExists(with: email) { exists in
+                if !exists {
+                    DatabaseManager.shared.insertUser(with: UserDataBase(firstName: firstName, lastName: lastName, email: email))
+                }
+            }
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: user.accessToken.tokenString)
+            
             Auth.auth().signIn(with: credential) { [weak self] result, error in
-
+                
                 if result != nil {
                     let homeVC = TabBarViewController()
                     homeVC.modalPresentationStyle = .fullScreen
                     self?.present(homeVC, animated: true)
                 }
-
+                
                 if error != nil {
                     self?.showAlert(with: "Warning", and: AuthError.unknownError.localizedDescription)
                 }
