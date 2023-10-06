@@ -16,6 +16,10 @@ extension UIFont {
         return UIFont(name: "PlusJakartaSans-Bold", size: 24)
     }
     
+    static func jakartaBold(size: CGFloat) -> UIFont? {
+        return UIFont(name: "PlusJakartaSans-Bold", size: size)
+    }
+    
     static func jakarta16() -> UIFont? {
         return UIFont(name: "PlusJakartaSans-Medium", size: 16)
     }
@@ -26,6 +30,10 @@ extension UIFont {
     
     static func jakarta14() -> UIFont? {
         return UIFont(name: "PlusJakartaSans-SemiBold", size: 14)
+    }
+
+    static func regular10() -> UIFont? {
+        return UIFont(name: "Manrope-Regular", size: 10)
     }
     
     static func jakarta14medium() -> UIFont? {
@@ -44,4 +52,3 @@ extension UIFont {
         return UIFont(name: "Manrope-SemiBold", size: 16)
     }
 }
-
