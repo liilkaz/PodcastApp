@@ -42,7 +42,7 @@ extension UIColor {
     static let blackTextColor = UIColor(hexString: "#111111")
     static let lightGrayWallpaper = UIColor(hexString: "#F8F8F5")
     
-    //TextColor TabBar
+    // TextColor TabBar
     static var tabBarItemAccent = UIColor.white
     static var mainWhite = UIColor.white
     static var tabBarItemLight = UIColor.activeBlueColor
@@ -51,11 +51,17 @@ extension UIColor {
     static let lightBlueColor = UIColor(hexString: "#CDDCFA")
     static let buttonsViewColor = UIColor(hexString: "D3D3D3")
     
-    
     // CollectionView Color
     static let lightPinkColor = UIColor(hexString: "#FFF0F0")
     static let collectionSelectedColor = UIColor(hexString: "F7F7F7")
     
     // TableViewCell Color
     static let tableViewColor = UIColor(hexString: "ECF0FC")
+
+    // Custom Colors
+    static let customBlue = UIColor(hexString: "#E6F6FF")
+    static let customLightBlue = UIColor(hexString: "#E8F6FD")
+    static let customPink = UIColor(hexString: "#FFE5EC")
+    static let customGray = UIColor(hexString: "#EDF0FC")
+    static let customGray2 = UIColor(hexString: "#858391")
 }

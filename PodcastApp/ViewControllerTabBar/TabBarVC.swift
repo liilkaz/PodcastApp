@@ -23,7 +23,7 @@ final class TabBarViewController: UITabBarController {
     private func generateTabBar() {
         let home = generateVC(viewController: UINavigationController(rootViewController: HomeViewController()), title: "House", image: UIImage(systemName: "house"))
         let search = generateVC(viewController: UINavigationController(rootViewController: SearchViewController()), title: "Search", image: UIImage(systemName: "magnifyingglass"))
-        let favorites = generateVC(viewController: UINavigationController(rootViewController: FavoritesViewController()), title: "Favorites", image: UIImage(systemName: "bookmark"))
+        let favorites = generateVC(viewController: UINavigationController(rootViewController: PlaylistViewController()), title: "Favorites", image: UIImage(systemName: "bookmark"))
         let profile = generateVC(
             viewController: UINavigationController(rootViewController: ProfileSettingViewController()), title: "Settings",
                 image: UIImage(systemName: "gearshape"))

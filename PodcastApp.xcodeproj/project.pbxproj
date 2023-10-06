@@ -14,6 +14,28 @@
 		406044952ACDBE8B001002BA /* PodcastRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044942ACDBE8B001002BA /* PodcastRealm.swift */; };
 		406044972ACEA152001002BA /* NowPlayingViewModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044962ACEA151001002BA /* NowPlayingViewModel .swift */; };
 		406044992ACEB879001002BA /* MusicPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044982ACEB879001002BA /* MusicPlayerViewModel.swift */; };
+		406044A72AD01970001002BA /* SavePlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044A62AD01970001002BA /* SavePlaylistModel.swift */; };
+		406044A92AD019A8001002BA /* CreatePlaylistCellProtocol .swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044A82AD019A8001002BA /* CreatePlaylistCellProtocol .swift */; };
+		406044AB2AD019E5001002BA /* CreatePlaylistProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044AA2AD019E5001002BA /* CreatePlaylistProtocol.swift */; };
+		406044AE2AD01A2D001002BA /* CreatePlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044AD2AD01A2D001002BA /* CreatePlaylistCell.swift */; };
+		406044B12AD01AB9001002BA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 406044B02AD01AB9001002BA /* SnapKit */; };
+		406044B42AD01B48001002BA /* CreatePlaylistController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044B32AD01B48001002BA /* CreatePlaylistController .swift */; };
+		406044B62AD01B7C001002BA /* CreatePlaylistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044B52AD01B7C001002BA /* CreatePlaylistCellViewModel.swift */; };
+		406044B82AD01BA5001002BA /* CreatePlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044B72AD01BA5001002BA /* CreatePlaylistViewModel.swift */; };
+		406044BA2AD01C6D001002BA /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044B92AD01C6D001002BA /* Event.swift */; };
+		406044BC2AD01C89001002BA /* ObserverBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044BB2AD01C89001002BA /* ObserverBox.swift */; };
+		406044BE2AD01CAB001002BA /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044BD2AD01CAB001002BA /* PlaylistModel.swift */; };
+		406044C02AD01CBF001002BA /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044BF2AD01CBF001002BA /* Section.swift */; };
+		406044C32AD01D09001002BA /* FavoritesCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044C22AD01D09001002BA /* FavoritesCellViewModelProtocol.swift */; };
+		406044C52AD01D23001002BA /* PlaylistViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044C42AD01D23001002BA /* PlaylistViewModelProtocol.swift */; };
+		406044C72AD01D52001002BA /* FavoritesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044C62AD01D52001002BA /* FavoritesListCell.swift */; };
+		406044C92AD01D83001002BA /* FavoritsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044C82AD01D83001002BA /* FavoritsCell.swift */; };
+		406044CB2AD01DBA001002BA /* HeaderPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044CA2AD01DBA001002BA /* HeaderPlaylist.swift */; };
+		406044CD2AD01DF8001002BA /* PlaylistViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044CC2AD01DF8001002BA /* PlaylistViewController .swift */; };
+		406044CF2AD01E65001002BA /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044CE2AD01E65001002BA /* FavoritesListViewModel.swift */; };
+		406044D12AD01E8A001002BA /* FavoritsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044D02AD01E8A001002BA /* FavoritsCellViewModel.swift */; };
+		406044D32AD01EA7001002BA /* PlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044D22AD01EA7001002BA /* PlaylistViewModel.swift */; };
+		406044D52AD01F03001002BA /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406044D42AD01F03001002BA /* HeaderCell.swift */; };
 		40B999192ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B999182ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift */; };
 		40B9991B2ACB0F3A00184D44 /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9991A2ACB0F3A00184D44 /* ProfileSettingViewController.swift */; };
 		40BCF6D42AC8BECF00912EA4 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCF6D32AC8BECF00912EA4 /* CategoryTableViewCell.swift */; };
@@ -81,6 +103,27 @@
 		406044942ACDBE8B001002BA /* PodcastRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastRealm.swift; sourceTree = "<group>"; };
 		406044962ACEA151001002BA /* NowPlayingViewModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NowPlayingViewModel .swift"; sourceTree = "<group>"; };
 		406044982ACEB879001002BA /* MusicPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewModel.swift; sourceTree = "<group>"; };
+		406044A62AD01970001002BA /* SavePlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePlaylistModel.swift; sourceTree = "<group>"; };
+		406044A82AD019A8001002BA /* CreatePlaylistCellProtocol .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreatePlaylistCellProtocol .swift"; sourceTree = "<group>"; };
+		406044AA2AD019E5001002BA /* CreatePlaylistProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistProtocol.swift; sourceTree = "<group>"; };
+		406044AD2AD01A2D001002BA /* CreatePlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCell.swift; sourceTree = "<group>"; };
+		406044B32AD01B48001002BA /* CreatePlaylistController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreatePlaylistController .swift"; sourceTree = "<group>"; };
+		406044B52AD01B7C001002BA /* CreatePlaylistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistCellViewModel.swift; sourceTree = "<group>"; };
+		406044B72AD01BA5001002BA /* CreatePlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistViewModel.swift; sourceTree = "<group>"; };
+		406044B92AD01C6D001002BA /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		406044BB2AD01C89001002BA /* ObserverBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverBox.swift; sourceTree = "<group>"; };
+		406044BD2AD01CAB001002BA /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModel.swift; sourceTree = "<group>"; };
+		406044BF2AD01CBF001002BA /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		406044C22AD01D09001002BA /* FavoritesCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCellViewModelProtocol.swift; sourceTree = "<group>"; };
+		406044C42AD01D23001002BA /* PlaylistViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewModelProtocol.swift; sourceTree = "<group>"; };
+		406044C62AD01D52001002BA /* FavoritesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListCell.swift; sourceTree = "<group>"; };
+		406044C82AD01D83001002BA /* FavoritsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCell.swift; sourceTree = "<group>"; };
+		406044CA2AD01DBA001002BA /* HeaderPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPlaylist.swift; sourceTree = "<group>"; };
+		406044CC2AD01DF8001002BA /* PlaylistViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaylistViewController .swift"; sourceTree = "<group>"; };
+		406044CE2AD01E65001002BA /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
+		406044D02AD01E8A001002BA /* FavoritsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsCellViewModel.swift; sourceTree = "<group>"; };
+		406044D22AD01EA7001002BA /* PlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewModel.swift; sourceTree = "<group>"; };
+		406044D42AD01F03001002BA /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		40B999182ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		40B9991A2ACB0F3A00184D44 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		40BCF6D32AC8BECF00912EA4 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -156,12 +199,128 @@
 				7595507C2AC7126200A47208 /* GoogleSignInSwift in Frameworks */,
 				759550772AC710EF00A47208 /* FirebaseAuth in Frameworks */,
 				7595507A2AC7126200A47208 /* GoogleSignIn in Frameworks */,
+				406044B12AD01AB9001002BA /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4060449E2AD018D7001002BA /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				406044D62AD02311001002BA /* Protocol */,
+				4060449F2AD018DF001002BA /* Model */,
+				406044A02AD018E7001002BA /* View */,
+				406044A12AD018EF001002BA /* ViewModel */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		4060449F2AD018DF001002BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				406044BD2AD01CAB001002BA /* PlaylistModel.swift */,
+				406044B92AD01C6D001002BA /* Event.swift */,
+				406044BB2AD01C89001002BA /* ObserverBox.swift */,
+				406044BF2AD01CBF001002BA /* Section.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		406044A02AD018E7001002BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				406044D72AD023D7001002BA /* Controller  */,
+				406044C62AD01D52001002BA /* FavoritesListCell.swift */,
+				406044C82AD01D83001002BA /* FavoritsCell.swift */,
+				406044D42AD01F03001002BA /* HeaderCell.swift */,
+				406044CA2AD01DBA001002BA /* HeaderPlaylist.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		406044A12AD018EF001002BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				406044D02AD01E8A001002BA /* FavoritsCellViewModel.swift */,
+				406044CE2AD01E65001002BA /* FavoritesListViewModel.swift */,
+				406044D22AD01EA7001002BA /* PlaylistViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		406044A22AD01935001002BA /* CreatePlaylist */ = {
+			isa = PBXGroup;
+			children = (
+				406044A32AD01943001002BA /* Model */,
+				406044A42AD01947001002BA /* View */,
+				406044A52AD0194B001002BA /* ViewModel */,
+			);
+			path = CreatePlaylist;
+			sourceTree = "<group>";
+		};
+		406044A32AD01943001002BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				406044A62AD01970001002BA /* SavePlaylistModel.swift */,
+				406044A82AD019A8001002BA /* CreatePlaylistCellProtocol .swift */,
+				406044AA2AD019E5001002BA /* CreatePlaylistProtocol.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		406044A42AD01947001002BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				406044AC2AD01A09001002BA /* Cell */,
+				406044B22AD01B36001002BA /* Controller  */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		406044A52AD0194B001002BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				406044B52AD01B7C001002BA /* CreatePlaylistCellViewModel.swift */,
+				406044B72AD01BA5001002BA /* CreatePlaylistViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		406044AC2AD01A09001002BA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				406044AD2AD01A2D001002BA /* CreatePlaylistCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		406044B22AD01B36001002BA /* Controller  */ = {
+			isa = PBXGroup;
+			children = (
+				406044B32AD01B48001002BA /* CreatePlaylistController .swift */,
+			);
+			path = "Controller ";
+			sourceTree = "<group>";
+		};
+		406044D62AD02311001002BA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				406044C42AD01D23001002BA /* PlaylistViewModelProtocol.swift */,
+				406044C22AD01D09001002BA /* FavoritesCellViewModelProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		406044D72AD023D7001002BA /* Controller  */ = {
+			isa = PBXGroup;
+			children = (
+				406044CC2AD01DF8001002BA /* PlaylistViewController .swift */,
+			);
+			path = "Controller ";
+			sourceTree = "<group>";
+		};
 		40B999142ACB0EC400184D44 /* ProfileSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +512,8 @@
 		40CA63AD2AC8BD0E00B8B4DA /* Modules  */ = {
 			isa = PBXGroup;
 			children = (
+				406044A22AD01935001002BA /* CreatePlaylist */,
+				4060449E2AD018D7001002BA /* Favorites */,
 				40B999142ACB0EC400184D44 /* ProfileSettings */,
 				40BCF70F2ACACAD300912EA4 /* Channel */,
 				40BCF7062AC9E0C800912EA4 /* Now_Playing */,
@@ -643,6 +804,7 @@
 				759550792AC7126200A47208 /* GoogleSignIn */,
 				7595507B2AC7126200A47208 /* GoogleSignInSwift */,
 				406044922ACDBE51001002BA /* RealmSwift */,
+				406044B02AD01AB9001002BA /* SnapKit */,
 			);
 			productName = "Podcast App";
 			productReference = 751C224F2AC0542000FF50C6 /* PodcastApp.app */;
@@ -676,6 +838,7 @@
 				759550752AC710EF00A47208 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				759550782AC7126200A47208 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				406044912ACDBE51001002BA /* XCRemoteSwiftPackageReference "realm-swift" */,
+				406044AF2AD01AB9001002BA /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 751C22502AC0542000FF50C6 /* Products */;
 			projectDirPath = "";
@@ -709,11 +872,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */,
+				406044CD2AD01DF8001002BA /* PlaylistViewController .swift in Sources */,
 				7595507F2AC7133900A47208 /* AuthService.swift in Sources */,
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
 				40BCF6D92AC8C08200912EA4 /* CategoryMusicEnum.swift in Sources */,
 				EB00A0AC2ACC56D5000C1CA3 /* PodcastModel.swift in Sources */,
 				EB00A0992ACC55DA000C1CA3 /* RequestMethod.swift in Sources */,
+				406044BE2AD01CAB001002BA /* PlaylistModel.swift in Sources */,
 				40BCF6E12AC8C18700912EA4 /* UIImageView.swift in Sources */,
 				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
 				40BCF7042AC9A5B000912EA4 /* MusicButton.swift in Sources */,
@@ -722,26 +887,37 @@
 				406044902ACDBDD7001002BA /* SavePodcastViewModel.swift in Sources */,
 				759550812AC713B100A47208 /* AuthError.swift in Sources */,
 				448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */,
+				406044C02AD01CBF001002BA /* Section.swift in Sources */,
 				40BCF6D42AC8BECF00912EA4 /* CategoryTableViewCell.swift in Sources */,
 				EB00A0A02ACC562C000C1CA3 /* Endpoints.swift in Sources */,
 				EB00A0A92ACC5698000C1CA3 /* NetworkService.swift in Sources */,
 				40BCF6DB2AC8C0F100912EA4 /* UICollectionView + Extension.swift in Sources */,
 				EB00A0A62ACC5675000C1CA3 /* PodcastService.swift in Sources */,
+				406044BA2AD01C6D001002BA /* Event.swift in Sources */,
+				406044CB2AD01DBA001002BA /* HeaderPlaylist.swift in Sources */,
 				751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */,
 				4060448E2ACD93A1001002BA /* CreatorsModel.swift in Sources */,
 				751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */,
+				406044C32AD01D09001002BA /* FavoritesCellViewModelProtocol.swift in Sources */,
+				406044D52AD01F03001002BA /* HeaderCell.swift in Sources */,
 				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
 				759550832AC7142700A47208 /* Validation.swift in Sources */,
 				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
 				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
+				406044AE2AD01A2D001002BA /* CreatePlaylistCell.swift in Sources */,
+				406044BC2AD01C89001002BA /* ObserverBox.swift in Sources */,
 				40BCF6E32AC8C27700912EA4 /* CategoryCollectionViewCell.swift in Sources */,
 				40BCF6DD2AC8C14600912EA4 /* HomeTableViewCell.swift in Sources */,
+				406044C92AD01D83001002BA /* FavoritsCell.swift in Sources */,
+				406044CF2AD01E65001002BA /* FavoritesListViewModel.swift in Sources */,
 				7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */,
 				751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */,
 				751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */,
+				406044A92AD019A8001002BA /* CreatePlaylistCellProtocol .swift in Sources */,
 				EB00A0942ACC55A3000C1CA3 /* Extension + String.swift in Sources */,
 				751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */,
+				406044B42AD01B48001002BA /* CreatePlaylistController .swift in Sources */,
 				406044992ACEB879001002BA /* MusicPlayerViewModel.swift in Sources */,
 				751C22D12AC1B3F100FF50C6 /* UIView + Extension.swift in Sources */,
 				EB00A0972ACC55C0000C1CA3 /* Endpoint.swift in Sources */,
@@ -752,16 +928,24 @@
 				40BCF6DF2AC8C16E00912EA4 /* UIView.swift in Sources */,
 				759550742AC2F22F00A47208 /* UIViewController + Extension.swift in Sources */,
 				EB00A09B2ACC55ED000C1CA3 /* RequestError.swift in Sources */,
+				406044AB2AD019E5001002BA /* CreatePlaylistProtocol.swift in Sources */,
+				406044D32AD01EA7001002BA /* PlaylistViewModel.swift in Sources */,
 				40BCF6E52AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift in Sources */,
+				406044C52AD01D23001002BA /* PlaylistViewModelProtocol.swift in Sources */,
 				40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */,
+				406044B82AD01BA5001002BA /* CreatePlaylistViewModel.swift in Sources */,
+				406044B62AD01B7C001002BA /* CreatePlaylistCellViewModel.swift in Sources */,
 				40B999192ACB0F0300184D44 /* ProfileSettingViewControllerTableViewCell.swift in Sources */,
 				406044952ACDBE8B001002BA /* PodcastRealm.swift in Sources */,
 				759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */,
 				EB00A09D2ACC55FC000C1CA3 /* HTTPClient.swift in Sources */,
+				406044C72AD01D52001002BA /* FavoritesListCell.swift in Sources */,
 				4060448C2ACD7CF0001002BA /* PopularCreatorsEnum.swift in Sources */,
 				751C22CC2AC1B08900FF50C6 /* UITextField + Extension.swift in Sources */,
+				406044A72AD01970001002BA /* SavePlaylistModel.swift in Sources */,
 				40BCF6E72AC8C2AF00912EA4 /* PlayedTrackView.swift in Sources */,
 				40B9991B2ACB0F3A00184D44 /* ProfileSettingViewController.swift in Sources */,
+				406044D12AD01E8A001002BA /* FavoritsCellViewModel.swift in Sources */,
 				EB00A0A32ACC5655000C1CA3 /* Servisable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -988,6 +1172,14 @@
 				kind = branch;
 			};
 		};
+		406044AF2AD01AB9001002BA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 		759550752AC710EF00A47208 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1011,6 +1203,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 406044912ACDBE51001002BA /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		406044B02AD01AB9001002BA /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 406044AF2AD01AB9001002BA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 		759550762AC710EF00A47208 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
