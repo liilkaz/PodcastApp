@@ -18,7 +18,7 @@ class SearchResultCell: UITableViewCell {
         return image
     }()
     
-    private lazy var podcastLabel = UILabel(text: "Baby Pesut Podcast", font: .manrope16bold(), textColor: .black, textAlignment: .left)
+    private lazy var podcastLabel = UILabel(text: "Baby Pesut Podcast", font: .manrope16bold(), textColor: .black, textAlignment: .left, numberOfLines: 0)
     private lazy var episodeLabel = UILabel(text: "56:38", font: .manrope14(), textColor: .darkGray, textAlignment: .left)
     private lazy var chanelLabel = UILabel(text: "Dr. Oi om jean", font: .manrope14(), textColor: .darkGray, textAlignment: .left)
     
@@ -36,11 +36,12 @@ class SearchResultCell: UITableViewCell {
             
             podcastLabel.topAnchor.constraint(equalTo: podcastImage.topAnchor),
             podcastLabel.leadingAnchor.constraint(equalTo: podcastImage.trailingAnchor, constant: 12),
+            podcastLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            episodeLabel.topAnchor.constraint(equalTo: podcastLabel.bottomAnchor, constant: 10),
+            episodeLabel.topAnchor.constraint(equalTo: podcastLabel.bottomAnchor, constant: 5),
             episodeLabel.leadingAnchor.constraint(equalTo: podcastLabel.leadingAnchor),
             
-            chanelLabel.topAnchor.constraint(equalTo: podcastLabel.bottomAnchor, constant: 10),
+            chanelLabel.topAnchor.constraint(equalTo: podcastLabel.bottomAnchor, constant: 5),
             chanelLabel.leadingAnchor.constraint(equalTo: episodeLabel.trailingAnchor, constant: 10)
         ])
         

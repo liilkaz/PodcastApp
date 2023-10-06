@@ -7,12 +7,10 @@
 
 import UIKit
 
-class TopGenreCell: UITableViewCell {
+class TopGenreCollection: UITableViewCell {
     var genresarr = GenresHardData()
-    static let identifier = "TopGenreCell"
-    private var lastSelectedIndexPath: IndexPath? = nil
+    static let identifier = "TopGenreCollection"
 
-    
     private lazy var sectionOneLabel = UILabel(text: "Top Genres", font: .manrope16bold(), textColor: .black)
     
     private lazy var seeAllButton: UIButton = {
@@ -22,16 +20,24 @@ class TopGenreCell: UITableViewCell {
     }()
     
     private lazy var topCategoryCollectionView: UICollectionView = {
-        let collection = UICollectionView(dataSource: self, delegate: self, width: 147, height: 84)
-        collection.register(GenreCell.self, forCellWithReuseIdentifier: GenreCell.identifier)
-        return collection
-    }()
-    
 
-    
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 17
+        layout.minimumLineSpacing = 17
+        layout.itemSize = CGSize(width: 147, height: 84)
+
+        let collectionview = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionview.register(GenreCell.self, forCellWithReuseIdentifier: GenreCell.identifier)
+        collectionview.backgroundColor = .clear
+        collectionview.dataSource = self
+        collectionview.delegate = self
+        collectionview.showsHorizontalScrollIndicator = false
+        return collectionview
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        lastSelectedIndexPath = IndexPath(row: 0, section: 0)
         setupUI()
     }
     
@@ -43,21 +49,18 @@ class TopGenreCell: UITableViewCell {
     private func setupUI() {
         contentView.addSubviews(sectionOneLabel,seeAllButton,topCategoryCollectionView )
         
-        
         NSLayoutConstraint.activate([
             sectionOneLabel.heightAnchor.constraint(equalToConstant: 22),
             sectionOneLabel.topAnchor.constraint(equalTo: topAnchor),
             sectionOneLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-      
+            
             seeAllButton.heightAnchor.constraint(equalToConstant: 25),
             seeAllButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             seeAllButton.topAnchor.constraint(equalTo: topAnchor),
-    
+            
             topCategoryCollectionView.topAnchor.constraint(equalTo: sectionOneLabel.bottomAnchor, constant: 13),
             topCategoryCollectionView.widthAnchor.constraint(equalTo: widthAnchor),
             topCategoryCollectionView.heightAnchor.constraint(equalToConstant: 84),
-            
-
         ])
     }
     
@@ -66,31 +69,29 @@ class TopGenreCell: UITableViewCell {
     }
 }
 
-extension TopGenreCell: UICollectionViewDataSource {
+extension TopGenreCollection: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return genresarr.topGenres.count
-        }
-
+        return genresarr.topGenres.count
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-            let title = genresarr.topGenres[indexPath.row]
-            let image = UIImage(systemName: "")
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCell.identifier, for: indexPath) as! GenreCell
-            cell.configureCell(image: image, title: title)
-            return cell
-
+        
+        let title = genresarr.topGenres[indexPath.row]
+        let image = UIImage(systemName: "")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCell.identifier, for: indexPath) as! GenreCell
+        cell.configureCell(image: image, title: title)
+        return cell
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return genresarr.allGenres.count
+        return genresarr.topGenres.count
     }
 }
 
-
-    
-    extension TopGenreCell: UICollectionViewDelegate {
-        
+extension TopGenreCollection: UICollectionViewDelegate {
     }
-    
+
+
+
+
 

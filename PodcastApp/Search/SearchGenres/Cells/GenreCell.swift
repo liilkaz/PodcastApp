@@ -8,8 +8,7 @@
 import UIKit
 
 class GenreCell: UICollectionViewCell {
-    static let identifier = "TopGenreCell"
-    
+    static let identifier = "GenreCell"
     
     private lazy var categoryImage: UIImageView = {
         let image = UIImageView(cornerRadius: 12)
@@ -30,8 +29,7 @@ class GenreCell: UICollectionViewCell {
         self.categoryImage.image = image
         self.genreLabel.text = title
     }
-    
-    
+        
     private func setupUI() {
         self.layer.cornerRadius = 12
         NSLayoutConstraint.activate([
@@ -40,12 +38,11 @@ class GenreCell: UICollectionViewCell {
             categoryImage.trailingAnchor.constraint(equalTo: trailingAnchor),
             categoryImage.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            
             genreLabel.centerXAnchor.constraint(equalTo: categoryImage.centerXAnchor),
             genreLabel.centerYAnchor.constraint(equalTo: categoryImage.centerYAnchor)
         ])
-        
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
