@@ -45,7 +45,6 @@ final class AccountSettingViewController: UIViewController {
         let button = UIButton()
         let image = UIImage(named: "edit")
         button.setImage(image, for: .normal)
-#warning("button.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)")
         button.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
