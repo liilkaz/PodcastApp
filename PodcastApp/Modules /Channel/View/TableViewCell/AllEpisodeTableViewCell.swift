@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class AllEpisodeTableViewCell: UITableViewCell {
     static let identifier = "AllEpisodeTableViewCell"
@@ -22,6 +23,15 @@ class AllEpisodeTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func configure(with model: Feed) {
+        guard let image = model.image,
+              let url = URL(string: image)
+        else {
+            return
+        }
+        episodeImage.kf.setImage(with: url)
+        episodeNameLabel.text = model.title
+    }
     
     private func setupUI() {
         contentView.addSubviews(episodeView)

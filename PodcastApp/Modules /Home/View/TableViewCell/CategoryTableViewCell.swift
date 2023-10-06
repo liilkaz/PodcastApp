@@ -1,11 +1,18 @@
 import UIKit
 
+
+protocol CategoryPressedDelegate: AnyObject {
+    func categoryPressed(with model: ChannelModel)
+}
+
 protocol CategoryTagPressedDelegate: AnyObject {
     func categoryTagPressed(with model: [Item])
 }
 
 class CategoryTableViewCell: UITableViewCell {
-    weak var delegate: CategoryTagPressedDelegate?
+    weak var categoryDelegate: CategoryPressedDelegate?
+    weak var tagDelegate: CategoryTagPressedDelegate?
+    
     static let identifier = "CategoryTableViewCell"
     private var lastSelectedIndexPath: IndexPath? = nil
     
@@ -18,11 +25,6 @@ class CategoryTableViewCell: UITableViewCell {
         return image
     }()
     private lazy var categoryLabel = UILabel(text: "Category", font: .systemFont(ofSize: 20), textColor: .black, textAlignment: .center)
-    private lazy var seeAllButton: UIButton = {
-        let button = UIButton(text: "See All", textColor: .darkGray, backgroundColor: .clear)
-        button.addTarget(self, action: #selector(seeAllButtonPressed(_:)), for: .touchUpInside)
-        return button
-    }()
     
     private lazy var categoryCollectionView: UICollectionView = {
         let collection = UICollectionView(dataSource: self, delegate: self, width: 150, height: 200)
@@ -54,7 +56,7 @@ class CategoryTableViewCell: UITableViewCell {
         homeViewModel.fetchPodcast(creator: "Emma") { [weak self] result in
             switch result {
             case .success(let success):
-                self?.delegate?.categoryTagPressed(with: success)
+                self?.tagDelegate?.categoryTagPressed(with: success)
             case .failure(let failure):
                 print(failure.localizedDescription)
             }
@@ -62,7 +64,7 @@ class CategoryTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        contentView.addSubviews(personFullnameLabel, loveLifeAndChillLabel, profileImage, categoryLabel, seeAllButton, categoryCollectionView, categoryTagCollectionView)
+        contentView.addSubviews(personFullnameLabel, loveLifeAndChillLabel, profileImage, categoryLabel, categoryCollectionView, categoryTagCollectionView)
         
         
         NSLayoutConstraint.activate([
@@ -92,14 +94,6 @@ class CategoryTableViewCell: UITableViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            seeAllButton.heightAnchor.constraint(equalToConstant: 25),
-            seeAllButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            seeAllButton.topAnchor.constraint(equalTo: loveLifeAndChillLabel.bottomAnchor, constant: 30)
-        ])
-        
-        
-        
-        NSLayoutConstraint.activate([
             categoryCollectionView.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 20),
             categoryCollectionView.widthAnchor.constraint(equalTo: widthAnchor),
             categoryCollectionView.heightAnchor.constraint(equalToConstant: 210)
@@ -111,10 +105,6 @@ class CategoryTableViewCell: UITableViewCell {
             categoryTagCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             categoryTagCollectionView.heightAnchor.constraint(equalToConstant: 60)
         ])
-    }
-    
-    @IBAction func seeAllButtonPressed(_ sender: UIButton) {
-        print("See all button pressed")
     }
 }
 
@@ -154,13 +144,14 @@ extension CategoryTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case categoryCollectionView:
-            break
+            let model = ChannelModel(image: homeViewModel.categoryImageArray[indexPath.row], title: homeViewModel.categoryArray[indexPath.row])
+            categoryDelegate?.categoryPressed(with: model)
         case categoryTagCollectionView:
             let creator = homeViewModel.categoryTagArray[indexPath.row]
             homeViewModel.fetchPodcast(creator: creator) { [weak self] result in
                 switch result {
                 case .success(let success):
-                    self?.delegate?.categoryTagPressed(with: success)
+                    self?.tagDelegate?.categoryTagPressed(with: success)
                 case .failure(let failure):
                     print(failure.localizedDescription)
                 }

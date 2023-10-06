@@ -72,7 +72,8 @@ extension HomeViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
-            cell.delegate = self
+            cell.categoryDelegate = self
+            cell.tagDelegate = self
             cell.selectionStyle = .none
             return cell
         case 1:
@@ -103,6 +104,13 @@ extension HomeViewController: CategoryTagPressedDelegate {
             self.homeTableView.reloadData()
         }
     }
-    
-    
+}
+
+extension HomeViewController: CategoryPressedDelegate {
+    func categoryPressed(with model: ChannelModel) {
+        let channelModel = ChannelViewModel(channelModel: model)
+        let vc = ChannelViewController(channelViewModel: channelModel)
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
