@@ -102,9 +102,9 @@
 		7573E0B72AD17A8B004C40D7 /* AllPodcastsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0B62AD17A8B004C40D7 /* AllPodcastsCell.swift */; };
 		7573E0B92AD17AA9004C40D7 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0B82AD17AA9004C40D7 /* SearchResultCell.swift */; };
 		7573E0BB2AD17AD5004C40D7 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0BA2AD17AD5004C40D7 /* SearchResultsViewController.swift */; };
-		7573E0BD2AD17B5D004C40D7 /* GenresHardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0BC2AD17B5D004C40D7 /* GenresHardData.swift */; };
 		7573E0BF2AD188C4004C40D7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0BE2AD188C4004C40D7 /* StorageManager.swift */; };
 		7573E0C12AD1F610004C40D7 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0C02AD1F610004C40D7 /* ProfileModel.swift */; };
+		7573E0C32AD2122B004C40D7 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0C22AD2122B004C40D7 /* Core.swift */; };
 		7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506B2AC1D06900A47208 /* SignUpViewController.swift */; };
 		759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */; };
 		759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550712AC2E6D200A47208 /* BottomLineAuth.swift */; };
@@ -215,9 +215,9 @@
 		7573E0B62AD17A8B004C40D7 /* AllPodcastsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPodcastsCell.swift; sourceTree = "<group>"; };
 		7573E0B82AD17AA9004C40D7 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		7573E0BA2AD17AD5004C40D7 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
-		7573E0BC2AD17B5D004C40D7 /* GenresHardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresHardData.swift; sourceTree = "<group>"; };
 		7573E0BE2AD188C4004C40D7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		7573E0C02AD1F610004C40D7 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		7573E0C22AD2122B004C40D7 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		7595506B2AC1D06900A47208 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		759550712AC2E6D200A47208 /* BottomLineAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineAuth.swift; sourceTree = "<group>"; };
@@ -894,6 +894,7 @@
 			children = (
 				751C22522AC0542000FF50C6 /* AppDelegate.swift */,
 				751C22542AC0542000FF50C6 /* SceneDelegate.swift */,
+				7573E0C22AD2122B004C40D7 /* Core.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1113,12 +1114,11 @@
 				406044C32AD01D09001002BA /* FavoritesCellViewModelProtocol.swift in Sources */,
 				406044D52AD01F03001002BA /* HeaderCell.swift in Sources */,
 				7573E0B92AD17AA9004C40D7 /* SearchResultCell.swift in Sources */,
+				7573E0C32AD2122B004C40D7 /* Core.swift in Sources */,
 				4056AF1F2AD188E1006ED01E /* TopGenres.swift in Sources */,
 				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
 				759550832AC7142700A47208 /* Validation.swift in Sources */,
-				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
-				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
 				750162A72AD097CC00EEC7B4 /* DatabaseManager.swift in Sources */,
 				7573E0BB2AD17AD5004C40D7 /* SearchResultsViewController.swift in Sources */,
 				406044AE2AD01A2D001002BA /* CreatePlaylistCell.swift in Sources */,

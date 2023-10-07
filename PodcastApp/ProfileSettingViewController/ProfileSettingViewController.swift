@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import Combine
 
 struct PSViewControllerModel {
     let name: String
@@ -19,6 +21,7 @@ struct PSModel {
 }
 
 final class ProfileSettingViewController: UIViewController {
+    private var anyCancellable = Set<AnyCancellable>()
     
     //MARK: - Private Properties UI
     
@@ -171,6 +174,8 @@ extension ProfileSettingViewController: UITableViewDelegate {
             let viewController = AccountSettingViewController()
             viewController.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(viewController, animated: true)
+        case 1:
+            showUpdateAlert()
         case 2:
             let alert = UIAlertController(title: "Забыл пароль?", message: "Ну Бывает)", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "ОК", style: .default)
@@ -178,5 +183,37 @@ extension ProfileSettingViewController: UITableViewDelegate {
             present(alert, animated: true)
         default: break
         }
+    }
+    
+    func showUpdateAlert() {
+        
+        let alertController = UIAlertController(title: "Change password", message: "new password 6 or more chars", preferredStyle: .alert)
+        
+        var alertTextField = UITextField()
+        alertTextField.isSecureTextEntry = true
+        let addActionButton = UIAlertAction(title: "Change", style: .default) { _ in
+            guard let newPassword = alertTextField.text else { return }
+            AuthService.shared.updatePassword(newPass: newPassword)
+        }
+        addActionButton.isEnabled = false
+
+        alertController.addTextField { alertTF in
+            alertTF.placeholder = "Input new password"
+            alertTextField = alertTF
+        }
+
+        alertTextField.textPublisher()
+            .sink(receiveValue: { text in
+                let trimmedStr = text.trimmingCharacters(in: .whitespacesAndNewlines)
+                addActionButton.isEnabled = !trimmedStr.isEmpty
+            })
+            .store(in: &self.anyCancellable)
+
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel)
+
+        alertController.addAction(addActionButton)
+        alertController.addAction(cancelActionButton)
+        alertController.preferredAction = addActionButton
+        present(alertController, animated: true)
     }
 }
