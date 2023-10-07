@@ -1,8 +1,9 @@
+
 //
 //  PSViewControllerTableViewCell.swift
 //  PodcastApp
 //
-//  Created by iOS - Developer on 01.10.2023.
+//  Created by Danila Bolshakov on 01.10.2023.
 //
 
 import UIKit
@@ -13,7 +14,7 @@ final class ProfileSettingViewControllerTableViewCell: UITableViewCell {
     
     private lazy var iconContentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
         view.layer.cornerRadius = 12
         return view
     }()
@@ -55,8 +56,6 @@ private extension ProfileSettingViewControllerTableViewCell {
             iconImageView.leadingAnchor.constraint(equalTo: iconContentView.leadingAnchor, constant: 12),
             iconImageView.trailingAnchor.constraint(equalTo: iconContentView.trailingAnchor, constant: -12),
             iconImageView.bottomAnchor.constraint(equalTo: iconContentView.bottomAnchor, constant: -12),
-            iconImageView.heightAnchor.constraint(equalToConstant: 18),
-            iconImageView.widthAnchor.constraint(equalToConstant: 18),
             
             iconContentView.topAnchor.constraint(equalTo: contentView.topAnchor),
             iconContentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 32),
