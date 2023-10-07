@@ -51,4 +51,24 @@ extension UIFont {
     static func semiBold() -> UIFont? {
         return UIFont(name: "Manrope-SemiBold", size: 16)
     }
+    
+    static func manrope16bold() -> UIFont? {
+        return UIFont(name: "Manrope-Bold", size: 16)
+    }
+    
+    static func manrope16regular() -> UIFont? {
+        return UIFont(name: "Manrope-Regular", size: 16)
+    }
+    
+    static func manrope14bold() -> UIFont? {
+        return UIFont(name: "Manrope-Bold", size: 14)
+    }
+        
+        static func manrope14regular() -> UIFont? {
+            return UIFont(name: "Manrope-Regular", size: 14)
+    }
+    
+    static func manrope12regular() -> UIFont? {
+        return UIFont(name: "Manrope-Regular", size: 12)
+    }
 }
