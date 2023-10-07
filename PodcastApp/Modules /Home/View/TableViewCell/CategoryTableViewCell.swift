@@ -64,6 +64,7 @@ class CategoryTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
+        personFullnameLabel.text = UserDefaults.standard.value(forKey: "name") as? String
         contentView.addSubviews(personFullnameLabel, loveLifeAndChillLabel, profileImage, categoryLabel, categoryCollectionView, categoryTagCollectionView)
         
         

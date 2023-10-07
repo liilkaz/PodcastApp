@@ -110,13 +110,31 @@ class LoginViewController: UIViewController {
     
     @objc
     private func didTapLoginButton() {
-        AuthService.shared.login(email: emailField.inputTextField.text,
-                                 password: passwordField.inputTextField.text) { [weak self] result in
+        let email = emailField.inputTextField.text
+        let password = passwordField.inputTextField.text
+        AuthService.shared.login(email: email,
+                                 password: password) { [weak self] result in
             switch result {
             case .success(let user):
+                let safeEmail = DatabaseManager.safeEmail(emailAddress: email ?? "none")
+                DatabaseManager.shared.getDataFor(path: safeEmail) { result in
+                    switch result {
+                    case .success(let data):
+                        guard let userData = data as? [String: Any],
+                              let firstName = userData["first_name"] as? String,
+                              let lastName = userData["last_name"] as? String else {
+                            return
+                        }
+                        UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
+                        
+                    case .failure(let error):
+                        print("Failed to read data with error \(error)")
+                    }
+                }
                 let homeVC = TabBarViewController()
                 homeVC.modalPresentationStyle = .fullScreen
                 self?.present(homeVC, animated: true)
+                UserDefaults.standard.set(email, forKey: "email")
                 print(user)
             case .failure(let error):
                 self?.showAlert(with: "Ошибка", and: error.localizedDescription)
@@ -152,10 +170,36 @@ extension LoginViewController {
             guard let email = user.profile?.email,
                   let firstName = user.profile?.givenName,
                   let lastName = user.profile?.familyName else { return }
+            UserDefaults.standard.set(email, forKey: "email")
             
             DatabaseManager.shared.userExists(with: email) { exists in
                 if !exists {
-                    DatabaseManager.shared.insertUser(with: UserDataBase(firstName: firstName, lastName: lastName, email: email))
+                    let userInfo = UserDataBase(firstName: firstName, lastName: lastName, email: email)
+                    DatabaseManager.shared.insertUser(with: userInfo, completion: {
+                        success in
+                        if success {
+                            if ((user.profile?.hasImage) != nil) {
+                                guard let url = user.profile?.imageURL(withDimension: 100) else {
+                                    return
+                                }
+                                URLSession.shared.dataTask(with: url) { data, _, _ in
+                                    guard let data = data else {
+                                        return
+                                    }
+                                    let filename = userInfo.profilePictureFileName
+                                    StorageManager.shared.uploadProfilePicture(with: data, fileName: filename) { result in
+                                        switch result {
+                                        case .success(let downloadURL):
+                                            UserDefaults.standard.set(downloadURL, forKey: "profile_picture_file_name")
+                                            print(downloadURL)
+                                        case .failure(let error):
+                                            print(error)
+                                        }
+                                    }
+                                }.resume()
+                            }
+                        }
+                    })
                 }
             }
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
@@ -164,6 +208,21 @@ extension LoginViewController {
             Auth.auth().signIn(with: credential) { [weak self] result, error in
                 
                 if result != nil {
+                    let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+                    DatabaseManager.shared.getDataFor(path: safeEmail) { result in
+                        switch result {
+                        case .success(let data):
+                            guard let userData = data as? [String: Any],
+                                  let firstName = userData["first_name"] as? String,
+                                  let lastName = userData["last_name"] as? String else {
+                                return
+                            }
+                            UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
+                            
+                        case .failure(let error):
+                            print("Failed to read data with error \(error)")
+                        }
+                    }
                     let homeVC = TabBarViewController()
                     homeVC.modalPresentationStyle = .fullScreen
                     self?.present(homeVC, animated: true)

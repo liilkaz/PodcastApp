@@ -191,18 +191,55 @@ class SignUpViewController: UIViewController {
     
     @objc
     private func didTapSignUp() {
-        DatabaseManager.shared.insertUser(with: UserDataBase(firstName: firstNameField.inputTextField.text ?? "none",
-                                                     lastName: lastNameField.inputTextField.text ?? "none",
-                                                     email: emailField.inputTextField.text ?? email))
+        let email = emailField.inputTextField.text
+        let password = passwordField.inputTextField.text
+        let confirmPassword = confirmPasswordField.inputTextField.text
+        let user = UserDataBase(firstName: firstNameField.inputTextField.text ?? "none", lastName: lastNameField.inputTextField.text ?? "none", email: email ?? "none")
+        DatabaseManager.shared.insertUser(with: user, completion: { [weak self] success in
+            if success {
+                let safeEmail = DatabaseManager.safeEmail(emailAddress: email ?? "none")
+                DatabaseManager.shared.getDataFor(path: safeEmail) { result in
+                    switch result {
+                    case .success(let data):
+                        guard let userData = data as? [String: Any],
+                              let firstName = userData["first_name"] as? String,
+                              let lastName = userData["last_name"] as? String else {
+                            return
+                        }
+                        UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
+                        
+                    case .failure(let error):
+                        print("Failed to read data with error \(error)")
+                    }
+                }
+                guard
+                    let image = UIImage(named: "avatar"),
+                    let data = image.pngData() else {
+                    return
+                }
+                let filename = user.profilePictureFileName
+                StorageManager.shared.uploadProfilePicture(with: data, fileName: filename) { result in
+                    switch result {
+                    case .success(let downloadURL):
+                        UserDefaults.standard.set(downloadURL, forKey: "profile_picture_file_name")
+                        print(downloadURL)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                    
+                }
+            }
+        })
         AuthService.shared.register(
-            email: emailField.inputTextField.text,
-            password: passwordField.inputTextField.text,
-            confirmPassword: confirmPasswordField.inputTextField.text) { [weak self] result in
+            email: email,
+            password: password,
+            confirmPassword: confirmPassword) { [weak self] result in
                 switch result {
                 case .success(let user):
                     let homeVC = TabBarViewController()
                     homeVC.modalPresentationStyle = .fullScreen
                     self?.present(homeVC, animated: true)
+                    UserDefaults.standard.set(email, forKey: "email")
                     print(user)
                 case .failure(let error):
                     print(error.localizedDescription)

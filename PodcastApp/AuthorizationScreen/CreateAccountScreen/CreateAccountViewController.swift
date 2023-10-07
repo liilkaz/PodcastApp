@@ -170,9 +170,29 @@ extension CreateAccountViewController {
                   let firstName = user.profile?.givenName,
                   let lastName = user.profile?.familyName else { return }
             
+            UserDefaults.standard.set(email, forKey: "email")
+            
             DatabaseManager.shared.userExists(with: email) { exists in
                 if !exists {
-                    DatabaseManager.shared.insertUser(with: UserDataBase(firstName: firstName, lastName: lastName, email: email))
+                    let user = UserDataBase(firstName: firstName, lastName: lastName, email: email)
+                    DatabaseManager.shared.insertUser(with: user, completion: { success in
+                        if success {
+                            guard let image = UIImage(named: "avatar"), let data = image.pngData() else {
+                                return
+                            }
+                            let filename = user.profilePictureFileName
+                            StorageManager.shared.uploadProfilePicture(with: data, fileName: filename) { result in
+                                switch result {
+                                case .success(let downloadURL):
+                                    UserDefaults.standard.set(downloadURL, forKey: "profile_picture_file_name")
+                                    print(downloadURL)
+                                case .failure(let error):
+                                    print(error)
+                                }
+                                
+                            }
+                        }
+                    })
                 }
             }
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
@@ -181,6 +201,21 @@ extension CreateAccountViewController {
             Auth.auth().signIn(with: credential) { [weak self] result, error in
                 
                 if result != nil {
+                    let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+                    DatabaseManager.shared.getDataFor(path: safeEmail) { result in
+                        switch result {
+                        case .success(let data):
+                            guard let userData = data as? [String: Any],
+                                  let firstName = userData["first_name"] as? String,
+                                  let lastName = userData["last_name"] as? String else {
+                                return
+                            }
+                            UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
+                            
+                        case .failure(let error):
+                            print("Failed to read data with error \(error)")
+                        }
+                    }
                     let homeVC = TabBarViewController()
                     homeVC.modalPresentationStyle = .fullScreen
                     self?.present(homeVC, animated: true)

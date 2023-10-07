@@ -63,6 +63,8 @@
 		448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */; };
 		448D80062AC32D0C003D0403 /* SearchViewContriller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80002AC32D0B003D0403 /* SearchViewContriller.swift */; };
 		448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D80032AC32D0B003D0403 /* FavoritesViewController.swift */; };
+		44AC2E502AD0AF8900AD3910 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AC2E4F2AD0AF8900AD3910 /* AccountSettingViewController.swift */; };
+		44CF6AAF2AD0BACC00201DC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 759550842AC7169B00A47208 /* GoogleService-Info.plist */; };
 		750162A72AD097CC00EEC7B4 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750162A62AD097CC00EEC7B4 /* DatabaseManager.swift */; };
 		750162AA2AD09C2D00EEC7B4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 750162A92AD09C2D00EEC7B4 /* FirebaseAuth */; };
 		750162AC2AD09C2D00EEC7B4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 750162AB2AD09C2D00EEC7B4 /* FirebaseDatabase */; };
@@ -70,8 +72,6 @@
 		750162B02AD09C2D00EEC7B4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 750162AF2AD09C2D00EEC7B4 /* FirebaseFirestore */; };
 		750162B22AD09C2D00EEC7B4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 750162B12AD09C2D00EEC7B4 /* FirebaseFirestoreSwift */; };
 		750162B42AD09C2D00EEC7B4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 750162B32AD09C2D00EEC7B4 /* FirebaseStorage */; };
-		44AC2E502AD0AF8900AD3910 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AC2E4F2AD0AF8900AD3910 /* AccountSettingViewController.swift */; };
-		44CF6AAF2AD0BACC00201DC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 759550842AC7169B00A47208 /* GoogleService-Info.plist */; };
 		751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22522AC0542000FF50C6 /* AppDelegate.swift */; };
 		751C22552AC0542000FF50C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22542AC0542000FF50C6 /* SceneDelegate.swift */; };
 		751C225C2AC0542100FF50C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751C225B2AC0542100FF50C6 /* Assets.xcassets */; };
@@ -98,6 +98,8 @@
 		7573E0B92AD17AA9004C40D7 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0B82AD17AA9004C40D7 /* SearchResultCell.swift */; };
 		7573E0BB2AD17AD5004C40D7 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0BA2AD17AD5004C40D7 /* SearchResultsViewController.swift */; };
 		7573E0BD2AD17B5D004C40D7 /* GenresHardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0BC2AD17B5D004C40D7 /* GenresHardData.swift */; };
+		7573E0BF2AD188C4004C40D7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0BE2AD188C4004C40D7 /* StorageManager.swift */; };
+		7573E0C12AD1F610004C40D7 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0C02AD1F610004C40D7 /* ProfileModel.swift */; };
 		7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506B2AC1D06900A47208 /* SignUpViewController.swift */; };
 		759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */; };
 		759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550712AC2E6D200A47208 /* BottomLineAuth.swift */; };
@@ -174,8 +176,8 @@
 		448D7FFD2AC32D0B003D0403 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		448D80002AC32D0B003D0403 /* SearchViewContriller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewContriller.swift; sourceTree = "<group>"; };
 		448D80032AC32D0B003D0403 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		750162A62AD097CC00EEC7B4 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		44AC2E4F2AD0AF8900AD3910 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
+		750162A62AD097CC00EEC7B4 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		751C224F2AC0542000FF50C6 /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		751C22522AC0542000FF50C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		751C22542AC0542000FF50C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +206,8 @@
 		7573E0B82AD17AA9004C40D7 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		7573E0BA2AD17AD5004C40D7 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		7573E0BC2AD17B5D004C40D7 /* GenresHardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresHardData.swift; sourceTree = "<group>"; };
+		7573E0BE2AD188C4004C40D7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		7573E0C02AD1F610004C40D7 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		7595506B2AC1D06900A47208 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		759550712AC2E6D200A47208 /* BottomLineAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineAuth.swift; sourceTree = "<group>"; };
@@ -613,6 +617,7 @@
 			isa = PBXGroup;
 			children = (
 				44AC2E4F2AD0AF8900AD3910 /* AccountSettingViewController.swift */,
+				7573E0C02AD1F610004C40D7 /* ProfileModel.swift */,
 			);
 			path = AccountSettingViewController;
 			sourceTree = "<group>";
@@ -661,6 +666,7 @@
 				751C22D82AC1C16100FF50C6 /* CreateAccountScreen */,
 				751C22B42AC194C100FF50C6 /* LoginScreen */,
 				750162A62AD097CC00EEC7B4 /* DatabaseManager.swift */,
+				7573E0BE2AD188C4004C40D7 /* StorageManager.swift */,
 			);
 			path = AuthorizationScreen;
 			sourceTree = "<group>";
@@ -1048,6 +1054,8 @@
 				40BCF6E52AC8C29200912EA4 /* CategoryTagCollectionViewCell.swift in Sources */,
 				406044C52AD01D23001002BA /* PlaylistViewModelProtocol.swift in Sources */,
 				40BCF6EB2AC8C30C00912EA4 /* HomeViewController.swift in Sources */,
+				7573E0BF2AD188C4004C40D7 /* StorageManager.swift in Sources */,
+				7573E0C12AD1F610004C40D7 /* ProfileModel.swift in Sources */,
 				406044B82AD01BA5001002BA /* CreatePlaylistViewModel.swift in Sources */,
 				406044B62AD01B7C001002BA /* CreatePlaylistCellViewModel.swift in Sources */,
 				406044952ACDBE8B001002BA /* PodcastRealm.swift in Sources */,
