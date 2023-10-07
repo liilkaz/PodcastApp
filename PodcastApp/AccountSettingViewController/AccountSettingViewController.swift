@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class AccountSettingViewController: UIViewController {
+    
+    let datePicker = UIDatePicker()
     
     //MARK: - User Interface
     
@@ -37,6 +40,7 @@ final class AccountSettingViewController: UIViewController {
     private lazy var imageAvatarView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "avatar")
+        image.contentMode = .scaleAspectFill
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -55,7 +59,7 @@ final class AccountSettingViewController: UIViewController {
             hasBorder: false,
             backgroundColor: .lightGray,
             cornerRadius: 10,
-            placeholder: "Enter somthing"),
+            placeholder: "Enter your first name"),
         title: "First Name"
     )
     
@@ -64,7 +68,7 @@ final class AccountSettingViewController: UIViewController {
             hasBorder: false,
             backgroundColor: .lightGray,
             cornerRadius: 10,
-            placeholder: "Enter somthing"),
+            placeholder: "Enter your last name"),
         title: "Last Name"
     )
     
@@ -73,7 +77,7 @@ final class AccountSettingViewController: UIViewController {
             hasBorder: false,
             backgroundColor: .lightGray,
             cornerRadius: 10,
-            placeholder: "Enter somthing"),
+            placeholder: "Enter your email"),
         title: "E-mail"
     )
     
@@ -82,7 +86,7 @@ final class AccountSettingViewController: UIViewController {
             hasBorder: false,
             backgroundColor: .lightGray,
             cornerRadius: 10,
-            placeholder: "Enter somthing"),
+            placeholder: "Enter your date of birth"),
         title: "Date of Birth"
     )
     
@@ -152,6 +156,31 @@ final class AccountSettingViewController: UIViewController {
         setupViews()
         saveAddTarget()
         setupConstraints()
+        createDatePicker()
+    }
+    
+    func createToolbar() -> UIToolbar {
+        let toolBar = UIToolbar()
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+        toolBar.sizeToFit()
+        toolBar.setItems([doneBtn], animated: true)
+        return toolBar
+    }
+    
+    @objc func doneButtonTapped() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateOfBirth.inputTextField.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    func createDatePicker() {
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .inline
+        
+        dateOfBirth.inputTextField.inputView = datePicker
+        dateOfBirth.inputTextField.inputAccessoryView = createToolbar()
     }
     
     override func viewWillLayoutSubviews() {
@@ -317,5 +346,25 @@ extension AccountSettingViewController {
             buttonSaveChanges.bottomAnchor.constraint(equalTo: viewScreen.bottomAnchor, constant: -20),
             buttonSaveChanges.heightAnchor.constraint(equalToConstant: 70)
         ])
+    }
+}
+
+extension AccountSettingViewController {
+    func getProfilePicture() {
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
+            return
+        }
+        let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+        let fileName = safeEmail + "_profile_picture.png"
+        let path = "images/" + fileName
+        
+        StorageManager.shared.downloadURL(for: path) {[weak self] result in
+            switch result {
+            case .success(let url):
+                self?.imageAvatarView.kf.setImage(with: url)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

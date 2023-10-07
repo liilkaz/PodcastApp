@@ -95,6 +95,7 @@ final class ProfileSettingViewController: UIViewController {
         navigationItem.title = "Settings" 
         setViews()
         setupConstraints()
+        nameLabel.text = UserDefaults.standard.string(forKey: "name")
     }
     
     func configure(model: PSViewControllerModel) {
@@ -104,6 +105,7 @@ final class ProfileSettingViewController: UIViewController {
     //MARK: - Setup Views
     
     private func setViews() {
+        logOutButton.addTarget(self, action: #selector(logOutPressed), for: .touchUpInside)
         view.addSubviews(headerStackView, settingsTableView, logOutButton)
         view.backgroundColor = .white
     }
@@ -132,6 +134,15 @@ extension ProfileSettingViewController {
             logOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             logOutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -140),
         ])
+    }
+    
+    @objc func logOutPressed(){
+        AuthService.shared.logout()
+        UserDefaults.standard.setValue(nil, forKey: "email")
+        UserDefaults.standard.setValue(nil, forKey: "name")
+        let logVC = LoginViewController()
+        logVC.modalPresentationStyle = .fullScreen
+        present(logVC, animated: true)
     }
 }
 

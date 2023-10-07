@@ -14,28 +14,28 @@ import GoogleSignInSwift
 class CreateAccountViewController: UIViewController {
     
     let cornerRadius: CGFloat = 24
-
+    
     private lazy var titleLabel = UILabel(text: "Create account", font: .jakarta24(), textColor: .white)
-
+    
     private lazy var subTitleLabel = UILabel(text: "Lorem ipsum dolor sit amet", font: .jakarta16(), textColor: .white)
-
+    
     private lazy var mainView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
     }()
-
+    
     private lazy var emailField = InputField(inputField: UITextField(hasBorder: false, backgroundColor: .lightGray, cornerRadius: cornerRadius, placeholder: "Enter your email address"), title: "Email")
-
-
+    
+    
     private lazy var emailButton = UIButton(title: "Continue with Email",
-                              backgroundColor: .activeBlueColor,
-                              titleColor: .white,
-                              hasBorder: false,
-                              cornerRadius: cornerRadius)
-
+                                            backgroundColor: .activeBlueColor,
+                                            titleColor: .white,
+                                            hasBorder: false,
+                                            cornerRadius: cornerRadius)
+    
     private lazy var dividerView = Divider(title: "Or continue with")
-
+    
     private lazy var googleButton: UIButton = {
         let button = UIButton(title: "  Continue with Google",
                               backgroundColor: .clear,
@@ -46,14 +46,14 @@ class CreateAccountViewController: UIViewController {
         button.addTarget(self, action: #selector(didTapGoogleButton), for: .touchUpInside)
         return button
     }()
-
+    
     private let bottomText = UILabel(text: "Already have an account?",
-                            font: .jakarta16semibold(), textColor: .boldGrayTextColor)
+                                     font: .jakarta16semibold(), textColor: .boldGrayTextColor)
     
     private lazy var loginButton = UIButton(title: "Login", backgroundColor: .clear, titleColor: .purpleTextColor, hasBorder: false)
     
     private let bottomStackView = UIStackView(axis: .horizontal, spacing: 2)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -116,20 +116,26 @@ class CreateAccountViewController: UIViewController {
             bottomStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
-
+    
     // MARK: - @objs Methods
-
+    
     @objc
     private func didTapEmailButton() {
         guard let email = emailField.inputTextField.text else {return}
-        if !email.isEmpty{
+        if !email.isEmpty {
+            DatabaseManager.shared.userExists(with: email) { [weak self] exists in
+                guard !exists else {
+                    self?.showAlert(with: "Warning", and: "User already exists")
+                    return
+                }
+            }
             let signUpVC = SignUpViewController(email: email)
             navigationController?.pushViewController(signUpVC, animated: true)
         } else {
             emailButton.isEnabled = true
         }
     }
-
+    
     @objc
     private func didTapLoginButton() {
         navigationController?.popViewController(animated: true)
@@ -137,42 +143,84 @@ class CreateAccountViewController: UIViewController {
     
     @objc
     private func didTapGoogleButton() {
-       signWithGoogle()
+        signWithGoogle()
     }
 }
 
 extension CreateAccountViewController {
     private func signWithGoogle() {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-
+        
         // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
         GIDSignIn.sharedInstance.configuration = config
-
+        
         // Start the sign in flow!
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
-          guard error == nil else {
-              showAlert(with: "Warning!", and: AuthError.unknownError.localizedDescription)
-              return
-          }
-
-          guard let user = result?.user,
-            let idToken = user.idToken?.tokenString
-          else {
-              return
-          }
-
-          let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                                                         accessToken: user.accessToken.tokenString)
-
+            guard error == nil else {
+                showAlert(with: "Warning!", and: AuthError.unknownError.localizedDescription)
+                return
+            }
+            
+            guard let user = result?.user,
+                  let idToken = user.idToken?.tokenString
+            else { return }
+            
+            guard let email = user.profile?.email,
+                  let firstName = user.profile?.givenName,
+                  let lastName = user.profile?.familyName else { return }
+            
+            UserDefaults.standard.set(email, forKey: "email")
+            
+            DatabaseManager.shared.userExists(with: email) { exists in
+                if !exists {
+                    let user = UserDataBase(firstName: firstName, lastName: lastName, email: email)
+                    DatabaseManager.shared.insertUser(with: user, completion: { success in
+                        if success {
+                            guard let image = UIImage(named: "avatar"), let data = image.pngData() else {
+                                return
+                            }
+                            let filename = user.profilePictureFileName
+                            StorageManager.shared.uploadProfilePicture(with: data, fileName: filename) { result in
+                                switch result {
+                                case .success(let downloadURL):
+                                    UserDefaults.standard.set(downloadURL, forKey: "profile_picture_file_name")
+                                    print(downloadURL)
+                                case .failure(let error):
+                                    print(error)
+                                }
+                                
+                            }
+                        }
+                    })
+                }
+            }
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: user.accessToken.tokenString)
+            
             Auth.auth().signIn(with: credential) { [weak self] result, error in
-
+                
                 if result != nil {
+                    let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+                    DatabaseManager.shared.getDataFor(path: safeEmail) { result in
+                        switch result {
+                        case .success(let data):
+                            guard let userData = data as? [String: Any],
+                                  let firstName = userData["first_name"] as? String,
+                                  let lastName = userData["last_name"] as? String else {
+                                return
+                            }
+                            UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
+                            
+                        case .failure(let error):
+                            print("Failed to read data with error \(error)")
+                        }
+                    }
                     let homeVC = TabBarViewController()
                     homeVC.modalPresentationStyle = .fullScreen
                     self?.present(homeVC, animated: true)
                 }
-
+                
                 if error != nil {
                     self?.showAlert(with: "Warning", and: AuthError.unknownError.localizedDescription)
                 }
