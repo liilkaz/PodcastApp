@@ -54,7 +54,7 @@ class SearchViewController: UIViewController {
         let searchTextField = searchBar.searchTextField
         searchTextField.backgroundColor = .white
         searchTextField.placeholder = "Podcast, channel, or artists"
-        searchTextField.font = .regular14()()
+        searchTextField.font = .regular14()
         searchTextField.leftView = nil
         searchTextField.rightView = rightButton
         searchTextField.rightViewMode = .always
@@ -117,6 +117,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return 120
         case 1:
+            // MARK: По идее можно получить  число жанров из апишки, умножить на (высоту ячейки +17) и разделить на два(сколько в ряду), но пока такое число, чтобы не резалось и влезало все.
             return 600
         default: break
         }
@@ -153,6 +154,11 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let vc = 
+//        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension SearchViewController : UISearchBarDelegate, UITextFieldDelegate {
@@ -180,6 +186,8 @@ extension SearchViewController : UISearchBarDelegate, UITextFieldDelegate {
         }
     }
 }
+
+
 
 
 

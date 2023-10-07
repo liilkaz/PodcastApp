@@ -91,7 +91,7 @@ extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegat
         return UITableViewCell()
     }
 
-    func createSectionHeaderView(withTitle title: String, font: UIFont? = .regular14()(), button: UIButton?, separatorNeeded: Bool = false, tableView: UITableView) -> UIView {
+    func createSectionHeaderView(withTitle title: String, font: UIFont? = .regular14(), button: UIButton?, separatorNeeded: Bool = false, tableView: UITableView) -> UIView {
         let headerView = UIView()
         let label = UILabel(text: "", font: font, textColor: .black)
         headerView.addSubviews(label)
