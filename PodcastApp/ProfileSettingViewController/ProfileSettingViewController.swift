@@ -103,7 +103,7 @@ final class ProfileSettingViewController: UIViewController {
     
     private func setViews() {
         view.addSubviews(headerStackView, settingsTableView, logOutButton)
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
     }
 }
 
@@ -120,10 +120,10 @@ extension ProfileSettingViewController {
             headerStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             headerStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             
-            settingsTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
+            settingsTableView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor, constant: 20),
             settingsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             settingsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
-            settingsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -250),
+            settingsTableView.bottomAnchor.constraint(equalTo: logOutButton.topAnchor, constant: -50),
             
             logOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 650),
             logOutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
@@ -148,13 +148,7 @@ extension ProfileSettingViewController: UITableViewDataSource {
         cell.configure(model: item)
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.section).")
-    }
 }
-
-//MARK: - UITableViewDelegate
 
 extension ProfileSettingViewController: UITableViewDelegate {
     
@@ -175,4 +169,3 @@ extension ProfileSettingViewController: UITableViewDelegate {
         }
     }
 }
-
