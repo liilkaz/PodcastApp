@@ -11,4 +11,5 @@ struct Feed: Decodable {
     let title: String?
     let image: String?
     let episodeCount: Int?
+    let author: String?
 }

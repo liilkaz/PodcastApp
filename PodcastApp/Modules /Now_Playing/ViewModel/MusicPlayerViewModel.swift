@@ -4,11 +4,14 @@ protocol CurrentTimeValueChangedDelegate: AnyObject {
     func changeValue(time: Double)
 }
 
+// playerQueue
 class MusicPlayerViewModel {
-    var isPaused = false
-    weak var delegate: CurrentTimeValueChangedDelegate?
-    // playerQueue
     private var player: AVPlayer?
+    weak var delegate: CurrentTimeValueChangedDelegate?
+    var tracks: [String] = []
+    
+    var currentIndex = 0
+    var isPaused = false
     var totalTime: Double = 0
     var currentTime: Double = 0.0 {
         didSet {
@@ -16,8 +19,34 @@ class MusicPlayerViewModel {
         }
     }
     
-    func setupPlayer(with url: String) {
-        guard let url = URL(string: url) else { return }
+    init(tracks: [String], currentIndex: Int) {
+        self.tracks = tracks
+        self.currentIndex = currentIndex
+    }
+    
+    
+    func playNextTrack() {
+        currentIndex += 1
+        if currentIndex >= tracks.count {
+            currentIndex = 0
+        }
+        setupPlayer()
+        playMusic()
+    }
+    
+    
+    func playPreviousTrack() {
+        currentIndex -= 1
+        if currentIndex < 0 {
+            currentIndex = tracks.count - 1
+        }
+        setupPlayer()
+        playMusic()
+    }
+    
+    
+    func setupPlayer() {
+        guard let url = URL(string: tracks[currentIndex]) else { return }
         print(url)
             
         let playerItem = AVPlayerItem(url: url)
@@ -85,6 +114,4 @@ class MusicPlayerViewModel {
         let normalizedMinutes = Float(minutePart + additionalMinutes)
         return normalizedMinutes + secondPart / 100.0
     }
-
-
 }

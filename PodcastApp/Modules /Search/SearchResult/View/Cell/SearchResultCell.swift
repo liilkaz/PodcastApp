@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class SearchResultCell: UITableViewCell {
     static let identifier = "SearchResultCell"
@@ -7,7 +8,6 @@ class SearchResultCell: UITableViewCell {
     private lazy var podcastImage: UIImageView = {
         let image = UIImageView(cornerRadius: 14)
         image.image = UIImage(named: "beauty")
-        //        image.backgroundColor = .tableViewColor
         return image
     }()
     
@@ -15,10 +15,22 @@ class SearchResultCell: UITableViewCell {
     private lazy var episodeLabel = UILabel(text: "56:38", font: .manrope14regular(), textColor: .darkGray, textAlignment: .left)
     private lazy var chanelLabel = UILabel(text: "Dr. Oi om jean", font: .manrope14regular(), textColor: .darkGray, textAlignment: .left)
     
+    public func setupCell(with model: Feed) {
+        guard let image = model.image,
+              let url = URL(string: image),
+              let episodeCount = model.episodeCount
+        else {
+            return
+        }
+        podcastImage.kf.setImage(with: url)
+        podcastLabel.text = model.title
+        episodeLabel.text = "\(episodeCount) Eps"
+        chanelLabel.text = model.author
+    }
+    
+    
     
     private func setupUI() {
-        
-        
         contentView.addSubviews(podcastImage, podcastLabel, episodeLabel, chanelLabel)
         NSLayoutConstraint.activate([
             
@@ -37,7 +49,6 @@ class SearchResultCell: UITableViewCell {
             chanelLabel.topAnchor.constraint(equalTo: podcastLabel.bottomAnchor, constant: 5),
             chanelLabel.leadingAnchor.constraint(equalTo: episodeLabel.trailingAnchor, constant: 10)
         ])
-        
     }
     
     
