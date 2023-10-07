@@ -9,9 +9,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let vc = UINavigationController(rootViewController: OnboardingPageViewController())
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
+        if Core.shared.isNewUser(){
+            Core.shared.notNewUser()
+            print("new user")
+            let vc = UINavigationController(rootViewController: OnboardingPageViewController())
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        }
+        else {
+            print("existing user")
+            let mainAppViewController = UINavigationController(rootViewController: LoginViewController())
+            window?.rootViewController = mainAppViewController
+            window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

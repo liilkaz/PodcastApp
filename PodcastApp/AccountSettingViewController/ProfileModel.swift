@@ -11,6 +11,5 @@ struct ProfileModel {
     
     let firstName: String
     let lastName: String
-    let dateOfBirth: String
-    let gender: String
+    let email: String
 }
