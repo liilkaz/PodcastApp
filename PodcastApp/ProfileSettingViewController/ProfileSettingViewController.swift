@@ -83,7 +83,7 @@ final class ProfileSettingViewController: UIViewController {
         backgroundColor: .clear,
         titleColor: .activeBlueColor,
         font: .jakarta16(),
-        hasBorder: false,
+        hasBorder: true,
         cornerRadius: 32
     )
 
