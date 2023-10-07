@@ -7,13 +7,8 @@
 import UIKit
 
 class SearchResultsViewController: UIViewController, UISearchBarDelegate {
-
-//    private lazy var searchResultsController: UISearchController = {
-//        let vc = UISearchController(searchResultsController: nil)
-//        vc.searchBar.placeholder = "Search Podcast"
-//        vc.searchBar.delegate = self
-//        return vc
-//    }()
+    
+    var searchTerm = ""
 
     private lazy var searchTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -23,11 +18,13 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
         tableView.delegate = self
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
     }
 
     override func viewWillLayoutSubviews() {
@@ -94,14 +91,14 @@ extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegat
         return UITableViewCell()
     }
 
-    func createSectionHeaderView(withTitle title: String, font: UIFont? = .manrope14(), button: UIButton?, separatorNeeded: Bool = false, tableView: UITableView) -> UIView {
+    func createSectionHeaderView(withTitle title: String, font: UIFont? = .regular14()(), button: UIButton?, separatorNeeded: Bool = false, tableView: UITableView) -> UIView {
         let headerView = UIView()
         let label = UILabel(text: "", font: font, textColor: .black)
         headerView.addSubviews(label)
 
         if let button = button {
             button.setImage(UIImage(named: "Close"), for: .normal)
-            button.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+            button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
             headerView.addSubviews(button)
         }
 
@@ -140,13 +137,17 @@ extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegat
         }
     }
 
+    @objc private func closeButtonTapped() {
+        navigationController?.popViewController(animated: true)
+        }
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case 0:
             let button = UIButton(type: .custom)
-            return createSectionHeaderView(withTitle: "Search Term", button: button, separatorNeeded: true, tableView: tableView)
+            return createSectionHeaderView(withTitle: searchTerm, button: button, separatorNeeded: true, tableView: tableView)
         case 1:
-            return createSectionHeaderView(withTitle: "Search Results", font: .manrope14bold(), button: nil, tableView: tableView)
+            return createSectionHeaderView(withTitle: "Search Results", font: .bold14(), button: nil, tableView: tableView)
         case 2:
             return createSectionHeaderView(withTitle: "All Podcasts", button: nil, tableView: tableView)
         default:

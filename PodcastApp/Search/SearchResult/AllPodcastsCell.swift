@@ -18,10 +18,10 @@ class AllPodcastsCell: UITableViewCell {
         return image
     }()
     
-    private lazy var podcastLabel = UILabel(text: "Between love and career", font: .manrope14bold(), textColor: .black, textAlignment: .left, numberOfLines: 0)
+    private lazy var podcastLabel = UILabel(text: "Between love and career", font: .bold14(), textColor: .black, textAlignment: .left, numberOfLines: 0)
 
-    private lazy var durationLabel = UILabel(text: "56:38", font: .manrope12(), textColor: .darkGray, textAlignment: .left)
-    private lazy var episodeLabel = UILabel(text: "56 Eps", font: .manrope12(), textColor: .darkGray, textAlignment: .left)
+    private lazy var durationLabel = UILabel(text: "56:38", font: .regular12(), textColor: .darkGray, textAlignment: .left)
+    private lazy var episodeLabel = UILabel(text: "56 Eps", font: .regular12(), textColor: .darkGray, textAlignment: .left)
     
     
     private func setupUI() {

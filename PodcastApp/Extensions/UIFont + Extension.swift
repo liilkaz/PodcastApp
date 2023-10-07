@@ -32,23 +32,23 @@ extension UIFont {
         return UIFont(name: "PlusJakartaSans-Medium", size: 14)
     }
     
-    static func manrope16bold() -> UIFont? {
+    static func bold16() -> UIFont? {
         return UIFont(name: "Manrope-Bold", size: 16)
     }
     
-    static func manrope16() -> UIFont? {
+    static func regular16() -> UIFont? {
         return UIFont(name: "Manrope-Regular", size: 16)
     }
     
-    static func manrope14bold() -> UIFont? {
+    static func bold14() -> UIFont? {
         return UIFont(name: "Manrope-Bold", size: 14)
     }
         
-        static func manrope14() -> UIFont? {
+        static func regular14() -> UIFont? {
             return UIFont(name: "Manrope-Regular", size: 14)
     }
     
-    static func manrope12() -> UIFont? {
+    static func regular12() -> UIFont? {
         return UIFont(name: "Manrope-Regular", size: 12)
     }
 }

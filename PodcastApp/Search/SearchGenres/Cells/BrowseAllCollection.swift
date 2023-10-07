@@ -11,7 +11,7 @@ class BrowseAllCollection: UITableViewCell {
     var genresarr = GenresHardData()
     static let identifier = "BrowseAllCollection"
     
-    private lazy var sectionLabel = UILabel(text: "Browse All", font: .manrope16bold(), textColor: .black)
+    private lazy var sectionLabel = UILabel(text: "Browse All", font: .bold16(), textColor: .black)
     
     private lazy var browseAllCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

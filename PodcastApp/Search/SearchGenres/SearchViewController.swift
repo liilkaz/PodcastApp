@@ -8,11 +8,13 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    var searchInput: String = ""
+    
     private lazy var bgView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "SearchBG")
+        view.contentMode = .scaleAspectFill
         return view
-        
     }()
     
     private lazy var searchTableView: UITableView = {
@@ -27,28 +29,39 @@ class SearchViewController: UIViewController {
         return tableView
     }()
     
-//    private let searchBar: UISearchBar = {
-//              let searchBar = UISearchBar()
-//              searchBar.barTintColor = UIColor.white
-//              searchBar.layer.cornerRadius = 12.0
-//              searchBar.layer.masksToBounds = true
-//
-//              if let searchImage = UIImage(systemName: "search") {
-//                  let searchImageView = UIImageView(image: searchImage)
-//                  searchImageView.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
-//                  searchBar.setImage(searchImageView.image, for: .search, state: .normal)
-//                  searchBar.searchTextField.backgroundColor = .white
-//                  searchBar.placeholder = "Search"
-//              }
-//        return searchBar
-//    }()
-    
-    private let searchBar : UISearchBar = {
+    private let searchBar: UISearchBar = {
         let bar = UISearchBar()
         bar.layer.masksToBounds = true
         bar.layer.cornerRadius = 12
         return bar
     }()
+    
+    private lazy var rightButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        button.setImage(UIImage(named: "Search"), for: .normal)
+        button.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func rightButtonTapped() {
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        rightButton.setImage(UIImage(named: "Search"), for: .normal)
+    }
+    
+    private func setupSearchBar() {
+        let searchTextField = searchBar.searchTextField
+        searchTextField.backgroundColor = .white
+        searchTextField.placeholder = "Podcast, channel, or artists"
+        searchTextField.font = .regular14()()
+        searchTextField.leftView = nil
+        searchTextField.rightView = rightButton
+        searchTextField.rightViewMode = .always
+      
+        searchBar.barTintColor = .white
+        searchBar.delegate = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,18 +69,18 @@ class SearchViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        view.backgroundColor = .white
         setupSearchBar()
         setupUI()
         navigationItem.title = "Search"
+        navigationItem.hidesBackButton = true
     }
     
     private func setupUI() {
         view.addSubviews(bgView)
         view.addSubviews(searchTableView)
         view.addSubviews(searchBar)
+        
         NSLayoutConstraint.activate([
-            
             bgView.topAnchor.constraint(equalTo: view.topAnchor),
             bgView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -83,18 +96,19 @@ class SearchViewController: UIViewController {
         ])
     }
     
-    private func setupSearchBar() {
-        let searchTextField = searchBar.searchTextField
-        searchTextField.backgroundColor = .white
-        searchTextField.placeholder = "Search"
-        let imageView = UIImageView(image:UIImage(named: "Search"))
-        searchTextField.leftView = nil
-        searchTextField.rightView = imageView
-        searchTextField.rightViewMode = UITextField.ViewMode.always
-        searchBar.barTintColor = .white
-        searchBar.delegate = self
-        
-    }
+    //    private func setupSearchBar() {
+    //        let searchTextField = searchBar.searchTextField
+    //        searchTextField.backgroundColor = .white
+    //        searchTextField.placeholder = "Search"
+    //        searchBar.showsBookmarkButton = true
+    //        searchTextField.leftView = nil
+    ////        if let button = searchTextField.rightView as? UIButton {
+    ////            button.setImage(UIImage(named: "Search"), for: .normal)
+    ////            button.setImage(UIImage(named: "Search"), for: .highlighted
+    ///}
+    //        searchBar.barTintColor = .white
+    //        searchBar.delegate = self
+    //    }
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
@@ -128,10 +142,12 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: TopGenreCollection.identifier, for: indexPath) as! TopGenreCollection
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: BrowseAllCollection.identifier, for: indexPath) as! BrowseAllCollection
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         default: break
         }
@@ -139,18 +155,32 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension SearchViewController : UISearchBarDelegate {
+extension SearchViewController : UISearchBarDelegate, UITextFieldDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            rightButton.setImage(UIImage(named: "Search"), for: .normal)
+        } else {
+            rightButton.setImage(UIImage(named: "Close"), for: .normal)
+        }
+    }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchInput = searchBar.text, !searchInput.isEmpty {
+            self.searchInput = searchInput
+            let vc = SearchResultsViewController()
+            vc.searchTerm = searchInput
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            searchBar.searchTextField.placeholder = "Type something"
         }
+    }
 }
-//extension SearchViewController: UISearchBarDelegate {
-//
-//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        let vc = SearchResultsViewController()
-//        navigationController?.pushViewController(vc, animated: true)
-//    }
-//}
+
 
 
 

@@ -16,7 +16,7 @@ class GenreCell: UICollectionViewCell {
         return image
     }()
     
-    private lazy var genreLabel = UILabel(text: "Music and chill", font: .manrope14(), textColor: .white, textAlignment: .center)
+    private lazy var genreLabel = UILabel(text: "Music and chill", font: .regular14()(), textColor: .white, textAlignment: .center)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

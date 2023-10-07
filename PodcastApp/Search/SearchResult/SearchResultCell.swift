@@ -18,9 +18,9 @@ class SearchResultCell: UITableViewCell {
         return image
     }()
     
-    private lazy var podcastLabel = UILabel(text: "Baby Pesut Podcast", font: .manrope16bold(), textColor: .black, textAlignment: .left, numberOfLines: 0)
-    private lazy var episodeLabel = UILabel(text: "56:38", font: .manrope14(), textColor: .darkGray, textAlignment: .left)
-    private lazy var chanelLabel = UILabel(text: "Dr. Oi om jean", font: .manrope14(), textColor: .darkGray, textAlignment: .left)
+    private lazy var podcastLabel = UILabel(text: "Baby Pesut Podcast", font: .bold16(), textColor: .black, textAlignment: .left, numberOfLines: 0)
+    private lazy var episodeLabel = UILabel(text: "56:38", font: .regular14()(), textColor: .darkGray, textAlignment: .left)
+    private lazy var chanelLabel = UILabel(text: "Dr. Oi om jean", font: .regular14()(), textColor: .darkGray, textAlignment: .left)
     
     
     private func setupUI() {

@@ -11,10 +11,10 @@ class TopGenreCollection: UITableViewCell {
     var genresarr = GenresHardData()
     static let identifier = "TopGenreCollection"
 
-    private lazy var sectionOneLabel = UILabel(text: "Top Genres", font: .manrope16bold(), textColor: .black)
+    private lazy var sectionOneLabel = UILabel(text: "Top Genres", font: .bold16(), textColor: .black)
     
     private lazy var seeAllButton: UIButton = {
-        let button = UIButton(title: "See All", backgroundColor: .clear, titleColor: .gray, font: .manrope16() , hasBorder: false)
+        let button = UIButton(title: "See All", backgroundColor: .clear, titleColor: .gray, font: .regular16() , hasBorder: false)
         button.addTarget(self, action: #selector(seeAllButtonPressed), for: .touchUpInside)
         return button
     }()
@@ -84,7 +84,7 @@ extension TopGenreCollection: UICollectionViewDataSource {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return genresarr.topGenres.count
+        return 1
     }
 }
 
