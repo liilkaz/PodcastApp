@@ -1,7 +1,12 @@
 import UIKit
 
+protocol BrowseAllButtonPressed: AnyObject {
+    func browseAllCollection(with title: String)
+}
+
 class BrowseAllCollection: UITableViewCell {
-    var genresarr = GenresHardData()
+    weak var delegate: BrowseAllButtonPressed?
+    var genresarr = AllGenres.allCases.map { $0.rawValue }
     static let identifier = "BrowseAllCollection"
     
     private lazy var sectionLabel = UILabel(text: "Browse All", font: .manrope16bold(), textColor: .black)
@@ -24,7 +29,7 @@ class BrowseAllCollection: UITableViewCell {
     }()
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 147, height: 84)
+        return CGSize(width: 150, height: 85)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -58,21 +63,26 @@ class BrowseAllCollection: UITableViewCell {
     }
 }
 
-extension BrowseAllCollection: UICollectionViewDataSource, UICollectionViewDelegate {
-        
+extension BrowseAllCollection: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return genresarr.allGenres.count
+        return genresarr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let title = genresarr.allGenres[indexPath.row]
-        let image = UIImage(systemName: "")
+        let title = genresarr[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCell.identifier, for: indexPath) as! GenreCell
-        cell.configureCell(image: image, title: title)
+        cell.configureCell(title: title)
         return cell
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
+    }
+}
+
+
+extension BrowseAllCollection: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.browseAllCollection(with: genresarr[indexPath.row])
     }
 }
