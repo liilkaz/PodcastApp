@@ -72,7 +72,7 @@ final class ProfileSettingViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
-        tableView.register(ProfileSettingViewControllerTableViewCell.self, forCellReuseIdentifier: Theme.psVCTableViewCellID)
+        tableView.register(ProfileSettingViewControllerTableViewCell.self, forCellReuseIdentifier: "Theme.psVCTableViewCellID")
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -83,7 +83,7 @@ final class ProfileSettingViewController: UIViewController {
         backgroundColor: .clear,
         titleColor: .activeBlueColor,
         font: .jakarta16(),
-        hasBorder: false,
+        hasBorder: true,
         cornerRadius: 32
     )
 
@@ -116,14 +116,14 @@ extension ProfileSettingViewController {
             avatarImageView.heightAnchor.constraint(equalToConstant: 52),
             avatarImageView.widthAnchor.constraint(equalToConstant: 48),
             
-            headerStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 56),
+            headerStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 56),
             headerStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             headerStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             
-            settingsTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
+            settingsTableView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor, constant: 20),
             settingsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             settingsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
-            settingsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -250),
+            settingsTableView.bottomAnchor.constraint(equalTo: logOutButton.topAnchor, constant: -50),
             
             logOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 650),
             logOutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
@@ -142,37 +142,29 @@ extension ProfileSettingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Theme.psVCTableViewCellID, for: indexPath) as? ProfileSettingViewControllerTableViewCell  else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Theme.psVCTableViewCellID", for: indexPath) as? ProfileSettingViewControllerTableViewCell  else { return UITableViewCell() }
         let item = models[indexPath.row]
         cell.selectionStyle = .none
         cell.configure(model: item)
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.section).")
-    }
 }
-
-//MARK: - UITableViewDelegate
 
 extension ProfileSettingViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         case 1:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         case 2:
-            let viewController = HomeViewController()
+            let viewController = AccountSettingViewController()
             present(viewController, animated: true)
         default:
             break
         }
     }
 }
-

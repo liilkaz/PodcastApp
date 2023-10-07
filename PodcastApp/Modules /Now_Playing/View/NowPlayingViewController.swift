@@ -21,7 +21,7 @@ class NowPlayingViewController: UIViewController {
     private lazy var musicLabel = UILabel(text: "Мне это не нужно", font: .boldSystemFont(ofSize: 16), textColor: .black, textAlignment: .center)
     private lazy var creatorLabel = UILabel(text: "Kizaru", font: .systemFont(ofSize: 14), textColor: .gray, textAlignment: .center)
     private lazy var startSliderValueLabel = UILabel(text: "0:00", font: .systemFont(ofSize: 14), textColor: .darkGray, textAlignment: .center)
-    private lazy var endSliderValueLabel = UILabel(text: "50:00", font: .systemFont(ofSize: 14), textColor: .darkGray, textAlignment: .center)
+    private lazy var endSliderValueLabel = UILabel(text: "0:00", font: .systemFont(ofSize: 14), textColor: .darkGray, textAlignment: .center)
     
     private lazy var musicSlider: UISlider = {
         let slider = UISlider()
@@ -92,9 +92,16 @@ class NowPlayingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupPlayer()
-        configure()
         musicPlayerViewModel.delegate = self
+        configureVC()
+       
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setupPlayer()
+        configurePlayer()
     }
     
     @IBAction private func sliderTouchUp(_ sender: UISlider) {
@@ -110,32 +117,35 @@ class NowPlayingViewController: UIViewController {
 
     
     private func setupPlayer() {
-        musicPlayerViewModel.setupPlayer(with: nowPlayingViewModel.podcastMusic!)
+        musicPlayerViewModel.setupPlayer(with: nowPlayingViewModel.podcastMusic)
         musicPlayerViewModel.playMusic()
     }
     
-    private func configure() {
-        let duration = musicPlayerViewModel.currentTime
-        guard let image = nowPlayingViewModel.podcastImage,
-              let podcastTitle = nowPlayingViewModel.podcastTitle,
-              let podcastCreator = nowPlayingViewModel.podcastCreator
-        else {
-            return
-        }
+    private func configureVC() {
         Task {
-           let image = try await nowPlayingViewModel.networkService.loadImageTask(from: image)
+            let image = try await nowPlayingViewModel.networkService.loadImageTask(from: nowPlayingViewModel.podcastImage)
             musicImage.image = image
         }
-        musicLabel.text = podcastTitle
-        creatorLabel.text = podcastCreator
+        
+        musicLabel.text = nowPlayingViewModel.podcastTitle
+        creatorLabel.text = nowPlayingViewModel.podcastCreator
+    }
+    
+    private func configurePlayer() {
+        let duration = musicPlayerViewModel.currentTime
         endSliderValueLabel.text = String(format: "%.2f", duration).replacingOccurrences(of: ".", with: ":")
         musicSlider.maximumValue = Float(duration)
-        print(duration)
     }
     
     
     private func setupNavigationBarWithBookmark() {
-        let button = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: self, action: #selector(bookmarkButtonPressed(_:)))
+        let button = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: self, action: #selector(bookmarkButtonPressed(_:)))
+        nowPlayingViewModel.realmService.checkPodcastInRealm(id: nowPlayingViewModel.podcastId) {
+            self.navigationItem.rightBarButtonItem = button
+        } failureCompletion: {
+            self.navigationItem.rightBarButtonItem = button
+            self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "bookmark")
+        }
         button.tintColor = .black
         navigationItem.rightBarButtonItem = button
     }
@@ -144,8 +154,10 @@ class NowPlayingViewController: UIViewController {
         switch sender.image{
         case UIImage(systemName: "bookmark"):
             sender.image = UIImage(systemName: "bookmark.fill")
+            nowPlayingViewModel.realmService.savePodcastToRealm(id: nowPlayingViewModel.podcastId, podcastURL: nowPlayingViewModel.podcastMusic, imageURL: nowPlayingViewModel.podcastImage, title: nowPlayingViewModel.podcastTitle, creator: nowPlayingViewModel.podcastCreator)
         case UIImage(systemName: "bookmark.fill"):
             sender.image = UIImage(systemName: "bookmark")
+            nowPlayingViewModel.realmService.deletePodcastFromRealm(id: nowPlayingViewModel.podcastId)
         default: break
         }
     }

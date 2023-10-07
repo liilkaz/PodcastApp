@@ -1,16 +1,10 @@
-//
-//  NetworkService.swift
-//  PodcastApp
-//
-//  Created by sidzhe on 03.10.2023.
-//
-
 import UIKit
 
 //MARK: - NetworkServiceProtocol
 
 protocol NetworkServiceProtocol: AnyObject {
     func searchPodcast<T: Decodable>(search: String, completion: @escaping (Result<T, RequestError>) -> Void)
+    func searchPodcastByTitle<T: Decodable>(title: String, completion: @escaping (Result<T, RequestError>) -> Void)
     func searchRecent<T: Decodable>(completion: @escaping (Result<T, RequestError>) -> Void)
     func loadImageTask(from urlString: String) async throws -> UIImage
 }
@@ -18,6 +12,13 @@ protocol NetworkServiceProtocol: AnyObject {
 //MARK: - NetworkService
 
 class NetworkService: NetworkServiceProtocol {
+    func searchPodcastByTitle<T>(title: String, completion: @escaping (Result<T, RequestError>) -> Void) where T : Decodable {
+        Task(priority: .background) {
+            let result: Result<T, RequestError> = await service.getPodcastByTitle(title: title)
+            completion(result)
+        }
+    }
+    
     
     private let service = PodcastService()
     
@@ -30,6 +31,8 @@ class NetworkService: NetworkServiceProtocol {
             completion(result)
         }
     }
+    
+    
     
     //MARK: - searchRecent
     

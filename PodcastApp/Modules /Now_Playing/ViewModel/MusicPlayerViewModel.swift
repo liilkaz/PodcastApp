@@ -9,6 +9,7 @@ class MusicPlayerViewModel {
     weak var delegate: CurrentTimeValueChangedDelegate?
     // playerQueue
     private var player: AVPlayer?
+    var totalTime: Double = 0
     var currentTime: Double = 0.0 {
         didSet {
             delegate?.changeValue(time: currentTime)
@@ -25,6 +26,7 @@ class MusicPlayerViewModel {
         if let duration = player?.currentItem?.asset.duration {
             let totalSeconds = CMTimeGetSeconds(duration)
             self.currentTime = converteToMinute(from: totalSeconds)
+            self.totalTime = converteToMinute(from: totalSeconds)
         }
     }
     
