@@ -152,8 +152,7 @@ extension ProfileSettingViewController: UITableViewDataSource {
 
 extension ProfileSettingViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
             let viewController = AccountSettingViewController()
