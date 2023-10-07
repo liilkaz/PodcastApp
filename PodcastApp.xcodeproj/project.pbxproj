@@ -83,6 +83,14 @@
 		751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D42AC1B5EB00FF50C6 /* UIColor + Extension.swift */; };
 		751C22D72AC1BC4F00FF50C6 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D62AC1BC4F00FF50C6 /* Divider.swift */; };
 		751C22DA2AC1C18200FF50C6 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C22D92AC1C18200FF50C6 /* CreateAccountViewController.swift */; };
+		7573E0AF2AD17943004C40D7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0AE2AD17943004C40D7 /* SearchViewController.swift */; };
+		7573E0B12AD179B7004C40D7 /* BrowseAllCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0B02AD179B7004C40D7 /* BrowseAllCollection.swift */; };
+		7573E0B32AD17A13004C40D7 /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0B22AD17A13004C40D7 /* GenreCell.swift */; };
+		7573E0B52AD17A41004C40D7 /* TopGenreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0B42AD17A41004C40D7 /* TopGenreCollection.swift */; };
+		7573E0B72AD17A8B004C40D7 /* AllPodcastsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0B62AD17A8B004C40D7 /* AllPodcastsCell.swift */; };
+		7573E0B92AD17AA9004C40D7 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0B82AD17AA9004C40D7 /* SearchResultCell.swift */; };
+		7573E0BB2AD17AD5004C40D7 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0BA2AD17AD5004C40D7 /* SearchResultsViewController.swift */; };
+		7573E0BD2AD17B5D004C40D7 /* GenresHardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573E0BC2AD17B5D004C40D7 /* GenresHardData.swift */; };
 		7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506B2AC1D06900A47208 /* SignUpViewController.swift */; };
 		759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */; };
 		759550722AC2E6D200A47208 /* BottomLineAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759550712AC2E6D200A47208 /* BottomLineAuth.swift */; };
@@ -181,6 +189,14 @@
 		751C22D42AC1B5EB00FF50C6 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		751C22D62AC1BC4F00FF50C6 /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
 		751C22D92AC1C18200FF50C6 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		7573E0AE2AD17943004C40D7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7573E0B02AD179B7004C40D7 /* BrowseAllCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseAllCollection.swift; sourceTree = "<group>"; };
+		7573E0B22AD17A13004C40D7 /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
+		7573E0B42AD17A41004C40D7 /* TopGenreCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGenreCollection.swift; sourceTree = "<group>"; };
+		7573E0B62AD17A8B004C40D7 /* AllPodcastsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPodcastsCell.swift; sourceTree = "<group>"; };
+		7573E0B82AD17AA9004C40D7 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		7573E0BA2AD17AD5004C40D7 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		7573E0BC2AD17B5D004C40D7 /* GenresHardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresHardData.swift; sourceTree = "<group>"; };
 		7595506B2AC1D06900A47208 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7595506F2AC2E55800A47208 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		759550712AC2E6D200A47208 /* BottomLineAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineAuth.swift; sourceTree = "<group>"; };
@@ -524,6 +540,7 @@
 		40CA63AD2AC8BD0E00B8B4DA /* Modules  */ = {
 			isa = PBXGroup;
 			children = (
+				7573E0AA2AD17879004C40D7 /* Search */,
 				406044A22AD01935001002BA /* CreatePlaylist */,
 				4060449E2AD018D7001002BA /* Favorites */,
 				40B999142ACB0EC400184D44 /* ProfileSettings */,
@@ -692,6 +709,45 @@
 				751C22D92AC1C18200FF50C6 /* CreateAccountViewController.swift */,
 			);
 			path = CreateAccountScreen;
+			sourceTree = "<group>";
+		};
+		7573E0AA2AD17879004C40D7 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7573E0AB2AD1789F004C40D7 /* SearchGenres */,
+				7573E0AD2AD178E7004C40D7 /* SearchResult */,
+				7573E0BC2AD17B5D004C40D7 /* GenresHardData.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		7573E0AB2AD1789F004C40D7 /* SearchGenres */ = {
+			isa = PBXGroup;
+			children = (
+				7573E0AC2AD178C1004C40D7 /* Cells */,
+				7573E0AE2AD17943004C40D7 /* SearchViewController.swift */,
+			);
+			path = SearchGenres;
+			sourceTree = "<group>";
+		};
+		7573E0AC2AD178C1004C40D7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7573E0B02AD179B7004C40D7 /* BrowseAllCollection.swift */,
+				7573E0B22AD17A13004C40D7 /* GenreCell.swift */,
+				7573E0B42AD17A41004C40D7 /* TopGenreCollection.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7573E0AD2AD178E7004C40D7 /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				7573E0B62AD17A8B004C40D7 /* AllPodcastsCell.swift */,
+				7573E0B82AD17AA9004C40D7 /* SearchResultCell.swift */,
+				7573E0BA2AD17AD5004C40D7 /* SearchResultsViewController.swift */,
+			);
+			path = SearchResult;
 			sourceTree = "<group>";
 		};
 		759550682AC1C97400A47208 /* SignUpScreen */ = {
@@ -899,6 +955,7 @@
 				406044CD2AD01DF8001002BA /* PlaylistViewController .swift in Sources */,
 				7595507F2AC7133900A47208 /* AuthService.swift in Sources */,
 				751C22B92AC1968800FF50C6 /* UILabel + Extension.swift in Sources */,
+				7573E0BD2AD17B5D004C40D7 /* GenresHardData.swift in Sources */,
 				40BCF6D92AC8C08200912EA4 /* CategoryMusicEnum.swift in Sources */,
 				EB00A0AC2ACC56D5000C1CA3 /* PodcastModel.swift in Sources */,
 				4033BE0F2AD095CC0064339A /* ChannelMusicInfoTableViewCell.swift in Sources */,
@@ -906,15 +963,18 @@
 				406044BE2AD01CAB001002BA /* PlaylistModel.swift in Sources */,
 				40BCF6E12AC8C18700912EA4 /* UIImageView.swift in Sources */,
 				751C22D32AC1B55300FF50C6 /* UIButton + Extension.swift in Sources */,
+				7573E0B52AD17A41004C40D7 /* TopGenreCollection.swift in Sources */,
 				40BCF7042AC9A5B000912EA4 /* MusicButton.swift in Sources */,
 				406044972ACEA152001002BA /* NowPlayingViewModel .swift in Sources */,
 				759550702AC2E55800A47208 /* UIStackView + Extension.swift in Sources */,
+				7573E0B72AD17A8B004C40D7 /* AllPodcastsCell.swift in Sources */,
 				406044902ACDBDD7001002BA /* SavePodcastViewModel.swift in Sources */,
 				759550812AC713B100A47208 /* AuthError.swift in Sources */,
 				448D80042AC32D0C003D0403 /* TabBarVC.swift in Sources */,
 				406044C02AD01CBF001002BA /* Section.swift in Sources */,
 				40BCF6D42AC8BECF00912EA4 /* CategoryTableViewCell.swift in Sources */,
 				EB00A0A02ACC562C000C1CA3 /* Endpoints.swift in Sources */,
+				7573E0AF2AD17943004C40D7 /* SearchViewController.swift in Sources */,
 				EB00A0A92ACC5698000C1CA3 /* NetworkService.swift in Sources */,
 				40BCF6DB2AC8C0F100912EA4 /* UICollectionView + Extension.swift in Sources */,
 				EB00A0A62ACC5675000C1CA3 /* PodcastService.swift in Sources */,
@@ -926,11 +986,13 @@
 				751C22B32AC1930300FF50C6 /* LoginViewController.swift in Sources */,
 				406044C32AD01D09001002BA /* FavoritesCellViewModelProtocol.swift in Sources */,
 				406044D52AD01F03001002BA /* HeaderCell.swift in Sources */,
+				7573E0B92AD17AA9004C40D7 /* SearchResultCell.swift in Sources */,
 				751C22CF2AC1B36A00FF50C6 /* InputField.swift in Sources */,
 				751C22532AC0542000FF50C6 /* AppDelegate.swift in Sources */,
 				759550832AC7142700A47208 /* Validation.swift in Sources */,
 				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
 				448D80092AC32D0C003D0403 /* FavoritesViewController.swift in Sources */,
+				7573E0BB2AD17AD5004C40D7 /* SearchResultsViewController.swift in Sources */,
 				406044AE2AD01A2D001002BA /* CreatePlaylistCell.swift in Sources */,
 				406044BC2AD01C89001002BA /* ObserverBox.swift in Sources */,
 				40BCF6E32AC8C27700912EA4 /* CategoryCollectionViewCell.swift in Sources */,
@@ -939,6 +1001,7 @@
 				4033BE142AD096A40064339A /* ChannelModel.swift in Sources */,
 				406044CF2AD01E65001002BA /* FavoritesListViewModel.swift in Sources */,
 				44AC2E502AD0AF8900AD3910 /* AccountSettingViewController.swift in Sources */,
+				7573E0B12AD179B7004C40D7 /* BrowseAllCollection.swift in Sources */,
 				4033BE0C2AD094D90064339A /* ChannelViewController.swift in Sources */,
 				7595506C2AC1D06900A47208 /* SignUpViewController.swift in Sources */,
 				751C22BB2AC196C600FF50C6 /* UIFont + Extension.swift in Sources */,
@@ -946,6 +1009,7 @@
 				406044A92AD019A8001002BA /* CreatePlaylistCellProtocol .swift in Sources */,
 				EB00A0942ACC55A3000C1CA3 /* Extension + String.swift in Sources */,
 				4033BE162AD096BB0064339A /* FeedsModel.swift in Sources */,
+				7573E0B32AD17A13004C40D7 /* GenreCell.swift in Sources */,
 				4033BE122AD096070064339A /* ChannelViewModel.swift in Sources */,
 				751C22D52AC1B5EB00FF50C6 /* UIColor + Extension.swift in Sources */,
 				406044B42AD01B48001002BA /* CreatePlaylistController .swift in Sources */,
