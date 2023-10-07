@@ -1,11 +1,3 @@
-
-//
-//  PSViewControllerTableViewCell.swift
-//  PodcastApp
-//
-//  Created by Danila Bolshakov on 01.10.2023.
-//
-
 import UIKit
 
 final class ProfileSettingViewControllerTableViewCell: UITableViewCell {
@@ -14,7 +6,7 @@ final class ProfileSettingViewControllerTableViewCell: UITableViewCell {
     
     private lazy var iconContentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .lightBlueColor
         view.layer.cornerRadius = 12
         return view
     }()
@@ -58,13 +50,13 @@ private extension ProfileSettingViewControllerTableViewCell {
             iconImageView.bottomAnchor.constraint(equalTo: iconContentView.bottomAnchor, constant: -12),
             
             iconContentView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            iconContentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 32),
-            iconContentView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -21),
+            iconContentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            iconContentView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -25),
             
-            menuTitleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 16),
+            menuTitleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 25),
             menuTitleLabel.centerYAnchor.constraint(equalTo: iconContentView.centerYAnchor),
             
-            arrowImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -32),
+            arrowImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             arrowImageView.centerYAnchor.constraint(equalTo: iconContentView.centerYAnchor),
             arrowImageView.heightAnchor.constraint(equalToConstant: 24),
             arrowImageView.widthAnchor.constraint(equalToConstant: 24)

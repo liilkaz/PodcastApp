@@ -1,24 +1,22 @@
 import UIKit
 
-class TopGenreCollection: UITableViewCell {
-    var genresarr = GenresHardData()
-    static let identifier = "TopGenreCollection"
+protocol TapGenresCollectionPressed: AnyObject {
+    func tapGenreCollection(with title: String)
+}
 
+class TopGenreCollection: UITableViewCell {
+    static let identifier = "TopGenreCollection"
+    weak var delegate: TapGenresCollectionPressed?
+    var genresarr = TopGenres.allCases.map { $0.rawValue }
+    
     private lazy var sectionOneLabel = UILabel(text: "Top Genres", font: .manrope16bold(), textColor: .black)
     
-    private lazy var seeAllButton: UIButton = {
-        let button = UIButton(title: "See All", backgroundColor: .clear, titleColor: .gray, font: .manrope16regular() , hasBorder: false)
-        button.addTarget(self, action: #selector(seeAllButtonPressed), for: .touchUpInside)
-        return button
-    }()
-    
     private lazy var topCategoryCollectionView: UICollectionView = {
-
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 17
         layout.minimumLineSpacing = 17
-        layout.itemSize = CGSize(width: 147, height: 84)
+        layout.itemSize = CGSize(width: 150, height: 85)
 
         let collectionview = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionview.register(GenreCell.self, forCellWithReuseIdentifier: GenreCell.identifier)
@@ -40,46 +38,39 @@ class TopGenreCollection: UITableViewCell {
     }
     
     private func setupUI() {
-        contentView.addSubviews(sectionOneLabel,seeAllButton,topCategoryCollectionView )
+        contentView.addSubviews(sectionOneLabel,topCategoryCollectionView )
         
         NSLayoutConstraint.activate([
             sectionOneLabel.heightAnchor.constraint(equalToConstant: 22),
             sectionOneLabel.topAnchor.constraint(equalTo: topAnchor),
             sectionOneLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             
-            seeAllButton.heightAnchor.constraint(equalToConstant: 25),
-            seeAllButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            seeAllButton.topAnchor.constraint(equalTo: topAnchor),
-            
             topCategoryCollectionView.topAnchor.constraint(equalTo: sectionOneLabel.bottomAnchor, constant: 13),
             topCategoryCollectionView.widthAnchor.constraint(equalTo: widthAnchor),
             topCategoryCollectionView.heightAnchor.constraint(equalToConstant: 84),
         ])
     }
-    
-    @objc func seeAllButtonPressed(_ sender: UIButton) {
-        print("See all button pressed")
-    }
 }
 
 extension TopGenreCollection: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return genresarr.topGenres.count
+        return genresarr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let title = genresarr.topGenres[indexPath.row]
-        let image = UIImage(systemName: "")
+        let title = genresarr[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCell.identifier, for: indexPath) as! GenreCell
-        cell.configureCell(image: image, title: title)
+        cell.configureCell(title: title)
         return cell
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return genresarr.topGenres.count
+        return 1
     }
 }
 
 extension TopGenreCollection: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.tapGenreCollection(with: genresarr[indexPath.row])
     }
+}

@@ -1,9 +1,9 @@
 import UIKit
 
 class NowPlayingViewController: UIViewController {
-    
     var nowPlayingViewModel: NowPlayingViewModel
-    var musicPlayerViewModel = MusicPlayerViewModel()
+    var musicPlayerViewModel: MusicPlayerViewModel
+    var currentTrack = 0
     private var isSliderBeingDragged = false
 
     private var isPlaying = true {
@@ -33,6 +33,7 @@ class NowPlayingViewController: UIViewController {
         slider.addTarget(self, action: #selector(sliderTouchUp(_:)), for: .touchDown)
         return slider
     }()
+
     private lazy var buttonsStackView: UIStackView = {
         let sv = UIStackView(axis: .horizontal, spacing: 0)
         sv.alignment = .fill
@@ -43,7 +44,6 @@ class NowPlayingViewController: UIViewController {
     private lazy var reverseView = CornerRadiusUIView(background: .buttonsViewColor.withAlphaComponent(0), rounding: 30)
     private lazy var playPauseView = CornerRadiusUIView(background: .buttonsViewColor.withAlphaComponent(0), rounding: 30)
     private lazy var forwardView = CornerRadiusUIView(background: .buttonsViewColor.withAlphaComponent(0), rounding: 30)
-    
     
     private lazy var reverseButton: NowPlayingButtons = {
         let button = NowPlayingButtons(pointSize: 30, image: UIImage(systemName: "backward.fill"))
@@ -67,13 +67,14 @@ class NowPlayingViewController: UIViewController {
         return button
     }()
     
-    
-    
-    init(nowPlayingModel: NowPlayingViewModel) {
+    init(nowPlayingModel: NowPlayingViewModel, tracks: [String], currentTrack: Int) {
         self.nowPlayingViewModel = nowPlayingModel
+        self.musicPlayerViewModel = MusicPlayerViewModel(tracks: tracks, currentIndex: currentTrack)
+        self.currentTrack = currentTrack
         super.init(nibName: nil, bundle: nil)
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -94,8 +95,6 @@ class NowPlayingViewController: UIViewController {
         super.viewWillAppear(animated)
         musicPlayerViewModel.delegate = self
         configureVC()
-       
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -115,32 +114,31 @@ class NowPlayingViewController: UIViewController {
         musicPlayerViewModel.updateCurrentTime(sliderValue: Double(value))
     }
 
-    
     private func setupPlayer() {
-        musicPlayerViewModel.setupPlayer(with: nowPlayingViewModel.podcastMusic)
+        musicPlayerViewModel.setupPlayer()
         musicPlayerViewModel.playMusic()
     }
     
     private func configureVC() {
         Task {
-            let image = try await nowPlayingViewModel.networkService.loadImageTask(from: nowPlayingViewModel.podcastImage)
+            let model = nowPlayingViewModel.podcastImage[currentTrack]
+            let image = try await nowPlayingViewModel.networkService.loadImageTask(from: model)
             musicImage.image = image
         }
         
-        musicLabel.text = nowPlayingViewModel.podcastTitle
-        creatorLabel.text = nowPlayingViewModel.podcastCreator
+        musicLabel.text = nowPlayingViewModel.podcastTitle[currentTrack]
+        creatorLabel.text = nowPlayingViewModel.podcastCreator[currentTrack]
     }
     
     private func configurePlayer() {
-        let duration = musicPlayerViewModel.currentTime
+        let duration = musicPlayerViewModel.totalTime
         endSliderValueLabel.text = String(format: "%.2f", duration).replacingOccurrences(of: ".", with: ":")
         musicSlider.maximumValue = Float(duration)
     }
     
-    
     private func setupNavigationBarWithBookmark() {
         let button = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: self, action: #selector(bookmarkButtonPressed(_:)))
-        nowPlayingViewModel.realmService.checkPodcastInRealm(id: nowPlayingViewModel.podcastId) {
+        nowPlayingViewModel.realmService.checkPodcastInRealm(id: nowPlayingViewModel.podcastId[currentTrack]) {
             self.navigationItem.rightBarButtonItem = button
         } failureCompletion: {
             self.navigationItem.rightBarButtonItem = button
@@ -151,13 +149,13 @@ class NowPlayingViewController: UIViewController {
     }
     
     @IBAction private func bookmarkButtonPressed(_ sender: UIBarButtonItem) {
-        switch sender.image{
+        switch sender.image {
         case UIImage(systemName: "bookmark"):
             sender.image = UIImage(systemName: "bookmark.fill")
-            nowPlayingViewModel.realmService.savePodcastToRealm(id: nowPlayingViewModel.podcastId, podcastURL: nowPlayingViewModel.podcastMusic, imageURL: nowPlayingViewModel.podcastImage, title: nowPlayingViewModel.podcastTitle, creator: nowPlayingViewModel.podcastCreator)
+            nowPlayingViewModel.realmService.savePodcastToRealm(id: nowPlayingViewModel.podcastId[currentTrack], podcastURL: nowPlayingViewModel.podcastMusic[currentTrack], imageURL: nowPlayingViewModel.podcastImage[currentTrack], title: nowPlayingViewModel.podcastTitle[currentTrack], creator: nowPlayingViewModel.podcastCreator[currentTrack])
         case UIImage(systemName: "bookmark.fill"):
             sender.image = UIImage(systemName: "bookmark")
-            nowPlayingViewModel.realmService.deletePodcastFromRealm(id: nowPlayingViewModel.podcastId)
+            nowPlayingViewModel.realmService.deletePodcastFromRealm(id: nowPlayingViewModel.podcastId[currentTrack])
         default: break
         }
     }
@@ -190,6 +188,7 @@ class NowPlayingViewController: UIViewController {
             buttonBackground = playPauseView
         case forwardButton:
             buttonBackground = forwardView
+            
         default: return
         }
         UIView.animate(withDuration: 0.5) {
@@ -203,10 +202,31 @@ class NowPlayingViewController: UIViewController {
         switch sender {
         case reverseButton:
             buttonBackground = reverseView
+            if currentTrack < 0 {
+                currentTrack = nowPlayingViewModel.podcastMusic.count
+                configureVC()
+                configurePlayer()
+            } else {
+                currentTrack -= 1
+                configureVC()
+                configurePlayer()
+            }
+            musicPlayerViewModel.playPreviousTrack()
         case playPauseButton:
             buttonBackground = playPauseView
         case forwardButton:
             buttonBackground = forwardView
+            if currentTrack > nowPlayingViewModel.podcastMusic.count {
+                currentTrack = 0
+                configureVC()
+                configurePlayer()
+            } else {
+                currentTrack += 1
+                configureVC()
+                configurePlayer()
+            }
+            
+            musicPlayerViewModel.playNextTrack()
         default: return
         }
         UIView.animate(withDuration: 0.5, animations: {
@@ -215,7 +235,6 @@ class NowPlayingViewController: UIViewController {
         })
     }
 
-    
     private func setupUI() {
         view.addSubviews(musicImage, musicLabel, creatorLabel, startSliderValueLabel, endSliderValueLabel, musicSlider, buttonsStackView)
 

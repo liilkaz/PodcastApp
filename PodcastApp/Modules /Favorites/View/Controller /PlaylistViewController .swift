@@ -4,7 +4,7 @@ import SnapKit
 final class PlaylistViewController: UIViewController {
     
     //MARK: - Properties
-    
+    private var favoritesViewModel = FavoritesViewModel()
     private var viewModel: PlaylistViewModelProtocol?
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, PlaylistModel>?
@@ -25,9 +25,15 @@ final class PlaylistViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         viewModel?.fetch()
+        fetchFavoritesPodcast()
     }
+    
+    private func fetchFavoritesPodcast() {
+        favoritesViewModel.fetchFavoritesPodcast()
+    }
+    
+    
     
     private func setupViews() {
         let additionallyButton = UIBarButtonItem(

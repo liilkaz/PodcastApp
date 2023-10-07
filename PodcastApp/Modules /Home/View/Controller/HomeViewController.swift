@@ -80,7 +80,7 @@ extension HomeViewController: UITableViewDataSource {
         case 1:
             let item = items[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as! HomeTableViewCell
-            cell.configureCell(with: items[indexPath.row])
+            cell.configureCell(with: item)
             cell.selectionStyle = .none
             return cell
         default: break
@@ -90,17 +90,14 @@ extension HomeViewController: UITableViewDataSource {
 }
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let indexPathRow = items[indexPath.row]
-        guard let id = indexPathRow.feedID,
-              let urlMusic = indexPathRow.enclosureURL,
-              let image = indexPathRow.feedImage,
-              let title = indexPathRow.feedTitle,
-              let creator = indexPathRow.feedAuthor
-        else {
-            return
-        }
-        let model = NowPlayingViewModel(podcastId: id, podcastMusic: urlMusic, podcastImage: image, podcastTitle: title, podcastCreator: creator)
-        let nowPlayingVC = NowPlayingViewController(nowPlayingModel: model)
+        let ids = items.compactMap { $0.feedID }
+        let urlMusics = items.compactMap { $0.enclosureURL }
+        let images = items.compactMap { $0.feedImage }
+        let titles = items.compactMap { $0.feedTitle }
+        let creators = items.compactMap { $0.feedAuthor }
+        
+        let model = NowPlayingViewModel(podcastId: ids, podcastMusic: urlMusics, podcastImage: images, podcastTitle: titles, podcastCreator: creators)
+        let nowPlayingVC = NowPlayingViewController(nowPlayingModel: model, tracks: urlMusics, currentTrack: indexPath.row)
         nowPlayingVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(nowPlayingVC, animated: true)
     }

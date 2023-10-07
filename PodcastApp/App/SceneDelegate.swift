@@ -9,7 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let vc = TabBarViewController()
+        let vc = UINavigationController(rootViewController: OnboardingPageViewController())
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }

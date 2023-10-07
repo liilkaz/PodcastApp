@@ -70,6 +70,7 @@ final class ProfileSettingViewController: UIViewController {
     
     private lazy var settingsTableView: UITableView = {
         let tableView = UITableView()
+        tableView.isScrollEnabled = false
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
         tableView.register(ProfileSettingViewControllerTableViewCell.self, forCellReuseIdentifier: "Theme.psVCTableViewCellID")
@@ -91,6 +92,7 @@ final class ProfileSettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Settings" 
         setViews()
         setupConstraints()
     }
@@ -116,11 +118,11 @@ extension ProfileSettingViewController {
             avatarImageView.heightAnchor.constraint(equalToConstant: 52),
             avatarImageView.widthAnchor.constraint(equalToConstant: 48),
             
-            headerStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 56),
+            headerStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             headerStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             headerStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             
-            settingsTableView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor, constant: 20),
+            settingsTableView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor, constant: 50),
             settingsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             settingsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             settingsTableView.bottomAnchor.constraint(equalTo: logOutButton.topAnchor, constant: -50),
@@ -156,15 +158,14 @@ extension ProfileSettingViewController: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             let viewController = AccountSettingViewController()
-            present(viewController, animated: true)
-        case 1:
-            let viewController = AccountSettingViewController()
-            present(viewController, animated: true)
+            viewController.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(viewController, animated: true)
         case 2:
-            let viewController = AccountSettingViewController()
-            present(viewController, animated: true)
-        default:
-            break
+            let alert = UIAlertController(title: "Забыл пароль?", message: "Ну Бывает)", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ОК", style: .default)
+            alert.addAction(okAction)
+            present(alert, animated: true)
+        default: break
         }
     }
 }

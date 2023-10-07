@@ -1,6 +1,7 @@
 import UIKit
 
 class SearchResultsViewController: UIViewController, UISearchBarDelegate {
+    var searchResultViewModel = SearchResultViewModel()
     
     var searchTerm = ""
 
@@ -15,10 +16,10 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
         tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
+        setNavigationBarWithBackButton(title: "Search Results")
     }
 
     override func viewWillLayoutSubviews() {
@@ -26,6 +27,17 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
         view.backgroundColor = .white
         setupUI()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        searchResultViewModel.fetchFeeds(with: searchTerm) {
+            DispatchQueue.main.async {
+                self.searchTableView.reloadData()
+            }
+        }
+    }
+    
+    
 
     private func setupUI() {
         view.addSubviews(searchTableView)
@@ -61,7 +73,7 @@ extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegat
         case 0:
             return 0
         case 1:
-            return 1
+            return searchResultViewModel.feeds.count
         case 2:
             return 10
         default: return 0
@@ -74,7 +86,9 @@ extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegat
             return UITableViewCell()
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultCell.identifier, for: indexPath) as! SearchResultCell
+            cell.setupCell(with: searchResultViewModel.feeds[indexPath.row])
             cell.selectionStyle = .none
+            
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: AllPodcastsCell.identifier, for: indexPath) as! AllPodcastsCell
@@ -125,7 +139,6 @@ extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegat
                 separatorView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
                 separatorView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
                 separatorView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 18),
-//                separatorView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
                 separatorView.heightAnchor.constraint(equalToConstant: 1) // Высота нижнего разделителя
             ])
         }
@@ -157,10 +170,3 @@ extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegat
         }
     }
 }
-
-
-    
-
-
-
-

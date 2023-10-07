@@ -2,7 +2,7 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    var searchInput: String = ""
+    private var searchViewModel = SearchViewModel()
     
     private lazy var bgView: UIImageView = {
         let view = UIImageView()
@@ -40,10 +40,19 @@ class SearchViewController: UIViewController {
     }()
     
     @objc func rightButtonTapped() {
-        searchBar.text = ""
         searchBar.resignFirstResponder()
         rightButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         rightButton.tintColor = .customGray2
+    }
+    
+    private func addTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @IBAction private func dismissKeyboard() {
+        searchBar.endEditing(true)
     }
     
     private func setupSearchBar() {
@@ -68,21 +77,16 @@ class SearchViewController: UIViewController {
         super.viewWillLayoutSubviews()
         setupSearchBar()
         setupUI()
+        addTapGesture()
         navigationItem.title = "Search"
-        navigationItem.hidesBackButton = true
+
     }
     
     private func setupUI() {
         view.backgroundColor = .white
-        view.addSubviews(bgView)
-        view.addSubviews(searchTableView)
-        view.addSubviews(searchBar)
+        view.addSubviews(searchTableView, searchBar)
         
         NSLayoutConstraint.activate([
-            bgView.topAnchor.constraint(equalTo: view.topAnchor),
-            bgView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            bgView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             searchBar.heightAnchor.constraint(equalToConstant: 48),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32.0),
@@ -93,20 +97,6 @@ class SearchViewController: UIViewController {
             searchTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
-    //    private func setupSearchBar() {
-    //        let searchTextField = searchBar.searchTextField
-    //        searchTextField.backgroundColor = .white
-    //        searchTextField.placeholder = "Search"
-    //        searchBar.showsBookmarkButton = true
-    //        searchTextField.leftView = nil
-    ////        if let button = searchTextField.rightView as? UIButton {
-    ////            button.setImage(UIImage(named: "Search"), for: .normal)
-    ////            button.setImage(UIImage(named: "Search"), for: .highlighted
-    ///}
-    //        searchBar.barTintColor = .white
-    //        searchBar.delegate = self
-    //    }
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
@@ -116,7 +106,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             return 120
         case 1:
             // MARK: По идее можно получить  число жанров из апишки, умножить на (высоту ячейки +17) и разделить на два(сколько в ряду), но пока такое число, чтобы не резалось и влезало все.
-            return 600
+            return 450
         default: break
         }
         return 0
@@ -140,11 +130,13 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: TopGenreCollection.identifier, for: indexPath) as! TopGenreCollection
+            cell.delegate = self
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: BrowseAllCollection.identifier, for: indexPath) as! BrowseAllCollection
+            cell.delegate = self
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             return cell
@@ -154,10 +146,30 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc =
-//        navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
+
+extension SearchViewController: TapGenresCollectionPressed {
+    func tapGenreCollection(with title: String) {
+        let vc = SearchResultsViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.searchTerm = title
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+extension SearchViewController: BrowseAllButtonPressed {
+    func browseAllCollection(with title: String) {
+        let vc = SearchResultsViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.searchTerm = title
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
 
 extension SearchViewController : UISearchBarDelegate, UITextFieldDelegate {
     
@@ -165,28 +177,19 @@ extension SearchViewController : UISearchBarDelegate, UITextFieldDelegate {
         if searchText.isEmpty {
             rightButton.setImage(UIImage(named: "Search"), for: .normal)
         } else {
-            rightButton.setImage(UIImage(named: "Close"), for: .normal)
+            rightButton.setImage(UIImage(systemName: "xmark.square"), for: .normal)
         }
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchInput = searchBar.text, !searchInput.isEmpty {
-            self.searchInput = searchInput
             let vc = SearchResultsViewController()
             vc.searchTerm = searchInput
+            vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         } else {
             searchBar.searchTextField.placeholder = "Type something"
         }
     }
 }
-
-
-
-
-
 
