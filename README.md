@@ -75,7 +75,7 @@
 * Добавить возможность создавать плейлисты и сохранять их.
 
 ---
-**TEAM FIFTEEN:**
+**TEAM SIX:**
 + [Liliya Feodotova](https://github.com/liilkaz) (Тимлид команды)
 + [Anna Zaitsava](https://github.com/ShapovalovIlya)
 + [Vladislav](https://github.com/fullzoom59)
