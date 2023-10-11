@@ -1,16 +1,15 @@
-# CHALLENGE №3 “Podcast App”
 # Podcast App
 <img src="https://github.com/liilkaz/PodcastApp/assets/122364066/1625abba-1fa9-4a2d-9262-c027ad69e08e" width="1000">
 
 ---
 
-**CHALLENGE №3 “Podcast App” [(SWIFTMARATHON 8.0)](https://t.me/swiftmarathon)**
+**CHALLENGE №3 “Podcast App” [(SWIFTMARATHON 8.0)](https://t.me/devrush_community/13663)**
 * Проект на Swift 5
 * Минимальная поддерживаемая iOS – 15
 * Только iPhone и портретная ориентация экрана.
 * API: [Podcastindex](https://api.podcastindex.org/)
 * Сторонние библиотеки: Kingfisher
-* Сохранение: Realme
+* Сохранение: Realm
 * Тесты
 
 ---
@@ -77,7 +76,7 @@
 ---
 **TEAM SIX:**
 + [Liliya Feodotova](https://github.com/liilkaz) (Тимлид команды)
-+ [Anna Zaitsava](https://github.com/ShapovalovIlya)
++ [Anna Zaitsava](https://github.com/AnnaZaitsava)
 + [Vladislav](https://github.com/fullzoom59)
 + [Danila Bolshakov](https://github.com/dsm5e](https://github.com/DanilaBolshakov1999 )
 + [Evgenii Sidorov](https://github.com/U-ggg)
